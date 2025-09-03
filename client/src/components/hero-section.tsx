@@ -16,28 +16,28 @@ const HeroSection = () => {
           />
         </div>
         
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground font-sans">
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white font-sans">
           Ily Coulibaly
         </h1>
-        <p className="text-xl md:text-2xl font-bold mb-2 text-gray-400 font-sans">
-          Data Analyst & AI Enthusiast
+        <p className="text-xl md:text-2xl font-bold mb-2 text-primary font-sans">
+          Data Analyst & Entrepreneur
         </p>
-        <p className="text-lg text-foreground mb-2 font-sans">
+        <p className="text-lg text-white mb-2 font-sans">
           B.S. Mathematics | M.S. Business Analytics
         </p>
-        <p className="text-lg text-foreground mb-2 font-sans flex items-center justify-center">
+        <p className="text-lg text-primary mb-2 font-sans flex items-center justify-center">
           <a 
             href="https://www.google.com/maps/place/Boston,+MA" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center hover:text-primary transition-colors duration-300"
+            className="flex items-center hover:text-white transition-colors duration-300"
             data-testid="location-link"
           >
             <MapPin className="w-4 h-4 mr-1" />
             Boston, MA
           </a>
         </p>
-        <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto font-sans">
+        <p className="text-lg text-primary mb-12 max-w-2xl mx-auto font-sans">
           Transforming Data into Business Insights
         </p>
         

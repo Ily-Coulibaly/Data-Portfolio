@@ -4,41 +4,41 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(0, 0%, 8%);
-  --foreground: hsl(0, 0%, 98%);
-  --card: hsl(0, 0%, 12%);
-  --card-foreground: hsl(0, 0%, 98%);
-  --primary: hsl(60, 9%, 58%);
-  --primary-foreground: hsl(0, 0%, 8%);
-  --secondary: hsl(0, 0%, 18%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --muted: hsl(0, 0%, 22%);
-  --muted-foreground: hsl(0, 0%, 70%);
-  --accent: hsl(60, 9%, 58%);
-  --accent-foreground: hsl(0, 0%, 8%);
-  --border: hsl(0, 0%, 22%);
-  --input: hsl(0, 0%, 15%);
-  --ring: hsl(60, 9%, 58%);
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(0, 0%, 8%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --primary: hsl(0, 0%, 45%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 8%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 8%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --accent: hsl(0, 0%, 45%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 20%);
+  --input: hsl(0, 0%, 8%);
+  --ring: hsl(0, 0%, 45%);
   --radius: 8px;
   --font-sans: 'Inter', sans-serif;
 }
 
 .dark {
-  --background: hsl(0, 0%, 8%);
-  --foreground: hsl(0, 0%, 98%);
-  --card: hsl(0, 0%, 12%);
-  --card-foreground: hsl(0, 0%, 98%);
-  --primary: hsl(60, 9%, 58%);
-  --primary-foreground: hsl(0, 0%, 8%);
-  --secondary: hsl(0, 0%, 18%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --muted: hsl(0, 0%, 22%);
-  --muted-foreground: hsl(0, 0%, 70%);
-  --accent: hsl(60, 9%, 58%);
-  --accent-foreground: hsl(0, 0%, 8%);
-  --border: hsl(0, 0%, 22%);
-  --input: hsl(0, 0%, 15%);
-  --ring: hsl(60, 9%, 58%);
+  --background: hsl(0, 0%, 0%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(0, 0%, 8%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --primary: hsl(0, 0%, 45%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 8%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 8%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --accent: hsl(0, 0%, 45%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 20%);
+  --input: hsl(0, 0%, 8%);
+  --ring: hsl(0, 0%, 45%);
 }
 
 @layer base {
@@ -80,15 +80,6 @@
   .filter-active {
     background: var(--primary);
     color: var(--primary-foreground);
-    border-color: var(--primary);
-  }
-  
-  .olive-text {
-    color: var(--primary);
-  }
-  
-  .hover-olive:hover {
-    color: var(--primary);
     border-color: var(--primary);
   }
 }
