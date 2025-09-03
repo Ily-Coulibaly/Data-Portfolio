@@ -90,7 +90,7 @@ const AboutSection = () => {
             I'm <span className="font-semibold">Ily</span>, a data analyst with a foundation in <span className="font-semibold">Mathematics and Actuarial Science</span>, and <span className="font-semibold">2.5 years of experience</span> spanning analytics, tech consulting, data strategy, and entrepreneurship.
           </p>
           <p className="text-base text-foreground leading-relaxed mb-6">
-            I specialize in solving real-world problems and building scalable solutions with <span className="font-semibold">data and artificial intelligence</span>.
+            A <span className="font-semibold">Master of Science in Business Analytics</span> graduate from <span className="font-semibold">Babson College</span>, I specialize in solving real-world problems and building scalable solutions with <span className="font-semibold">data and artificial intelligence</span>.
           </p>
           <p className="text-base text-foreground leading-relaxed mb-12">
             I am also the founder of <span className="font-semibold">KYN</span>, a sustainable and ethical skincare brand.
