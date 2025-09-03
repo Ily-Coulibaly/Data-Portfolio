@@ -1,0 +1,60 @@
+Perfect — here’s your **updated, polished prompt** with the screenshots included so the Replit agent clearly understands what to do:
+
+---
+
+**Prompt for Replit Agent:**
+
+Help me **rebuild my data portfolio as a Data Analyst**. I’ve uploaded **screenshots of my existing portfolio** to show the layout and style I want. Please **reproduce the structure and design shown in the screenshots**, but fix any mistakes or errors and improve the overall quality.
+
+### Key instructions:
+
+1. **Screenshots as Reference**
+
+   * Use the uploaded screenshots of my current portfolio as the visual guide for layout, structure, and design.
+   * Keep the overall style but polish it so it looks more professional, minimal, and error-free.
+
+2. **Resume**
+
+   * I will upload my resume.
+   * Rename the downloadable file to: `Resume_Ily_Coulibaly_Data_Analyst.pdf`.
+
+3. **Profile Picture**
+
+   * Use my uploaded profile picture: `Facetune_30-03-2025-11-57-48_1756911615748.jpg`.
+
+4. **Clickable External Links (Icons required)**
+
+   * LinkedIn: [https://www.linkedin.com/in/ily-kynion-coulibaly-05602a189/](https://www.linkedin.com/in/ily-kynion-coulibaly-05602a189/)
+   * GitHub: [https://github.com/Ily-Coulibaly](https://github.com/Ily-Coulibaly)
+   * Tableau Public: [https://public.tableau.com/app/profile/ily.kynion.coulibaly/vizzes](https://public.tableau.com/app/profile/ily.kynion.coulibaly/vizzes)
+   * Medium: [https://medium.com/@k.ilycoulibaly](https://medium.com/@k.ilycoulibaly)
+
+5. **Content**
+
+   * **About Me** section: highlight my mathematics background, Babson MSBA degree, and passion for analytics + AI.
+   * **Projects section**: flexible so I can upload unlimited projects with descriptions, links, and visuals (e.g., GitHub repos, Tableau dashboards).
+   * **Skills section**: include interactive logos for Python, R, SQL, Tableau, Power BI, Excel, etc.
+   * **Achievements/Certificates section**: for awards, recognitions, and certifications.
+   * **Resume Download button** in the hero section.
+
+6. **Design requirements**
+
+   * Minimalist, modern, and professional.
+   * Profile picture centered in the hero section.
+   * Clean layout with smooth navigation.
+   * Consistent clickable icons (LinkedIn, GitHub, Tableau, Medium, Email).
+
+7. **Creativity**
+
+   * Suggest or add extra features that could make the portfolio stand out, such as:
+
+     * Testimonials section
+     * Blog/Articles section
+     * Contact form integrated with Replit
+     * Interactive elements that showcase data skills
+
+---
+
+⚡This wording makes it crystal clear that the **screenshots** are the baseline, while still giving the agent freedom to improve.
+
+Do you want me to also draft a **short professional “About Me” paragraph** that you can drop in directly so the agent doesn’t generate one on its own?
