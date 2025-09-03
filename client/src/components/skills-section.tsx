@@ -32,18 +32,21 @@ const SkillsSection = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center max-w-5xl mx-auto">
           {currentSkills.map((skill) => {
             const IconComponent = skill.icon;
             return (
-              <div key={skill.name} className="skill-logo text-center">
+              <div key={skill.name} className="skill-logo text-center flex flex-col items-center">
                 <div 
-                  className="w-20 h-20 mx-auto mb-4 bg-card rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-300"
+                  className="w-20 h-20 mb-4 bg-card rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-300"
                   data-testid={`skill-${skill.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  title={skill.name}
                 >
-                  <IconComponent className={`w-12 h-12 ${skill.color}`} />
+                  <IconComponent 
+                    className={`w-12 h-12 ${skill.color}`}
+                  />
                 </div>
-                <p className="text-sm font-medium">{skill.name}</p>
+                <p className="text-sm font-medium text-center">{skill.name}</p>
               </div>
             );
           })}

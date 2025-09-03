@@ -1,5 +1,5 @@
 import { SiPython, SiR, SiTableau, SiGit, SiJupyter, SiPandas } from "react-icons/si";
-import { Brain, Database, BarChart3, Users, MessageSquare, Target, TrendingUp, Eye, LineChart, FileSpreadsheet, Calculator, GitBranch } from "lucide-react";
+import { Brain, Database, BarChart3, Users, MessageSquare, Target, TrendingUp, Eye, LineChart, FileSpreadsheet, Calculator, GitBranch, PieChart, Lightbulb, Briefcase, ToggleLeft, Network } from "lucide-react";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/ily-kynion-coulibaly-05602a189/",
@@ -20,24 +20,26 @@ export const TECHNICAL_TOOLS = [
   { name: "Jupyter", icon: SiJupyter, color: "text-orange-400" },
   { name: "Pandas", icon: SiPandas, color: "text-blue-700" },
   { name: "MATLAB", icon: Calculator, color: "text-red-600" },
-  { name: "SAS", icon: BarChart3, color: "text-blue-800" },
+  { name: "SAS", icon: LineChart, color: "text-blue-800" },
   { name: "Git", icon: SiGit, color: "text-red-500" }
 ];
 
 export const DATA_SKILLS = [
+  { name: "Data Analytics", icon: PieChart, color: "text-teal-500" },
   { name: "Machine Learning", icon: Brain, color: "text-primary" },
-  { name: "Predictive Analytics", icon: TrendingUp, color: "text-green-500" },
   { name: "Statistical Modeling", icon: LineChart, color: "text-blue-500" },
-  { name: "Data Visualization", icon: Eye, color: "text-purple-500" },
-  { name: "Data Analytics", icon: BarChart3, color: "text-teal-500" }
+  { name: "Predictive Analytics", icon: TrendingUp, color: "text-green-500" },
+  { name: "Data Visualization", icon: BarChart3, color: "text-purple-500" },
+  { name: "Artificial Intelligence", icon: Network, color: "text-indigo-500" },
+  { name: "A/B Testing", icon: ToggleLeft, color: "text-orange-500" }
 ];
 
 export const BUSINESS_SKILLS = [
   { name: "Strategic Leadership", icon: Target, color: "text-red-500" },
-  { name: "Critical Thinking", icon: Brain, color: "text-indigo-500" },
+  { name: "Critical Thinking", icon: Lightbulb, color: "text-indigo-500" },
   { name: "Communication", icon: MessageSquare, color: "text-green-500" },
   { name: "Teamwork", icon: Users, color: "text-blue-500" },
-  { name: "Consulting", icon: Target, color: "text-purple-500" }
+  { name: "Consulting", icon: Briefcase, color: "text-purple-500" }
 ];
 
 export const SKILLS_CATEGORIES = [
