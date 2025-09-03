@@ -7,11 +7,11 @@ const HeroSection = () => {
     <section id="home" className="min-h-screen flex flex-col items-center justify-center px-6 pt-20">
       <div className="text-center max-w-4xl mx-auto">
         {/* Profile Picture */}
-        <div className="mb-8 -mt-12">
+        <div className="mb-10 -mt-12">
           <img 
             src="/profile.jpg" 
             alt="Ily Coulibaly Profile Picture" 
-            className="w-40 h-40 rounded-full mx-auto object-cover border-4 border-primary shadow-2xl"
+            className="w-40 h-40 rounded-full mx-auto object-cover border-4 border-gray-600 shadow-2xl"
             data-testid="profile-picture"
           />
         </div>
@@ -87,7 +87,7 @@ const HeroSection = () => {
           >
             <FileText className="w-6 h-6" />
             <span className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-sans">
-              View Full Resume (PDF Download)
+              Resume
             </span>
           </a>
         </div>
