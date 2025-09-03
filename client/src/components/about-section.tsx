@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, GraduationCap, Briefcase } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const TypingBanner = () => {
@@ -75,6 +75,76 @@ const TypingBanner = () => {
   );
 };
 
+const Timeline = () => {
+  const timelineData = [
+    {
+      year: "2025",
+      type: "education",
+      title: "M.S. Business Analytics",
+      subtitle: "Babson College",
+      description: "Specialized in data analytics, machine learning, and business intelligence"
+    },
+    {
+      year: "2024",
+      type: "experience", 
+      title: "Founder & CEO",
+      subtitle: "KYN Skincare",
+      description: "Founded sustainable and ethical skincare brand, managing operations and growth strategy"
+    },
+    {
+      year: "2023",
+      type: "experience",
+      title: "Data Analytics Consultant", 
+      subtitle: "Various Organizations",
+      description: "Provided data strategy and analytics solutions across multiple industries"
+    },
+    {
+      year: "2022",
+      type: "education",
+      title: "B.S. Mathematics",
+      subtitle: "Actuarial Science Focus",
+      description: "Strong foundation in statistical modeling and mathematical analysis"
+    }
+  ];
+
+  return (
+    <div className="max-w-3xl mx-auto mb-12">
+      <div className="relative">
+        {/* Main timeline line */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-primary/30"></div>
+        
+        <div className="space-y-8">
+          {timelineData.map((item, index) => (
+            <div key={index} className="relative flex items-center">
+              {/* Timeline dot */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
+                <div className="w-4 h-4 bg-primary rounded-full border-4 border-background"></div>
+              </div>
+              
+              {/* Content */}
+              <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'ml-auto pl-8 text-left'}`}>
+                <div className="bg-card/50 backdrop-blur-sm rounded-lg p-4 border border-primary/20">
+                  <div className="flex items-center gap-2 mb-2">
+                    {item.type === 'education' ? (
+                      <GraduationCap className="w-4 h-4 text-primary" />
+                    ) : (
+                      <Briefcase className="w-4 h-4 text-primary" />
+                    )}
+                    <span className="text-sm font-semibold text-primary">{item.year}</span>
+                  </div>
+                  <h3 className="font-bold text-white text-sm mb-1">{item.title}</h3>
+                  <p className="text-primary font-medium text-xs mb-2">{item.subtitle}</p>
+                  <p className="text-foreground/80 text-xs leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const AboutSection = () => {
   return (
     <section id="about" className="py-20 px-6">
@@ -95,6 +165,9 @@ const AboutSection = () => {
           <p className="text-base text-foreground leading-relaxed mb-12">
             I am also the founder of <span className="font-semibold">KYN</span>, a sustainable and ethical skincare brand.
           </p>
+          
+          {/* Timeline */}
+          <Timeline />
           
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
