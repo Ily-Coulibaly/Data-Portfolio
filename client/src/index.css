@@ -14,17 +14,17 @@ body {
   --foreground: hsl(0, 0%, 100%);
   --card: hsl(0, 0%, 8%);
   --card-foreground: hsl(0, 0%, 100%);
-  --primary: hsl(0, 0%, 45%);
+  --primary: hsl(0, 0%, 55%);
   --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(0, 0%, 8%);
   --secondary-foreground: hsl(0, 0%, 100%);
   --muted: hsl(0, 0%, 8%);
-  --muted-foreground: hsl(0, 0%, 45%);
-  --accent: hsl(0, 0%, 45%);
+  --muted-foreground: hsl(0, 0%, 55%);
+  --accent: hsl(0, 0%, 55%);
   --accent-foreground: hsl(0, 0%, 100%);
   --border: hsl(0, 0%, 20%);
   --input: hsl(0, 0%, 8%);
-  --ring: hsl(0, 0%, 45%);
+  --ring: hsl(0, 0%, 55%);
   --radius: 8px;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -34,17 +34,17 @@ body {
   --foreground: hsl(0, 0%, 100%);
   --card: hsl(0, 0%, 8%);
   --card-foreground: hsl(0, 0%, 100%);
-  --primary: hsl(0, 0%, 45%);
+  --primary: hsl(0, 0%, 55%);
   --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(0, 0%, 8%);
   --secondary-foreground: hsl(0, 0%, 100%);
   --muted: hsl(0, 0%, 8%);
-  --muted-foreground: hsl(0, 0%, 45%);
-  --accent: hsl(0, 0%, 45%);
+  --muted-foreground: hsl(0, 0%, 55%);
+  --accent: hsl(0, 0%, 55%);
   --accent-foreground: hsl(0, 0%, 100%);
   --border: hsl(0, 0%, 20%);
   --input: hsl(0, 0%, 8%);
-  --ring: hsl(0, 0%, 45%);
+  --ring: hsl(0, 0%, 55%);
 }
 
 @layer base {
