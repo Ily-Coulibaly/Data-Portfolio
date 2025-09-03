@@ -1,10 +1,90 @@
 import { ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
+
+const TypingBanner = () => {
+  const titles = [
+    "Data Analyst",
+    "Python & ML Engineer", 
+    "AI Innovator",
+    "Business Analyst",
+    "Bilingual Problem Solver",
+    "Entrepreneur"
+  ];
+
+  const [currentText, setCurrentText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+
+  useEffect(() => {
+    const currentTitle = titles[currentIndex];
+    let timeout: NodeJS.Timeout;
+
+    if (!isDeleting && currentText === currentTitle) {
+      // Finished typing, wait 2 seconds before deleting
+      setIsTypingComplete(true);
+      timeout = setTimeout(() => {
+        setIsTypingComplete(false);
+        setIsDeleting(true);
+      }, 2000);
+    } else if (isDeleting && currentText === "") {
+      // Finished deleting, move to next title
+      setIsDeleting(false);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % titles.length);
+    } else {
+      // Continue typing or deleting
+      const speed = isDeleting ? 50 : 100;
+      timeout = setTimeout(() => {
+        if (isDeleting) {
+          setCurrentText(currentTitle.substring(0, currentText.length - 1));
+        } else {
+          setCurrentText(currentTitle.substring(0, currentText.length + 1));
+        }
+      }, speed);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [currentText, currentIndex, isDeleting, titles]);
+
+  return (
+    <div 
+      className="flex items-center justify-center h-20"
+      style={{ minHeight: '80px' }}
+    >
+      <div className="text-center">
+        <span 
+          className="text-2xl md:text-3xl font-semibold typing-text"
+          style={{ 
+            color: '#64ffda',
+            fontSize: '1.8rem'
+          }}
+        >
+          {currentText}
+          <span 
+            className="typing-cursor"
+            style={{
+              borderRight: '3px solid #64ffda',
+              animation: 'blink 1s infinite'
+            }}
+          >
+            &nbsp;
+          </span>
+        </span>
+      </div>
+    </div>
+  );
+};
 
 const AboutSection = () => {
   return (
     <section id="about" className="py-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-8">About Me</h2>
+        
+        {/* Animated Typing Banner */}
+        <div className="mb-12">
+          <TypingBanner />
+        </div>
         <div className="max-w-4xl mx-auto">
           <p className="text-lg text-foreground leading-relaxed mb-6">
             I'm <span className="font-semibold">Ily Kynion Coulibaly</span>, a bilingual data analyst with an actuarial foundation and a passion for solving real-world problems with data and purpose.
