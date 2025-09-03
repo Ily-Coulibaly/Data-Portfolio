@@ -1,4 +1,4 @@
-import { Download, FileText, ChevronDown } from "lucide-react";
+import { FileText, ChevronDown, MapPin } from "lucide-react";
 import { SiLinkedin, SiGithub, SiTableau } from "react-icons/si";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
@@ -16,19 +16,28 @@ const HeroSection = () => {
           />
         </div>
         
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground">
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground font-sans">
           Ily Coulibaly
         </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-2">
+        <p className="text-xl md:text-2xl font-bold mb-2 text-gray-400 font-sans">
           Data Analyst & AI Enthusiast
         </p>
-        <p className="text-lg text-muted-foreground mb-2">
+        <p className="text-lg text-foreground mb-2 font-sans">
           B.S. Mathematics | M.S. Business Analytics
         </p>
-        <p className="text-base text-muted-foreground mb-2">
-          📍 Boston, MA
+        <p className="text-lg text-foreground mb-2 font-sans flex items-center justify-center">
+          <a 
+            href="https://www.google.com/maps/place/Boston,+MA" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center hover:text-primary transition-colors duration-300"
+            data-testid="location-link"
+          >
+            <MapPin className="w-4 h-4 mr-1" />
+            Boston, MA
+          </a>
         </p>
-        <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+        <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto font-sans">
           Transforming Data into Business Insights
         </p>
         
@@ -39,52 +48,47 @@ const HeroSection = () => {
             target="_blank" 
             rel="noopener noreferrer"
             data-testid="social-linkedin"
-            className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300"
+            className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300 group relative"
           >
             <SiLinkedin className="w-6 h-6" />
+            <span className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-sans">
+              LinkedIn
+            </span>
           </a>
           <a 
             href={SOCIAL_LINKS.github} 
             target="_blank" 
             rel="noopener noreferrer"
             data-testid="social-github"
-            className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300"
+            className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300 group relative"
           >
             <SiGithub className="w-6 h-6" />
+            <span className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-sans">
+              GitHub
+            </span>
           </a>
           <a 
             href={SOCIAL_LINKS.tableau} 
             target="_blank" 
             rel="noopener noreferrer"
             data-testid="social-tableau"
-            className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300"
+            className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300 group relative"
           >
             <SiTableau className="w-6 h-6" />
+            <span className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-sans">
+              Tableau Public
+            </span>
           </a>
           <a 
             href="Resume_Ily_Coulibaly_Data_Analyst.pdf" 
             download 
             data-testid="social-resume"
             className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300 group relative"
-            title="View Full Resume (PDF Download)"
           >
             <FileText className="w-6 h-6" />
-            <span className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+            <span className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-sans">
               View Full Resume (PDF Download)
             </span>
-          </a>
-        </div>
-        
-        {/* Resume Download Button */}
-        <div className="mb-12">
-          <a 
-            href="Resume_Ily_Coulibaly_Data_Analyst.pdf" 
-            download 
-            data-testid="download-resume"
-            className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
-          >
-            <Download className="w-5 h-5 mr-2" />
-            Download CV
           </a>
         </div>
       </div>
