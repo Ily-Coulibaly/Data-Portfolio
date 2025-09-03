@@ -17,7 +17,7 @@ export const SKILLS = [
   { name: "Tableau", icon: SiTableau, color: "text-blue-400" },
   { name: "Power BI", icon: Database, color: "text-yellow-500" },
   { name: "Excel", icon: Database, color: "text-green-600" },
-  { name: "Machine Learning", icon: Brain, color: "text-purple-500" },
+  { name: "Machine Learning", icon: Brain, color: "text-primary" },
   { name: "TensorFlow", icon: SiTensorflow, color: "text-orange-600" },
   { name: "AWS", icon: SiAmazon, color: "text-yellow-600" },
   { name: "Git", icon: SiGit, color: "text-red-500" },

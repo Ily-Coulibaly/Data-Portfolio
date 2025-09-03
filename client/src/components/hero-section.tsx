@@ -1,5 +1,5 @@
-import { Download, Mail, ChevronDown } from "lucide-react";
-import { SiLinkedin, SiGithub, SiTableau, SiMedium } from "react-icons/si";
+import { Download, FileText, ChevronDown } from "lucide-react";
+import { SiLinkedin, SiGithub, SiTableau } from "react-icons/si";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
 const HeroSection = () => {
@@ -16,14 +16,20 @@ const HeroSection = () => {
           />
         </div>
         
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground">
           Ily Coulibaly
         </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+        <p className="text-xl md:text-2xl text-muted-foreground mb-2">
           Data Analyst & AI Enthusiast
         </p>
+        <p className="text-lg text-muted-foreground mb-2">
+          B.S. Mathematics | M.S. Business Analytics
+        </p>
+        <p className="text-base text-muted-foreground mb-2">
+          📍 Boston, MA
+        </p>
         <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Transforming complex data into actionable insights through advanced analytics, machine learning, and strategic decision-making
+          Transforming Data into Business Insights
         </p>
         
         {/* Social Links */}
@@ -56,20 +62,16 @@ const HeroSection = () => {
             <SiTableau className="w-6 h-6" />
           </a>
           <a 
-            href={SOCIAL_LINKS.medium} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            data-testid="social-medium"
-            className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300"
+            href="Resume_Ily_Coulibaly_Data_Analyst.pdf" 
+            download 
+            data-testid="social-resume"
+            className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300 group relative"
+            title="View Full Resume (PDF Download)"
           >
-            <SiMedium className="w-6 h-6" />
-          </a>
-          <a 
-            href={`mailto:${SOCIAL_LINKS.email}`}
-            data-testid="social-email"
-            className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300"
-          >
-            <Mail className="w-6 h-6" />
+            <FileText className="w-6 h-6" />
+            <span className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+              View Full Resume (PDF Download)
+            </span>
           </a>
         </div>
         
