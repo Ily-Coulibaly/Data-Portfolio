@@ -11,7 +11,7 @@ const HeroSection = () => {
           <img 
             src="/profile.jpg" 
             alt="Ily Coulibaly Profile Picture" 
-            className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-primary shadow-2xl"
+            className="w-36 h-36 rounded-full mx-auto object-cover border-4 border-primary shadow-2xl"
             data-testid="profile-picture"
           />
         </div>
