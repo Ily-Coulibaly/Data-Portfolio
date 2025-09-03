@@ -1,4 +1,4 @@
-import { FileText, ChevronDown, MapPin } from "lucide-react";
+import { FileText, ChevronDown, MapPin, ArrowRight, FolderOpen } from "lucide-react";
 import { SiLinkedin, SiGithub, SiTableau } from "react-icons/si";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
@@ -97,10 +97,15 @@ const HeroSection = () => {
           <a 
             href="#projects" 
             data-testid="view-projects-button"
-            className="inline-flex items-center px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="group inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-primary to-primary/80 text-white font-bold rounded-xl hover:from-primary/90 hover:to-primary/70 transition-all duration-500 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 border border-primary/20 backdrop-blur-sm relative overflow-hidden"
             style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}
           >
-            View Projects
+            {/* Background shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+            
+            <FolderOpen className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+            <span className="relative z-10">View My Projects</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </a>
         </div>
       </div>
