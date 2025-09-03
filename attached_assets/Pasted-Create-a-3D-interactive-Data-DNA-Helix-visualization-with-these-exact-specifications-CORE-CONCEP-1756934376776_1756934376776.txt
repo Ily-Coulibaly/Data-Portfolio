@@ -1,0 +1,53 @@
+Create a 3D interactive "Data DNA Helix" visualization with these exact specifications:
+
+CORE CONCEPT:
+- 3D rotating DNA helix structure with skill nodes orbiting around a central identity core
+- Dark space background with floating data particles
+- Mouse movement controls 3D rotation
+- Hover interactions reveal detailed skill information
+
+HTML STRUCTURE:
+- Central core: "ILY KYNION" + "Data Alchemist" 
+- 8 skill nodes positioned in 3D space around the core:
+  * Python (🐍 PYTHON 90%) - yellow glow
+  * SQL (🗄️ SQL 85%) - cyan glow  
+  * Tableau (📊 TABLEAU 95%) - teal glow
+  * Machine Learning (🤖 ML 88%) - red glow
+  * Leadership (👑 LEADER 92%) - yellow glow
+  * Analytics (📈 ANALYTICS 95%) - blue glow
+  * Entrepreneur (🚀 STARTUP 90%) - purple glow
+  * R (📊 R 80%) - green glow
+- Outer orbit with 4 metric nodes: "1500+ Customers", "140% Growth", "2.5+ Years", "10 Countries"
+- Info panel that appears on hover with skill details
+- Control buttons: Normal, Hyperspeed, Slow Motion
+
+CSS ANIMATIONS:
+- Main helix rotation: 20s infinite
+- Individual node spinning borders with conic-gradient
+- Pulsing core with scale animation
+- Floating particles with 3D movement
+- Orbiting metrics with counter-rotation
+- Hover effects with scale and glow
+- Shimmer effects on borders
+
+JAVASCRIPT INTERACTIONS:
+- Mouse movement controls 3D perspective (rotateY and rotateX)
+- Hover on skill nodes shows info panel with detailed metrics
+- Speed controls change animation duration
+- Generate 30 floating particles with random timing
+- Smooth transitions for all interactions
+
+VISUAL EFFECTS:
+- Radial gradients for each skill node
+- Box-shadows with color-matched glows
+- Backdrop-filter blur effects
+- Transform3d for 3D positioning
+- Conic-gradient spinning borders
+- Particle system with opacity animations
+
+RESPONSIVE DESIGN:
+- Mobile breakpoint at 768px
+- Smaller nodes and text on mobile
+- Adjusted positioning for smaller screens
+
+Make it exactly like the provided design with the same colors, animations, and interactivity. Focus on the 3D effect and smooth animations.
