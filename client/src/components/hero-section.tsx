@@ -11,12 +11,12 @@ const HeroSection = () => {
           <img 
             src="/profile.jpg" 
             alt="Ily Coulibaly Profile Picture" 
-            className="w-36 h-36 rounded-full mx-auto object-cover border-4 border-primary shadow-2xl"
+            className="w-40 h-40 rounded-full mx-auto object-cover border-4 border-primary shadow-2xl"
             data-testid="profile-picture"
           />
         </div>
         
-        <h1 className="text-5xl md:text-6xl font-bold mb-3 text-white" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           Ily Coulibaly
         </h1>
         <p className="text-2xl md:text-3xl font-semibold mb-3 text-primary" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
