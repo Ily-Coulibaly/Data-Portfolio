@@ -53,17 +53,17 @@ const TypingBanner = () => {
     >
       <div className="text-center">
         <span 
-          className="text-2xl md:text-3xl font-semibold typing-text"
+          className="font-semibold typing-text"
           style={{ 
-            color: '#64ffda',
-            fontSize: '1.8rem'
+            color: 'hsl(0, 0%, 45%)',
+            fontSize: '1.2rem'
           }}
         >
           {currentText}
           <span 
             className="typing-cursor"
             style={{
-              borderRight: '3px solid #64ffda',
+              borderRight: '3px solid hsl(0, 0%, 45%)',
               animation: 'blink 1s infinite'
             }}
           >
