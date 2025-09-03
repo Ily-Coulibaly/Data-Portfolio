@@ -79,10 +79,10 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8">About Me</h2>
+        <h2 className="text-4xl font-bold mb-4">About Me</h2>
         
         {/* Animated Typing Banner */}
-        <div className="mb-12">
+        <div className="mb-6">
           <TypingBanner />
         </div>
         <div className="max-w-4xl mx-auto">
