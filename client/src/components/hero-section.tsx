@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section id="home" className="min-h-screen flex flex-col items-center justify-center px-6 pt-20">
       <div className="text-center max-w-4xl mx-auto">
         {/* Profile Picture */}
-        <div className="mb-2">
+        <div className="mb-8 -mt-12">
           <img 
             src="/profile.jpg" 
             alt="Ily Coulibaly Profile Picture" 
