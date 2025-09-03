@@ -87,16 +87,13 @@ const AboutSection = () => {
         </div>
         <div className="max-w-4xl mx-auto">
           <p className="text-base text-foreground leading-relaxed mb-6">
-            I'm <span className="font-semibold">Ily Kynion Coulibaly</span>, a bilingual data analyst with an actuarial foundation and a passion for solving real-world problems with data and purpose.
+            I'm <span className="font-semibold">Ily</span>, a data analyst with a foundation in <span className="font-semibold">Mathematics and Actuarial Science</span>, and <span className="font-semibold">2.5 years of experience</span> spanning analytics, tech consulting, data strategy, and entrepreneurship.
           </p>
           <p className="text-base text-foreground leading-relaxed mb-6">
-            I'm a <span className="font-semibold">M.S. in Business Analytics</span> graduate with <span className="font-semibold">2.5 years of experience</span> spanning analytics, consulting, actuarial sciences, and entrepreneurship. I specialize in transforming complex data into actionable insights using tools like <span className="font-semibold">Python, SQL, R, machine learning, and Tableau</span>.
-          </p>
-          <p className="text-base text-foreground leading-relaxed mb-6">
-            I have a proven track record in building AI-powered solutions, securing business funding, and delivering measurable results. I'm excited to apply my analytical and startup experience in a dynamic, impact-driven role.
+            I specialize in solving real-world problems and building scalable solutions with <span className="font-semibold">data and artificial intelligence</span>.
           </p>
           <p className="text-base text-foreground leading-relaxed mb-12">
-            I'm also the founder of <span className="font-semibold">KYN</span>, a sustainable skincare brand rooted in wellness, community, and ethical innovation, which I've been scaling while working on analytics projects.
+            I am also the founder of <span className="font-semibold">KYN</span>, a sustainable and ethical skincare brand.
           </p>
           
           {/* Action Buttons */}
