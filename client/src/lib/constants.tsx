@@ -1,5 +1,5 @@
-import { SiPython, SiR, SiTableau, SiGit, SiJupyter, SiPandas } from "react-icons/si";
-import { Brain, Database, BarChart3, Users, MessageSquare, Target, TrendingUp, Eye, LineChart, FileSpreadsheet, Calculator, GitBranch, PieChart, Lightbulb, Briefcase, ToggleLeft, Network } from "lucide-react";
+import { SiPython, SiR, SiTableau, SiJupyter, SiPandas } from "react-icons/si";
+import { Brain, Database, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, Network } from "lucide-react";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/ily-kynion-coulibaly-05602a189/",
@@ -10,36 +10,52 @@ export const SOCIAL_LINKS = {
   kyn: "https://kyn-care.com/"
 };
 
+// Custom icon components for external logos
+const ExcelIcon = () => (
+  <img src="https://cdn.simpleicons.org/microsoftexcel" alt="Excel logo" title="Excel" className="w-12 h-12" />
+);
+
+const PowerBIIcon = () => (
+  <img src="https://cdn.simpleicons.org/powerbi" alt="Power BI logo" title="Power BI" className="w-12 h-12" />
+);
+
+const MatlabIcon = () => (
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB logo" title="MATLAB" className="w-12 h-12" />
+);
+
+const SASIcon = () => (
+  <img src="https://cdn.simpleicons.org/sas" alt="SAS logo" title="SAS" className="w-12 h-12" />
+);
+
 export const TECHNICAL_TOOLS = [
-  { name: "Python", icon: SiPython, color: "text-blue-500" },
-  { name: "R", icon: SiR, color: "text-blue-600" },
-  { name: "SQL", icon: Database, color: "text-orange-500" },
-  { name: "Excel", icon: FileSpreadsheet, color: "text-green-600" },
-  { name: "Tableau", icon: SiTableau, color: "text-blue-400" },
-  { name: "Power BI", icon: BarChart3, color: "text-yellow-500" },
-  { name: "Jupyter", icon: SiJupyter, color: "text-orange-400" },
-  { name: "Pandas", icon: SiPandas, color: "text-blue-700" },
-  { name: "MATLAB", icon: Calculator, color: "text-red-600" },
-  { name: "SAS", icon: LineChart, color: "text-blue-800" },
-  { name: "Git", icon: SiGit, color: "text-red-500" }
+  { name: "Python", icon: SiPython, color: "text-blue-500", title: "Python" },
+  { name: "R", icon: SiR, color: "text-blue-600", title: "R" },
+  { name: "SQL", icon: Database, color: "text-orange-500", title: "SQL" },
+  { name: "Excel", icon: ExcelIcon, color: "", title: "Excel" },
+  { name: "Tableau", icon: SiTableau, color: "text-blue-400", title: "Tableau" },
+  { name: "Power BI", icon: PowerBIIcon, color: "", title: "Power BI" },
+  { name: "Jupyter", icon: SiJupyter, color: "text-orange-400", title: "Jupyter" },
+  { name: "Pandas", icon: SiPandas, color: "text-blue-700", title: "Pandas" },
+  { name: "MATLAB", icon: MatlabIcon, color: "", title: "MATLAB" },
+  { name: "SAS", icon: SASIcon, color: "", title: "SAS" }
 ];
 
 export const DATA_SKILLS = [
-  { name: "Data Analytics", icon: PieChart, color: "text-teal-500" },
-  { name: "Machine Learning", icon: Brain, color: "text-primary" },
-  { name: "Statistical Modeling", icon: LineChart, color: "text-blue-500" },
-  { name: "Predictive Analytics", icon: TrendingUp, color: "text-green-500" },
-  { name: "Data Visualization", icon: BarChart3, color: "text-purple-500" },
-  { name: "Artificial Intelligence", icon: Network, color: "text-indigo-500" },
-  { name: "A/B Testing", icon: ToggleLeft, color: "text-orange-500" }
+  { name: "Data Analytics", icon: PieChart, color: "text-teal-500", title: "Data Analytics" },
+  { name: "Machine Learning", icon: Brain, color: "text-primary", title: "Machine Learning" },
+  { name: "Statistical Modeling", icon: LineChart, color: "text-blue-500", title: "Statistical Modeling" },
+  { name: "Predictive Analytics", icon: TrendingUp, color: "text-green-500", title: "Predictive Analytics" },
+  { name: "Data Visualization", icon: BarChart3, color: "text-purple-500", title: "Data Visualization" },
+  { name: "Artificial Intelligence", icon: BrainCircuit, color: "text-indigo-500", title: "Artificial Intelligence" },
+  { name: "A/B Testing", icon: FlaskConical, color: "text-orange-500", title: "A/B Testing" }
 ];
 
 export const BUSINESS_SKILLS = [
-  { name: "Strategic Leadership", icon: Target, color: "text-red-500" },
-  { name: "Critical Thinking", icon: Lightbulb, color: "text-indigo-500" },
-  { name: "Communication", icon: MessageSquare, color: "text-green-500" },
-  { name: "Teamwork", icon: Users, color: "text-blue-500" },
-  { name: "Consulting", icon: Briefcase, color: "text-purple-500" }
+  { name: "Strategic Leadership", icon: Target, color: "text-red-500", title: "Strategic Leadership" },
+  { name: "Critical Thinking", icon: Lightbulb, color: "text-indigo-500", title: "Critical Thinking" },
+  { name: "Communication", icon: MessageSquare, color: "text-green-500", title: "Communication" },
+  { name: "Teamwork", icon: Users, color: "text-blue-500", title: "Teamwork" },
+  { name: "Consulting", icon: Briefcase, color: "text-purple-500", title: "Consulting" }
 ];
 
 export const SKILLS_CATEGORIES = [

@@ -40,10 +40,11 @@ const SkillsSection = () => {
                 <div 
                   className="w-20 h-20 mb-4 bg-card rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-300"
                   data-testid={`skill-${skill.name.toLowerCase().replace(/\s+/g, '-')}`}
-                  title={skill.name}
+                  title={skill.title || skill.name}
                 >
                   <IconComponent 
-                    className={`w-12 h-12 ${skill.color}`}
+                    className={skill.color ? `w-12 h-12 ${skill.color}` : `w-12 h-12`}
+                    title={skill.title || skill.name}
                   />
                 </div>
                 <p className="text-sm font-medium text-center">{skill.name}</p>
