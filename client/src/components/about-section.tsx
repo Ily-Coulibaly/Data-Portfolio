@@ -95,7 +95,7 @@ const AboutSection = () => {
           <p className="text-base text-foreground leading-relaxed mb-6">
             I have a proven track record in building AI-powered solutions, securing business funding, and delivering measurable results. I'm excited to apply my analytical and startup experience in a dynamic, impact-driven role.
           </p>
-          <p className="text-base text-foreground leading-relaxed mb-8">
+          <p className="text-base text-foreground leading-relaxed mb-12">
             I'm also the founder of <span className="font-semibold">KYN</span>, a sustainable skincare brand rooted in wellness, community, and ethical innovation, which I've been scaling while working on analytics projects.
           </p>
           
