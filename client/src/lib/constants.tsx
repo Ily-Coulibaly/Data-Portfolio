@@ -1,5 +1,5 @@
 import { SiPython, SiR, SiTableau, SiJupyter, SiPandas } from "react-icons/si";
-import { Brain, Database, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, Network } from "lucide-react";
+import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, Network, DatabaseZap } from "lucide-react";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/ily-kynion-coulibaly-05602a189/",
@@ -10,13 +10,13 @@ export const SOCIAL_LINKS = {
   kyn: "https://kyn-care.com/"
 };
 
-// Custom icon components for external logos
+// Custom icon components for external logos - using reliable CDN links
 const ExcelIcon = () => (
-  <img src="/logos/excel.svg" alt="Excel logo" title="Excel" className="skills-logo w-12 h-12 object-contain" />
+  <img src="https://img.icons8.com/fluency/48/microsoft-excel-2019.png" alt="Excel logo" title="Excel" className="skills-logo w-12 h-12 object-contain" />
 );
 
 const PowerBIIcon = () => (
-  <img src="/logos/powerbi.svg" alt="Power BI logo" title="Power BI" className="skills-logo w-12 h-12 object-contain" />
+  <img src="https://img.icons8.com/fluency/48/power-bi-2021.png" alt="Power BI logo" title="Power BI" className="skills-logo w-12 h-12 object-contain" />
 );
 
 const MatlabIcon = () => (
@@ -24,13 +24,13 @@ const MatlabIcon = () => (
 );
 
 const SASIcon = () => (
-  <img src="/logos/sas.svg" alt="SAS logo" title="SAS" className="skills-logo w-12 h-12 object-contain" />
+  <img src="https://img.icons8.com/color/48/sas.png" alt="SAS logo" title="SAS" className="skills-logo w-12 h-12 object-contain" />
 );
 
 export const TECHNICAL_TOOLS = [
   { name: "Python", icon: SiPython, color: "text-blue-500", title: "Python" },
   { name: "R", icon: SiR, color: "text-blue-600", title: "R" },
-  { name: "SQL", icon: Database, color: "text-orange-500", title: "SQL" },
+  { name: "SQL", icon: DatabaseZap, color: "text-orange-500", title: "SQL" },
   { name: "Excel", icon: ExcelIcon, color: "", title: "Excel" },
   { name: "Tableau", icon: SiTableau, color: "text-blue-400", title: "Tableau" },
   { name: "Power BI", icon: PowerBIIcon, color: "", title: "Power BI" },
