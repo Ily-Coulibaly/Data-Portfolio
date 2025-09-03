@@ -22,7 +22,7 @@ const HeroSection = () => {
         <p className="text-2xl md:text-3xl font-semibold mb-3 text-primary" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           Data Analyst & AI Enthusiast
         </p>
-        <p className="text-base font-medium text-gray-300 mb-3" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
+        <p className="text-base font-medium text-white mb-3" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           B.S. Mathematics | M.S. Business Analytics
         </p>
         <p className="text-sm font-medium text-primary mb-4 flex items-center justify-center" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
@@ -89,6 +89,18 @@ const HeroSection = () => {
             <span className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-sans">
               View Full Resume (PDF Download)
             </span>
+          </a>
+        </div>
+        
+        {/* View Projects Button */}
+        <div className="mb-8">
+          <a 
+            href="#projects" 
+            data-testid="view-projects-button"
+            className="inline-flex items-center px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}
+          >
+            View Projects
           </a>
         </div>
       </div>

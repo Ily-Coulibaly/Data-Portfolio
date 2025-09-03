@@ -1,5 +1,5 @@
 import { SiPython, SiR, SiTableau, SiJupyter, SiPandas } from "react-icons/si";
-import { DatabaseZap } from "lucide-react";
+import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, DatabaseZap } from "lucide-react";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/ily-kynion-coulibaly-05602a189/",
@@ -141,16 +141,16 @@ export const DATA_SKILLS = [
   { name: "Statistical Modeling", icon: StatisticalModelingIcon, color: "text-blue-500", title: "Statistical Modeling" },
   { name: "Predictive Analytics", icon: PredictiveAnalyticsIcon, color: "text-green-500", title: "Predictive Analytics" },
   { name: "Data Visualization", icon: DataVisualizationIcon, color: "text-purple-500", title: "Data Visualization" },
-  { name: "Artificial Intelligence", icon: ArtificialIntelligenceIcon, color: "text-indigo-500", title: "Artificial Intelligence" },
-  { name: "A/B Testing", icon: ABTestingIcon, color: "text-orange-500", title: "A/B Testing" }
+  { name: "Artificial Intelligence", icon: BrainCircuit, color: "text-indigo-500", title: "Artificial Intelligence" },
+  { name: "A/B Testing", icon: FlaskConical, color: "text-orange-500", title: "A/B Testing" }
 ];
 
 export const BUSINESS_SKILLS = [
-  { name: "Strategic Leadership", icon: StrategicLeadershipIcon, color: "text-red-500", title: "Strategic Leadership" },
-  { name: "Critical Thinking", icon: CriticalThinkingIcon, color: "text-indigo-500", title: "Critical Thinking" },
-  { name: "Communication", icon: CommunicationIcon, color: "text-green-500", title: "Communication" },
-  { name: "Teamwork", icon: TeamworkIcon, color: "text-blue-500", title: "Teamwork" },
-  { name: "Consulting", icon: ConsultingIcon, color: "text-purple-500", title: "Consulting" }
+  { name: "Strategic Leadership", icon: Target, color: "text-red-500", title: "Strategic Leadership" },
+  { name: "Critical Thinking", icon: Lightbulb, color: "text-indigo-500", title: "Critical Thinking" },
+  { name: "Communication", icon: MessageSquare, color: "text-green-500", title: "Communication" },
+  { name: "Teamwork", icon: Users, color: "text-blue-500", title: "Teamwork" },
+  { name: "Consulting", icon: Briefcase, color: "text-purple-500", title: "Consulting" }
 ];
 
 export const SKILLS_CATEGORIES = [
