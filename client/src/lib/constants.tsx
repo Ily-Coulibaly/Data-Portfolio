@@ -24,7 +24,7 @@ const MatlabIcon = () => (
 );
 
 const SASIcon = () => (
-  <img src="https://img.icons8.com/color/48/sas.png" alt="SAS logo" title="SAS" className="skills-logo w-12 h-12 object-contain" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sas/sas-original.svg" alt="SAS logo" title="SAS" className="skills-logo w-12 h-12 object-contain" />
 );
 
 export const TECHNICAL_TOOLS = [
