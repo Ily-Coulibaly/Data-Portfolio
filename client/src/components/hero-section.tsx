@@ -16,16 +16,16 @@ const HeroSection = () => {
           />
         </div>
         
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white font-sans">
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           Ily Coulibaly
         </h1>
-        <p className="text-xl md:text-2xl font-bold mb-2 text-primary font-sans">
-          Data Analyst & Entrepreneur
+        <p className="text-2xl md:text-3xl font-semibold mb-2 text-primary" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
+          Data Analyst & AI Enthusiast
         </p>
-        <p className="text-lg text-white mb-2 font-sans">
+        <p className="text-base text-gray-300 mb-2" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           B.S. Mathematics | M.S. Business Analytics
         </p>
-        <p className="text-lg text-primary mb-2 font-sans flex items-center justify-center">
+        <p className="text-sm text-primary mb-2 flex items-center justify-center" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           <a 
             href="https://www.google.com/maps/place/Boston,+MA" 
             target="_blank" 
@@ -33,11 +33,11 @@ const HeroSection = () => {
             className="flex items-center hover:text-white transition-colors duration-300"
             data-testid="location-link"
           >
-            <MapPin className="w-4 h-4 mr-1" />
+            <MapPin className="w-4 h-4 mr-1 fill-current" />
             Boston, MA
           </a>
         </p>
-        <p className="text-lg text-primary mb-12 max-w-2xl mx-auto font-sans">
+        <p className="text-lg font-medium text-primary mb-12 max-w-2xl mx-auto" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           Transforming Data into Business Insights
         </p>
         
