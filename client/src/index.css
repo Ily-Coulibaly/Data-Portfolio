@@ -74,6 +74,13 @@ body {
   .skill-logo:hover {
     transform: scale(1.1);
   }
+
+  /* Skills logo styling for uniform appearance */
+  .skills-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+  }
   
   .project-card {
     transition: all 0.3s ease;

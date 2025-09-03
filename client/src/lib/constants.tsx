@@ -12,19 +12,19 @@ export const SOCIAL_LINKS = {
 
 // Custom icon components for external logos
 const ExcelIcon = () => (
-  <img src="https://cdn.simpleicons.org/microsoftexcel" alt="Excel logo" title="Excel" className="w-12 h-12" />
+  <img src="/logos/excel.svg" alt="Excel logo" title="Excel" className="skills-logo w-12 h-12 object-contain" />
 );
 
 const PowerBIIcon = () => (
-  <img src="https://cdn.simpleicons.org/powerbi" alt="Power BI logo" title="Power BI" className="w-12 h-12" />
+  <img src="/logos/powerbi.svg" alt="Power BI logo" title="Power BI" className="skills-logo w-12 h-12 object-contain" />
 );
 
 const MatlabIcon = () => (
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB logo" title="MATLAB" className="w-12 h-12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB logo" title="MATLAB" className="skills-logo w-12 h-12 object-contain" />
 );
 
 const SASIcon = () => (
-  <img src="https://cdn.simpleicons.org/sas" alt="SAS logo" title="SAS" className="w-12 h-12" />
+  <img src="/logos/sas.svg" alt="SAS logo" title="SAS" className="skills-logo w-12 h-12 object-contain" />
 );
 
 export const TECHNICAL_TOOLS = [
