@@ -1,4 +1,4 @@
-import { FileText, ChevronDown, Navigation } from "lucide-react";
+import { FileText, ChevronDown, MapPin } from "lucide-react";
 import { SiLinkedin, SiGithub, SiTableau } from "react-icons/si";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
@@ -7,25 +7,25 @@ const HeroSection = () => {
     <section id="home" className="min-h-screen flex flex-col items-center justify-center px-6 pt-20">
       <div className="text-center max-w-4xl mx-auto">
         {/* Profile Picture */}
-        <div className="mb-8">
+        <div className="mb-6">
           <img 
             src="/profile.jpg" 
             alt="Ily Coulibaly Profile Picture" 
-            className="w-48 h-48 rounded-full mx-auto object-cover border-4 border-primary shadow-2xl"
+            className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-primary shadow-2xl"
             data-testid="profile-picture"
           />
         </div>
         
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
+        <h1 className="text-5xl md:text-6xl font-bold mb-3 text-white" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           Ily Coulibaly
         </h1>
-        <p className="text-2xl md:text-3xl font-bold mb-2 text-primary" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
+        <p className="text-2xl md:text-3xl font-semibold mb-3 text-primary" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           Data Analyst & AI Enthusiast
         </p>
-        <p className="text-base font-bold text-gray-300 mb-2" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
+        <p className="text-base font-medium text-gray-300 mb-3" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           B.S. Mathematics | M.S. Business Analytics
         </p>
-        <p className="text-sm font-bold text-primary mb-2 flex items-center justify-center" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
+        <p className="text-sm font-medium text-primary mb-4 flex items-center justify-center" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           <a 
             href="https://www.google.com/maps/place/Boston,+MA" 
             target="_blank" 
@@ -33,16 +33,16 @@ const HeroSection = () => {
             className="flex items-center hover:text-white transition-colors duration-300"
             data-testid="location-link"
           >
-            <Navigation className="w-4 h-4 mr-1" />
+            <MapPin className="w-3 h-3 mr-1" />
             Boston, MA
           </a>
         </p>
-        <p className="text-lg font-bold text-primary mb-12 max-w-2xl mx-auto" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
+        <p className="text-lg font-semibold text-primary mb-8 max-w-2xl mx-auto" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           Transforming Data into Business Insights
         </p>
         
         {/* Social Links */}
-        <div className="flex justify-center space-x-6 mb-12">
+        <div className="flex justify-center space-x-6 mb-8">
           <a 
             href={SOCIAL_LINKS.linkedin} 
             target="_blank" 
