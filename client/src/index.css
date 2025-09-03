@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 6%);
+  --foreground: hsl(0, 0%, 98%);
+  --card: hsl(0, 0%, 15%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --primary: hsl(262, 83%, 67%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(0, 0%, 20%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --muted: hsl(0, 0%, 25%);
+  --muted-foreground: hsl(0, 0%, 65%);
+  --accent: hsl(262, 83%, 67%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --border: hsl(0, 0%, 25%);
+  --input: hsl(0, 0%, 20%);
+  --ring: hsl(262, 83%, 67%);
+  --radius: 12px;
+  --font-sans: 'Inter', sans-serif;
+}
+
+.dark {
+  --background: hsl(0, 0%, 6%);
+  --foreground: hsl(0, 0%, 98%);
+  --card: hsl(0, 0%, 15%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --primary: hsl(262, 83%, 67%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(0, 0%, 20%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --muted: hsl(0, 0%, 25%);
+  --muted-foreground: hsl(0, 0%, 65%);
+  --accent: hsl(262, 83%, 67%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --border: hsl(0, 0%, 25%);
+  --input: hsl(0, 0%, 20%);
+  --ring: hsl(262, 83%, 67%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  .scroll-indicator {
+    animation: bounce 2s infinite;
+  }
+  
+  .skill-logo {
+    transition: all 0.3s ease;
+  }
+  
+  .skill-logo:hover {
+    transform: scale(1.1);
+  }
+  
+  .project-card {
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .filter-active {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { 
+    transform: translateY(0); 
+  }
+  40% { 
+    transform: translateY(-10px); 
+  }
+  60% { 
+    transform: translateY(-5px); 
+  }
+}
