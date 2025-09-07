@@ -108,7 +108,7 @@ const AIChatbot = () => {
   return (
     <>
       {/* Floating Chat Bubble */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-6 right-6 z-50 sm:bottom-6 sm:right-6">
         {!isOpen && (
           <div className="relative">
             {showWelcome && (
@@ -133,7 +133,7 @@ const AIChatbot = () => {
 
         {/* Chat Interface */}
         {isOpen && (
-          <div className="w-96 h-[500px] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col animate-in slide-in-from-bottom-4">
+          <div className="w-96 max-w-[calc(100vw-3rem)] h-[500px] max-h-[calc(100vh-8rem)] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col animate-in slide-in-from-bottom-4 sm:w-96">
             {/* Header */}
             <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-4 rounded-t-2xl flex items-center justify-between">
               <div className="text-white">
