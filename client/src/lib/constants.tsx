@@ -123,14 +123,14 @@ const ConsultingIcon = () => (
 );
 
 export const PROGRAMMING_TOOLS = [
-  { name: "Python", icon: SiPython, color: "text-blue-500", title: "Python", proficiency: 5 },
+  { name: "Python", icon: SiPython, color: "text-blue-500", title: "Python", proficiency: 5, certified: true, certificateId: 2 },
   { name: "R", icon: SiR, color: "text-blue-600", title: "R", proficiency: 5 },
   { name: "SQL", icon: DatabaseZap, color: "text-orange-500", title: "SQL", proficiency: 4 },
   { name: "MATLAB", icon: MatlabIcon, color: "", title: "MATLAB", proficiency: 4 }
 ];
 
 export const VISUALIZATION_SKILLS = [
-  { name: "Tableau", icon: SiTableau, color: "text-blue-400", title: "Tableau", proficiency: 5 },
+  { name: "Tableau", icon: SiTableau, color: "text-blue-400", title: "Tableau", proficiency: 5, certified: true, certificateId: 1 },
   { name: "Power BI", icon: PowerBIIcon, color: "", title: "Power BI", proficiency: 4 },
   { name: "Excel", icon: ExcelIcon, color: "", title: "Excel", proficiency: 4 }
 ];

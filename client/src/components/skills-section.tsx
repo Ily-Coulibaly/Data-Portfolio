@@ -69,6 +69,28 @@ const SkillsSection = () => {
                   </div>
                 )}
                 
+                {/* Certification Indicator */}
+                {'certified' in skill && skill.certified && (
+                  <div className="mt-2">
+                    <button
+                      onClick={() => {
+                        document.getElementById('certificates')?.scrollIntoView({ behavior: 'smooth' });
+                        // Focus on the specific certificate after scroll
+                        setTimeout(() => {
+                          const certificateElement = document.querySelector(`[data-testid="certificate-${skill.certificateId}"]`);
+                          if (certificateElement) {
+                            certificateElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                          }
+                        }, 800);
+                      }}
+                      className="text-xs text-[#A5A584] hover:text-[#8a8d6b] underline transition-colors cursor-pointer"
+                      data-testid={`certified-${skill.name.toLowerCase().replace(/\s+/g, '-')}`}
+                    >
+                      Certified
+                    </button>
+                  </div>
+                )}
+                
               </div>
             );
           })}
