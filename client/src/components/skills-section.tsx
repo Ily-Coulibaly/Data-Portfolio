@@ -36,7 +36,7 @@ const SkillsSection = () => {
           {currentSkills.map((skill) => {
             const IconComponent = skill.icon;
             return (
-              <div key={skill.name} className="skill-logo text-center flex flex-col items-center">
+              <div key={skill.name} className="skill-logo skill-card text-center flex flex-col items-center">
                 <div 
                   className="w-20 h-20 mb-4 bg-card rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-300"
                   data-testid={`skill-${skill.name.toLowerCase().replace(/\s+/g, '-')}`}
@@ -47,7 +47,22 @@ const SkillsSection = () => {
                     title={skill.title || skill.name}
                   />
                 </div>
-                <p className="text-sm font-medium text-center">{skill.name}</p>
+                <p className="text-sm font-medium text-center mb-2">{skill.name}</p>
+                
+                {/* Proficiency Dots */}
+                <div className="proficiency-dots">
+                  {[1, 2, 3, 4, 5].map((dot) => (
+                    <div
+                      key={dot}
+                      className={`proficiency-dot ${
+                        dot <= (skill.proficiency || 0) ? 'filled' : 'empty'
+                      }`}
+                    />
+                  ))}
+                </div>
+                
+                {/* Experience Label */}
+                <p className="experience-label">{skill.experience || ''}</p>
               </div>
             );
           })}

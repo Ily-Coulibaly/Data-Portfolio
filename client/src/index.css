@@ -72,7 +72,7 @@ body {
   }
   
   .skill-logo:hover {
-    transform: scale(1.1);
+    transform: translateY(-4px) scale(1.02);
   }
 
   /* Skills logo styling for uniform appearance */
@@ -80,6 +80,56 @@ body {
     height: 48px;
     width: auto;
     object-fit: contain;
+    transition: all 0.3s ease;
+  }
+  
+  .skills-logo:hover {
+    transform: scale(1.1);
+  }
+
+  /* Proficiency Dots Styling */
+  .proficiency-dots {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 0 4px 0;
+  }
+
+  .proficiency-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .proficiency-dot.filled {
+    background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    box-shadow: 0 0 4px rgba(79, 70, 229, 0.4);
+  }
+
+  .proficiency-dot.empty {
+    background-color: #404040;
+    border: 1px solid #555;
+  }
+
+  .skill-card:hover .proficiency-dot.filled {
+    box-shadow: 0 0 8px rgba(79, 70, 229, 0.6);
+    transform: scale(1.1);
+  }
+
+  /* Experience Label Styling */
+  .experience-label {
+    font-size: 11px;
+    color: #9ca3af;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 4px;
+    transition: color 0.3s ease;
+  }
+
+  .skill-card:hover .experience-label {
+    color: #d1d5db;
   }
   
   .project-card {

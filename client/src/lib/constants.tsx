@@ -1,5 +1,5 @@
 import { SiPython, SiR, SiTableau, SiJupyter, SiPandas } from "react-icons/si";
-import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, DatabaseZap } from "lucide-react";
+import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, DatabaseZap, Users2, Cog, LayoutDashboard } from "lucide-react";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/ily-kynion-coulibaly-05602a189/",
@@ -123,40 +123,43 @@ const ConsultingIcon = () => (
 );
 
 export const TECHNICAL_TOOLS = [
-  { name: "Python", icon: SiPython, color: "text-blue-500", title: "Python" },
-  { name: "R", icon: SiR, color: "text-blue-600", title: "R" },
-  { name: "SQL", icon: DatabaseZap, color: "text-orange-500", title: "SQL" },
-  { name: "Excel", icon: ExcelIcon, color: "", title: "Excel" },
-  { name: "Tableau", icon: SiTableau, color: "text-blue-400", title: "Tableau" },
-  { name: "Power BI", icon: PowerBIIcon, color: "", title: "Power BI" },
-  { name: "Jupyter", icon: SiJupyter, color: "text-orange-400", title: "Jupyter" },
-  { name: "Pandas", icon: SiPandas, color: "text-blue-700", title: "Pandas" },
-  { name: "MATLAB", icon: MatlabIcon, color: "", title: "MATLAB" },
-  { name: "SAS", icon: SASIcon, color: "", title: "SAS" }
+  { name: "Python", icon: SiPython, color: "text-blue-500", title: "Python", proficiency: 5, experience: "3+ Years • Expert" },
+  { name: "R", icon: SiR, color: "text-blue-600", title: "R", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "SQL", icon: DatabaseZap, color: "text-orange-500", title: "SQL", proficiency: 5, experience: "3+ Years • Expert" },
+  { name: "Excel", icon: ExcelIcon, color: "", title: "Excel", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "Tableau", icon: SiTableau, color: "text-blue-400", title: "Tableau", proficiency: 4, experience: "2+ Years • Advanced" }
 ];
 
 export const DATA_SKILLS = [
-  { name: "Data Analytics", icon: DataAnalyticsIcon, color: "text-teal-500", title: "Data Analytics" },
-  { name: "Machine Learning", icon: MachineLearningIcon, color: "text-primary", title: "Machine Learning" },
-  { name: "Statistical Modeling", icon: StatisticalModelingIcon, color: "text-blue-500", title: "Statistical Modeling" },
-  { name: "Predictive Analytics", icon: PredictiveAnalyticsIcon, color: "text-green-500", title: "Predictive Analytics" },
-  { name: "Data Visualization", icon: DataVisualizationIcon, color: "text-purple-500", title: "Data Visualization" },
-  { name: "Artificial Intelligence", icon: BrainCircuit, color: "text-indigo-500", title: "Artificial Intelligence" },
-  { name: "A/B Testing", icon: FlaskConical, color: "text-orange-500", title: "A/B Testing" }
+  { name: "Power BI", icon: PowerBIIcon, color: "", title: "Power BI", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "Jupyter", icon: SiJupyter, color: "text-orange-400", title: "Jupyter", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "Pandas", icon: SiPandas, color: "text-blue-700", title: "Pandas", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "MATLAB", icon: MatlabIcon, color: "", title: "MATLAB", proficiency: 3, experience: "1+ Years • Intermediate" },
+  { name: "SAS", icon: SASIcon, color: "", title: "SAS", proficiency: 2, experience: "6+ Months • Beginner" }
 ];
 
 export const BUSINESS_SKILLS = [
-  { name: "Strategic Leadership", icon: Target, color: "text-red-500", title: "Strategic Leadership" },
-  { name: "Critical Thinking", icon: Lightbulb, color: "text-indigo-500", title: "Critical Thinking" },
-  { name: "Communication", icon: MessageSquare, color: "text-green-500", title: "Communication" },
-  { name: "Teamwork", icon: Users, color: "text-blue-500", title: "Teamwork" },
-  { name: "Consulting", icon: Briefcase, color: "text-purple-500", title: "Consulting" }
+  { name: "Statistical Modeling", icon: StatisticalModelingIcon, color: "text-blue-500", title: "Statistical Modeling", proficiency: 5, experience: "3+ Years • Expert" },
+  { name: "Business Analysis", icon: BarChart3, color: "text-green-500", title: "Business Analysis", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "Data Strategy", icon: Target, color: "text-red-500", title: "Data Strategy", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "Risk Analysis", icon: TrendingUp, color: "text-purple-500", title: "Risk Analysis", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "Project Management", icon: Briefcase, color: "text-indigo-500", title: "Project Management", proficiency: 3, experience: "1+ Years • Intermediate" }
+];
+
+// New Business category
+export const BUSINESS_CATEGORY = [
+  { name: "Consulting", icon: ConsultingIcon, color: "text-blue-500", title: "Consulting", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "Entrepreneurship", icon: Lightbulb, color: "text-yellow-500", title: "Entrepreneurship", proficiency: 3, experience: "1+ Years • Intermediate" },
+  { name: "Strategic Planning", icon: LayoutDashboard, color: "text-purple-500", title: "Strategic Planning", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "Stakeholder Management", icon: Users2, color: "text-green-500", title: "Stakeholder Management", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "Process Optimization", icon: Cog, color: "text-orange-500", title: "Process Optimization", proficiency: 3, experience: "1+ Years • Intermediate" }
 ];
 
 export const SKILLS_CATEGORIES = [
   { id: "technical", label: "Technical Tools", skills: TECHNICAL_TOOLS },
   { id: "data", label: "Data Skills", skills: DATA_SKILLS },
-  { id: "business", label: "Business Skills", skills: BUSINESS_SKILLS }
+  { id: "business", label: "Business Skills", skills: BUSINESS_SKILLS },
+  { id: "businessCategory", label: "Business", skills: BUSINESS_CATEGORY }
 ];
 
 // Legacy SKILLS array for backward compatibility
