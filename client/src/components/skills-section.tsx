@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, Shield } from "lucide-react";
+import { ChevronDown, Award } from "lucide-react";
 import { SKILLS_CATEGORIES } from "@/lib/constants";
 
 const SkillsSection = () => {
@@ -67,7 +67,7 @@ const SkillsSection = () => {
                         }, 800);
                       }}
                     >
-                      <Shield className="w-3 h-3" />
+                      <Award className="w-2.5 h-2.5" />
                     </div>
                   )}
                 </div>
@@ -100,25 +100,10 @@ const SkillsSection = () => {
           })}
         </div>
         
-        {/* Skills Legend */}
-        <div className="skills-legend">
-          <h3 className="text-sm font-semibold mb-3 text-center text-muted-foreground">Legend</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div className="legend-item">
-              <div className="legend-dot filled"></div>
-              <span className="text-sm">Proficient</span>
-            </div>
-            <div className="legend-item">
-              <div className="legend-dot empty"></div>
-              <span className="text-sm">Learning/Basic</span>
-            </div>
-            <div className="legend-item">
-              <div className="legend-badge">
-                <Shield className="w-2 h-2" />
-              </div>
-              <span className="text-sm">Certified (click to view)</span>
-            </div>
-          </div>
+        {/* Skills Note */}
+        <div className="skills-note">
+          <Award className="w-4 h-4 inline mr-1" />
+          indicates certification - click to view certificate
         </div>
 
         {/* Scroll Indicator */}
