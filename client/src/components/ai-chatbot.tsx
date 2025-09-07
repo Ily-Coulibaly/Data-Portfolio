@@ -68,34 +68,34 @@ const AIChatbot = () => {
     const lowerText = userText.toLowerCase();
     
     if (lowerText.includes('experience') || lowerText.includes('background')) {
-      return "Ily brings 3 years of exceptional experience across analytics, tech consulting, business analysis, data strategy, Actuarial Science, and entrepreneurship. This rare combination makes her a strategic powerhouse who understands both technical execution and business impact.";
+      return "Ily has 3 years of experience working across analytics, tech consulting, business analysis, data strategy, actuarial science, and entrepreneurship. She combines technical skills with business understanding to solve real problems.";
     }
     
     if (lowerText.includes('skill') || lowerText.includes('technical')) {
-      return "Ily is a master of Python, R, SQL, and Machine Learning with expertise in Scikit-learn and TensorFlow. Her mathematical and actuarial foundation provides deep statistical modeling capabilities. She's also proficient with Tableau, Power BI, AWS, and Azure.";
+      return "She's proficient in Python, R, SQL, and Machine Learning frameworks like Scikit-learn and TensorFlow. She also works with Tableau, Power BI, AWS, and Azure. Her math background helps with statistical modeling and data analysis.";
     }
     
     if (lowerText.includes('hire') || lowerText.includes('why')) {
-      return "She's not just another data analyst - she's a business transformation catalyst who turns data into competitive advantage. Her unique blend of technical mastery, business acumen, and entrepreneurial experience makes her invaluable for organizations seeking strategic data solutions.";
+      return "Ily offers a practical combination of technical data skills and business experience. She can analyze data, build models, and communicate insights effectively to stakeholders. Her consulting and entrepreneurship background helps her understand business needs.";
     }
     
     if (lowerText.includes('education') || lowerText.includes('school')) {
-      return "Ily has a solid educational foundation with a B.S. in Mathematics and an M.S. in Business Analytics from Babson College. This combination gives her both the theoretical depth and practical business application skills needed to excel in today's data-driven landscape.";
+      return "She holds a B.S. in Mathematics and an M.S. in Business Analytics from Babson College. This gives her both the mathematical foundation for data work and the business context for practical applications.";
     }
     
     if (lowerText.includes('location') || lowerText.includes('where')) {
-      return "Ily is based in Boston, MA - right in the heart of the innovation ecosystem. She's available for hire and ready to bring her exceptional capabilities to forward-thinking organizations.";
+      return "Ily is based in Boston, MA and is available for new opportunities.";
     }
     
     if (lowerText.includes('available') || lowerText.includes('contact')) {
-      return "Yes! Ily is actively seeking new opportunities where she can apply her exceptional skills. She's passionate about transforming businesses through intelligent data solutions. I recommend reaching out through the contact section to discuss how she can drive success for your organization.";
+      return "Yes, she's currently looking for new opportunities. You can reach out through the contact section to discuss potential roles or projects.";
     }
 
     if (lowerText.includes('hello') || lowerText.includes('hi') || lowerText.includes('hey')) {
-      return "Hello! I'm ARIA, Ily's AI Research & Intelligence Assistant. I'm here to share insights about her exceptional capabilities and how she can transform your organization through strategic data solutions. What would you like to know about her?";
+      return "Hello! I'm ARIA, Ily's AI assistant. I can help you learn about her background and skills. What would you like to know?";
     }
     
-    return "That's an excellent question! Ily's diverse background spanning analytics, consulting, and entrepreneurship gives her a unique perspective on business challenges. For detailed discussions about specific opportunities, I recommend connecting with her directly through the contact section. What aspect of her expertise interests you most?";
+    return "I'd be happy to share more about Ily's experience and skills. For detailed discussions about specific opportunities, you can contact her directly through the contact section. What else would you like to know?";
   };
 
   const handleStarterClick = (starter: string) => {
@@ -194,7 +194,7 @@ const AIChatbot = () => {
             >
               {/* Avatar with Sparkle */}
               <div className="relative flex items-center justify-center h-full">
-                <span className="text-2xl">👩🏽‍💼</span>
+                <span className="text-2xl">👩🏽‍💻</span>
                 <span 
                   className="absolute -top-1 -right-1 text-yellow-300 sparkle-animation"
                   style={{ fontSize: '12px' }}
@@ -238,16 +238,12 @@ const AIChatbot = () => {
             >
               <div className="flex items-center space-x-3">
                 <div className="relative">
-                  <span className="text-lg">👩🏽‍💼</span>
+                  <span className="text-lg">👩🏽‍💻</span>
                   <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-400 rounded-full border border-black"></div>
                 </div>
                 <div>
                   <h3 className="text-white font-semibold text-sm">ARIA</h3>
-                  <p className="text-gray-400 text-xs">AI Research & Intelligence Assistant</p>
-                  <div className="flex items-center space-x-1">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-green-400 text-xs">Online</span>
-                  </div>
+                  <p className="text-gray-400 text-xs">AI Intelligence Assistant</p>
                 </div>
               </div>
               <button
@@ -264,7 +260,7 @@ const AIChatbot = () => {
                 <div className="space-y-4">
                   <div className="text-gray-300 text-sm">
                     <div className="flex items-center space-x-2 mb-3">
-                      <span>👩🏽‍💼</span>
+                      <span>👩🏽‍💻</span>
                       <span className="font-semibold">ARIA</span>
                     </div>
                     <p>Hi! I'm ARIA, Ily's AI assistant. I can share insights about her skills and experience. What would you like to know?</p>
@@ -290,7 +286,7 @@ const AIChatbot = () => {
                 >
                   <div className="flex items-start space-x-2 max-w-[85%]">
                     {!message.isUser && (
-                      <span className="text-sm mt-1">👩🏽‍💼</span>
+                      <span className="text-sm mt-1">👩🏽‍💻</span>
                     )}
                     <div
                       className={`p-3 rounded-lg ${
@@ -308,7 +304,7 @@ const AIChatbot = () => {
               {isTyping && (
                 <div className="flex justify-start">
                   <div className="flex items-start space-x-2">
-                    <span className="text-sm">👩🏽‍💼</span>
+                    <span className="text-sm">👩🏽‍💻</span>
                     <div className="bg-gray-800 border border-gray-600 p-3 rounded-lg">
                       <div className="flex space-x-1">
                         <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
