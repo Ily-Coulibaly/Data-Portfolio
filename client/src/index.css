@@ -104,8 +104,8 @@ body {
   }
 
   .proficiency-dot.filled {
-    background: linear-gradient(135deg, #9ca3af 0%, #84cc16 100%);
-    box-shadow: 0 0 4px rgba(156, 163, 175, 0.4);
+    background: linear-gradient(135deg, #9ca3af 0%, #A5A584 100%);
+    box-shadow: 0 0 4px rgba(165, 165, 132, 0.4);
   }
 
   .proficiency-dot.empty {
@@ -114,7 +114,7 @@ body {
   }
 
   .skill-card:hover .proficiency-dot.filled {
-    box-shadow: 0 0 8px rgba(156, 163, 175, 0.6);
+    box-shadow: 0 0 8px rgba(165, 165, 132, 0.6);
     transform: scale(1.1);
   }
 
