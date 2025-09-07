@@ -50,7 +50,7 @@ const SkillsSection = () => {
                 <p className="text-sm font-medium text-center mb-2">{skill.name}</p>
                 
                 {/* Proficiency Dots - Only show if proficiency exists */}
-                {skill.proficiency && (
+                {'proficiency' in skill && skill.proficiency && (
                   <div className="proficiency-dots">
                     {[1, 2, 3, 4, 5].map((dot) => (
                       <div
@@ -64,7 +64,7 @@ const SkillsSection = () => {
                 )}
                 
                 {/* Experience Label - Only show if experience exists */}
-                {skill.experience && (
+                {'experience' in skill && skill.experience && (
                   <p className="experience-label">{skill.experience}</p>
                 )}
               </div>
