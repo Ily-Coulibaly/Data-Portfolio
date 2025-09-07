@@ -137,12 +137,10 @@ export const VISUALIZATION_SKILLS = [
 
 // Machine Learning Skills
 export const MACHINE_LEARNING_SKILLS = [
-  { name: "Supervised Learning", icon: Target, color: "text-green-500", title: "Supervised Learning", proficiency: 5 },
-  { name: "Unsupervised Learning", icon: TreePine, color: "text-blue-500", title: "Unsupervised Learning", proficiency: 4 },
-  { name: "Regression", icon: TrendingUp, color: "text-orange-500", title: "Regression Analysis", proficiency: 5 },
-  { name: "Classification", icon: CheckCircle, color: "text-purple-500", title: "Classification", proficiency: 5 },
-  { name: "Clustering", icon: Network, color: "text-teal-500", title: "Clustering", proficiency: 4 },
-  { name: "Model Evaluation", icon: FileSearch, color: "text-red-500", title: "Model Evaluation", proficiency: 4 }
+  { name: "Regression", icon: TrendingUp, color: "text-gray-400", title: "Regression Analysis", proficiency: 5 },
+  { name: "Classification", icon: CheckCircle, color: "text-gray-400", title: "Classification", proficiency: 5 },
+  { name: "Clustering", icon: Network, color: "text-gray-400", title: "Clustering", proficiency: 4 },
+  { name: "Model Evaluation", icon: FileSearch, color: "text-gray-400", title: "Model Evaluation", proficiency: 4 }
 ];
 
 // Hugging Face icon component
