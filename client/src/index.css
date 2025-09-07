@@ -90,18 +90,17 @@ body {
   /* Proficiency Dots Styling */
   .proficiency-dots {
     display: flex;
-    gap: 6px;
+    gap: 4px;
     justify-content: center;
     align-items: center;
-    margin: 10px 0 6px 0;
+    margin: 8px 0 4px 0;
   }
 
   .proficiency-dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     transition: all 0.3s ease;
-    position: relative;
   }
 
   .proficiency-dot.filled {
@@ -121,30 +120,6 @@ body {
     transform: scale(1.15);
   }
 
-  /* Certification Badge */
-  .certification-badge {
-    position: absolute;
-    top: -3px;
-    right: -3px;
-    width: 16px;
-    height: 16px;
-    background: linear-gradient(135deg, #A5A584 0%, #8a8d6b 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    z-index: 10;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .certification-badge:hover {
-    transform: scale(1.1);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.4);
-  }
 
   /* Experience Label Styling */
   .experience-label {

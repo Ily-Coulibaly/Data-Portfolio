@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, Award } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { SKILLS_CATEGORIES } from "@/lib/constants";
 
 const SkillsSection = () => {
@@ -44,7 +44,7 @@ const SkillsSection = () => {
             return (
               <div key={skill.name} className="skill-logo skill-card text-center flex flex-col items-center">
                 <div 
-                  className="w-20 h-20 mb-4 bg-card rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-300 relative"
+                  className="w-20 h-20 mb-4 bg-card rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-300"
                   data-testid={`skill-${skill.name.toLowerCase().replace(/\s+/g, '-')}`}
                   title={skill.title || skill.name}
                 >
@@ -52,24 +52,6 @@ const SkillsSection = () => {
                     className={skill.color ? `w-12 h-12 ${skill.color}` : `w-12 h-12`}
                     title={skill.title || skill.name}
                   />
-                  {/* Certification Badge */}
-                  {'certified' in skill && skill.certified && (
-                    <div 
-                      className="certification-badge"
-                      title="Certified"
-                      onClick={() => {
-                        document.getElementById('certificates')?.scrollIntoView({ behavior: 'smooth' });
-                        setTimeout(() => {
-                          const certificateElement = document.querySelector(`[data-testid="certificate-${skill.certificateId}"]`);
-                          if (certificateElement) {
-                            certificateElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                          }
-                        }, 800);
-                      }}
-                    >
-                      <Award className="w-2.5 h-2.5" />
-                    </div>
-                  )}
                 </div>
                 <p className="text-sm font-medium text-center mb-2">{skill.name}</p>
                 
@@ -89,7 +71,7 @@ const SkillsSection = () => {
                 
                 {/* Proficiency Level Text - Only show if proficiency exists */}
                 {'proficiency' in skill && skill.proficiency && (
-                  <p className="text-xs text-muted-foreground text-center mt-2">
+                  <p className="text-xs text-white text-center mt-2">
                     {skill.proficiency === 5 ? 'Expert' : skill.proficiency === 4 ? 'Advanced' : 'Intermediate'}
                   </p>
                 )}
@@ -100,11 +82,6 @@ const SkillsSection = () => {
           })}
         </div>
         
-        {/* Skills Note */}
-        <div className="skills-note">
-          <Award className="w-4 h-4 inline mr-1" />
-          indicates certification - click to view certificate
-        </div>
 
         {/* Scroll Indicator */}
         <div className="mt-16 text-center scroll-indicator">
