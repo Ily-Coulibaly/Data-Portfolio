@@ -120,7 +120,7 @@ const HeroSection = () => {
             data-testid="social-linkedin"
             className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300 group relative"
           >
-            <SiLinkedin className="w-6 h-6" />
+            <SiLinkedin className="w-6 h-6 text-[#0077B5]" />
             <span className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-sans">
               LinkedIn
             </span>
@@ -132,7 +132,7 @@ const HeroSection = () => {
             data-testid="social-github"
             className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300 group relative"
           >
-            <SiGithub className="w-6 h-6" />
+            <SiGithub className="w-6 h-6 text-white" />
             <span className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-sans">
               GitHub
             </span>
@@ -144,7 +144,7 @@ const HeroSection = () => {
             data-testid="social-tableau"
             className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300 group relative"
           >
-            <SiTableau className="w-6 h-6" />
+            <SiTableau className="w-6 h-6 text-[#E97627]" />
             <span className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-sans">
               Tableau Public
             </span>
@@ -155,7 +155,7 @@ const HeroSection = () => {
             data-testid="social-resume"
             className="p-3 bg-card rounded-full hover:bg-primary transition-colors duration-300 group relative"
           >
-            <FileText className="w-6 h-6" />
+            <FileText className="w-6 h-6 text-gray-300" />
             <span className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-sans">
               View Full Resume (PDF Download)
             </span>
