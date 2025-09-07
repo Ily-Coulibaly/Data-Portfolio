@@ -1,5 +1,5 @@
 import { SiPython, SiR, SiTableau, SiJupyter } from "react-icons/si";
-import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, DatabaseZap, Users2, Cog, LayoutDashboard, Zap, Bot, MessageCircle, Network, TreePine, CheckCircle, FileSearch, MessageSquareCode } from "lucide-react";
+import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, DatabaseZap, Users2, Cog, LayoutDashboard, Zap, Bot, MessageCircle, Network, TreePine, CheckCircle, FileSearch, MessageSquareCode, BarChart2, GitBranch, Activity, Layers, Presentation, Users3, Handshake } from "lucide-react";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/ily-kynion-coulibaly-05602a189/",
@@ -135,12 +135,12 @@ export const VISUALIZATION_SKILLS = [
   { name: "Excel", icon: ExcelIcon, color: "", title: "Excel", proficiency: 4 }
 ];
 
-// Machine Learning Skills
+// Machine Learning Skills with professional icons
 export const MACHINE_LEARNING_SKILLS = [
-  { name: "Regression", icon: TrendingUp, color: "text-gray-400", title: "Regression Analysis", proficiency: 5 },
-  { name: "Classification", icon: CheckCircle, color: "text-gray-400", title: "Classification", proficiency: 5 },
-  { name: "Clustering", icon: Network, color: "text-gray-400", title: "Clustering", proficiency: 4 },
-  { name: "Model Evaluation", icon: FileSearch, color: "text-gray-400", title: "Model Evaluation", proficiency: 4 }
+  { name: "Regression", icon: BarChart2, color: "text-blue-600", title: "Regression Analysis", proficiency: 5 },
+  { name: "Classification", icon: GitBranch, color: "text-green-600", title: "Classification", proficiency: 5 },
+  { name: "Clustering", icon: Layers, color: "text-purple-600", title: "Clustering", proficiency: 4 },
+  { name: "Model Evaluation", icon: Activity, color: "text-orange-600", title: "Model Evaluation", proficiency: 4 }
 ];
 
 // Hugging Face icon component
@@ -151,21 +151,19 @@ const HuggingFaceIcon = () => (
 );
 
 export const AI_SKILLS = [
-  { name: "Neural Networks", icon: Brain, color: "text-pink-500", title: "Neural Networks", proficiency: 4 },
-  { name: "Deep Learning", icon: Zap, color: "text-orange-500", title: "Deep Learning", proficiency: 4 },
-  { name: "Chatbot Development", icon: MessageSquareCode, color: "text-blue-500", title: "Chatbot Development", proficiency: 4 },
-  { name: "Prompt Engineering", icon: MessageCircle, color: "text-green-500", title: "Prompt Engineering", proficiency: 4 }
+  { name: "Neural Networks", icon: Brain, color: "text-indigo-600", title: "Neural Networks", proficiency: 4 },
+  { name: "Deep Learning", icon: Layers, color: "text-blue-700", title: "Deep Learning", proficiency: 4 },
+  { name: "Chatbot Building", icon: Bot, color: "text-teal-600", title: "Chatbot Building", proficiency: 4 },
+  { name: "Prompt Engineering", icon: MessageSquareCode, color: "text-emerald-600", title: "Prompt Engineering", proficiency: 4 }
 ];
 
-// New Business category (no proficiency levels)
+// Business Skills - Top 5 most relevant for Data Analyst position
 export const BUSINESS_CATEGORY = [
-  { name: "Consulting", icon: ConsultingIcon, color: "text-blue-500", title: "Consulting" },
-  { name: "Entrepreneurship", icon: Lightbulb, color: "text-yellow-500", title: "Entrepreneurship" },
-  { name: "Communication/Storytelling", icon: MessageSquare, color: "text-green-500", title: "Communication/Storytelling" },
-  { name: "Problem-Solving", icon: BrainCircuit, color: "text-purple-500", title: "Problem-Solving" },
-  { name: "Stakeholder Management", icon: Users2, color: "text-indigo-500", title: "Stakeholder Management" },
-  { name: "Strategic Planning", icon: LayoutDashboard, color: "text-red-500", title: "Strategic Planning" },
-  { name: "Process Optimization", icon: Cog, color: "text-orange-500", title: "Process Optimization" }
+  { name: "Data Storytelling", icon: Presentation, color: "text-blue-600", title: "Data Storytelling" },
+  { name: "Business Intelligence", icon: BarChart3, color: "text-green-600", title: "Business Intelligence" },
+  { name: "Stakeholder Management", icon: Users3, color: "text-purple-600", title: "Stakeholder Management" },
+  { name: "Strategic Analysis", icon: Target, color: "text-orange-600", title: "Strategic Analysis" },
+  { name: "Cross-functional Collaboration", icon: Handshake, color: "text-teal-600", title: "Cross-functional Collaboration" }
 ];
 
 export const SKILLS_CATEGORIES = [

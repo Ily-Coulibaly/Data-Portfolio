@@ -10,7 +10,7 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="py-20 px-6 bg-secondary">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">Technical Skills</h2>
+        <h2 className="text-4xl font-bold text-center mb-16">Technical & Professional Skills</h2>
         
         {/* Filter Buttons */}
         <div className="flex justify-center mb-12">
