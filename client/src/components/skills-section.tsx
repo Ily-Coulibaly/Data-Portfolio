@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Shield } from "lucide-react";
 import { SKILLS_CATEGORIES } from "@/lib/constants";
 
 const SkillsSection = () => {
@@ -44,7 +44,7 @@ const SkillsSection = () => {
             return (
               <div key={skill.name} className="skill-logo skill-card text-center flex flex-col items-center">
                 <div 
-                  className="w-20 h-20 mb-4 bg-card rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-300"
+                  className="w-20 h-20 mb-4 bg-card rounded-lg flex items-center justify-center hover:bg-primary transition-colors duration-300 relative"
                   data-testid={`skill-${skill.name.toLowerCase().replace(/\s+/g, '-')}`}
                   title={skill.title || skill.name}
                 >
@@ -52,6 +52,24 @@ const SkillsSection = () => {
                     className={skill.color ? `w-12 h-12 ${skill.color}` : `w-12 h-12`}
                     title={skill.title || skill.name}
                   />
+                  {/* Certification Badge */}
+                  {'certified' in skill && skill.certified && (
+                    <div 
+                      className="certification-badge"
+                      title="Certified"
+                      onClick={() => {
+                        document.getElementById('certificates')?.scrollIntoView({ behavior: 'smooth' });
+                        setTimeout(() => {
+                          const certificateElement = document.querySelector(`[data-testid="certificate-${skill.certificateId}"]`);
+                          if (certificateElement) {
+                            certificateElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                          }
+                        }, 800);
+                      }}
+                    >
+                      <Shield className="w-3 h-3" />
+                    </div>
+                  )}
                 </div>
                 <p className="text-sm font-medium text-center mb-2">{skill.name}</p>
                 
@@ -76,33 +94,33 @@ const SkillsSection = () => {
                   </p>
                 )}
                 
-                {/* Certification Indicator */}
-                {'certified' in skill && skill.certified && (
-                  <div className="mt-2">
-                    <button
-                      onClick={() => {
-                        document.getElementById('certificates')?.scrollIntoView({ behavior: 'smooth' });
-                        // Focus on the specific certificate after scroll
-                        setTimeout(() => {
-                          const certificateElement = document.querySelector(`[data-testid="certificate-${skill.certificateId}"]`);
-                          if (certificateElement) {
-                            certificateElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                          }
-                        }, 800);
-                      }}
-                      className="text-xs text-[#A5A584] hover:text-[#8a8d6b] underline transition-colors cursor-pointer"
-                      data-testid={`certified-${skill.name.toLowerCase().replace(/\s+/g, '-')}`}
-                    >
-                      Certified
-                    </button>
-                  </div>
-                )}
                 
               </div>
             );
           })}
         </div>
         
+        {/* Skills Legend */}
+        <div className="skills-legend">
+          <h3 className="text-sm font-semibold mb-3 text-center text-muted-foreground">Legend</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div className="legend-item">
+              <div className="legend-dot filled"></div>
+              <span className="text-sm">Proficient</span>
+            </div>
+            <div className="legend-item">
+              <div className="legend-dot empty"></div>
+              <span className="text-sm">Learning/Basic</span>
+            </div>
+            <div className="legend-item">
+              <div className="legend-badge">
+                <Shield className="w-2 h-2" />
+              </div>
+              <span className="text-sm">Certified (click to view)</span>
+            </div>
+          </div>
+        </div>
+
         {/* Scroll Indicator */}
         <div className="mt-16 text-center scroll-indicator">
           <a 

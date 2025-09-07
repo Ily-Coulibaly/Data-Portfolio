@@ -90,32 +90,54 @@ body {
   /* Proficiency Dots Styling */
   .proficiency-dots {
     display: flex;
-    gap: 4px;
+    gap: 6px;
     justify-content: center;
     align-items: center;
-    margin: 8px 0 4px 0;
+    margin: 10px 0 6px 0;
   }
 
   .proficiency-dot {
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     transition: all 0.3s ease;
+    position: relative;
   }
 
   .proficiency-dot.filled {
-    background: linear-gradient(135deg, #9ca3af 0%, #A5A584 100%);
-    box-shadow: 0 0 4px rgba(165, 165, 132, 0.4);
+    background: linear-gradient(135deg, #A5A584 0%, #8a8d6b 100%);
+    box-shadow: 0 2px 4px rgba(165, 165, 132, 0.3), 0 0 8px rgba(165, 165, 132, 0.2);
+    border: 2px solid #A5A584;
   }
 
   .proficiency-dot.empty {
-    background-color: #404040;
-    border: 1px solid #555;
+    background-color: #2a2a2a;
+    border: 2px solid #404040;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
   }
 
   .skill-card:hover .proficiency-dot.filled {
-    box-shadow: 0 0 8px rgba(165, 165, 132, 0.6);
-    transform: scale(1.1);
+    box-shadow: 0 3px 6px rgba(165, 165, 132, 0.4), 0 0 12px rgba(165, 165, 132, 0.3);
+    transform: scale(1.15);
+  }
+
+  /* Certification Badge */
+  .certification-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #A5A584 0%, #8a8d6b 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    z-index: 10;
   }
 
   /* Experience Label Styling */
@@ -130,6 +152,58 @@ body {
 
   .skill-card:hover .experience-label {
     color: #d1d5db;
+  }
+
+  /* Skills Legend */
+  .skills-legend {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 24px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 6px 0;
+    font-size: 14px;
+    color: #d1d5db;
+  }
+
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .legend-dot.filled {
+    background: linear-gradient(135deg, #A5A584 0%, #8a8d6b 100%);
+    border: 2px solid #A5A584;
+  }
+
+  .legend-dot.empty {
+    background-color: #2a2a2a;
+    border: 2px solid #404040;
+  }
+
+  .legend-badge {
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #A5A584 0%, #8a8d6b 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    color: white;
+    font-weight: bold;
+    flex-shrink: 0;
   }
   
   .project-card {
