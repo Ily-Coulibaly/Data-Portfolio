@@ -1,5 +1,5 @@
 import { SiPython, SiR, SiTableau, SiJupyter } from "react-icons/si";
-import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, DatabaseZap, Users2, Cog, LayoutDashboard, Zap, Bot, MessageCircle } from "lucide-react";
+import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, DatabaseZap, Users2, Cog, LayoutDashboard, Zap, Bot, MessageCircle, Network, TreePine, CheckCircle, FileSearch, MessageSquareCode } from "lucide-react";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/ily-kynion-coulibaly-05602a189/",
@@ -135,6 +135,16 @@ export const VISUALIZATION_SKILLS = [
   { name: "Excel", icon: ExcelIcon, color: "", title: "Excel", proficiency: 4 }
 ];
 
+// Machine Learning Skills
+export const MACHINE_LEARNING_SKILLS = [
+  { name: "Supervised Learning", icon: Target, color: "text-green-500", title: "Supervised Learning", proficiency: 5 },
+  { name: "Unsupervised Learning", icon: TreePine, color: "text-blue-500", title: "Unsupervised Learning", proficiency: 4 },
+  { name: "Regression", icon: TrendingUp, color: "text-orange-500", title: "Regression Analysis", proficiency: 5 },
+  { name: "Classification", icon: CheckCircle, color: "text-purple-500", title: "Classification", proficiency: 5 },
+  { name: "Clustering", icon: Network, color: "text-teal-500", title: "Clustering", proficiency: 4 },
+  { name: "Model Evaluation", icon: FileSearch, color: "text-red-500", title: "Model Evaluation", proficiency: 4 }
+];
+
 // Hugging Face icon component
 const HuggingFaceIcon = () => (
   <svg className="w-12 h-12 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
@@ -143,9 +153,10 @@ const HuggingFaceIcon = () => (
 );
 
 export const AI_SKILLS = [
-  { name: "Hugging Face Transformers", icon: HuggingFaceIcon, color: "text-yellow-500", title: "Hugging Face Transformers", proficiency: 4 },
-  { name: "NLP", icon: MessageCircle, color: "text-blue-500", title: "Natural Language Processing", proficiency: 4 },
-  { name: "Copilot Studio", icon: Bot, color: "text-purple-500", title: "Copilot Studio", proficiency: 4 }
+  { name: "Neural Networks", icon: Brain, color: "text-pink-500", title: "Neural Networks", proficiency: 4 },
+  { name: "Deep Learning", icon: Zap, color: "text-orange-500", title: "Deep Learning", proficiency: 4 },
+  { name: "Chatbot Development", icon: MessageSquareCode, color: "text-blue-500", title: "Chatbot Development", proficiency: 4 },
+  { name: "Prompt Engineering", icon: MessageCircle, color: "text-green-500", title: "Prompt Engineering", proficiency: 4 }
 ];
 
 // New Business category (no proficiency levels)
@@ -162,6 +173,7 @@ export const BUSINESS_CATEGORY = [
 export const SKILLS_CATEGORIES = [
   { id: "programming", label: "Programming", skills: PROGRAMMING_TOOLS },
   { id: "visualization", label: "Visualization", skills: VISUALIZATION_SKILLS },
+  { id: "ml", label: "Machine Learning", skills: MACHINE_LEARNING_SKILLS },
   { id: "ai", label: "Artificial Intelligence", skills: AI_SKILLS },
   { id: "business", label: "Business", skills: BUSINESS_CATEGORY }
 ];
