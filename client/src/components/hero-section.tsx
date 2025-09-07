@@ -194,8 +194,8 @@ const HeroSection = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 scroll-indicator">
         <a 
-          href="#about" 
-          data-testid="scroll-to-about"
+          href="#skills" 
+          data-testid="scroll-to-skills"
           className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors duration-300"
         >
           <ChevronDown className="w-6 h-6" />
