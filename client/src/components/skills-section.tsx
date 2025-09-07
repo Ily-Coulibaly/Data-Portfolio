@@ -32,7 +32,13 @@ const SkillsSection = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center max-w-5xl mx-auto">
+        <div className={`grid gap-8 justify-items-center max-w-5xl mx-auto ${
+          currentSkills.length <= 3 
+            ? 'grid-cols-1 md:grid-cols-3 place-content-center' 
+            : currentSkills.length === 4
+            ? 'grid-cols-2 md:grid-cols-4 place-content-center'
+            : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'
+        }`}>
           {currentSkills.map((skill) => {
             const IconComponent = skill.icon;
             return (
@@ -63,10 +69,6 @@ const SkillsSection = () => {
                   </div>
                 )}
                 
-                {/* Experience Label - Only show if experience exists */}
-                {'experience' in skill && skill.experience && (
-                  <p className="experience-label">{skill.experience}</p>
-                )}
               </div>
             );
           })}

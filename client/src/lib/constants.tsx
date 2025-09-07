@@ -123,17 +123,17 @@ const ConsultingIcon = () => (
 );
 
 export const PROGRAMMING_TOOLS = [
-  { name: "Python", icon: SiPython, color: "text-blue-500", title: "Python", proficiency: 5, experience: "3+ Years • Expert" },
-  { name: "Jupyter", icon: SiJupyter, color: "text-orange-400", title: "Jupyter", proficiency: 5, experience: "3+ Years • Expert" },
-  { name: "R", icon: SiR, color: "text-blue-600", title: "R", proficiency: 5, experience: "3+ Years • Expert" },
-  { name: "SQL", icon: DatabaseZap, color: "text-orange-500", title: "SQL", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "MATLAB", icon: MatlabIcon, color: "", title: "MATLAB", proficiency: 4, experience: "2+ Years • Advanced" }
+  { name: "Python", icon: SiPython, color: "text-blue-500", title: "Python", proficiency: 5 },
+  { name: "Jupyter", icon: SiJupyter, color: "text-orange-400", title: "Jupyter", proficiency: 5 },
+  { name: "R", icon: SiR, color: "text-blue-600", title: "R", proficiency: 5 },
+  { name: "SQL", icon: DatabaseZap, color: "text-orange-500", title: "SQL", proficiency: 4 },
+  { name: "MATLAB", icon: MatlabIcon, color: "", title: "MATLAB", proficiency: 4 }
 ];
 
 export const VISUALIZATION_SKILLS = [
-  { name: "Tableau", icon: SiTableau, color: "text-blue-400", title: "Tableau", proficiency: 5, experience: "3+ Years • Expert" },
-  { name: "Power BI", icon: PowerBIIcon, color: "", title: "Power BI", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "Excel", icon: ExcelIcon, color: "", title: "Excel", proficiency: 4, experience: "2+ Years • Advanced" }
+  { name: "Tableau", icon: SiTableau, color: "text-blue-400", title: "Tableau", proficiency: 5 },
+  { name: "Power BI", icon: PowerBIIcon, color: "", title: "Power BI", proficiency: 4 },
+  { name: "Excel", icon: ExcelIcon, color: "", title: "Excel", proficiency: 4 }
 ];
 
 // Hugging Face icon component
@@ -144,9 +144,9 @@ const HuggingFaceIcon = () => (
 );
 
 export const AI_SKILLS = [
-  { name: "Hugging Face Transformers", icon: HuggingFaceIcon, color: "text-yellow-500", title: "Hugging Face Transformers", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "NLP", icon: MessageCircle, color: "text-blue-500", title: "Natural Language Processing", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "Copilot Studio", icon: Bot, color: "text-purple-500", title: "Copilot Studio", proficiency: 4, experience: "2+ Years • Advanced" }
+  { name: "Hugging Face Transformers", icon: HuggingFaceIcon, color: "text-yellow-500", title: "Hugging Face Transformers", proficiency: 4 },
+  { name: "NLP", icon: MessageCircle, color: "text-blue-500", title: "Natural Language Processing", proficiency: 4 },
+  { name: "Copilot Studio", icon: Bot, color: "text-purple-500", title: "Copilot Studio", proficiency: 4 }
 ];
 
 // New Business category (no proficiency levels)
