@@ -1,6 +1,76 @@
 import { FileText, ChevronDown, MapPin, ArrowRight, FolderOpen } from "lucide-react";
 import { SiLinkedin, SiGithub, SiTableau } from "react-icons/si";
 import { SOCIAL_LINKS } from "@/lib/constants";
+import { useEffect, useState } from "react";
+
+const HeroTypingBanner = () => {
+  const titles = [
+    "Data Analyst & AI Specialist",
+    "Business Analyst",
+    "Python & ML Engineer",
+    "Statistician"
+  ];
+
+  const [currentText, setCurrentText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+
+  useEffect(() => {
+    const currentTitle = titles[currentIndex];
+    let timeout: NodeJS.Timeout;
+
+    if (!isDeleting && currentText === currentTitle) {
+      // Finished typing, wait 2 seconds before deleting
+      setIsTypingComplete(true);
+      timeout = setTimeout(() => {
+        setIsTypingComplete(false);
+        setIsDeleting(true);
+      }, 2000);
+    } else if (isDeleting && currentText === "") {
+      // Finished deleting, move to next title
+      setIsDeleting(false);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % titles.length);
+    } else {
+      // Continue typing or deleting
+      const speed = isDeleting ? 50 : 100;
+      timeout = setTimeout(() => {
+        if (isDeleting) {
+          setCurrentText(currentTitle.substring(0, currentText.length - 1));
+        } else {
+          setCurrentText(currentTitle.substring(0, currentText.length + 1));
+        }
+      }, speed);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [currentText, currentIndex, isDeleting, titles]);
+
+  return (
+    <div 
+      className="flex items-center justify-center h-16"
+      style={{ minHeight: '64px' }}
+    >
+      <div className="text-center">
+        <span 
+          className="text-2xl md:text-3xl font-semibold typing-text text-primary"
+          style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}
+        >
+          {currentText}
+          <span 
+            className="typing-cursor"
+            style={{
+              borderRight: '3px solid hsl(var(--primary))',
+              animation: 'blink 1s infinite'
+            }}
+          >
+            &nbsp;
+          </span>
+        </span>
+      </div>
+    </div>
+  );
+};
 
 const HeroSection = () => {
   return (
@@ -19,9 +89,9 @@ const HeroSection = () => {
         <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           Ily Coulibaly
         </h1>
-        <p className="text-2xl md:text-3xl font-semibold mb-3 text-primary" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
-          Data Analyst & AI Specialist
-        </p>
+        <div className="mb-3">
+          <HeroTypingBanner />
+        </div>
         <p className="text-base font-medium text-white mb-3" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           B.S. Mathematics | M.S. Business Analytics
         </p>
