@@ -162,21 +162,32 @@ const HeroSection = () => {
           </a>
         </div>
         
-        {/* View Projects Button */}
+        {/* Action Buttons */}
         <div className="mb-8">
-          <a 
-            href="#projects" 
-            data-testid="view-projects-button"
-            className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 border border-primary/30 relative overflow-hidden"
-            style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}
-          >
-            {/* Subtle background effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a 
+              href="#projects" 
+              data-testid="view-projects-button"
+              className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 border border-primary/30 relative overflow-hidden min-w-[180px] justify-center"
+              style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}
+            >
+              {/* Subtle background effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+              
+              <FolderOpen className="w-4 h-4 group-hover:rotate-6 transition-transform duration-300" />
+              <span className="relative z-10">View My Projects</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </a>
             
-            <FolderOpen className="w-4 h-4 group-hover:rotate-6 transition-transform duration-300" />
-            <span className="relative z-10">View My Projects</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-          </a>
+            <a 
+              href="#contact"
+              className="px-8 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-300 rounded-lg font-semibold text-center min-w-[180px]"
+              data-testid="contact-me-button"
+              style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}
+            >
+              Contact Me
+            </a>
+          </div>
         </div>
       </div>
       
