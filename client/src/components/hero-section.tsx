@@ -108,7 +108,7 @@ const HeroSection = () => {
           </a>
         </p>
         <p className="text-base text-primary leading-relaxed mb-10 max-w-3xl mx-auto" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
-          I am a Data Analyst with 3 years of experience in analytics, consulting, data strategy, actuarial science, and entrepreneurship. Expert at transforming data into actionable business insights using Python, R, SQL, and machine learning.
+          I am an <span className="font-semibold">expert</span> at turning data into actionable business insights using <span className="font-semibold">Python, R, SQL, and Machine Learning</span>. <span className="font-semibold">M.S. in Business Analytics</span> graduate from <span className="font-semibold">Babson College</span>, I have <span className="font-semibold">3 years of experience</span> across analytics, tech consulting, business analysis, data strategy, Actuarial Science, and entrepreneurship.
         </p>
         
         {/* Social Links */}
