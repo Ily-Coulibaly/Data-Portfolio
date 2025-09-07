@@ -124,7 +124,6 @@ const ConsultingIcon = () => (
 
 export const PROGRAMMING_TOOLS = [
   { name: "Python", icon: SiPython, color: "text-blue-500", title: "Python", proficiency: 5 },
-  { name: "Jupyter", icon: SiJupyter, color: "text-orange-400", title: "Jupyter", proficiency: 5 },
   { name: "R", icon: SiR, color: "text-blue-600", title: "R", proficiency: 5 },
   { name: "SQL", icon: DatabaseZap, color: "text-orange-500", title: "SQL", proficiency: 4 },
   { name: "MATLAB", icon: MatlabIcon, color: "", title: "MATLAB", proficiency: 4 }
