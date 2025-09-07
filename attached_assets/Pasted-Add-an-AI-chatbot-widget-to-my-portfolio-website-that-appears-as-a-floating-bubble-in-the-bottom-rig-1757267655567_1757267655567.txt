@@ -1,0 +1,44 @@
+Add an AI chatbot widget to my portfolio website that appears as a floating bubble in the bottom-right corner. The chatbot should help visitors learn about my professional background.
+
+**CHATBOT REQUIREMENTS:**
+
+**Visual Design:**
+- Floating chat bubble in bottom-right corner with smooth animation
+- Modern gradient design (blue/cyan colors to match portfolio theme)
+- Chat icon that expands to full chat interface when clicked
+- Responsive design that works on mobile and desktop
+- Subtle pulse animation to draw attention
+
+**Chatbot Personality & Knowledge:**
+The AI should know these facts about me:
+- Name: Ily Coulibaly
+- Title: Python & ML Engineer / Data Analyst & AI Specialist  
+- Education: B.S. Mathematics, M.S. Business Analytics from Babson College
+- Experience: 3 years across analytics, tech consulting, business analysis, data strategy, Actuarial Science, and entrepreneurship
+- Location: Boston, MA
+- Core expertise: Turning data into actionable business insights using Python, R, SQL, and Machine Learning
+- Skills: Python, R, SQL, Machine Learning (Scikit-learn, TensorFlow), Tableau, Power BI, AWS, Azure
+- Available for hire and new opportunities
+
+**Conversation Guidelines:**
+- Professional, enthusiastic, and knowledgeable tone
+- Focus on my strengths and unique combination of skills
+- Highlight business impact and problem-solving abilities
+- Never make up projects or experience not mentioned
+- Suggest contacting me directly for detailed discussions
+- Answer questions about my background, skills, and availability
+
+**Features to Include:**
+- Welcome message after 10 seconds: "👋 Hi! I'm Ily's AI assistant. Ask me anything about his background!"
+- Suggested conversation starters
+- Smooth typing animations
+- Professional chat interface
+- Close/minimize functionality
+
+**Technical Implementation:**
+- Use a modern chat library or build custom HTML/CSS/JavaScript
+- Integrate with an AI service (OpenAI, Anthropic, or similar)
+- Ensure fast loading and smooth animations
+- Mobile-responsive design
+
+Please implement this chatbot widget and integrate it seamlessly into my existing portfolio design.
