@@ -107,8 +107,8 @@ const HeroSection = () => {
             Boston, MA
           </a>
         </p>
-        <p className="text-lg font-semibold text-primary mb-8 max-w-2xl mx-auto" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
-          Transforming Data into Business Insights
+        <p className="text-base text-foreground leading-relaxed mb-8 max-w-3xl mx-auto" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
+          Data Analyst with 3 years of experience in analytics, consulting, data strategy, actuarial science, and entrepreneurship. Expert at transforming data into actionable business insights using Python, R, SQL, and machine learning.
         </p>
         
         {/* Social Links */}
