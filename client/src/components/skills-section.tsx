@@ -53,14 +53,7 @@ const SkillsSection = () => {
                     title={skill.title || skill.name}
                   />
                 </div>
-                <p className="text-sm font-medium text-center mb-1">{skill.name}</p>
-                
-                {/* Proficiency Level Text - Only show if proficiency exists */}
-                {'proficiency' in skill && skill.proficiency && (
-                  <p className="text-xs text-muted-foreground text-center mb-2">
-                    {skill.proficiency === 5 ? 'Expert' : skill.proficiency === 4 ? 'Advanced' : 'Intermediate'}
-                  </p>
-                )}
+                <p className="text-sm font-medium text-center mb-2">{skill.name}</p>
                 
                 {/* Proficiency Dots - Only show if proficiency exists */}
                 {'proficiency' in skill && skill.proficiency && (
@@ -74,6 +67,13 @@ const SkillsSection = () => {
                       />
                     ))}
                   </div>
+                )}
+                
+                {/* Proficiency Level Text - Only show if proficiency exists */}
+                {'proficiency' in skill && skill.proficiency && (
+                  <p className="text-xs text-muted-foreground text-center mt-2">
+                    {skill.proficiency === 5 ? 'Expert' : skill.proficiency === 4 ? 'Advanced' : 'Intermediate'}
+                  </p>
                 )}
                 
                 {/* Certification Indicator */}
