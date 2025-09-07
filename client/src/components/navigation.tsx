@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -10,6 +11,40 @@ const Navigation = () => {
     
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = navItems.map(item => item.href.substring(1)); // Remove # from href
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '-100px 0px -50% 0px'
+      }
+    );
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
   }, []);
 
   const navItems = [
@@ -33,7 +68,11 @@ const Navigation = () => {
               key={item.href}
               href={item.href}
               data-testid={`nav-link-${item.label.toLowerCase()}`}
-              className="text-foreground hover:text-primary transition-colors duration-300"
+              className={`transition-all duration-300 ${
+                activeSection === item.href.substring(1)
+                  ? 'text-[#A5A584] font-semibold glow-text'
+                  : 'text-foreground hover:text-primary'
+              }`}
             >
               {item.label}
             </a>
