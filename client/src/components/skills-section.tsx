@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { SKILLS_CATEGORIES } from "@/lib/constants";
 
 const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("technical");
+  const [activeCategory, setActiveCategory] = useState("programming");
 
   const currentSkills = SKILLS_CATEGORIES.find(cat => cat.id === activeCategory)?.skills || [];
 
@@ -49,20 +49,24 @@ const SkillsSection = () => {
                 </div>
                 <p className="text-sm font-medium text-center mb-2">{skill.name}</p>
                 
-                {/* Proficiency Dots */}
-                <div className="proficiency-dots">
-                  {[1, 2, 3, 4, 5].map((dot) => (
-                    <div
-                      key={dot}
-                      className={`proficiency-dot ${
-                        dot <= (skill.proficiency || 0) ? 'filled' : 'empty'
-                      }`}
-                    />
-                  ))}
-                </div>
+                {/* Proficiency Dots - Only show if proficiency exists */}
+                {skill.proficiency && (
+                  <div className="proficiency-dots">
+                    {[1, 2, 3, 4, 5].map((dot) => (
+                      <div
+                        key={dot}
+                        className={`proficiency-dot ${
+                          dot <= (skill.proficiency || 0) ? 'filled' : 'empty'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                )}
                 
-                {/* Experience Label */}
-                <p className="experience-label">{skill.experience || ''}</p>
+                {/* Experience Label - Only show if experience exists */}
+                {skill.experience && (
+                  <p className="experience-label">{skill.experience}</p>
+                )}
               </div>
             );
           })}

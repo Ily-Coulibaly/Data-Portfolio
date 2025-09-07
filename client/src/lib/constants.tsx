@@ -1,5 +1,5 @@
-import { SiPython, SiR, SiTableau, SiJupyter, SiPandas } from "react-icons/si";
-import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, DatabaseZap, Users2, Cog, LayoutDashboard } from "lucide-react";
+import { SiPython, SiR, SiTableau, SiJupyter } from "react-icons/si";
+import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, DatabaseZap, Users2, Cog, LayoutDashboard, Zap, Bot, MessageCircle } from "lucide-react";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/ily-kynion-coulibaly-05602a189/",
@@ -122,48 +122,53 @@ const ConsultingIcon = () => (
   </svg>
 );
 
-export const TECHNICAL_TOOLS = [
+export const PROGRAMMING_TOOLS = [
   { name: "Python", icon: SiPython, color: "text-blue-500", title: "Python", proficiency: 5, experience: "3+ Years • Expert" },
-  { name: "R", icon: SiR, color: "text-blue-600", title: "R", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "SQL", icon: DatabaseZap, color: "text-orange-500", title: "SQL", proficiency: 5, experience: "3+ Years • Expert" },
-  { name: "Excel", icon: ExcelIcon, color: "", title: "Excel", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "Tableau", icon: SiTableau, color: "text-blue-400", title: "Tableau", proficiency: 4, experience: "2+ Years • Advanced" }
+  { name: "Jupyter", icon: SiJupyter, color: "text-orange-400", title: "Jupyter", proficiency: 5, experience: "3+ Years • Expert" },
+  { name: "R", icon: SiR, color: "text-blue-600", title: "R", proficiency: 5, experience: "3+ Years • Expert" },
+  { name: "SQL", icon: DatabaseZap, color: "text-orange-500", title: "SQL", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "MATLAB", icon: MatlabIcon, color: "", title: "MATLAB", proficiency: 4, experience: "2+ Years • Advanced" }
 ];
 
-export const DATA_SKILLS = [
+export const VISUALIZATION_SKILLS = [
+  { name: "Tableau", icon: SiTableau, color: "text-blue-400", title: "Tableau", proficiency: 5, experience: "3+ Years • Expert" },
   { name: "Power BI", icon: PowerBIIcon, color: "", title: "Power BI", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "Jupyter", icon: SiJupyter, color: "text-orange-400", title: "Jupyter", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "Pandas", icon: SiPandas, color: "text-blue-700", title: "Pandas", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "MATLAB", icon: MatlabIcon, color: "", title: "MATLAB", proficiency: 3, experience: "1+ Years • Intermediate" },
-  { name: "SAS", icon: SASIcon, color: "", title: "SAS", proficiency: 2, experience: "6+ Months • Beginner" }
+  { name: "Excel", icon: ExcelIcon, color: "", title: "Excel", proficiency: 4, experience: "2+ Years • Advanced" }
 ];
 
-export const BUSINESS_SKILLS = [
-  { name: "Statistical Modeling", icon: StatisticalModelingIcon, color: "text-blue-500", title: "Statistical Modeling", proficiency: 5, experience: "3+ Years • Expert" },
-  { name: "Business Analysis", icon: BarChart3, color: "text-green-500", title: "Business Analysis", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "Data Strategy", icon: Target, color: "text-red-500", title: "Data Strategy", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "Risk Analysis", icon: TrendingUp, color: "text-purple-500", title: "Risk Analysis", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "Project Management", icon: Briefcase, color: "text-indigo-500", title: "Project Management", proficiency: 3, experience: "1+ Years • Intermediate" }
+// Hugging Face icon component
+const HuggingFaceIcon = () => (
+  <svg className="w-12 h-12 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 2.04c-5.5 0-10 4.49-10 10.02s4.5 10.02 10 10.02 10-4.49 10-10.02S17.5 2.04 12 2.04zm3.54 6.8l-1.51 1.51c.91.91.91 2.4 0 3.31s-2.4.91-3.31 0l-1.51-1.51c-.91-.91-.91-2.4 0-3.31s2.4-.91 3.31 0l1.51 1.51c.91.91.91 2.4 0 3.31z"/>
+  </svg>
+);
+
+export const AI_SKILLS = [
+  { name: "Hugging Face Transformers", icon: HuggingFaceIcon, color: "text-yellow-500", title: "Hugging Face Transformers", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "NLP", icon: MessageCircle, color: "text-blue-500", title: "Natural Language Processing", proficiency: 4, experience: "2+ Years • Advanced" },
+  { name: "Copilot Studio", icon: Bot, color: "text-purple-500", title: "Copilot Studio", proficiency: 4, experience: "2+ Years • Advanced" }
 ];
 
-// New Business category
+// New Business category (no proficiency levels)
 export const BUSINESS_CATEGORY = [
-  { name: "Consulting", icon: ConsultingIcon, color: "text-blue-500", title: "Consulting", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "Entrepreneurship", icon: Lightbulb, color: "text-yellow-500", title: "Entrepreneurship", proficiency: 3, experience: "1+ Years • Intermediate" },
-  { name: "Strategic Planning", icon: LayoutDashboard, color: "text-purple-500", title: "Strategic Planning", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "Stakeholder Management", icon: Users2, color: "text-green-500", title: "Stakeholder Management", proficiency: 4, experience: "2+ Years • Advanced" },
-  { name: "Process Optimization", icon: Cog, color: "text-orange-500", title: "Process Optimization", proficiency: 3, experience: "1+ Years • Intermediate" }
+  { name: "Consulting", icon: ConsultingIcon, color: "text-blue-500", title: "Consulting" },
+  { name: "Entrepreneurship", icon: Lightbulb, color: "text-yellow-500", title: "Entrepreneurship" },
+  { name: "Communication/Storytelling", icon: MessageSquare, color: "text-green-500", title: "Communication/Storytelling" },
+  { name: "Problem-Solving", icon: BrainCircuit, color: "text-purple-500", title: "Problem-Solving" },
+  { name: "Stakeholder Management", icon: Users2, color: "text-indigo-500", title: "Stakeholder Management" },
+  { name: "Strategic Planning", icon: LayoutDashboard, color: "text-red-500", title: "Strategic Planning" },
+  { name: "Process Optimization", icon: Cog, color: "text-orange-500", title: "Process Optimization" }
 ];
 
 export const SKILLS_CATEGORIES = [
-  { id: "technical", label: "Technical Tools", skills: TECHNICAL_TOOLS },
-  { id: "data", label: "Data Skills", skills: DATA_SKILLS },
-  { id: "business", label: "Business Skills", skills: BUSINESS_SKILLS },
-  { id: "businessCategory", label: "Business", skills: BUSINESS_CATEGORY }
+  { id: "programming", label: "Programming", skills: PROGRAMMING_TOOLS },
+  { id: "visualization", label: "Visualization", skills: VISUALIZATION_SKILLS },
+  { id: "ai", label: "Artificial Intelligence", skills: AI_SKILLS },
+  { id: "business", label: "Business", skills: BUSINESS_CATEGORY }
 ];
 
 // Legacy SKILLS array for backward compatibility
-export const SKILLS = TECHNICAL_TOOLS;
+export const SKILLS = PROGRAMMING_TOOLS;
 
 export const PROJECTS = [
   {
