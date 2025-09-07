@@ -20,7 +20,7 @@ const HeroSection = () => {
           Ily Coulibaly
         </h1>
         <p className="text-2xl md:text-3xl font-semibold mb-3 text-primary" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
-          Data Analyst & AI Enthusiast
+          Data Analyst & AI Specialist
         </p>
         <p className="text-base font-medium text-white mb-3" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           B.S. Mathematics | M.S. Business Analytics
