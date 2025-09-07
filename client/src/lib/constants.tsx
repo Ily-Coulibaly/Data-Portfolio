@@ -1,5 +1,5 @@
 import { SiPython, SiR, SiTableau, SiJupyter } from "react-icons/si";
-import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, DatabaseZap, Users2, Cog, LayoutDashboard, Zap, Bot, MessageCircle, Network, TreePine, CheckCircle, FileSearch, MessageSquareCode, BarChart2, GitBranch, Activity, Layers, Presentation, Handshake } from "lucide-react";
+import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, DatabaseZap, Users2, Cog, LayoutDashboard, Zap, Bot, MessageCircle, Network, TreePine, CheckCircle, FileSearch, MessageSquareCode, BarChart2, GitBranch, Activity, Layers, Presentation, Handshake, BarChart4, Workflow, Monitor, Settings, Users3, Handshake as CollaborationIcon } from "lucide-react";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/ily-kynion-coulibaly-05602a189/",
@@ -135,12 +135,13 @@ export const VISUALIZATION_SKILLS = [
   { name: "Excel", icon: ExcelIcon, color: "", title: "Excel", proficiency: 4 }
 ];
 
-// Machine Learning Skills with exciting icons and vibrant colors
+// Machine Learning Skills with realistic professional icons
 export const MACHINE_LEARNING_SKILLS = [
-  { name: "Regression", icon: TrendingUp, color: "text-emerald-500", title: "Regression Analysis", proficiency: 5 },
-  { name: "Classification", icon: Target, color: "text-pink-500", title: "Classification", proficiency: 5 },
-  { name: "Clustering", icon: Network, color: "text-cyan-500", title: "Clustering", proficiency: 4 },
-  { name: "Model Evaluation", icon: Zap, color: "text-yellow-500", title: "Model Evaluation", proficiency: 4 }
+  { name: "Regression", icon: LineChart, color: "text-blue-600", title: "Regression Analysis", proficiency: 5 },
+  { name: "Classification", icon: GitBranch, color: "text-green-600", title: "Classification", proficiency: 5 },
+  { name: "Clustering", icon: Network, color: "text-purple-600", title: "Clustering", proficiency: 4 },
+  { name: "Predictive Analytics", icon: BarChart4, color: "text-orange-600", title: "Predictive Analytics", proficiency: 5 },
+  { name: "Ensemble Methods", icon: Workflow, color: "text-teal-600", title: "Ensemble Methods", proficiency: 4 }
 ];
 
 // Hugging Face icon component
@@ -151,18 +152,18 @@ const HuggingFaceIcon = () => (
 );
 
 export const AI_SKILLS = [
-  { name: "Neural Networks", icon: Brain, color: "text-indigo-600", title: "Neural Networks", proficiency: 4 },
-  { name: "Deep Learning", icon: Layers, color: "text-blue-700", title: "Deep Learning", proficiency: 4 },
-  { name: "Chatbot Building", icon: Bot, color: "text-teal-600", title: "Chatbot Building", proficiency: 4 },
-  { name: "Prompt Engineering", icon: MessageSquareCode, color: "text-emerald-600", title: "Prompt Engineering", proficiency: 4 }
+  { name: "Neural Networks", icon: Brain, color: "text-blue-600", title: "Neural Networks", proficiency: 4 },
+  { name: "Deep Learning", icon: Layers, color: "text-indigo-600", title: "Deep Learning", proficiency: 4 },
+  { name: "Chatbot Building", icon: Bot, color: "text-green-600", title: "Chatbot Building", proficiency: 4 },
+  { name: "Prompt Engineering", icon: Settings, color: "text-orange-600", title: "Prompt Engineering", proficiency: 4 }
 ];
 
 // Business Skills - Top 5 most relevant for Data Analyst position
 export const BUSINESS_CATEGORY = [
   { name: "Data Storytelling", icon: Presentation, color: "text-blue-600", title: "Data Storytelling" },
-  { name: "Business Intelligence", icon: BarChart3, color: "text-green-600", title: "Business Intelligence" },
+  { name: "Business Intelligence", icon: Monitor, color: "text-green-600", title: "Business Intelligence" },
   { name: "Stakeholder Management", icon: Users2, color: "text-purple-600", title: "Stakeholder Management" },
-  { name: "Strategic Analysis", icon: Target, color: "text-orange-600", title: "Strategic Analysis" },
+  { name: "Strategic Analysis", icon: BarChart3, color: "text-orange-600", title: "Strategic Analysis" },
   { name: "Cross-functional Collaboration", icon: Handshake, color: "text-teal-600", title: "Cross-functional Collaboration" }
 ];
 
