@@ -1,0 +1,69 @@
+Create a professional AI chatbot widget called ARIA for my portfolio with these EXACT specifications:
+
+**DESIGN REQUIREMENTS:**
+- Position: Fixed bottom-right corner (20px from edges)
+- Colors: Match my portfolio - Black (#000), dark grays (#1a1a1a, #2d2d2d, #404040), white text
+- Size: 70px bubble that expands to 400x520px chat window
+- Style: Modern glassmorphism with backdrop blur and elegant animations
+
+**VISUAL ELEMENTS:**
+- Avatar: Black woman professional emoji (👩🏿‍💼) - USE EXACTLY THIS EMOJI
+- Name: ARIA (AI Research & Intelligence Assistant)  
+- Bubble: Gradient background with pulsing ring animation
+- Badge: "NEW" notification in red that disappears when opened
+- Status: Green "Online" indicator with pulsing dot
+- Sparkle effect: ✨ on avatar with 2s animation
+
+**CHAT INTERFACE:**
+- Header: Dark gradient with ARIA name, subtitle, and close button
+- Messages: Dark theme with proper contrast for readability
+- Input: Rounded field with dark styling and send button
+- Scrollbar: Thin dark gray with hover effects
+- Typing indicator: 3 animated dots when responding
+
+**FUNCTIONALITY:**
+- Smooth open/close animations (0.4s cubic-bezier)
+- Typing simulation (1.2s delay before response)
+- Enter key to send messages
+- Auto-scroll to latest message
+- Mobile responsive (full width on small screens)
+
+**ARIA'S KNOWLEDGE BASE:**
+- Name: Ily Coulibaly (Black woman)
+- Title: Python & ML Engineer / Data Analyst & AI Specialist
+- Experience: 3 years across analytics, tech consulting, business analysis, data strategy, Actuarial Science, entrepreneurship
+- Education: B.S. Mathematics, M.S. Business Analytics from Babson College
+- Skills: Python, R, SQL, Machine Learning (Scikit-learn, TensorFlow), Tableau, Power BI, AWS, Azure
+- Location: Boston, MA
+- Status: Available for hire
+
+**CONVERSATION STARTERS:**
+- "Tell me about her experience"
+- "What are her technical skills?" 
+- "Education & background?"
+- "Why hire Ily?"
+
+**ARIA'S PERSONALITY:**
+- Professional, confident, enthusiastic
+- Emphasizes Ily's unique combination of technical + business skills
+- Uses empowering language: "exceptional," "strategic powerhouse," "transformation catalyst"
+- Highlights her entrepreneurship and consulting background
+- Never exaggerates but presents authentic strengths powerfully
+- Positions her as business-savvy problem solver, not just technical analyst
+
+**SAMPLE RESPONSES:**
+- Experience: "Ily brings 3 years of exceptional experience across analytics, tech consulting, business analysis, data strategy, Actuarial Science, and entrepreneurship. This rare combination makes her a strategic powerhouse who understands both technical execution and business impact."
+- Skills: "Ily is a master of Python, R, SQL, and Machine Learning with expertise in Scikit-learn and TensorFlow. Her mathematical and actuarial foundation provides deep statistical modeling capabilities."
+- Why hire: "She's not just another data analyst - she's a business transformation catalyst who turns data into competitive advantage."
+
+**TECHNICAL IMPLEMENTATION:**
+- Use vanilla HTML/CSS/JavaScript (no external dependencies)
+- Smooth animations with CSS transitions
+- Proper event handlers for all interactions
+- Clean, maintainable code structure
+- Cross-browser compatibility
+- Fast loading and smooth performance
+
+**CRITICAL:** Use the exact Black woman professional emoji (👩🏿‍💼) for authentic representation. The design should feel premium and professional while being warm and approachable.
+
+Please implement this EXACTLY as specified to create an outstanding AI assistant that represents Ily professionally and helps visitors understand her exceptional capabilities.
