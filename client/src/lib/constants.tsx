@@ -224,10 +224,10 @@ export const PROJECTS = [
   {
     id: 2,
     title: "Wayfair 'Ships in Time' Campaign Analysis",
-    subtitle: "Strategic campaign effectiveness analysis",
+    subtitle: "",
     description: "Comprehensive analysis of holiday season guarantee campaign impact on customer purchasing behavior, revenue optimization, and customer segmentation across different visitor types during the 2016 Christmas shopping period.",
     skills: ["tableau", "analytics", "business"],
-    tags: ["Campaign Analysis", "Customer Segmentation", "Revenue Analysis"],
+    tags: ["Tableau Analytics", "A/B Testing", "Customer Insights", "Revenue Optimization"],
     link: "https://public.tableau.com/app/profile/ily.kynion.coulibaly",
     tableauLink: "https://public.tableau.com/app/profile/ily.kynion.coulibaly",
     gradient: "from-purple-500 to-blue-600",

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ChevronDown, ExternalLink, Play, FileText, X, Target, BarChart3, Lightbulb, TrendingUp, CheckCircle } from "lucide-react";
 import { PROJECTS, FILTER_CATEGORIES } from "@/lib/constants";
 import bikeShareBg from "@assets/generated_images/Dark_tech_bike_analytics_dashboard_f691e25c.png";
-import wayfairBg from "@assets/generated_images/Dark_e-commerce_analytics_dashboard_c58fd74a.png";
+import wayfairBg from "@assets/generated_images/Dark_Wayfair_analytics_dashboard_0212aec8.png";
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("all");
