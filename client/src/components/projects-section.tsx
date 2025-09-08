@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, ExternalLink, Play, FileText, X, Target, BarChart3, Lightbulb, TrendingUp, CheckCircle } from "lucide-react";
 import { PROJECTS, FILTER_CATEGORIES } from "@/lib/constants";
+import bikeShareBg from "@assets/generated_images/Modern_bike_share_city_scene_25080b8f.png";
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -98,7 +99,7 @@ const ProjectsSection = () => {
                     style={{ 
                       height: '160px',
                       position: 'relative',
-                      background: `url(${project.headerImage})`,
+                      backgroundImage: `url(${bikeShareBg})`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                       borderRadius: '16px 16px 0 0',
