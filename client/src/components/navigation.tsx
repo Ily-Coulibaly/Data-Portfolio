@@ -67,7 +67,12 @@ const Navigation = () => {
     }`}>
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          {/* Navigation Links */}
+          {/* Language Toggle - Far Left */}
+          <div className="flex items-center">
+            <LanguageToggle />
+          </div>
+          
+          {/* Navigation Links - Center */}
           <div className="flex justify-center space-x-8 flex-1">
             {navItems.map((item) => (
               <a
@@ -85,9 +90,8 @@ const Navigation = () => {
             ))}
           </div>
           
-          {/* Theme and Language Toggles */}
-          <div className="flex items-center space-x-3">
-            <LanguageToggle />
+          {/* Theme Toggle - Far Right */}
+          <div className="flex items-center">
             <ThemeToggle />
           </div>
         </div>

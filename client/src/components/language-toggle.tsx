@@ -8,26 +8,26 @@ const LanguageToggle = () => {
   };
 
   return (
-    <div className="flex items-center rounded-lg border border-border bg-card overflow-hidden">
+    <div className="flex items-center space-x-2 text-sm font-medium">
       <button
         onClick={() => toggleLanguage('en')}
-        className={`px-3 py-2 text-sm font-medium transition-all duration-300 ${
+        className={`transition-all duration-300 ${
           language === 'en' 
-            ? 'bg-[#A5A584] text-black' 
-            : 'text-foreground hover:bg-accent'
+            ? 'text-[#A5A584] font-semibold glow-text' 
+            : 'text-foreground/70 hover:text-foreground'
         }`}
         aria-label="Switch to English"
         data-testid="language-en"
       >
         EN
       </button>
-      <div className="w-px h-6 bg-border"></div>
+      <span className="text-foreground/50">|</span>
       <button
         onClick={() => toggleLanguage('fr')}
-        className={`px-3 py-2 text-sm font-medium transition-all duration-300 ${
+        className={`transition-all duration-300 ${
           language === 'fr' 
-            ? 'bg-[#A5A584] text-black' 
-            : 'text-foreground hover:bg-accent'
+            ? 'text-[#A5A584] font-semibold glow-text' 
+            : 'text-foreground/70 hover:text-foreground'
         }`}
         aria-label="Switch to French"
         data-testid="language-fr"

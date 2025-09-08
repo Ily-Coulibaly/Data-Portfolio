@@ -5,18 +5,33 @@ const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <button
-      onClick={toggleTheme}
-      className="p-2 rounded-lg border border-border bg-card hover:bg-accent transition-all duration-300 hover:scale-105"
-      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-      data-testid="theme-toggle"
-    >
-      {theme === 'dark' ? (
-        <Sun className="h-5 w-5 text-foreground transition-transform duration-300 rotate-0 hover:rotate-45" />
-      ) : (
-        <Moon className="h-5 w-5 text-foreground transition-transform duration-300 rotate-0 hover:-rotate-12" />
-      )}
-    </button>
+    <div className="flex items-center space-x-2">
+      <button
+        onClick={() => theme === 'light' && toggleTheme()}
+        className={`transition-all duration-300 ${
+          theme === 'dark' 
+            ? 'text-[#A5A584] glow-text' 
+            : 'text-foreground/70 hover:text-foreground'
+        }`}
+        aria-label="Switch to dark mode"
+        data-testid="theme-dark"
+      >
+        <Moon className="h-5 w-5 transition-transform duration-300 hover:-rotate-12" />
+      </button>
+      <span className="text-foreground/50">|</span>
+      <button
+        onClick={() => theme === 'dark' && toggleTheme()}
+        className={`transition-all duration-300 ${
+          theme === 'light' 
+            ? 'text-[#A5A584] glow-text' 
+            : 'text-foreground/70 hover:text-foreground'
+        }`}
+        aria-label="Switch to light mode"
+        data-testid="theme-light"
+      >
+        <Sun className="h-5 w-5 transition-transform duration-300 hover:rotate-45" />
+      </button>
+    </div>
   );
 };
 
