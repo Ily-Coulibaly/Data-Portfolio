@@ -179,40 +179,33 @@ const ProjectsSection = () => {
                       </div>
                     </div>
 
-                    {/* Action Buttons - Adjusted to fit card properly */}
-                    <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
+                    {/* Action Buttons - Minimalistic */}
+                    <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
                       <button
                         onClick={() => showDetailedView(project)}
-                        className="btn-primary"
                         style={{
-                          padding: '12px 16px',
-                          borderRadius: '8px',
-                          fontSize: '13px',
-                          fontWeight: 600,
+                          padding: '8px 12px',
+                          borderRadius: '4px',
+                          fontSize: '12px',
+                          fontWeight: 500,
                           display: 'inline-flex',
                           alignItems: 'center',
-                          gap: '6px',
-                          transition: 'all 0.3s ease',
-                          position: 'relative',
-                          overflow: 'hidden',
+                          gap: '4px',
+                          transition: 'opacity 0.2s ease',
                           border: 'none',
                           cursor: 'pointer',
-                          background: '#A5A584',
-                          color: '#000',
-                          flex: '1',
-                          justifyContent: 'center',
-                          minWidth: '0'
+                          background: 'transparent',
+                          color: '#A5A584',
+                          textDecoration: 'underline',
+                          textUnderlineOffset: '2px'
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.transform = 'translateY(-2px)';
-                          e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.3)';
+                          e.currentTarget.style.opacity = '0.7';
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.transform = 'translateY(0)';
-                          e.currentTarget.style.boxShadow = 'none';
+                          e.currentTarget.style.opacity = '1';
                         }}
                       >
-                        <FileText className="w-4 h-4" />
                         Read More
                       </button>
 
@@ -220,37 +213,29 @@ const ProjectsSection = () => {
                         href={project.tableauLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-secondary"
                         style={{
-                          padding: '12px 16px',
-                          borderRadius: '8px',
-                          fontSize: '13px',
-                          fontWeight: 600,
+                          padding: '8px 12px',
+                          borderRadius: '4px',
+                          fontSize: '12px',
+                          fontWeight: 500,
                           textDecoration: 'none',
                           display: 'inline-flex',
                           alignItems: 'center',
-                          gap: '6px',
-                          transition: 'all 0.3s ease',
-                          position: 'relative',
-                          overflow: 'hidden',
+                          gap: '4px',
+                          transition: 'opacity 0.2s ease',
                           border: '1px solid #404040',
                           cursor: 'pointer',
-                          background: '#2a2a2a',
-                          color: '#e0e0e0',
-                          flex: '1',
-                          justifyContent: 'center',
-                          minWidth: '0'
+                          background: 'transparent',
+                          color: '#d0d0d0'
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.transform = 'translateY(-2px)';
-                          e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.3)';
+                          e.currentTarget.style.opacity = '0.7';
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.transform = 'translateY(0)';
-                          e.currentTarget.style.boxShadow = 'none';
+                          e.currentTarget.style.opacity = '1';
                         }}
                       >
-                        <Play className="w-4 h-4" />
+                        <Play className="w-3 h-3" />
                         View Tableau
                       </a>
                     </div>
