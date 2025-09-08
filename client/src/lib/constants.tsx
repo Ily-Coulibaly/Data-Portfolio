@@ -235,7 +235,7 @@ export const PROJECTS = [
     isAdvancedCard: true,
     image: "attached_assets/generated_images/Dark_olive_shipping_analytics_dashboard_8d8f44a1.png",
     projectImage: "attached_assets/generated_images/Dark_olive_shipping_analytics_dashboard_8d8f44a1.png",
-    headerImage: "attached_assets/generated_images/Dark_e-commerce_analytics_dashboard_70c46a18.png",
+    headerImage: "attached_assets/generated_images/Dark_olive_shipping_analytics_dashboard_8d8f44a1.png",
     profileImage: "attached_assets/generated_images/Professional_data_analyst_portrait_dffdd099.png",
     keyFindings: [
       "4.18% revenue increase with guarantee shown ($157.28 vs $150.98 average)",
