@@ -29,17 +29,17 @@ const AIChatbot = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Show popup message after 3 seconds on hero section
+  // Show popup message every 5 seconds when chat is closed
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!isOpen) {
+    if (!isOpen) {
+      const interval = setInterval(() => {
         setShowPopupMessage(true);
-        // Hide popup after 5 seconds
-        setTimeout(() => setShowPopupMessage(false), 5000);
-      }
-    }, 3000);
+        // Hide popup after 3 seconds
+        setTimeout(() => setShowPopupMessage(false), 3000);
+      }, 5000);
 
-    return () => clearTimeout(timer);
+      return () => clearInterval(interval);
+    }
   }, [isOpen]);
 
   const conversationStarters = [
@@ -255,10 +255,12 @@ const AIChatbot = () => {
             }}
           >
             <div 
-              className="glassmorphism px-4 py-3 rounded-2xl shadow-2xl border-2"
+              className="px-4 py-3 rounded-2xl shadow-2xl border-2"
               style={{ 
+                background: 'rgba(0, 0, 0, 0.9)',
                 borderColor: '#A5A584',
-                maxWidth: '200px'
+                maxWidth: '200px',
+                backdropFilter: 'blur(20px)'
               }}
             >
               <p className="text-white text-sm font-medium text-center">
@@ -290,20 +292,14 @@ const AIChatbot = () => {
               onClick={openChat}
               className="relative w-[70px] h-[70px] rounded-full shadow-2xl transition-all duration-300 hover:scale-105 group"
               style={{
-                background: 'linear-gradient(135deg, #2d2d2d 0%, #404040 50%, #1a1a1a 100%)',
+                background: 'linear-gradient(135deg, #A5A584 0%, #8A8B6B 50%, #6F7058 100%)',
                 border: '2px solid #A5A584'
               }}
               data-testid="chatbot-open-button"
             >
-              {/* Avatar with Sparkle */}
+              {/* Avatar */}
               <div className="relative flex items-center justify-center h-full">
                 <span className="text-2xl">👩🏽‍💻</span>
-                <span 
-                  className="absolute -top-1 -right-1 text-yellow-300 sparkle-animation"
-                  style={{ fontSize: '12px' }}
-                >
-                  ✨
-                </span>
               </div>
               
               {/* Online Status */}
