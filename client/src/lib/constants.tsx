@@ -233,8 +233,8 @@ export const PROJECTS = [
     gradient: "from-purple-500 to-blue-600",
     icon: "📊",
     isAdvancedCard: true,
-    image: "attached_assets/generated_images/Dark_tech_bike_analytics_dashboard_f691e25c.png",
-    projectImage: "attached_assets/generated_images/Dark_tech_bike_analytics_dashboard_f691e25c.png",
+    image: "attached_assets/generated_images/Dark_olive_shipping_analytics_dashboard_8d8f44a1.png",
+    projectImage: "attached_assets/generated_images/Dark_olive_shipping_analytics_dashboard_8d8f44a1.png",
     headerImage: "attached_assets/generated_images/Dark_e-commerce_analytics_dashboard_70c46a18.png",
     profileImage: "attached_assets/generated_images/Professional_data_analyst_portrait_dffdd099.png",
     keyFindings: [
