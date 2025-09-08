@@ -5,6 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 import { Mail, Download } from "lucide-react";
 import { SiLinkedin, SiGithub } from "react-icons/si";
 import { z } from "zod";
+import { useLanguage } from "@/hooks/useLanguage";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,17 +15,22 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
-const contactFormSchema = z.object({
-  email: z.string().email("Please enter a valid email address"),
-  subject: z.string().min(1, "Subject is required"),
-  message: z.string().min(10, "Message must be at least 10 characters long"),
-});
-
-type ContactFormData = z.infer<typeof contactFormSchema>;
+type ContactFormData = {
+  email: string;
+  subject: string;
+  message: string;
+};
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const contactFormSchema = z.object({
+    email: z.string().email(t('validation.emailInvalid')),
+    subject: z.string().min(1, t('validation.subjectRequired')),
+    message: z.string().min(10, t('validation.messageMinLength')),
+  });
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -40,16 +46,16 @@ const ContactSection = () => {
       apiRequest("POST", "/api/contact", data),
     onSuccess: () => {
       toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        title: t('contact.messageSentTitle'),
+        description: t('contact.messageSentDesc'),
       });
       form.reset();
       setIsSubmitting(false);
     },
     onError: (error) => {
       toast({
-        title: "Failed to send message",
-        description: "Please try again later or contact me directly via email.",
+        title: t('contact.messageFailedTitle'),
+        description: t('contact.messageFailedDesc'),
         variant: "destructive",
       });
       setIsSubmitting(false);
@@ -64,13 +70,13 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">Get in Touch</h2>
+        <h2 className="text-4xl font-bold text-center mb-16">{t('contact.getInTouch')}</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>
             <p className="text-xl text-muted-foreground mb-8">
-              Feel free to reach out for collaboration, questions, or just to connect!
+              {t('contact.reachOut')}
             </p>
             
             {/* Contact Information */}
@@ -98,7 +104,7 @@ const ContactSection = () => {
                 className="inline-flex items-center px-6 py-3 bg-card text-card-foreground rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 <Download className="w-5 h-5 mr-2" />
-                Download CV
+                {t('contact.downloadCV')}
               </a>
             </div>
             
@@ -106,7 +112,7 @@ const ContactSection = () => {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <div>
                 <Label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Your Email
+                  {t('contact.yourEmail')}
                 </Label>
                 <Input
                   id="email"
@@ -124,7 +130,7 @@ const ContactSection = () => {
               
               <div>
                 <Label htmlFor="subject" className="block text-sm font-medium mb-2">
-                  Subject
+                  {t('contact.subject')}
                 </Label>
                 <Input
                   id="subject"
@@ -142,7 +148,7 @@ const ContactSection = () => {
               
               <div>
                 <Label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Message
+                  {t('contact.message')}
                 </Label>
                 <Textarea
                   id="message"
@@ -164,7 +170,7 @@ const ContactSection = () => {
                 data-testid="button-submit-contact"
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
               >
-                {isSubmitting ? "Sending..." : "Let's Connect"}
+                {isSubmitting ? t('contact.sending') : t('contact.letsConnect')}
               </Button>
             </form>
           </div>

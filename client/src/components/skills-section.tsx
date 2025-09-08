@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { SKILLS_CATEGORIES } from "@/lib/constants";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("programming");
+  const { t } = useLanguage();
 
   const currentSkills = SKILLS_CATEGORIES.find(cat => cat.id === activeCategory)?.skills || [];
 
   return (
     <section id="skills" className="py-20 px-6 bg-secondary">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">Technical & Professional Skills</h2>
+        <h2 className="text-4xl font-bold text-center mb-16">{t('skills.technicalTitle')}</h2>
         
         {/* Filter Buttons */}
         <div className="flex justify-center mb-12">
@@ -72,7 +74,7 @@ const SkillsSection = () => {
                 {/* Proficiency Level Text - Only show if proficiency exists */}
                 {'proficiency' in skill && skill.proficiency && (
                   <p className="text-xs text-white text-center mt-2">
-                    {skill.proficiency === 5 ? 'Expert' : skill.proficiency === 4 ? 'Advanced' : 'Intermediate'}
+                    {skill.proficiency === 5 ? t('skills.expertLevel') : skill.proficiency === 4 ? t('skills.advancedLevel') : t('skills.intermediateLevel')}
                   </p>
                 )}
                 

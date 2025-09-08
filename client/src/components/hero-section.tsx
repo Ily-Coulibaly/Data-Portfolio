@@ -2,13 +2,15 @@ import { FileText, ChevronDown, MapPin, ArrowRight, FolderOpen } from "lucide-re
 import { SiLinkedin, SiGithub, SiTableau } from "react-icons/si";
 import { SOCIAL_LINKS } from "@/lib/constants";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const HeroTypingBanner = () => {
+  const { t } = useLanguage();
   const titles = [
-    "Data Analyst & AI Specialist",
-    "Business Analyst",
-    "Python & ML Engineer",
-    "Statistician"
+    t('hero.title1'),
+    t('hero.title2'),
+    t('hero.title3'),
+    t('hero.title4')
   ];
 
   const [currentText, setCurrentText] = useState("");
@@ -73,6 +75,8 @@ const HeroTypingBanner = () => {
 };
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="home" className="min-h-screen flex flex-col items-center justify-center px-6 pt-20">
       <div className="text-center max-w-4xl mx-auto">
@@ -93,7 +97,7 @@ const HeroSection = () => {
           <HeroTypingBanner />
         </div>
         <p className="text-base font-medium text-white mb-3" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
-          B.S. Mathematics | M.S. Business Analytics
+          {t('hero.education')}
         </p>
         <p className="text-sm font-medium text-primary mb-4 flex items-center justify-center" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           <a 
@@ -104,11 +108,11 @@ const HeroSection = () => {
             data-testid="location-link"
           >
             <MapPin className="w-3 h-3 mr-1" />
-            Boston, MA
+            {t('hero.location')}
           </a>
         </p>
         <p className="text-base text-primary leading-relaxed mb-10 max-w-3xl mx-auto" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
-          I am an <span className="font-semibold">expert</span> at turning data into actionable business insights using <span className="font-semibold">Python, R, SQL, and Machine Learning</span>. I have <span className="font-semibold">3 years of experience</span> across analytics, tech consulting, business analysis, data strategy, Actuarial Science, and entrepreneurship.
+          {t('hero.description')}
         </p>
         
         {/* Social Links */}
@@ -157,7 +161,7 @@ const HeroSection = () => {
           >
             <FileText className="w-6 h-6 text-[#A5A584]" />
             <span className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-card px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-sans">
-              View Full Resume (PDF Download)
+              {t('hero.resumeTooltip')}
             </span>
           </a>
         </div>
@@ -175,7 +179,7 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
               
               <FolderOpen className="w-4 h-4 group-hover:rotate-6 transition-transform duration-300" />
-              <span className="relative z-10">View My Projects</span>
+              <span className="relative z-10">{t('hero.viewProjects')}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
             
@@ -185,7 +189,7 @@ const HeroSection = () => {
               data-testid="contact-me-button"
               style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}
             >
-              Contact Me
+              {t('hero.contactMe')}
             </a>
           </div>
         </div>

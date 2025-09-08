@@ -73,7 +73,45 @@ const translations = {
     
     // Footer
     'footer.rights': 'All rights reserved.',
-    'footer.builtWith': 'Built with React, TypeScript, and Tailwind CSS'
+    'footer.builtWith': 'Built with React, TypeScript, and Tailwind CSS',
+    
+    // Hero Section Details
+    'hero.education': 'B.S. Mathematics | M.S. Business Analytics',
+    'hero.location': 'Boston, MA',
+    'hero.description': 'I am an expert at turning data into actionable business insights using Python, R, SQL, and Machine Learning. I have 3 years of experience across analytics, tech consulting, business analysis, data strategy, Actuarial Science, and entrepreneurship.',
+    'hero.experience': '3 years of experience',
+    'hero.viewProjects': 'View My Projects',
+    'hero.contactMe': 'Contact Me',
+    'hero.resumeTooltip': 'View Full Resume (PDF Download)',
+    
+    // Skills Section Details
+    'skills.technicalTitle': 'Technical & Professional Skills',
+    'skills.expertLevel': 'Expert',
+    'skills.advancedLevel': 'Advanced', 
+    'skills.intermediateLevel': 'Intermediate',
+    
+    // Contact Section Details
+    'contact.getInTouch': 'Get in Touch',
+    'contact.reachOut': 'Feel free to reach out for collaboration, questions, or just to connect!',
+    'contact.downloadCV': 'Download CV',
+    'contact.yourEmail': 'Your Email',
+    'contact.subject': 'Subject',
+    'contact.letsConnect': 'Let\'s Connect',
+    'contact.messageSentTitle': 'Message sent successfully!',
+    'contact.messageSentDesc': 'Thank you for reaching out. I\'ll get back to you soon.',
+    'contact.messageFailedTitle': 'Failed to send message',
+    'contact.messageFailedDesc': 'Please try again later or contact me directly via email.',
+    
+    // Validation Messages
+    'validation.emailInvalid': 'Please enter a valid email address',
+    'validation.subjectRequired': 'Subject is required',
+    'validation.messageMinLength': 'Message must be at least 10 characters long',
+    
+    // Hero Typing Titles
+    'hero.title1': 'Data Analyst & AI Specialist',
+    'hero.title2': 'Business Analyst',
+    'hero.title3': 'Python & ML Engineer',
+    'hero.title4': 'Statistician'
   },
   
   fr: {
@@ -140,7 +178,45 @@ const translations = {
     
     // Footer
     'footer.rights': 'Tous droits réservés.',
-    'footer.builtWith': 'Construit avec React, TypeScript et Tailwind CSS'
+    'footer.builtWith': 'Construit avec React, TypeScript et Tailwind CSS',
+    
+    // Hero Section Details
+    'hero.education': 'B.S. Mathématiques | M.S. Analytique d\'Affaires',
+    'hero.location': 'Boston, MA',
+    'hero.description': 'Je suis un expert dans la transformation de données en insights d\'affaires exploitables en utilisant Python, R, SQL et l\'apprentissage automatique. J\'ai 3 ans d\'expérience en analytique, consultation technologique, analyse d\'affaires, stratégie de données, science actuarielle et entrepreneuriat.',
+    'hero.experience': '3 ans d\'expérience',
+    'hero.viewProjects': 'Voir Mes Projets',
+    'hero.contactMe': 'Me Contacter',
+    'hero.resumeTooltip': 'Voir CV Complet (Téléchargement PDF)',
+    
+    // Skills Section Details
+    'skills.technicalTitle': 'Compétences Techniques et Professionnelles',
+    'skills.expertLevel': 'Expert',
+    'skills.advancedLevel': 'Avancé',
+    'skills.intermediateLevel': 'Intermédiaire',
+    
+    // Contact Section Details
+    'contact.getInTouch': 'Entrer en Contact',
+    'contact.reachOut': 'N\'hésitez pas à me contacter pour une collaboration, des questions, ou simplement pour échanger !',
+    'contact.downloadCV': 'Télécharger CV',
+    'contact.yourEmail': 'Votre Courriel',
+    'contact.subject': 'Sujet',
+    'contact.letsConnect': 'Connectons-nous',
+    'contact.messageSentTitle': 'Message envoyé avec succès !',
+    'contact.messageSentDesc': 'Merci de m\'avoir contacté. Je vous répondrai bientôt.',
+    'contact.messageFailedTitle': 'Échec de l\'envoi du message',
+    'contact.messageFailedDesc': 'Veuillez réessayer plus tard ou me contacter directement par courriel.',
+    
+    // Validation Messages
+    'validation.emailInvalid': 'Veuillez entrer une adresse courriel valide',
+    'validation.subjectRequired': 'Le sujet est requis',
+    'validation.messageMinLength': 'Le message doit contenir au moins 10 caractères',
+    
+    // Hero Typing Titles
+    'hero.title1': 'Analyste de Données et Spécialiste IA',
+    'hero.title2': 'Analyste d\'Affaires',
+    'hero.title3': 'Ingénieur Python et ML',
+    'hero.title4': 'Statisticien'
   }
 };
 
