@@ -193,7 +193,7 @@ export const PROJECTS = [
     isAdvancedCard: true,
     image: "attached_assets/generated_images/Futuristic_bike_share_data_visualization_57b575bb.png",
     projectImage: "attached_assets/generated_images/Futuristic_bike_share_data_visualization_57b575bb.png",
-    headerImage: "attached_assets/generated_images/Bike_share_analytics_dashboard_2ecfa25c.png",
+    headerImage: "attached_assets/generated_images/Modern_bike_share_city_scene_25080b8f.png",
     profileImage: "attached_assets/generated_images/Professional_data_analyst_portrait_dffdd099.png",
     keyFindings: [
       "Registered users dominate weekdays (193 avg rides), casual users peak on weekends",

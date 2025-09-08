@@ -236,7 +236,7 @@ const ProjectsSection = () => {
                         }}
                       >
                         <Play className="w-3 h-3" />
-                        View Tableau
+                        Read in Tableau
                       </a>
                     </div>
                   </div>
@@ -300,25 +300,11 @@ const ProjectsSection = () => {
               </button>
 
               <div className="p-8 overflow-y-auto max-h-[80vh]">
-                <div className="flex items-start gap-6 mb-8">
-                  <div 
-                    style={{
-                      width: '120px',
-                      height: '90px',
-                      borderRadius: '12px',
-                      background: `url(${selectedProject.projectImage})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      border: '2px solid #A5A584',
-                      flexShrink: 0
-                    }}
-                  />
-                  <div>
-                    <h2 className="text-3xl font-bold text-white mb-4">{selectedProject.title}</h2>
-                    <p className="text-gray-300 text-lg leading-relaxed">
-                      {selectedProject.description}
-                    </p>
-                  </div>
+                <div className="mb-8">
+                  <h2 className="text-3xl font-bold text-white mb-4">{selectedProject.title}</h2>
+                  <p className="text-gray-300 text-lg leading-relaxed">
+                    {selectedProject.description}
+                  </p>
                 </div>
 
                 {/* Key Findings */}
@@ -332,52 +318,6 @@ const ProjectsSection = () => {
                       <span style={{ color: '#d0d0d0' }}>{finding}</span>
                     </div>
                   ))}
-                </div>
-
-                {/* Stats Grid */}
-                <div 
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                    gap: '16px',
-                    marginBottom: '30px',
-                    padding: '20px',
-                    background: '#222',
-                    borderRadius: '12px'
-                  }}
-                >
-                  <div style={{ textAlign: 'center' }}>
-                    <span style={{ fontSize: '24px', fontWeight: 700, color: '#A5A584', display: 'block' }}>
-                      {selectedProject.stats.weekdayRides}
-                    </span>
-                    <span style={{ fontSize: '13px', color: '#a0a0a0', marginTop: '4px' }}>
-                      Avg Weekday Rides
-                    </span>
-                  </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <span style={{ fontSize: '24px', fontWeight: 700, color: '#A5A584', display: 'block' }}>
-                      {selectedProject.stats.weatherImpact}
-                    </span>
-                    <span style={{ fontSize: '13px', color: '#a0a0a0', marginTop: '4px' }}>
-                      Weather Impact
-                    </span>
-                  </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <span style={{ fontSize: '24px', fontWeight: 700, color: '#A5A584', display: 'block' }}>
-                      {selectedProject.stats.casualTempSensitivity}
-                    </span>
-                    <span style={{ fontSize: '13px', color: '#a0a0a0', marginTop: '4px' }}>
-                      Casual Temperature Sensitivity
-                    </span>
-                  </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <span style={{ fontSize: '24px', fontWeight: 700, color: '#A5A584', display: 'block' }}>
-                      {selectedProject.stats.registeredTempSensitivity}
-                    </span>
-                    <span style={{ fontSize: '13px', color: '#a0a0a0', marginTop: '4px' }}>
-                      Registered Temperature Sensitivity
-                    </span>
-                  </div>
                 </div>
 
                 {/* Research Questions */}
