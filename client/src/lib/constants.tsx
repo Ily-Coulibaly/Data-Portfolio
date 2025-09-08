@@ -265,6 +265,48 @@ export const PROJECTS = [
   },
   {
     id: 3,
+    title: "Olist E-Commerce Geospatial Analysis",
+    subtitle: "Brazilian Marketplace Performance Study",
+    description: "Comprehensive geospatial analysis of Olist's e-commerce performance across Brazil, examining regional disparities in order volume, payment preferences, and delivery performance to optimize operational efficiency and drive revenue growth.",
+    skills: ["tableau", "analytics", "business"],
+    tags: ["Geospatial Analysis", "Market Research", "Regional Performance", "E-commerce Strategy"],
+    link: "https://public.tableau.com/app/profile/ily.kynion.coulibaly",
+    tableauLink: "https://public.tableau.com/app/profile/ily.kynion.coulibaly",
+    gradient: "from-green-500 to-teal-600",
+    icon: "🗺️",
+    isAdvancedCard: true,
+    image: "attached_assets/generated_images/Brazilian_geospatial_e-commerce_dashboard_d46812ea.png",
+    projectImage: "attached_assets/generated_images/Brazilian_geospatial_e-commerce_dashboard_d46812ea.png",
+    headerImage: "attached_assets/generated_images/Brazilian_geospatial_e-commerce_dashboard_d46812ea.png",
+    profileImage: "attached_assets/generated_images/Professional_data_analyst_portrait_dffdd099.png",
+    keyFindings: [
+      "São Paulo dominates with 20,044 orders (20% of total) and $2.8M revenue, leading Brazil's e-commerce",
+      "Top 20 product categories account for 86.29% of all orders and 83.4% of total revenue ($13.3M)",
+      "Northern states (AC, RR, AP) show minimal performance with <100 orders each, revealing market gaps"
+    ],
+    stats: {
+      totalOrders: "88,853",
+      totalRevenue: "$13.3M",
+      topState: "São Paulo (20%)",
+      analysisYears: "2016-2018"
+    },
+    researchQuestions: [
+      "How do order volume, revenue, and seller distribution vary across Brazilian states and cities?",
+      "What payment preferences emerge across different regions and customer segments?",
+      "How does delivery performance impact customer satisfaction across geographical areas?"
+    ],
+    visualizationTypes: [
+      "Interactive geospatial heat maps showing regional order density and revenue distribution",
+      "State-by-state performance comparison dashboards with population density correlations",
+      "Payment preference analysis across Brazilian regions and customer segments"
+    ],
+    analysisApproach: "Comprehensive geospatial analysis using Olist's 100,000+ orders dataset from 2016-2018, focusing on regional performance patterns, payment behaviors, and delivery efficiency across Brazil's diverse marketplace landscape.",
+    businessImpact: "Identified strategic opportunities for market expansion in underperforming regions, revealed infrastructure-performance correlations, and provided actionable insights for optimizing seller distribution and customer acquisition strategies.",
+    conclusion: "Successfully mapped Brazil's e-commerce landscape revealing significant regional disparities, with southeastern states driving majority performance while northern regions present untapped growth opportunities requiring tailored market penetration strategies.",
+    hasReport: true
+  },
+  {
+    id: 4,
     title: "Sales Forecasting Model",
     description: "Time series analysis and ARIMA modeling to predict future sales trends with 95% accuracy, enabling proactive inventory management.",
     skills: ["python", "ml", "sql"],
@@ -274,7 +316,7 @@ export const PROJECTS = [
     icon: "📈"
   },
   {
-    id: 4,
+    id: 5,
     title: "Social Media Sentiment Analysis",
     description: "NLP pipeline using BERT transformers to analyze customer sentiment from social media data, providing real-time brand perception insights.",
     skills: ["python", "nlp", "ml"],
@@ -284,7 +326,7 @@ export const PROJECTS = [
     icon: "💬"
   },
   {
-    id: 5,
+    id: 6,
     title: "Interactive Financial Dashboard",
     description: "Comprehensive Tableau dashboard tracking KPIs, revenue trends, and profitability metrics with real-time data connections.",
     skills: ["tableau", "sql"],
@@ -294,7 +336,7 @@ export const PROJECTS = [
     icon: "💰"
   },
   {
-    id: 6,
+    id: 7,
     title: "Supply Chain Analytics",
     description: "End-to-end supply chain analysis identifying bottlenecks and optimization opportunities, resulting in 20% cost reduction.",
     skills: ["python", "sql", "tableau"],
@@ -304,7 +346,7 @@ export const PROJECTS = [
     icon: "🚛"
   },
   {
-    id: 7,
+    id: 8,
     title: "Product Recommendation Engine",
     description: "Collaborative filtering and matrix factorization techniques to build personalized product recommendations, improving engagement by 35%.",
     skills: ["python", "ml"],
