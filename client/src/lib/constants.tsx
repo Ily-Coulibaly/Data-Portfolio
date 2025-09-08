@@ -307,6 +307,48 @@ export const PROJECTS = [
   },
   {
     id: 4,
+    title: "Blue Bikes Peak Demand Analysis",
+    subtitle: "Boston Bike-Share Optimization Study",
+    description: "Comprehensive analysis of Blue Bikes demand patterns across user types, stations, and temporal dimensions to optimize station placements and bike availability for Boston's bike-sharing ecosystem.",
+    skills: ["tableau", "analytics", "business"],
+    tags: ["Urban Mobility", "Demand Forecasting", "Geospatial Analysis", "Station Optimization"],
+    link: "https://public.tableau.com/app/profile/ily.kynion.coulibaly",
+    tableauLink: "https://public.tableau.com/app/profile/ily.kynion.coulibaly",
+    gradient: "from-blue-500 to-cyan-600",
+    icon: "🚲",
+    isAdvancedCard: true,
+    image: "attached_assets/generated_images/Boston_bike-sharing_analytics_dashboard_68ff43d0.png",
+    projectImage: "attached_assets/generated_images/Boston_bike-sharing_analytics_dashboard_68ff43d0.png",
+    headerImage: "attached_assets/generated_images/Boston_bike-sharing_analytics_dashboard_68ff43d0.png",
+    profileImage: "attached_assets/generated_images/Professional_data_analyst_portrait_dffdd099.png",
+    keyFindings: [
+      "196,917 total rides analyzed across Boston's ~200 bike stations with clear seasonal patterns",
+      "Subscriber usage dominates with distinct peak patterns differing from casual users",
+      "Central Boston stations show highest demand with MIT area and downtown leading start/end locations"
+    ],
+    stats: {
+      totalRides: "196,917",
+      stationCount: "~200",
+      peakSeason: "Summer/Fall",
+      userTypes: "Subscribers & Casual"
+    },
+    researchQuestions: [
+      "What are the peak demand patterns across different user types, stations, and temporal dimensions?",
+      "How can geospatial analysis inform optimal station placement strategies?",
+      "What seasonal and daily usage trends can guide bike availability optimization?"
+    ],
+    visualizationTypes: [
+      "Interactive geospatial maps showing station-level demand distribution and ridership hotspots",
+      "Time series analysis of daily, monthly, and seasonal usage patterns",
+      "Comparative analysis of subscriber vs casual user behavior patterns across Boston"
+    ],
+    analysisApproach: "Interactive Tableau dashboard combining geospatial mapping, temporal analysis, and user segmentation to identify demand patterns and optimization opportunities for Boston's bike-sharing infrastructure.",
+    businessImpact: "Provided actionable insights for station placement optimization, fleet distribution strategies, and demand forecasting to enhance operational efficiency and user satisfaction across Boston's bike-sharing network.",
+    conclusion: "Successfully identified key demand drivers and spatial patterns enabling data-driven decisions for station optimization, revealing critical insights for improving bike availability and meeting diverse user needs across Boston.",
+    hasReport: true
+  },
+  {
+    id: 5,
     title: "Sales Forecasting Model",
     description: "Time series analysis and ARIMA modeling to predict future sales trends with 95% accuracy, enabling proactive inventory management.",
     skills: ["python", "ml", "sql"],
@@ -316,7 +358,7 @@ export const PROJECTS = [
     icon: "📈"
   },
   {
-    id: 5,
+    id: 6,
     title: "Social Media Sentiment Analysis",
     description: "NLP pipeline using BERT transformers to analyze customer sentiment from social media data, providing real-time brand perception insights.",
     skills: ["python", "nlp", "ml"],
@@ -326,7 +368,7 @@ export const PROJECTS = [
     icon: "💬"
   },
   {
-    id: 6,
+    id: 7,
     title: "Interactive Financial Dashboard",
     description: "Comprehensive Tableau dashboard tracking KPIs, revenue trends, and profitability metrics with real-time data connections.",
     skills: ["tableau", "sql"],
@@ -336,7 +378,7 @@ export const PROJECTS = [
     icon: "💰"
   },
   {
-    id: 7,
+    id: 8,
     title: "Supply Chain Analytics",
     description: "End-to-end supply chain analysis identifying bottlenecks and optimization opportunities, resulting in 20% cost reduction.",
     skills: ["python", "sql", "tableau"],
@@ -346,7 +388,7 @@ export const PROJECTS = [
     icon: "🚛"
   },
   {
-    id: 8,
+    id: 9,
     title: "Product Recommendation Engine",
     description: "Collaborative filtering and matrix factorization techniques to build personalized product recommendations, improving engagement by 35%.",
     skills: ["python", "ml"],
