@@ -47,6 +47,24 @@ body {
   --ring: hsl(0, 0%, 45%);
 }
 
+.light {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 9%);
+  --card: hsl(0, 0%, 98%);
+  --card-foreground: hsl(0, 0%, 9%);
+  --primary: hsl(0, 0%, 20%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(0, 0%, 96%);
+  --secondary-foreground: hsl(0, 0%, 9%);
+  --muted: hsl(0, 0%, 96%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --accent: hsl(0, 0%, 96%);
+  --accent-foreground: hsl(0, 0%, 9%);
+  --border: hsl(0, 0%, 89%);
+  --input: hsl(0, 0%, 89%);
+  --ring: hsl(0, 0%, 20%);
+}
+
 @layer base {
   * {
     @apply border-border;

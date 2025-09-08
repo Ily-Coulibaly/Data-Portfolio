@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/hooks/useLanguage";
+import ThemeToggle from "./theme-toggle";
+import LanguageToggle from "./language-toggle";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,13 +52,13 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { href: "#home", label: "Home" },
-    { href: "#skills", label: "Skills" },
-    { href: "#projects", label: "Projects" },
-    { href: "#certificates", label: "Certificates" },
-    { href: "#articles", label: "Articles" },
+    { href: "#home", label: t('nav.home') },
+    { href: "#skills", label: t('nav.skills') },
+    { href: "#projects", label: t('nav.projects') },
+    { href: "#certificates", label: t('nav.certificates') },
+    { href: "#articles", label: t('nav.articles') },
     { href: "#kyn", label: "KYN" },
-    { href: "#contact", label: "Contact" },
+    { href: "#contact", label: t('nav.contact') },
   ];
 
   return (
@@ -62,21 +66,30 @@ const Navigation = () => {
       isScrolled ? 'backdrop-blur-md' : ''
     }`}>
       <div className="max-w-6xl mx-auto px-6 py-4">
-        <div className="flex justify-center space-x-8">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              data-testid={`nav-link-${item.label.toLowerCase()}`}
-              className={`transition-all duration-300 ${
-                activeSection === item.href.substring(1)
-                  ? 'text-[#A5A584] font-semibold glow-text'
-                  : 'text-foreground hover:text-primary'
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
+        <div className="flex justify-between items-center">
+          {/* Navigation Links */}
+          <div className="flex justify-center space-x-8 flex-1">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                data-testid={`nav-link-${item.label.toLowerCase()}`}
+                className={`transition-all duration-300 ${
+                  activeSection === item.href.substring(1)
+                    ? 'text-[#A5A584] font-semibold glow-text'
+                    : 'text-foreground hover:text-primary'
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+          
+          {/* Theme and Language Toggles */}
+          <div className="flex items-center space-x-3">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </nav>
