@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Portfolio Project Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0f0f0f;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #e0e0e0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 16px;
+            max-width: 450px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+        }
+
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00ff87, #0099ff, #8b5cf6, #ff6b35);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .portfolio-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            padding: 24px;
+            position: relative;
+        }
+
+        .category-badge {
+            background: linear-gradient(135deg, #00ff87, #0099ff);
+            color: #000;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .profile-pic {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .project-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            line-height: 1.3;
+            padding-right: 80px;
+        }
+
+        .project-subtitle {
+            color: #a0a0a0;
+            font-size: 14px;
+            line-height: 1.4;
+            padding-right: 80px;
+        }
+
+        .card-content {
+            padding: 0 24px 24px;
+        }
+
+        .project-description {
+            color: #d0d0d0;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .key-findings {
+            margin-bottom: 20px;
+        }
+
+        .key-findings h4 {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .finding-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .finding-bullet {
+            color: #00ff87;
+            margin-right: 8px;
+            margin-top: 2px;
+            font-weight: bold;
+        }
+
+        .skills-container {
+            margin-bottom: 24px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #2a2a2a;
+            color: #e0e0e0;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid #404040;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: #333;
+            box-shadow: 0 0 12px rgba(0, 255, 135, 0.2);
+            border-color: #00ff87;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00ff87, #0099ff);
+            color: #000;
+        }
+
+        .btn-secondary {
+            background: #2a2a2a;
+            color: #e0e0e0;
+            border: 1px solid #404040;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .expandable-content.expanded {
+            max-height: 1000px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: #222;
+            border-radius: 8px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #00ff87;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #a0a0a0;
+            margin-top: 4px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-content {
+            color: #d0d0d0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .list-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #00ff87;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+            padding: 12px;
+        }
+
+        .toggle-btn:hover {
+            color: #ffffff;
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .arrow.rotated {
+            transform: rotate(180deg);
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-card {
+                max-width: 100%;
+                margin: 0 10px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio-card" id="portfolioCard">
+        <div class="card-header">
+            <div class="category-badge">Tableau Analytics</div>
+            <div class="profile-pic">IC</div>
+            <h3 class="project-title">Bike Share User Behavior Analysis</h3>
+            <p class="project-subtitle">Comprehensive analysis of two years of hourly bike share usage data</p>
+        </div>
+
+        <div class="card-content">
+            <div class="project-description">
+                This report analyzes two years of hourly bike share usage data, revealing actionable insights into customer behavior patterns between casual and registered users across weather conditions and seasonal variations.
+            </div>
+
+            <div class="key-findings">
+                <h4>Key Findings</h4>
+                <div class="finding-item">
+                    <span class="finding-bullet">•</span>
+                    <span>Registered users dominate weekdays (193 avg rides), casual users peak on weekends</span>
+                </div>
+                <div class="finding-item">
+                    <span class="finding-bullet">•</span>
+                    <span>Temperature increases drive 6.2x more casual rides per degree vs 2.5x for registered</span>
+                </div>
+                <div class="finding-item">
+                    <span class="finding-bullet">•</span>
+                    <span>Weather significantly impacts usage: clear/cloudy conditions outperform rainy/snowy by 40%</span>
+                </div>
+            </div>
+
+            <div class="skills-container">
+                <div class="skill-tags">
+                    <span class="skill-tag">EDA</span>
+                    <span class="skill-tag">Business Intelligence</span>
+                    <span class="skill-tag">Trend Analysis</span>
+                    <span class="skill-tag">Business Recommendations</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="window.open('#', '_blank')">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14,2 14,8 20,8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10,9 9,9 8,9"></polyline>
+                    </svg>
+                    View in Tableau
+                </button>
+                <button class="btn btn-secondary" id="readMoreBtn" onclick="toggleExpand()">
+                    <span id="readMoreText">Read More</span>
+                    <svg class="icon arrow" id="readMoreArrow" viewBox="0 0 24 24">
+                        <polyline points="6,9 12,15 18,9"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="expandable-content" id="expandableContent">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value">193</span>
+                        <span class="stat-label">Avg Weekday Rides</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">40%</span>
+                        <span class="stat-label">Weather Impact</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">6.2x</span>
+                        <span class="stat-label">Casual Temperature Sensitivity</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">2.5x</span>
+                        <span class="stat-label">Registered Temperature Sensitivity</span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h4 class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+                        </svg>
+                        Research Questions
+                    </h4>
+                    <div class="section-content">
+                        <div class="list-item">How do bike rental patterns vary among casual and registered users on weekdays, weekends, and holidays?</div>
+                        <div class="list-item">How does the average yearly number of bike rentals differ across various weather conditions over time?</div>
+                        <div class="list-item">How are biking patterns related to temperature variations and what strategies can increase rentals?</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h4 class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                        Visualization Types
+                    </h4>
+                    <div class="section-content">
+                        <div class="list-item">Stacked bar charts for user type comparison across time periods</div>
+                        <div class="list-item">Line charts for trend analysis across weather conditions and temperature</div>
+                        <div class="list-item">Interactive dashboards combining multiple data dimensions</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h4 class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M9 11H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h4m6-6h4a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-4m-6 0a2 2 0 0 0-2-2v-3a2 2 0 0 0 2-2m6 0a2 2 0 0 1 2-2v-3a2 2 0 0 1-2-2"></path>
+                        </svg>
+                        Analysis Approach
+                    </h4>
+                    <div class="section-content">
+                        Systematic exploration of user behavior patterns through statistical analysis, trend identification, and predictive modeling to extract actionable business insights from bike share operational data.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h4 class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"></polyline>
+                        </svg>
+                        Business Impact
+                    </h4>
+                    <div class="section-content">
+                        Provided strategic recommendations for loyalty programs, weather-based pricing strategies, and fleet optimization that could increase ridership by 25% and improve operational efficiency across different user segments.
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h4 class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                        </svg>
+                        Conclusion
+                    </h4>
+                    <div class="section-content">
+                        This comprehensive analysis successfully identified distinct usage patterns between user types, established weather and temperature correlations, and delivered actionable recommendations for business growth and user engagement optimization.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isExpanded = false;
+
+        function toggleExpand() {
+            const expandableContent = document.getElementById('expandableContent');
+            const readMoreText = document.getElementById('readMoreText');
+            const readMoreArrow = document.getElementById('readMoreArrow');
+
+            isExpanded = !isExpanded;
+
+            if (isExpanded) {
+                expandableContent.classList.add('expanded');
+                readMoreText.textContent = 'Read Less';
+                readMoreArrow.classList.add('rotated');
+            } else {
+                expandableContent.classList.remove('expanded');
+                readMoreText.textContent = 'Read More';
+                readMoreArrow.classList.remove('rotated');
+            }
+        }
+
+        // Add subtle hover effects to the card
+        const card = document.getElementById('portfolioCard');
+        
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px)';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+
+        // Add shimmer effect to buttons on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.querySelector('::before')?.animate?.([
+                        { left: '-100%' },
+                        { left: '100%' }
+                    ], {
+                        duration: 500,
+                        easing: 'ease-out'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
