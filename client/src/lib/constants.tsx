@@ -187,7 +187,7 @@ export const PROJECTS = [
     skills: ["tableau", "analytics", "business"],
     tags: ["EDA", "Business Intelligence", "Trend Analysis", "Business Recommendations"],
     link: "https://public.tableau.com/app/profile/ily.coulibaly/vizzes",
-    tableauLink: "https://public.tableau.com/app/profile/ily.coulibaly/vizzes",
+    tableauLink: "https://public.tableau.com/app/profile/ily.kynion.coulibaly/viz/BikeShare_Case-Ily_Coulibaly/Vizualization3",
     gradient: "from-blue-500 to-purple-600",
     icon: "🚴",
     isAdvancedCard: true,

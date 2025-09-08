@@ -105,23 +105,6 @@ const ProjectsSection = () => {
                       overflow: 'hidden'
                     }}
                   >
-                    {/* Project Analysis Image - Top Right Corner */}
-                    <div 
-                      style={{
-                        position: 'absolute',
-                        top: '12px',
-                        right: '12px',
-                        width: '100px',
-                        height: '65px',
-                        borderRadius: '8px',
-                        background: `url(${project.projectImage})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        border: '2px solid rgba(255, 255, 255, 0.9)',
-                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)'
-                      }}
-                    />
-                    
                     {/* Subtle overlay for better contrast */}
                     <div 
                       style={{
@@ -171,7 +154,7 @@ const ProjectsSection = () => {
                         marginBottom: '18px'
                       }}
                     >
-                      Comprehensive analysis revealing actionable insights into customer behavior patterns across weather conditions and seasonal variations.
+                      Comprehensive data analysis of two years of hourly bike share usage patterns, delivering actionable business insights into customer behavior segmentation, seasonal demand forecasting, and weather impact analytics to optimize operational efficiency and drive strategic decision-making.
                     </div>
 
                     {/* Skill Tags - Minimalistic */}
