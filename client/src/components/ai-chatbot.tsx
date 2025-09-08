@@ -168,7 +168,20 @@ const AIChatbot = () => {
     let arrowPosition = 'right';
     let arrowTop = '50%';
 
-    // Horizontal positioning
+    // Define content collision zones (areas to avoid)
+    const heroSectionHeight = 600; // approximate hero section height
+    const contentCenterX = windowWidth / 2;
+    const contentCenterY = heroSectionHeight / 2;
+    const contentZoneWidth = 600; // width of main content area
+    const contentZoneHeight = 400; // height of main content area
+    
+    // Content zone boundaries
+    const contentLeft = contentCenterX - contentZoneWidth / 2;
+    const contentRight = contentCenterX + contentZoneWidth / 2;
+    const contentTop = contentCenterY - contentZoneHeight / 2;
+    const contentBottom = contentCenterY + contentZoneHeight / 2;
+
+    // Horizontal positioning with collision avoidance
     if (position.x > windowWidth / 2) {
       // Bubble on right side - message to the left
       messageX = position.x - messageWidth - offset;
@@ -179,18 +192,50 @@ const AIChatbot = () => {
       arrowPosition = 'left';
     }
 
-    // Vertical positioning
-    if (position.y < windowHeight / 2) {
-      // Bubble at top - message below or aligned
-      messageY = position.y;
+    // Vertical positioning with content avoidance
+    const proposedMessageBottom = position.y + messageHeight;
+    const proposedMessageTop = position.y;
+    
+    // Check if message would overlap with content area
+    const messageLeft = messageX;
+    const messageRight = messageX + messageWidth;
+    
+    // If message overlaps horizontally with content area and vertically with hero section
+    const overlapsHorizontally = messageRight > contentLeft && messageLeft < contentRight;
+    const overlapsVertically = proposedMessageBottom > contentTop && proposedMessageTop < contentBottom;
+    
+    if (overlapsHorizontally && overlapsVertically && position.y < heroSectionHeight) {
+      // Force message outside content area
+      if (position.y < contentCenterY) {
+        // If bubble is in upper part of hero, place message below content area
+        messageY = Math.max(contentBottom + 20, position.y);
+      } else {
+        // If bubble is in lower part of hero, place message above content area
+        messageY = Math.min(contentTop - messageHeight - 20, position.y + bubbleSize - messageHeight);
+      }
     } else {
-      // Bubble at bottom - message above or aligned
-      messageY = position.y + bubbleSize - messageHeight;
+      // Normal vertical positioning
+      if (position.y < windowHeight / 2) {
+        // Bubble at top - message below or aligned
+        messageY = position.y;
+      } else {
+        // Bubble at bottom - message above or aligned
+        messageY = position.y + bubbleSize - messageHeight;
+      }
     }
 
     // Ensure message stays within screen bounds
     messageX = Math.max(10, Math.min(messageX, windowWidth - messageWidth - 10));
     messageY = Math.max(10, Math.min(messageY, windowHeight - messageHeight - 10));
+
+    // Additional check: if still overlapping, move to edge of screen
+    if (overlapsHorizontally && messageY > contentTop && messageY < contentBottom && position.y < heroSectionHeight) {
+      if (messageX < contentCenterX) {
+        messageX = Math.max(10, contentLeft - messageWidth - 20);
+      } else {
+        messageX = Math.min(windowWidth - messageWidth - 10, contentRight + 20);
+      }
+    }
 
     return { messageX, messageY, arrowPosition, arrowTop };
   };
