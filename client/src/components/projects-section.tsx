@@ -236,7 +236,7 @@ const ProjectsSection = () => {
                         }}
                       >
                         <Play className="w-3 h-3" />
-                        Read in Tableau
+                        View in Tableau
                       </a>
                     </div>
                   </div>
