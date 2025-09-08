@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { X, Send } from 'lucide-react';
+import { X, Send, Move } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -8,12 +8,17 @@ interface Message {
   timestamp: Date;
 }
 
+type CornerPosition = 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
+
 const AIChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [showNewBadge, setShowNewBadge] = useState(true);
+  const [showPopupMessage, setShowPopupMessage] = useState(false);
+  const [position, setPosition] = useState<CornerPosition>('bottom-right');
+  const [isDragging, setIsDragging] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -23,6 +28,19 @@ const AIChatbot = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Show popup message after 3 seconds on hero section
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!isOpen) {
+        setShowPopupMessage(true);
+        // Hide popup after 5 seconds
+        setTimeout(() => setShowPopupMessage(false), 5000);
+      }
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [isOpen]);
 
   const conversationStarters = [
     "Tell me about her experience",
@@ -34,6 +52,29 @@ const AIChatbot = () => {
   const openChat = () => {
     setIsOpen(true);
     setShowNewBadge(false);
+    setShowPopupMessage(false);
+  };
+
+  const getPositionStyles = (pos: CornerPosition) => {
+    switch (pos) {
+      case 'bottom-right':
+        return { bottom: '20px', right: '20px' };
+      case 'bottom-left':
+        return { bottom: '20px', left: '20px' };
+      case 'top-right':
+        return { top: '20px', right: '20px' };
+      case 'top-left':
+        return { top: '20px', left: '20px' };
+      default:
+        return { bottom: '20px', right: '20px' };
+    }
+  };
+
+  const cyclePosition = () => {
+    const positions: CornerPosition[] = ['bottom-right', 'bottom-left', 'top-left', 'top-right'];
+    const currentIndex = positions.indexOf(position);
+    const nextIndex = (currentIndex + 1) % positions.length;
+    setPosition(positions[nextIndex]);
   };
 
   const sendMessage = async (text: string) => {
@@ -127,6 +168,17 @@ const AIChatbot = () => {
           from { transform: translateY(100%) scale(0.95); opacity: 0; }
           to { transform: translateY(0) scale(1); opacity: 1; }
         }
+
+        @keyframes bounce-in {
+          0% { transform: scale(0.7) translateY(10px); opacity: 0; }
+          50% { transform: scale(1.1) translateY(-5px); opacity: 0.9; }
+          100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        @keyframes gentle-bounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-3px); }
+        }
         
         .sparkle-animation {
           animation: sparkle 2s infinite;
@@ -139,13 +191,21 @@ const AIChatbot = () => {
           left: -8px;
           right: -8px;
           bottom: -8px;
-          border: 2px solid #404040;
+          border: 2px solid #A5A584;
           border-radius: 50%;
           animation: pulse-ring 2s infinite;
         }
         
         .chat-slide-up {
           animation: slide-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .popup-bounce-in {
+          animation: bounce-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .gentle-bounce {
+          animation: gentle-bounce 2s infinite ease-in-out;
         }
         
         .glassmorphism {
@@ -171,13 +231,55 @@ const AIChatbot = () => {
         .aria-scrollbar::-webkit-scrollbar-thumb:hover {
           background: #555;
         }
+
+        .position-transition {
+          transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
       `}</style>
 
       {/* Floating ARIA Bubble */}
       <div 
-        className="fixed z-50"
-        style={{ bottom: '20px', right: '20px' }}
+        className="fixed z-50 position-transition"
+        style={getPositionStyles(position)}
       >
+        {/* Popup Message */}
+        {showPopupMessage && !isOpen && (
+          <div 
+            className="absolute mb-4 popup-bounce-in gentle-bounce"
+            style={{
+              bottom: position.includes('bottom') ? '85px' : 'auto',
+              top: position.includes('top') ? '85px' : 'auto',
+              right: position.includes('right') ? '0' : 'auto',
+              left: position.includes('right') ? '50%' : position.includes('left') ? '0' : '50%',
+              transform: position.includes('left') ? 'translateX(0)' : 'translateX(-50%)'
+            }}
+          >
+            <div 
+              className="glassmorphism px-4 py-3 rounded-2xl shadow-2xl border-2"
+              style={{ 
+                borderColor: '#A5A584',
+                maxWidth: '200px'
+              }}
+            >
+              <p className="text-white text-sm font-medium text-center">
+                💬 Learn more about me!
+              </p>
+              {/* Speech bubble arrow */}
+              <div 
+                className="absolute w-0 h-0"
+                style={{
+                  [position.includes('bottom') ? 'top' : 'bottom']: '100%',
+                  [position.includes('right') ? 'right' : 'left']: position.includes('left') || position.includes('right') ? '20px' : '50%',
+                  transform: position.includes('left') || position.includes('right') ? 'none' : 'translateX(-50%)',
+                  borderLeft: '8px solid transparent',
+                  borderRight: '8px solid transparent',
+                  [position.includes('bottom') ? 'borderBottom' : 'borderTop']: '8px solid #A5A584'
+                }}
+              />
+            </div>
+          </div>
+        )}
+
         {!isOpen && (
           <div className="relative">
             {/* Pulsing Ring */}
@@ -186,11 +288,12 @@ const AIChatbot = () => {
             {/* Main Bubble */}
             <button
               onClick={openChat}
-              className="relative w-[70px] h-[70px] rounded-full shadow-2xl transition-all duration-300 hover:scale-105"
+              className="relative w-[70px] h-[70px] rounded-full shadow-2xl transition-all duration-300 hover:scale-105 group"
               style={{
                 background: 'linear-gradient(135deg, #2d2d2d 0%, #404040 50%, #1a1a1a 100%)',
-                border: '2px solid #404040'
+                border: '2px solid #A5A584'
               }}
+              data-testid="chatbot-open-button"
             >
               {/* Avatar with Sparkle */}
               <div className="relative flex items-center justify-center h-full">
@@ -207,6 +310,19 @@ const AIChatbot = () => {
               <div className="absolute bottom-1 right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-black">
                 <div className="w-full h-full bg-green-400 rounded-full animate-pulse"></div>
               </div>
+            </button>
+
+            {/* Move Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                cyclePosition();
+              }}
+              className="absolute -top-2 -left-2 w-8 h-8 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 border border-gray-600"
+              title="Move to corner"
+              data-testid="chatbot-move-button"
+            >
+              <Move className="w-4 h-4 text-gray-300" />
             </button>
           </div>
         )}
@@ -227,6 +343,7 @@ const AIChatbot = () => {
                 borderRadius: '16px 16px 0 0'
               })
             }}
+            data-testid="chatbot-interface"
           >
             {/* Header */}
             <div 
@@ -249,13 +366,14 @@ const AIChatbot = () => {
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-gray-400 hover:text-white transition-colors p-2"
+                data-testid="chatbot-close-button"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* Messages */}
-            <div className="flex-1 p-4 overflow-y-auto space-y-4 aria-scrollbar">
+            <div className="flex-1 p-4 overflow-y-auto space-y-4 aria-scrollbar" data-testid="chatbot-messages">
               {messages.length === 0 && (
                 <div className="space-y-4">
                   <div className="text-gray-300 text-sm">
@@ -271,6 +389,7 @@ const AIChatbot = () => {
                         key={index}
                         onClick={() => handleStarterClick(starter)}
                         className="block w-full text-left p-3 text-sm bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-white border border-gray-600"
+                        data-testid={`conversation-starter-${index}`}
                       >
                         {starter}
                       </button>
@@ -328,11 +447,13 @@ const AIChatbot = () => {
                   onKeyPress={handleKeyPress}
                   placeholder="Ask about Ily's background..."
                   className="flex-1 p-3 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-500 text-white text-sm placeholder-gray-400"
+                  data-testid="chatbot-input"
                 />
                 <button
                   onClick={() => sendMessage(inputText)}
                   disabled={!inputText.trim()}
                   className="p-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+                  data-testid="chatbot-send-button"
                 >
                   <Send className="w-4 h-4" />
                 </button>

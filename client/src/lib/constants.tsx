@@ -1,5 +1,5 @@
 import { SiPython, SiR, SiTableau, SiJupyter } from "react-icons/si";
-import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, DatabaseZap, Users2, Cog, LayoutDashboard, Zap, Bot, MessageCircle, Network, TreePine, CheckCircle, FileSearch, MessageSquareCode, BarChart2, GitBranch, Activity, Layers, Presentation, Handshake, BarChart4, Workflow, Monitor, Settings, Users3, Handshake as CollaborationIcon } from "lucide-react";
+import { Brain, BarChart3, Users, MessageSquare, Target, TrendingUp, LineChart, PieChart, Lightbulb, Briefcase, BrainCircuit, FlaskConical, DatabaseZap, Users2, Cog, LayoutDashboard, Zap, Bot, MessageCircle, Network, TreePine, CheckCircle, FileSearch, MessageSquareCode, BarChart2, GitBranch, Activity, Layers, Presentation, Handshake, BarChart4, Workflow, Monitor, Settings } from "lucide-react";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/ily-kynion-coulibaly-05602a189/",
