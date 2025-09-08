@@ -28,7 +28,7 @@ const SkillsSection = () => {
                 }`}
                 data-testid={`filter-${category.id}`}
               >
-                {category.label}
+                {t(`skills.${category.id}`)}
               </button>
             ))}
           </div>
