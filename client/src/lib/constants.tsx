@@ -182,7 +182,7 @@ export const PROJECTS = [
   {
     id: 1,
     title: "Bike Share User Behavior Analysis",
-    subtitle: "Advanced analytics driving strategic business decisions",
+    subtitle: "",
     description: "This report analyzes two years of hourly bike share usage data, revealing actionable insights into customer behavior patterns between casual and registered users across weather conditions and seasonal variations.",
     skills: ["tableau", "analytics", "business"],
     tags: ["EDA", "Business Intelligence", "Trend Analysis", "Business Recommendations"],

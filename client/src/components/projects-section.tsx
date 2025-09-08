@@ -105,23 +105,6 @@ const ProjectsSection = () => {
                       overflow: 'hidden'
                     }}
                   >
-                    {/* Professional Profile Picture */}
-                    <div 
-                      style={{
-                        position: 'absolute',
-                        top: '15px',
-                        right: '15px',
-                        width: '70px',
-                        height: '70px',
-                        borderRadius: '50%',
-                        background: `url(${project.profileImage})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        border: '3px solid rgba(255, 255, 255, 0.9)',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)'
-                      }}
-                    />
-
                     {/* Subtle overlay for better contrast */}
                     <div 
                       style={{
@@ -171,7 +154,7 @@ const ProjectsSection = () => {
                         marginBottom: '18px'
                       }}
                     >
-                      Comprehensive data analysis of two years of hourly bike share usage patterns, delivering actionable business insights into customer behavior segmentation, seasonal demand forecasting, and weather impact analytics to optimize operational efficiency and drive strategic decision-making.
+                      Data analysis of two years of hourly bike share usage patterns, delivering actionable business insights into customer behavior segmentation, seasonal demand forecasting, and weather impact analytics to optimize operational efficiency and drive strategic decision-making.
                     </div>
 
                     {/* Skill Tags - Minimalistic */}
