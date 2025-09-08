@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { X, Send, Move } from 'lucide-react';
 
 interface Message {
@@ -8,7 +8,10 @@ interface Message {
   timestamp: Date;
 }
 
-type CornerPosition = 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
+interface Position {
+  x: number;
+  y: number;
+}
 
 const AIChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,8 +20,12 @@ const AIChatbot = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [showNewBadge, setShowNewBadge] = useState(true);
   const [showPopupMessage, setShowPopupMessage] = useState(false);
-  const [position, setPosition] = useState<CornerPosition>('bottom-right');
+  const [position, setPosition] = useState<Position>({ x: window.innerWidth - 90, y: window.innerHeight - 90 });
   const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState<Position>({ x: 0, y: 0 });
+  const [animationCycle, setAnimationCycle] = useState(0);
+  const [animationStopped, setAnimationStopped] = useState(false);
+  const bubbleRef = useRef<HTMLDivElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -29,18 +36,164 @@ const AIChatbot = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Show popup message every 5 seconds when chat is closed
+  // Animation timing: 4s wait → 15s show → 4s hide → 15s show → stop
   useEffect(() => {
-    if (!isOpen) {
-      const interval = setInterval(() => {
-        setShowPopupMessage(true);
-        // Hide popup after 3 seconds
-        setTimeout(() => setShowPopupMessage(false), 3000);
-      }, 5000);
-
-      return () => clearInterval(interval);
+    if (!animationStopped && !isOpen && animationCycle < 2) {
+      if (animationCycle === 0) {
+        // Initial 4-second delay
+        const initialTimer = setTimeout(() => {
+          setShowPopupMessage(true);
+          setAnimationCycle(1);
+          
+          // Hide after 15 seconds
+          setTimeout(() => {
+            setShowPopupMessage(false);
+            
+            // Wait 4 seconds, then show again for 15 seconds
+            setTimeout(() => {
+              setShowPopupMessage(true);
+              setAnimationCycle(2);
+              
+              // Final hide after 15 seconds
+              setTimeout(() => {
+                setShowPopupMessage(false);
+              }, 15000);
+            }, 4000);
+          }, 15000);
+        }, 4000);
+        
+        return () => clearTimeout(initialTimer);
+      }
     }
-  }, [isOpen]);
+  }, [animationCycle, animationStopped, isOpen]);
+
+  const snapToEdge = useCallback((x: number, y: number) => {
+    const snapThreshold = 30;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const bubbleSize = 70;
+    
+    let newX = x;
+    let newY = y;
+    
+    // Snap to edges
+    if (x < snapThreshold) newX = 20;
+    if (x > windowWidth - bubbleSize - snapThreshold) newX = windowWidth - bubbleSize - 20;
+    if (y < snapThreshold) newY = 20;
+    if (y > windowHeight - bubbleSize - snapThreshold) newY = windowHeight - bubbleSize - 20;
+    
+    return { x: newX, y: newY };
+  }, []);
+
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    if (!bubbleRef.current) return;
+    
+    setIsDragging(true);
+    const rect = bubbleRef.current.getBoundingClientRect();
+    setDragOffset({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    });
+    e.preventDefault();
+  }, []);
+
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    if (!isDragging) return;
+    
+    const newX = e.clientX - dragOffset.x;
+    const newY = e.clientY - dragOffset.y;
+    const snappedPosition = snapToEdge(newX, newY);
+    setPosition(snappedPosition);
+  }, [isDragging, dragOffset, snapToEdge]);
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  // Touch events for mobile
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    if (!bubbleRef.current) return;
+    
+    setIsDragging(true);
+    const rect = bubbleRef.current.getBoundingClientRect();
+    const touch = e.touches[0];
+    setDragOffset({
+      x: touch.clientX - rect.left,
+      y: touch.clientY - rect.top
+    });
+    e.preventDefault();
+  }, []);
+
+  const handleTouchMove = useCallback((e: TouchEvent) => {
+    if (!isDragging) return;
+    
+    const touch = e.touches[0];
+    const newX = touch.clientX - dragOffset.x;
+    const newY = touch.clientY - dragOffset.y;
+    const snappedPosition = snapToEdge(newX, newY);
+    setPosition(snappedPosition);
+    e.preventDefault();
+  }, [isDragging, dragOffset, snapToEdge]);
+
+  const handleTouchEnd = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  useEffect(() => {
+    if (isDragging) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+      document.addEventListener('touchmove', handleTouchMove, { passive: false });
+      document.addEventListener('touchend', handleTouchEnd);
+    }
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [isDragging, handleMouseMove, handleMouseUp, handleTouchMove, handleTouchEnd]);
+
+  const getMessagePosition = () => {
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const messageWidth = 400; // max-width
+    const messageHeight = 120; // approximate height
+    const bubbleSize = 70;
+    const offset = 20;
+
+    let messageX = position.x;
+    let messageY = position.y;
+    let arrowPosition = 'right';
+    let arrowTop = '50%';
+
+    // Horizontal positioning
+    if (position.x > windowWidth / 2) {
+      // Bubble on right side - message to the left
+      messageX = position.x - messageWidth - offset;
+      arrowPosition = 'right';
+    } else {
+      // Bubble on left side - message to the right
+      messageX = position.x + bubbleSize + offset;
+      arrowPosition = 'left';
+    }
+
+    // Vertical positioning
+    if (position.y < windowHeight / 2) {
+      // Bubble at top - message below or aligned
+      messageY = position.y;
+    } else {
+      // Bubble at bottom - message above or aligned
+      messageY = position.y + bubbleSize - messageHeight;
+    }
+
+    // Ensure message stays within screen bounds
+    messageX = Math.max(10, Math.min(messageX, windowWidth - messageWidth - 10));
+    messageY = Math.max(10, Math.min(messageY, windowHeight - messageHeight - 10));
+
+    return { messageX, messageY, arrowPosition, arrowTop };
+  };
 
   const conversationStarters = [
     "Tell me about her experience",
@@ -53,28 +206,14 @@ const AIChatbot = () => {
     setIsOpen(true);
     setShowNewBadge(false);
     setShowPopupMessage(false);
+    setAnimationStopped(true);
   };
 
-  const getPositionStyles = (pos: CornerPosition) => {
-    switch (pos) {
-      case 'bottom-right':
-        return { bottom: '20px', right: '20px' };
-      case 'bottom-left':
-        return { bottom: '20px', left: '20px' };
-      case 'top-right':
-        return { top: '20px', right: '20px' };
-      case 'top-left':
-        return { top: '20px', left: '20px' };
-      default:
-        return { bottom: '20px', right: '20px' };
-    }
-  };
-
-  const cyclePosition = () => {
-    const positions: CornerPosition[] = ['bottom-right', 'bottom-left', 'top-left', 'top-right'];
-    const currentIndex = positions.indexOf(position);
-    const nextIndex = (currentIndex + 1) % positions.length;
-    setPosition(positions[nextIndex]);
+  const handleLearnMore = () => {
+    setShowPopupMessage(false);
+    setAnimationStopped(true);
+    // Scroll to skills section or handle learn more action
+    document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const sendMessage = async (text: string) => {
@@ -149,6 +288,8 @@ const AIChatbot = () => {
       sendMessage(inputText);
     }
   };
+
+  const { messageX, messageY, arrowPosition } = getMessagePosition();
 
   return (
     <>
@@ -232,49 +373,82 @@ const AIChatbot = () => {
           background: #555;
         }
 
-        .position-transition {
-          transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        .draggable-cursor {
+          cursor: ${isDragging ? 'grabbing' : 'grab'};
+        }
+
+        .no-select {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
         }
       `}</style>
 
       {/* Floating ARIA Bubble */}
       <div 
-        className="fixed z-50 position-transition"
-        style={getPositionStyles(position)}
+        ref={bubbleRef}
+        className="fixed z-50"
+        style={{ 
+          left: `${position.x}px`, 
+          top: `${position.y}px`,
+          transition: isDragging ? 'none' : 'all 0.3s ease'
+        }}
       >
-        {/* Popup Message */}
+        {/* Enhanced Popup Message */}
         {showPopupMessage && !isOpen && (
           <div 
-            className="absolute mb-4 popup-bounce-in gentle-bounce"
+            className="absolute popup-bounce-in gentle-bounce"
             style={{
-              bottom: position.includes('bottom') ? '85px' : 'auto',
-              top: position.includes('top') ? '85px' : 'auto',
-              right: position.includes('right') ? '85px' : 'auto',
-              left: position.includes('left') ? '85px' : 'auto'
+              left: `${messageX - position.x}px`,
+              top: `${messageY - position.y}px`,
+              width: '400px',
+              minWidth: '320px'
             }}
           >
             <div 
-              className="px-4 py-3 rounded-2xl shadow-2xl border-2"
+              className="px-6 py-4 rounded-2xl shadow-2xl border-2 relative"
               style={{ 
-                background: 'rgba(0, 0, 0, 0.9)',
+                background: 'rgba(0, 0, 0, 0.95)',
                 borderColor: '#A5A584',
-                maxWidth: '200px',
-                backdropFilter: 'blur(20px)'
+                backdropFilter: 'blur(20px)',
+                lineHeight: '1.6'
               }}
             >
-              <p className="text-white text-sm font-medium text-center">
-                💬 Learn more about me!
+              <p className="text-white text-sm font-medium mb-4" style={{ lineHeight: '1.6' }}>
+                Hi! I'm ARIA, Ily's AI assistant. Want to learn more about her experience and skills?
               </p>
+              
+              <div className="flex gap-3">
+                <button
+                  onClick={handleLearnMore}
+                  className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-sm transition-colors border border-gray-600"
+                  data-testid="learn-more-button"
+                >
+                  Learn More
+                </button>
+                <button
+                  onClick={openChat}
+                  className="px-4 py-2 text-white rounded-lg text-sm transition-colors border-2"
+                  style={{ 
+                    backgroundColor: '#A5A584',
+                    borderColor: '#A5A584'
+                  }}
+                  data-testid="chat-button"
+                >
+                  Chat
+                </button>
+              </div>
+              
               {/* Speech bubble arrow */}
               <div 
                 className="absolute w-0 h-0"
                 style={{
-                  [position.includes('bottom') ? 'top' : 'bottom']: '100%',
-                  [position.includes('right') ? 'right' : 'left']: position.includes('left') || position.includes('right') ? '20px' : '50%',
-                  transform: position.includes('left') || position.includes('right') ? 'none' : 'translateX(-50%)',
-                  borderLeft: '8px solid transparent',
-                  borderRight: '8px solid transparent',
-                  [position.includes('bottom') ? 'borderBottom' : 'borderTop']: '8px solid #A5A584'
+                  [arrowPosition]: '100%',
+                  top: '30px',
+                  borderTop: '10px solid transparent',
+                  borderBottom: '10px solid transparent',
+                  [arrowPosition === 'left' ? 'borderRight' : 'borderLeft']: '10px solid #A5A584'
                 }}
               />
             </div>
@@ -288,8 +462,12 @@ const AIChatbot = () => {
             
             {/* Main Bubble */}
             <button
-              onClick={openChat}
-              className="relative w-[70px] h-[70px] rounded-full shadow-2xl transition-all duration-300 hover:scale-105 group"
+              onMouseDown={handleMouseDown}
+              onTouchStart={handleTouchStart}
+              onClick={isDragging ? undefined : openChat}
+              className={`relative w-[70px] h-[70px] rounded-full shadow-2xl transition-all duration-300 hover:scale-105 group no-select ${
+                isDragging ? 'draggable-cursor scale-110' : 'draggable-cursor'
+              }`}
               style={{
                 background: 'linear-gradient(135deg, #2d2d2d 0%, #404040 50%, #1a1a1a 100%)',
                 border: '2px solid #A5A584'
@@ -306,37 +484,19 @@ const AIChatbot = () => {
                 <div className="w-full h-full bg-green-400 rounded-full animate-pulse"></div>
               </div>
             </button>
-
-            {/* Move Button */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                cyclePosition();
-              }}
-              className="absolute -top-2 -left-2 w-8 h-8 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 border border-gray-600"
-              title="Move to corner"
-              data-testid="chatbot-move-button"
-            >
-              <Move className="w-4 h-4 text-gray-300" />
-            </button>
           </div>
         )}
 
         {/* ARIA Chat Interface */}
         {isOpen && (
           <div 
-            className="glassmorphism chat-slide-up flex flex-col"
+            className="glassmorphism chat-slide-up flex flex-col absolute"
             style={{
               width: window.innerWidth <= 480 ? '100vw' : '400px',
               height: '520px',
               borderRadius: '16px',
-              position: window.innerWidth <= 480 ? 'fixed' : 'relative',
-              ...(window.innerWidth <= 480 && {
-                bottom: 0,
-                right: 0,
-                left: 0,
-                borderRadius: '16px 16px 0 0'
-              })
+              left: position.x + 70 + window.innerWidth > window.innerWidth + 380 ? '-330px' : '80px',
+              top: position.y + 520 > window.innerHeight ? `${window.innerHeight - position.y - 520 - 10}px` : '0px'
             }}
             data-testid="chatbot-interface"
           >
