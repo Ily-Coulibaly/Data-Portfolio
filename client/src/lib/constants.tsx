@@ -181,13 +181,47 @@ export const SKILLS = PROGRAMMING_TOOLS;
 export const PROJECTS = [
   {
     id: 1,
-    title: "Customer Segmentation Analysis",
-    description: "Advanced clustering analysis using K-means and hierarchical clustering to identify distinct customer segments for targeted marketing strategies.",
-    skills: ["python", "ml", "tableau"],
-    tags: ["Python", "Machine Learning", "Tableau"],
-    link: SOCIAL_LINKS.github,
+    title: "Bike Share Case: User Behavior Insights",
+    description: "Comprehensive analysis of two years of hourly bike share usage data, revealing actionable insights into customer behavior patterns between casual and registered users across weather conditions and seasonal variations.",
+    skills: ["tableau", "analytics", "business"],
+    tags: ["Tableau", "Data Analytics", "Business Intelligence"],
+    link: "https://public.tableau.com/app/profile/ily.coulibaly/vizzes", // Replace with actual Tableau Public link
     gradient: "from-blue-500 to-purple-600",
-    icon: "📊"
+    icon: "🚴",
+    isNetflixStyle: true,
+    image: "attached_assets/generated_images/Futuristic_bike_share_data_visualization_57b575bb.png",
+    reportContent: `This report analyzes two years of hourly bike share usage data, addressing three key business questions. The primary objective is to provide actionable insights into customer behavior, particularly regarding the differences in usage patterns between casual and registered users.
+
+**Business Question 1:** How do bike rental patterns vary among casual and registered users on weekdays, weekends, and holidays?
+
+**Key Insights:**
+• Registered users account for the highest number of rides on both weekends and weekdays, with weekdays showing the most rides overall (about 193 rides)
+• Casual users increase activity on weekends compared to weekdays, suggesting leisure-focused usage
+• Bike activity is lowest during weekend holidays
+
+**Business Question 2:** How does the average yearly number of bike rentals differ across various weather conditions?
+
+**Key Insights:**
+• Registered users consistently outrent casual users under all weather conditions
+• Clear and Cloudy weather conditions show noticeable peaks for both user types
+• Snowy and Rainy conditions result in lowest rentals overall
+• Registered users show an average increase of 0.17 rides per year, while casual users exhibit 0.025 rides annually
+
+**Business Question 3:** How are biking patterns related to temperature variations?
+
+**Key Insights:**
+• As temperatures rise, average rides increase for both groups, with a peak at 40°C
+• For casual users, each degree increase results in approximately 6.2 more rides
+• For registered users, each degree increase results in about 2.5 more rides
+
+**Strategic Recommendations:**
+1. Implement loyalty programs for registered users with tiered rewards
+2. Launch targeted weekend promotions to boost registered user activity
+3. Develop "Weekend Explorer" plans for casual riders
+4. Offer weather-specific pricing strategies and bundle deals
+5. Ensure adequate bike supply during peak temperature periods`,
+    tableauLink: "https://public.tableau.com/app/profile/ily.coulibaly/vizzes", // Replace with actual link
+    hasReport: true
   },
   {
     id: 2,
