@@ -349,26 +349,6 @@ export const PROJECTS = [
   },
   {
     id: 5,
-    title: "Sales Forecasting Model",
-    description: "Time series analysis and ARIMA modeling to predict future sales trends with 95% accuracy, enabling proactive inventory management.",
-    skills: ["python", "ml", "sql"],
-    tags: ["Python", "Machine Learning", "SQL"],
-    link: SOCIAL_LINKS.github,
-    gradient: "from-green-500 to-blue-600",
-    icon: "📈"
-  },
-  {
-    id: 6,
-    title: "Social Media Sentiment Analysis",
-    description: "NLP pipeline using BERT transformers to analyze customer sentiment from social media data, providing real-time brand perception insights.",
-    skills: ["python", "nlp", "ml"],
-    tags: ["Python", "NLP", "Machine Learning"],
-    link: SOCIAL_LINKS.github,
-    gradient: "from-purple-500 to-pink-600",
-    icon: "💬"
-  },
-  {
-    id: 7,
     title: "Interactive Financial Dashboard",
     description: "Comprehensive Tableau dashboard tracking KPIs, revenue trends, and profitability metrics with real-time data connections.",
     skills: ["tableau", "sql"],
@@ -378,7 +358,7 @@ export const PROJECTS = [
     icon: "💰"
   },
   {
-    id: 8,
+    id: 6,
     title: "Supply Chain Analytics",
     description: "End-to-end supply chain analysis identifying bottlenecks and optimization opportunities, resulting in 20% cost reduction.",
     skills: ["python", "sql", "tableau"],
@@ -386,16 +366,6 @@ export const PROJECTS = [
     link: SOCIAL_LINKS.github,
     gradient: "from-teal-500 to-green-600",
     icon: "🚛"
-  },
-  {
-    id: 9,
-    title: "Product Recommendation Engine",
-    description: "Collaborative filtering and matrix factorization techniques to build personalized product recommendations, improving engagement by 35%.",
-    skills: ["python", "ml"],
-    tags: ["Python", "Machine Learning"],
-    link: SOCIAL_LINKS.github,
-    gradient: "from-indigo-500 to-purple-600",
-    icon: "🎯"
   }
 ];
 
