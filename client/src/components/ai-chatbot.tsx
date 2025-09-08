@@ -588,7 +588,10 @@ const AIChatbot = () => {
                       <button
                         key={index}
                         onClick={() => handleStarterClick(starter)}
-                        className="block w-full text-left p-3 text-sm bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-white border border-gray-600"
+                        className="block w-full text-left p-3 text-sm rounded-lg transition-all duration-300 text-white border border-gray-700 hover:border-gray-600 hover:shadow-lg hover:scale-[1.02]"
+                        style={{
+                          background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%)',
+                        }}
                         data-testid={`conversation-starter-${index}`}
                       >
                         {starter}
