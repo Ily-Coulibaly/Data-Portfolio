@@ -19,12 +19,9 @@ const AIChatbot = () => {
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [showNewBadge, setShowNewBadge] = useState(true);
-  const [showPopupMessage, setShowPopupMessage] = useState(false);
   const [position, setPosition] = useState<Position>({ x: window.innerWidth - 90, y: window.innerHeight - 90 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState<Position>({ x: 0, y: 0 });
-  const [animationCycle, setAnimationCycle] = useState(0);
-  const [animationStopped, setAnimationStopped] = useState(false);
   const bubbleRef = useRef<HTMLDivElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -36,36 +33,6 @@ const AIChatbot = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Animation timing: 4s wait → 15s show → 4s hide → 15s show → stop
-  useEffect(() => {
-    if (!animationStopped && !isOpen && animationCycle < 2) {
-      if (animationCycle === 0) {
-        // Initial 4-second delay
-        const initialTimer = setTimeout(() => {
-          setShowPopupMessage(true);
-          setAnimationCycle(1);
-          
-          // Hide after 15 seconds
-          setTimeout(() => {
-            setShowPopupMessage(false);
-            
-            // Wait 4 seconds, then show again for 15 seconds
-            setTimeout(() => {
-              setShowPopupMessage(true);
-              setAnimationCycle(2);
-              
-              // Final hide after 15 seconds
-              setTimeout(() => {
-                setShowPopupMessage(false);
-              }, 15000);
-            }, 4000);
-          }, 15000);
-        }, 4000);
-        
-        return () => clearTimeout(initialTimer);
-      }
-    }
-  }, [animationCycle, animationStopped, isOpen]);
 
   const snapToEdge = useCallback((x: number, y: number) => {
     const snapThreshold = 30;
@@ -250,16 +217,8 @@ const AIChatbot = () => {
   const openChat = () => {
     setIsOpen(true);
     setShowNewBadge(false);
-    setShowPopupMessage(false);
-    setAnimationStopped(true);
   };
 
-  const handleLearnMore = () => {
-    setShowPopupMessage(false);
-    setAnimationStopped(true);
-    // Scroll to skills section or handle learn more action
-    document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   const sendMessage = async (text: string) => {
     if (!text.trim()) return;
@@ -334,7 +293,6 @@ const AIChatbot = () => {
     }
   };
 
-  const { messageX, messageY, arrowPosition } = getMessagePosition();
 
   return (
     <>
@@ -440,65 +398,6 @@ const AIChatbot = () => {
           transition: isDragging ? 'none' : 'all 0.3s ease'
         }}
       >
-        {/* Enhanced Popup Message */}
-        {showPopupMessage && !isOpen && (
-          <div 
-            className="absolute popup-bounce-in gentle-bounce"
-            style={{
-              left: `${messageX - position.x}px`,
-              top: `${messageY - position.y}px`,
-              width: '400px',
-              minWidth: '320px'
-            }}
-          >
-            <div 
-              className="px-6 py-4 rounded-2xl shadow-2xl border-2 relative"
-              style={{ 
-                background: 'rgba(0, 0, 0, 0.95)',
-                borderColor: '#A5A584',
-                backdropFilter: 'blur(20px)',
-                lineHeight: '1.6'
-              }}
-            >
-              <p className="text-white text-sm font-medium mb-4" style={{ lineHeight: '1.6' }}>
-                Hi! I'm ARIA, Ily's AI assistant. Want to learn more about her experience and skills?
-              </p>
-              
-              <div className="flex gap-3">
-                <button
-                  onClick={handleLearnMore}
-                  className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-sm transition-colors border border-gray-600"
-                  data-testid="learn-more-button"
-                >
-                  Learn More
-                </button>
-                <button
-                  onClick={openChat}
-                  className="px-4 py-2 text-white rounded-lg text-sm transition-colors border-2"
-                  style={{ 
-                    backgroundColor: '#A5A584',
-                    borderColor: '#A5A584'
-                  }}
-                  data-testid="chat-button"
-                >
-                  Chat
-                </button>
-              </div>
-              
-              {/* Speech bubble arrow */}
-              <div 
-                className="absolute w-0 h-0"
-                style={{
-                  [arrowPosition]: '100%',
-                  top: '30px',
-                  borderTop: '10px solid transparent',
-                  borderBottom: '10px solid transparent',
-                  [arrowPosition === 'left' ? 'borderRight' : 'borderLeft']: '10px solid #A5A584'
-                }}
-              />
-            </div>
-          </div>
-        )}
 
         {!isOpen && (
           <div className="relative">
