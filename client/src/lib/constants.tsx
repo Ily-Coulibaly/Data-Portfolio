@@ -223,6 +223,48 @@ export const PROJECTS = [
   },
   {
     id: 2,
+    title: "Wayfair 'Ships in Time' Campaign Analysis",
+    subtitle: "Strategic campaign effectiveness analysis",
+    description: "Comprehensive analysis of holiday season guarantee campaign impact on customer purchasing behavior, revenue optimization, and customer segmentation across different visitor types during the 2016 Christmas shopping period.",
+    skills: ["tableau", "analytics", "business"],
+    tags: ["Campaign Analysis", "Customer Segmentation", "Revenue Analysis"],
+    link: "https://public.tableau.com/app/profile/ily.kynion.coulibaly",
+    tableauLink: "https://public.tableau.com/app/profile/ily.kynion.coulibaly",
+    gradient: "from-purple-500 to-blue-600",
+    icon: "📊",
+    isAdvancedCard: true,
+    image: "attached_assets/generated_images/Dark_tech_bike_analytics_dashboard_f691e25c.png",
+    projectImage: "attached_assets/generated_images/Dark_tech_bike_analytics_dashboard_f691e25c.png",
+    headerImage: "attached_assets/generated_images/Dark_e-commerce_analytics_dashboard_70c46a18.png",
+    profileImage: "attached_assets/generated_images/Professional_data_analyst_portrait_dffdd099.png",
+    keyFindings: [
+      "4.18% revenue increase with guarantee shown ($157.28 vs $150.98 average)",
+      "67.55% of orders placed without guarantee, 32.45% with guarantee shown",
+      "Bedding and Decorative Accents dominate across all customer types with high demand"
+    ],
+    stats: {
+      revenueIncrease: "4.18%",
+      guaranteeOrders: "32.45%",
+      topCategories: "Bedding & Accents",
+      customerTypes: "4 segments"
+    },
+    researchQuestions: [
+      "How does the 'Ships in Time' guarantee influence average revenue per customer type?",
+      "What is the distribution of orders between customers who saw vs didn't see the guarantee?",
+      "How does the guarantee affect purchase volume and product variety across visitor types?"
+    ],
+    visualizationTypes: [
+      "Bar charts comparing purchase quantities across customer segments",
+      "Revenue distribution analysis with guarantee vs control groups",
+      "Customer segmentation dashboards showing behavioral patterns"
+    ],
+    analysisApproach: "A/B testing methodology comparing control group (no guarantee) vs treatment group (guarantee shown) across four customer types: Activated Customers, Acquired Members, New Visitors, and Returning Visitors during 2016 holiday season.",
+    businessImpact: "Provided strategic insights for campaign ROI evaluation, revealing modest revenue uplift that informed future marketing investment decisions and customer assurance strategies during high-stakes shopping periods.",
+    conclusion: "The guarantee campaign showed positive but modest revenue impact (4.18% increase), suggesting need for cost-benefit analysis before full implementation, while revealing valuable customer behavior patterns across different visitor segments.",
+    hasReport: true
+  },
+  {
+    id: 3,
     title: "Sales Forecasting Model",
     description: "Time series analysis and ARIMA modeling to predict future sales trends with 95% accuracy, enabling proactive inventory management.",
     skills: ["python", "ml", "sql"],
@@ -232,7 +274,7 @@ export const PROJECTS = [
     icon: "📈"
   },
   {
-    id: 3,
+    id: 4,
     title: "Social Media Sentiment Analysis",
     description: "NLP pipeline using BERT transformers to analyze customer sentiment from social media data, providing real-time brand perception insights.",
     skills: ["python", "nlp", "ml"],
@@ -242,7 +284,7 @@ export const PROJECTS = [
     icon: "💬"
   },
   {
-    id: 4,
+    id: 5,
     title: "Interactive Financial Dashboard",
     description: "Comprehensive Tableau dashboard tracking KPIs, revenue trends, and profitability metrics with real-time data connections.",
     skills: ["tableau", "sql"],
@@ -252,7 +294,7 @@ export const PROJECTS = [
     icon: "💰"
   },
   {
-    id: 5,
+    id: 6,
     title: "Supply Chain Analytics",
     description: "End-to-end supply chain analysis identifying bottlenecks and optimization opportunities, resulting in 20% cost reduction.",
     skills: ["python", "sql", "tableau"],
@@ -262,7 +304,7 @@ export const PROJECTS = [
     icon: "🚛"
   },
   {
-    id: 6,
+    id: 7,
     title: "Product Recommendation Engine",
     description: "Collaborative filtering and matrix factorization techniques to build personalized product recommendations, improving engagement by 35%.",
     skills: ["python", "ml"],
