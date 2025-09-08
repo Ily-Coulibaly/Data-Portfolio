@@ -346,26 +346,6 @@ export const PROJECTS = [
     businessImpact: "Provided actionable insights for station placement optimization, fleet distribution strategies, and demand forecasting to enhance operational efficiency and user satisfaction across Boston's bike-sharing network.",
     conclusion: "Successfully identified key demand drivers and spatial patterns enabling data-driven decisions for station optimization, revealing critical insights for improving bike availability and meeting diverse user needs across Boston.",
     hasReport: true
-  },
-  {
-    id: 5,
-    title: "Interactive Financial Dashboard",
-    description: "Comprehensive Tableau dashboard tracking KPIs, revenue trends, and profitability metrics with real-time data connections.",
-    skills: ["tableau", "sql"],
-    tags: ["Tableau", "SQL"],
-    link: SOCIAL_LINKS.tableau,
-    gradient: "from-yellow-500 to-red-600",
-    icon: "💰"
-  },
-  {
-    id: 6,
-    title: "Supply Chain Analytics",
-    description: "End-to-end supply chain analysis identifying bottlenecks and optimization opportunities, resulting in 20% cost reduction.",
-    skills: ["python", "sql", "tableau"],
-    tags: ["Python", "SQL", "Tableau"],
-    link: SOCIAL_LINKS.github,
-    gradient: "from-teal-500 to-green-600",
-    icon: "🚛"
   }
 ];
 
