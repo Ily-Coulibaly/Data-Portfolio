@@ -5,8 +5,7 @@ import { PROJECTS, FILTER_CATEGORIES } from "@/lib/constants";
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [selectedProject, setSelectedProject] = useState<any>(null);
-  const [showReport, setShowReport] = useState(false);
-  const [expandedProjects, setExpandedProjects] = useState<Set<number>>(new Set());
+  const [showDetailModal, setShowDetailModal] = useState(false);
 
   const filteredProjects = PROJECTS.filter(project => 
     activeFilter === "all" || project.skills.includes(activeFilter)
@@ -18,28 +17,16 @@ const ProjectsSection = () => {
 
   const closeProjectModal = () => {
     setSelectedProject(null);
-    setShowReport(false);
+    setShowDetailModal(false);
   };
 
-  const showProjectReport = (project: any) => {
+  const showDetailedView = (project: any) => {
     setSelectedProject(project);
-    setShowReport(true);
+    setShowDetailModal(true);
   };
-
-  const toggleExpand = (projectId: number) => {
-    const newExpanded = new Set(expandedProjects);
-    if (newExpanded.has(projectId)) {
-      newExpanded.delete(projectId);
-    } else {
-      newExpanded.add(projectId);
-    }
-    setExpandedProjects(newExpanded);
-  };
-
-  const isExpanded = (projectId: number) => expandedProjects.has(projectId);
 
   return (
-    <section id="projects" className="py-20 px-6" style={{ background: '#0f0f0f' }}>
+    <section id="projects" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-16">Featured Projects</h2>
         
@@ -76,8 +63,7 @@ const ProjectsSection = () => {
                     width: '100%',
                     overflow: 'hidden',
                     position: 'relative',
-                    transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                    cursor: 'pointer'
+                    transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-8px)';
@@ -101,51 +87,29 @@ const ProjectsSection = () => {
                       left: 0,
                       right: 0,
                       height: '3px',
-                      background: 'linear-gradient(90deg, #00ff87, #0099ff, #8b5cf6, #ff6b35)',
+                      background: 'linear-gradient(90deg, #A5A584, #A5A584, #A5A584)',
                       opacity: 0,
                       transition: 'opacity 0.4s ease'
                     }}
                   />
 
-                  {/* Header */}
+                  {/* Header with Project Image */}
                   <div style={{ padding: '24px', position: 'relative' }}>
-                    <div 
-                      style={{
-                        background: 'linear-gradient(135deg, #00ff87, #0099ff)',
-                        color: '#000',
-                        padding: '6px 12px',
-                        borderRadius: '20px',
-                        fontSize: '12px',
-                        fontWeight: 600,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        display: 'inline-block',
-                        marginBottom: '16px'
-                      }}
-                    >
-                      {project.category}
-                    </div>
-                    
-                    {/* Profile Picture */}
+                    {/* Project Image Space */}
                     <div 
                       style={{
                         position: 'absolute',
                         top: '24px',
                         right: '24px',
-                        width: '60px',
+                        width: '80px',
                         height: '60px',
-                        borderRadius: '50%',
-                        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '24px',
-                        color: 'white',
-                        fontWeight: 'bold'
+                        borderRadius: '8px',
+                        background: `url(${project.projectImage})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        border: '2px solid #A5A584'
                       }}
-                    >
-                      IC
-                    </div>
+                    />
 
                     <h3 
                       style={{
@@ -154,7 +118,7 @@ const ProjectsSection = () => {
                         color: '#ffffff',
                         marginBottom: '8px',
                         lineHeight: 1.3,
-                        paddingRight: '80px'
+                        paddingRight: '100px'
                       }}
                     >
                       {project.title}
@@ -165,7 +129,7 @@ const ProjectsSection = () => {
                         color: '#a0a0a0',
                         fontSize: '14px',
                         lineHeight: 1.4,
-                        paddingRight: '80px'
+                        paddingRight: '100px'
                       }}
                     >
                       {project.subtitle}
@@ -183,19 +147,6 @@ const ProjectsSection = () => {
                       }}
                     >
                       {project.description}
-                    </div>
-
-                    {/* Key Findings */}
-                    <div style={{ marginBottom: '20px' }}>
-                      <h4 style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600, marginBottom: '12px' }}>
-                        Key Findings
-                      </h4>
-                      {project.keyFindings.map((finding: string, index: number) => (
-                        <div key={index} style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '8px', fontSize: '13px', lineHeight: 1.5 }}>
-                          <span style={{ color: '#00ff87', marginRight: '8px', marginTop: '2px', fontWeight: 'bold' }}>•</span>
-                          <span>{finding}</span>
-                        </div>
-                      ))}
                     </div>
 
                     {/* Skill Tags */}
@@ -217,8 +168,8 @@ const ProjectsSection = () => {
                             }}
                             onMouseEnter={(e) => {
                               e.currentTarget.style.background = '#333';
-                              e.currentTarget.style.boxShadow = '0 0 12px rgba(0, 255, 135, 0.2)';
-                              e.currentTarget.style.borderColor = '#00ff87';
+                              e.currentTarget.style.boxShadow = '0 0 12px rgba(165, 165, 132, 0.2)';
+                              e.currentTarget.style.borderColor = '#A5A584';
                             }}
                             onMouseLeave={(e) => {
                               e.currentTarget.style.background = '#2a2a2a';
@@ -234,17 +185,14 @@ const ProjectsSection = () => {
 
                     {/* Action Buttons */}
                     <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
-                      <a
-                        href={project.tableauLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <button
+                        onClick={() => showDetailedView(project)}
                         className="btn-primary"
                         style={{
                           padding: '10px 20px',
                           borderRadius: '8px',
                           fontSize: '14px',
                           fontWeight: 600,
-                          textDecoration: 'none',
                           display: 'inline-flex',
                           alignItems: 'center',
                           gap: '8px',
@@ -253,7 +201,7 @@ const ProjectsSection = () => {
                           overflow: 'hidden',
                           border: 'none',
                           cursor: 'pointer',
-                          background: 'linear-gradient(135deg, #00ff87, #0099ff)',
+                          background: '#A5A584',
                           color: '#000'
                         }}
                         onMouseEnter={(e) => {
@@ -266,17 +214,20 @@ const ProjectsSection = () => {
                         }}
                       >
                         <FileText className="w-4 h-4" />
-                        View in Tableau
-                      </a>
-                      
-                      <button
-                        onClick={() => toggleExpand(project.id)}
+                        Read More
+                      </button>
+
+                      <a
+                        href={project.tableauLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="btn-secondary"
                         style={{
                           padding: '10px 20px',
                           borderRadius: '8px',
                           fontSize: '14px',
                           fontWeight: 600,
+                          textDecoration: 'none',
                           display: 'inline-flex',
                           alignItems: 'center',
                           gap: '8px',
@@ -297,179 +248,9 @@ const ProjectsSection = () => {
                           e.currentTarget.style.boxShadow = 'none';
                         }}
                       >
-                        <span>{isExpanded(project.id) ? 'Read Less' : 'Read More'}</span>
-                        <ChevronDown 
-                          className="w-4 h-4" 
-                          style={{ 
-                            transition: 'transform 0.3s ease',
-                            transform: isExpanded(project.id) ? 'rotate(180deg)' : 'rotate(0deg)'
-                          }} 
-                        />
-                      </button>
-                    </div>
-
-                    {/* Expandable Content */}
-                    <div 
-                      style={{
-                        maxHeight: isExpanded(project.id) ? '1000px' : '0',
-                        overflow: 'hidden',
-                        transition: 'max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-                      }}
-                    >
-                      {/* Stats Grid */}
-                      <div 
-                        style={{
-                          display: 'grid',
-                          gridTemplateColumns: '1fr 1fr',
-                          gap: '16px',
-                          marginBottom: '20px',
-                          padding: '16px',
-                          background: '#222',
-                          borderRadius: '8px'
-                        }}
-                      >
-                        <div style={{ textAlign: 'center' }}>
-                          <span style={{ fontSize: '20px', fontWeight: 700, color: '#00ff87', display: 'block' }}>
-                            {project.stats.weekdayRides}
-                          </span>
-                          <span style={{ fontSize: '12px', color: '#a0a0a0', marginTop: '4px' }}>
-                            Avg Weekday Rides
-                          </span>
-                        </div>
-                        <div style={{ textAlign: 'center' }}>
-                          <span style={{ fontSize: '20px', fontWeight: 700, color: '#00ff87', display: 'block' }}>
-                            {project.stats.weatherImpact}
-                          </span>
-                          <span style={{ fontSize: '12px', color: '#a0a0a0', marginTop: '4px' }}>
-                            Weather Impact
-                          </span>
-                        </div>
-                        <div style={{ textAlign: 'center' }}>
-                          <span style={{ fontSize: '20px', fontWeight: 700, color: '#00ff87', display: 'block' }}>
-                            {project.stats.casualTempSensitivity}
-                          </span>
-                          <span style={{ fontSize: '12px', color: '#a0a0a0', marginTop: '4px' }}>
-                            Casual Temperature Sensitivity
-                          </span>
-                        </div>
-                        <div style={{ textAlign: 'center' }}>
-                          <span style={{ fontSize: '20px', fontWeight: 700, color: '#00ff87', display: 'block' }}>
-                            {project.stats.registeredTempSensitivity}
-                          </span>
-                          <span style={{ fontSize: '12px', color: '#a0a0a0', marginTop: '4px' }}>
-                            Registered Temperature Sensitivity
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Research Questions */}
-                      <div style={{ marginBottom: '20px' }}>
-                        <h4 style={{ 
-                          color: '#ffffff', 
-                          fontSize: '14px', 
-                          fontWeight: 600, 
-                          marginBottom: '8px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '8px'
-                        }}>
-                          <Target className="w-4 h-4" />
-                          Research Questions
-                        </h4>
-                        <div style={{ color: '#d0d0d0', fontSize: '13px', lineHeight: 1.5 }}>
-                          {project.researchQuestions.map((question: string, index: number) => (
-                            <div key={index} style={{ 
-                              padding: '8px 0', 
-                              borderBottom: index < project.researchQuestions.length - 1 ? '1px solid #333' : 'none'
-                            }}>
-                              {question}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Visualization Types */}
-                      <div style={{ marginBottom: '20px' }}>
-                        <h4 style={{ 
-                          color: '#ffffff', 
-                          fontSize: '14px', 
-                          fontWeight: 600, 
-                          marginBottom: '8px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '8px'
-                        }}>
-                          <BarChart3 className="w-4 h-4" />
-                          Visualization Types
-                        </h4>
-                        <div style={{ color: '#d0d0d0', fontSize: '13px', lineHeight: 1.5 }}>
-                          {project.visualizationTypes.map((type: string, index: number) => (
-                            <div key={index} style={{ 
-                              padding: '8px 0', 
-                              borderBottom: index < project.visualizationTypes.length - 1 ? '1px solid #333' : 'none'
-                            }}>
-                              {type}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Analysis Approach */}
-                      <div style={{ marginBottom: '20px' }}>
-                        <h4 style={{ 
-                          color: '#ffffff', 
-                          fontSize: '14px', 
-                          fontWeight: 600, 
-                          marginBottom: '8px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '8px'
-                        }}>
-                          <Lightbulb className="w-4 h-4" />
-                          Analysis Approach
-                        </h4>
-                        <div style={{ color: '#d0d0d0', fontSize: '13px', lineHeight: 1.5 }}>
-                          {project.analysisApproach}
-                        </div>
-                      </div>
-
-                      {/* Business Impact */}
-                      <div style={{ marginBottom: '20px' }}>
-                        <h4 style={{ 
-                          color: '#ffffff', 
-                          fontSize: '14px', 
-                          fontWeight: 600, 
-                          marginBottom: '8px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '8px'
-                        }}>
-                          <TrendingUp className="w-4 h-4" />
-                          Business Impact
-                        </h4>
-                        <div style={{ color: '#d0d0d0', fontSize: '13px', lineHeight: 1.5 }}>
-                          {project.businessImpact}
-                        </div>
-                      </div>
-
-                      {/* Conclusion */}
-                      <div style={{ marginBottom: '20px' }}>
-                        <h4 style={{ 
-                          color: '#ffffff', 
-                          fontSize: '14px', 
-                          fontWeight: 600, 
-                          marginBottom: '8px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '8px'
-                        }}>
-                          <CheckCircle className="w-4 h-4" />
-                          Conclusion
-                        </h4>
-                        <div style={{ color: '#d0d0d0', fontSize: '13px', lineHeight: 1.5 }}>
-                          {project.conclusion}
-                        </div>
-                      </div>
+                        <Play className="w-4 h-4" />
+                        View in Tableau Public
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -520,8 +301,8 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Project Modal */}
-        {selectedProject && (
+        {/* Detailed Modal */}
+        {selectedProject && showDetailModal && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="bg-black rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative">
               <button
@@ -531,104 +312,267 @@ const ProjectsSection = () => {
                 <X className="w-6 h-6 text-white" />
               </button>
 
-              {showReport ? (
-                /* Report View */
-                <div className="p-8 overflow-y-auto max-h-[80vh]">
-                  <h2 className="text-3xl font-bold text-white mb-6">{selectedProject.title}</h2>
+              <div className="p-8 overflow-y-auto max-h-[80vh]">
+                <div className="flex items-start gap-6 mb-8">
                   <div 
-                    className="text-gray-300 leading-relaxed whitespace-pre-line"
-                    style={{ 
-                      userSelect: 'none', 
-                      WebkitUserSelect: 'none',
-                      MozUserSelect: 'none',
-                      msUserSelect: 'none',
-                      WebkitTouchCallout: 'none',
-                      WebkitUserDrag: 'none',
-                      KhtmlUserSelect: 'none'
+                    style={{
+                      width: '120px',
+                      height: '90px',
+                      borderRadius: '12px',
+                      background: `url(${selectedProject.projectImage})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      border: '2px solid #A5A584',
+                      flexShrink: 0
                     }}
-                    onContextMenu={(e) => e.preventDefault()}
-                    onDragStart={(e) => e.preventDefault()}
-                    onSelectStart={(e) => e.preventDefault()}
-                  >
-                    {selectedProject.reportContent}
-                  </div>
-                  <div className="mt-8 flex gap-4">
-                    <button
-                      onClick={() => setShowReport(false)}
-                      className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors"
-                    >
-                      Back to Project
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                /* Project Details View */
-                <div>
-                  <div className="relative h-80">
-                    <img 
-                      src={selectedProject.image || selectedProject.gradient} 
-                      alt={selectedProject.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8 right-8">
-                      <h2 className="text-4xl font-bold text-white mb-4">{selectedProject.title}</h2>
-                      <div className="flex gap-2 mb-4">
-                        {selectedProject.tags.map((tag: string) => (
-                          <span 
-                            key={tag} 
-                            className="px-3 py-1 bg-white/20 text-white text-sm rounded-full backdrop-blur-sm"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="p-8">
-                    <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  />
+                  <div>
+                    <h2 className="text-3xl font-bold text-white mb-4">{selectedProject.title}</h2>
+                    <p className="text-gray-300 text-lg leading-relaxed">
                       {selectedProject.description}
                     </p>
-                    
-                    <div className="flex gap-4">
-                      {selectedProject.tableauLink && (
-                        <a
-                          href={selectedProject.tableauLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-semibold"
-                        >
-                          <Play className="w-5 h-5" />
-                          View in Tableau Public
-                        </a>
-                      )}
-                      
-                      {selectedProject.hasReport && (
-                        <button
-                          onClick={() => showProjectReport(selectedProject)}
-                          className="flex items-center gap-3 px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors font-semibold"
-                        >
-                          <FileText className="w-5 h-5" />
-                          Read Full Report
-                        </button>
-                      )}
-                      
-                      {!selectedProject.isAdvancedCard && (
-                        <a
-                          href={selectedProject.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-3 px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors font-semibold"
-                        >
-                          <ExternalLink className="w-5 h-5" />
-                          View Project
-                        </a>
-                      )}
-                    </div>
                   </div>
                 </div>
-              )}
+
+                {/* Key Findings */}
+                <div style={{ marginBottom: '30px' }}>
+                  <h4 style={{ color: '#ffffff', fontSize: '18px', fontWeight: 600, marginBottom: '16px' }}>
+                    Key Findings
+                  </h4>
+                  {selectedProject.keyFindings.map((finding: string, index: number) => (
+                    <div key={index} style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px', fontSize: '14px', lineHeight: 1.6 }}>
+                      <span style={{ color: '#A5A584', marginRight: '12px', marginTop: '2px', fontWeight: 'bold' }}>•</span>
+                      <span style={{ color: '#d0d0d0' }}>{finding}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Stats Grid */}
+                <div 
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                    gap: '16px',
+                    marginBottom: '30px',
+                    padding: '20px',
+                    background: '#222',
+                    borderRadius: '12px'
+                  }}
+                >
+                  <div style={{ textAlign: 'center' }}>
+                    <span style={{ fontSize: '24px', fontWeight: 700, color: '#A5A584', display: 'block' }}>
+                      {selectedProject.stats.weekdayRides}
+                    </span>
+                    <span style={{ fontSize: '13px', color: '#a0a0a0', marginTop: '4px' }}>
+                      Avg Weekday Rides
+                    </span>
+                  </div>
+                  <div style={{ textAlign: 'center' }}>
+                    <span style={{ fontSize: '24px', fontWeight: 700, color: '#A5A584', display: 'block' }}>
+                      {selectedProject.stats.weatherImpact}
+                    </span>
+                    <span style={{ fontSize: '13px', color: '#a0a0a0', marginTop: '4px' }}>
+                      Weather Impact
+                    </span>
+                  </div>
+                  <div style={{ textAlign: 'center' }}>
+                    <span style={{ fontSize: '24px', fontWeight: 700, color: '#A5A584', display: 'block' }}>
+                      {selectedProject.stats.casualTempSensitivity}
+                    </span>
+                    <span style={{ fontSize: '13px', color: '#a0a0a0', marginTop: '4px' }}>
+                      Casual Temperature Sensitivity
+                    </span>
+                  </div>
+                  <div style={{ textAlign: 'center' }}>
+                    <span style={{ fontSize: '24px', fontWeight: 700, color: '#A5A584', display: 'block' }}>
+                      {selectedProject.stats.registeredTempSensitivity}
+                    </span>
+                    <span style={{ fontSize: '13px', color: '#a0a0a0', marginTop: '4px' }}>
+                      Registered Temperature Sensitivity
+                    </span>
+                  </div>
+                </div>
+
+                {/* Research Questions */}
+                <div style={{ marginBottom: '30px' }}>
+                  <h4 style={{ 
+                    color: '#ffffff', 
+                    fontSize: '16px', 
+                    fontWeight: 600, 
+                    marginBottom: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                  }}>
+                    <Target className="w-5 h-5" style={{ color: '#A5A584' }} />
+                    Research Questions
+                  </h4>
+                  <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
+                    {selectedProject.researchQuestions.map((question: string, index: number) => (
+                      <div key={index} style={{ 
+                        padding: '12px 0', 
+                        borderBottom: index < selectedProject.researchQuestions.length - 1 ? '1px solid #333' : 'none'
+                      }}>
+                        {question}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Visualization Types */}
+                <div style={{ marginBottom: '30px' }}>
+                  <h4 style={{ 
+                    color: '#ffffff', 
+                    fontSize: '16px', 
+                    fontWeight: 600, 
+                    marginBottom: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                  }}>
+                    <BarChart3 className="w-5 h-5" style={{ color: '#A5A584' }} />
+                    Visualization Types
+                  </h4>
+                  <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
+                    {selectedProject.visualizationTypes.map((type: string, index: number) => (
+                      <div key={index} style={{ 
+                        padding: '12px 0', 
+                        borderBottom: index < selectedProject.visualizationTypes.length - 1 ? '1px solid #333' : 'none'
+                      }}>
+                        {type}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Analysis Approach */}
+                <div style={{ marginBottom: '30px' }}>
+                  <h4 style={{ 
+                    color: '#ffffff', 
+                    fontSize: '16px', 
+                    fontWeight: 600, 
+                    marginBottom: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                  }}>
+                    <Lightbulb className="w-5 h-5" style={{ color: '#A5A584' }} />
+                    Analysis Approach
+                  </h4>
+                  <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
+                    {selectedProject.analysisApproach}
+                  </div>
+                </div>
+
+                {/* Business Impact */}
+                <div style={{ marginBottom: '30px' }}>
+                  <h4 style={{ 
+                    color: '#ffffff', 
+                    fontSize: '16px', 
+                    fontWeight: 600, 
+                    marginBottom: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                  }}>
+                    <TrendingUp className="w-5 h-5" style={{ color: '#A5A584' }} />
+                    Business Impact
+                  </h4>
+                  <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
+                    {selectedProject.businessImpact}
+                  </div>
+                </div>
+
+                {/* Conclusion */}
+                <div style={{ marginBottom: '30px' }}>
+                  <h4 style={{ 
+                    color: '#ffffff', 
+                    fontSize: '16px', 
+                    fontWeight: 600, 
+                    marginBottom: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                  }}>
+                    <CheckCircle className="w-5 h-5" style={{ color: '#A5A584' }} />
+                    Conclusion
+                  </h4>
+                  <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
+                    {selectedProject.conclusion}
+                  </div>
+                </div>
+
+                {/* Action Button */}
+                <div className="flex justify-center">
+                  <a
+                    href={selectedProject.tableauLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-8 py-4 rounded-lg transition-colors font-semibold text-lg"
+                    style={{ 
+                      background: '#A5A584',
+                      color: '#000'
+                    }}
+                  >
+                    <Play className="w-6 h-6" />
+                    View in Tableau Public
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Regular Project Modal */}
+        {selectedProject && !showDetailModal && (
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="bg-black rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative">
+              <button
+                onClick={closeProjectModal}
+                className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors"
+              >
+                <X className="w-6 h-6 text-white" />
+              </button>
+
+              <div className="relative h-80">
+                <img 
+                  src={selectedProject.image || selectedProject.gradient} 
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                <div className="absolute bottom-8 left-8 right-8">
+                  <h2 className="text-4xl font-bold text-white mb-4">{selectedProject.title}</h2>
+                  <div className="flex gap-2 mb-4">
+                    {selectedProject.tags.map((tag: string) => (
+                      <span 
+                        key={tag} 
+                        className="px-3 py-1 bg-white/20 text-white text-sm rounded-full backdrop-blur-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-8">
+                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  {selectedProject.description}
+                </p>
+                
+                <div className="flex gap-4">
+                  <a
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors font-semibold"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                    View Project
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         )}
