@@ -249,9 +249,8 @@ const AIChatbot = () => {
             style={{
               bottom: position.includes('bottom') ? '85px' : 'auto',
               top: position.includes('top') ? '85px' : 'auto',
-              right: position.includes('right') ? '0' : 'auto',
-              left: position.includes('right') ? '50%' : position.includes('left') ? '0' : '50%',
-              transform: position.includes('left') ? 'translateX(0)' : 'translateX(-50%)'
+              right: position.includes('right') ? '85px' : 'auto',
+              left: position.includes('left') ? '85px' : 'auto'
             }}
           >
             <div 
@@ -292,14 +291,14 @@ const AIChatbot = () => {
               onClick={openChat}
               className="relative w-[70px] h-[70px] rounded-full shadow-2xl transition-all duration-300 hover:scale-105 group"
               style={{
-                background: 'linear-gradient(135deg, #A5A584 0%, #8A8B6B 50%, #6F7058 100%)',
+                background: 'linear-gradient(135deg, #2d2d2d 0%, #404040 50%, #1a1a1a 100%)',
                 border: '2px solid #A5A584'
               }}
               data-testid="chatbot-open-button"
             >
               {/* Avatar */}
               <div className="relative flex items-center justify-center h-full">
-                <span className="text-2xl">👩🏽‍💻</span>
+                <span className="text-2xl">👩🏽</span>
               </div>
               
               {/* Online Status */}
@@ -351,7 +350,7 @@ const AIChatbot = () => {
             >
               <div className="flex items-center space-x-3">
                 <div className="relative">
-                  <span className="text-lg">👩🏽‍💻</span>
+                  <span className="text-lg">👩🏽</span>
                   <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-400 rounded-full border border-black"></div>
                 </div>
                 <div>
@@ -374,7 +373,7 @@ const AIChatbot = () => {
                 <div className="space-y-4">
                   <div className="text-gray-300 text-sm">
                     <div className="flex items-center space-x-2 mb-3">
-                      <span>👩🏽‍💻</span>
+                      <span>👩🏽</span>
                       <span className="font-semibold">ARIA</span>
                     </div>
                     <p>Hi! I'm ARIA, Ily's AI assistant. I can share insights about her skills and experience. What would you like to know?</p>
@@ -401,7 +400,7 @@ const AIChatbot = () => {
                 >
                   <div className="flex items-start space-x-2 max-w-[85%]">
                     {!message.isUser && (
-                      <span className="text-sm mt-1">👩🏽‍💻</span>
+                      <span className="text-sm mt-1">👩🏽</span>
                     )}
                     <div
                       className={`p-3 rounded-lg ${
@@ -419,7 +418,7 @@ const AIChatbot = () => {
               {isTyping && (
                 <div className="flex justify-start">
                   <div className="flex items-start space-x-2">
-                    <span className="text-sm">👩🏽‍💻</span>
+                    <span className="text-sm">👩🏽</span>
                     <div className="bg-gray-800 border border-gray-600 p-3 rounded-lg">
                       <div className="flex space-x-1">
                         <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
