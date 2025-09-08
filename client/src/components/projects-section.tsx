@@ -93,41 +93,57 @@ const ProjectsSection = () => {
                     }}
                   />
 
-                  {/* Header with Gradient Background and Project Image */}
+                  {/* Header Image */}
                   <div 
                     style={{ 
-                      padding: '24px', 
+                      height: '160px',
                       position: 'relative',
-                      background: 'linear-gradient(135deg, #00C851 0%, #007bff 100%)',
-                      borderRadius: '16px 16px 0 0'
+                      background: `url(${project.headerImage})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      borderRadius: '16px 16px 0 0',
+                      overflow: 'hidden'
                     }}
                   >
-                    {/* Project Image Space - Bigger like other cards */}
+                    {/* Project Analysis Image - Top Right Corner */}
                     <div 
                       style={{
                         position: 'absolute',
-                        top: '20px',
-                        right: '20px',
-                        width: '120px',
-                        height: '80px',
-                        borderRadius: '12px',
+                        top: '12px',
+                        right: '12px',
+                        width: '100px',
+                        height: '65px',
+                        borderRadius: '8px',
                         background: `url(${project.projectImage})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
-                        border: '3px solid rgba(255, 255, 255, 0.8)',
-                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)'
+                        border: '2px solid rgba(255, 255, 255, 0.9)',
+                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)'
                       }}
                     />
+                    
+                    {/* Subtle overlay for better contrast */}
+                    <div 
+                      style={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        height: '60px',
+                        background: 'linear-gradient(transparent, rgba(0, 0, 0, 0.3))'
+                      }}
+                    />
+                  </div>
 
+                  {/* Title and Content Below Header */}
+                  <div style={{ padding: '20px 24px 0' }}>
                     <h3 
                       style={{
-                        fontSize: '20px',
+                        fontSize: '18px',
                         fontWeight: 700,
                         color: '#ffffff',
-                        marginBottom: '8px',
-                        lineHeight: 1.3,
-                        paddingRight: '140px',
-                        textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
+                        marginBottom: '6px',
+                        lineHeight: 1.3
                       }}
                     >
                       {project.title}
@@ -135,11 +151,10 @@ const ProjectsSection = () => {
                     
                     <p 
                       style={{
-                        color: 'rgba(255, 255, 255, 0.9)',
-                        fontSize: '14px',
+                        color: '#a0a0a0',
+                        fontSize: '13px',
                         lineHeight: 1.4,
-                        paddingRight: '140px',
-                        textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+                        marginBottom: '16px'
                       }}
                     >
                       {project.subtitle}
@@ -150,41 +165,29 @@ const ProjectsSection = () => {
                   <div style={{ padding: '0 24px 24px' }}>
                     <div 
                       style={{
-                        color: '#d0d0d0',
-                        fontSize: '14px',
-                        lineHeight: 1.6,
-                        marginBottom: '20px'
+                        color: '#c0c0c0',
+                        fontSize: '13px',
+                        lineHeight: 1.5,
+                        marginBottom: '18px'
                       }}
                     >
-                      {project.description}
+                      Comprehensive analysis revealing actionable insights into customer behavior patterns across weather conditions and seasonal variations.
                     </div>
 
-                    {/* Skill Tags */}
-                    <div style={{ marginBottom: '24px' }}>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                        {project.tags.map((tag: string) => (
+                    {/* Skill Tags - Minimalistic */}
+                    <div style={{ marginBottom: '18px' }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                        {project.tags.slice(0, 3).map((tag: string) => (
                           <span 
                             key={tag}
-                            className="skill-tag-hover"
                             style={{
                               background: '#2a2a2a',
-                              color: '#e0e0e0',
-                              padding: '6px 12px',
-                              borderRadius: '20px',
-                              fontSize: '12px',
+                              color: '#d0d0d0',
+                              padding: '4px 10px',
+                              borderRadius: '12px',
+                              fontSize: '11px',
                               fontWeight: 500,
-                              border: '1px solid #404040',
-                              transition: 'all 0.3s ease'
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.background = '#333';
-                              e.currentTarget.style.boxShadow = '0 0 12px rgba(165, 165, 132, 0.2)';
-                              e.currentTarget.style.borderColor = '#A5A584';
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.background = '#2a2a2a';
-                              e.currentTarget.style.boxShadow = 'none';
-                              e.currentTarget.style.borderColor = '#404040';
+                              border: '1px solid #404040'
                             }}
                           >
                             {tag}

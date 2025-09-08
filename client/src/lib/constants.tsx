@@ -193,6 +193,7 @@ export const PROJECTS = [
     isAdvancedCard: true,
     image: "attached_assets/generated_images/Futuristic_bike_share_data_visualization_57b575bb.png",
     projectImage: "attached_assets/generated_images/Futuristic_bike_share_data_visualization_57b575bb.png",
+    headerImage: "attached_assets/generated_images/Bike_share_analytics_dashboard_2ecfa25c.png",
     keyFindings: [
       "Registered users dominate weekdays (193 avg rides), casual users peak on weekends",
       "Temperature increases drive 6.2x more casual rides per degree vs 2.5x for registered",
