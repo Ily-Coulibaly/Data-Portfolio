@@ -275,9 +275,9 @@ export const PROJECTS = [
     gradient: "from-green-500 to-teal-600",
     icon: "🗺️",
     isAdvancedCard: true,
-    image: "attached_assets/generated_images/Brazil_geospatial_e-commerce_dashboard_4e7844eb.png",
-    projectImage: "attached_assets/generated_images/Brazil_geospatial_e-commerce_dashboard_4e7844eb.png",
-    headerImage: "attached_assets/generated_images/Brazil_geospatial_e-commerce_dashboard_4e7844eb.png",
+    image: "attached_assets/generated_images/Brazilian_e-commerce_geospatial_heatmap_8c9b5b48.png",
+    projectImage: "attached_assets/generated_images/Brazilian_e-commerce_geospatial_heatmap_8c9b5b48.png",
+    headerImage: "attached_assets/generated_images/Brazilian_e-commerce_geospatial_heatmap_8c9b5b48.png",
     profileImage: "attached_assets/generated_images/Professional_data_analyst_portrait_dffdd099.png",
     keyFindings: [
       "São Paulo dominates with 20,044 orders (20% of total) and $2.8M revenue, leading Brazil's e-commerce",
