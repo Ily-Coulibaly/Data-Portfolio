@@ -93,21 +93,29 @@ const ProjectsSection = () => {
                     }}
                   />
 
-                  {/* Header with Project Image */}
-                  <div style={{ padding: '24px', position: 'relative' }}>
-                    {/* Project Image Space */}
+                  {/* Header with Gradient Background and Project Image */}
+                  <div 
+                    style={{ 
+                      padding: '24px', 
+                      position: 'relative',
+                      background: 'linear-gradient(135deg, #00C851 0%, #007bff 100%)',
+                      borderRadius: '16px 16px 0 0'
+                    }}
+                  >
+                    {/* Project Image Space - Bigger like other cards */}
                     <div 
                       style={{
                         position: 'absolute',
-                        top: '24px',
-                        right: '24px',
-                        width: '80px',
-                        height: '60px',
-                        borderRadius: '8px',
+                        top: '20px',
+                        right: '20px',
+                        width: '120px',
+                        height: '80px',
+                        borderRadius: '12px',
                         background: `url(${project.projectImage})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
-                        border: '2px solid #A5A584'
+                        border: '3px solid rgba(255, 255, 255, 0.8)',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)'
                       }}
                     />
 
@@ -118,7 +126,8 @@ const ProjectsSection = () => {
                         color: '#ffffff',
                         marginBottom: '8px',
                         lineHeight: 1.3,
-                        paddingRight: '100px'
+                        paddingRight: '140px',
+                        textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
                       }}
                     >
                       {project.title}
@@ -126,10 +135,11 @@ const ProjectsSection = () => {
                     
                     <p 
                       style={{
-                        color: '#a0a0a0',
+                        color: 'rgba(255, 255, 255, 0.9)',
                         fontSize: '14px',
                         lineHeight: 1.4,
-                        paddingRight: '100px'
+                        paddingRight: '140px',
+                        textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                       }}
                     >
                       {project.subtitle}
@@ -183,26 +193,29 @@ const ProjectsSection = () => {
                       </div>
                     </div>
 
-                    {/* Action Buttons */}
-                    <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
+                    {/* Action Buttons - Adjusted to fit card properly */}
+                    <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
                       <button
                         onClick={() => showDetailedView(project)}
                         className="btn-primary"
                         style={{
-                          padding: '10px 20px',
+                          padding: '12px 16px',
                           borderRadius: '8px',
-                          fontSize: '14px',
+                          fontSize: '13px',
                           fontWeight: 600,
                           display: 'inline-flex',
                           alignItems: 'center',
-                          gap: '8px',
+                          gap: '6px',
                           transition: 'all 0.3s ease',
                           position: 'relative',
                           overflow: 'hidden',
                           border: 'none',
                           cursor: 'pointer',
                           background: '#A5A584',
-                          color: '#000'
+                          color: '#000',
+                          flex: '1',
+                          justifyContent: 'center',
+                          minWidth: '0'
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.transform = 'translateY(-2px)';
@@ -223,21 +236,24 @@ const ProjectsSection = () => {
                         rel="noopener noreferrer"
                         className="btn-secondary"
                         style={{
-                          padding: '10px 20px',
+                          padding: '12px 16px',
                           borderRadius: '8px',
-                          fontSize: '14px',
+                          fontSize: '13px',
                           fontWeight: 600,
                           textDecoration: 'none',
                           display: 'inline-flex',
                           alignItems: 'center',
-                          gap: '8px',
+                          gap: '6px',
                           transition: 'all 0.3s ease',
                           position: 'relative',
                           overflow: 'hidden',
                           border: '1px solid #404040',
                           cursor: 'pointer',
                           background: '#2a2a2a',
-                          color: '#e0e0e0'
+                          color: '#e0e0e0',
+                          flex: '1',
+                          justifyContent: 'center',
+                          minWidth: '0'
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.transform = 'translateY(-2px)';
@@ -249,7 +265,7 @@ const ProjectsSection = () => {
                         }}
                       >
                         <Play className="w-4 h-4" />
-                        View in Tableau Public
+                        View Tableau
                       </a>
                     </div>
                   </div>
