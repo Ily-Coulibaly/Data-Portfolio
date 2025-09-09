@@ -1,0 +1,59 @@
+I have an existing bike share portfolio project card that needs to be completely redesigned. Transform it into a minimalist blog-style presentation with these specific requirements:
+
+DESIGN REQUIREMENTS:
+- Use dark theme colors: #1a1a1a (main background), #2d2d2d (secondary background), #00d4aa (accent color)
+- Clean, minimalist blog article layout
+- Professional typography with proper hierarchy
+- NO emojis, NO green colors (only use #00d4aa for accents)
+- Mobile responsive design
+
+CONTENT STRUCTURE (in this exact order):
+1. Header section with:
+   - Simple circular logo placeholder with "BS" text
+   - Title: "Bike Share User Behavior Analysis"
+   - Subtitle: "Uncovering Revenue Opportunities Through Data-Driven Insights"
+   - Meta info bar: "2 years of hourly data | 17,520+ data points | Statistical modeling | Business intelligence"
+
+2. Introduction section explaining the bike share industry analysis context
+
+3. Business Challenge section with highlighted box explaining the core problem
+
+4. Research Questions section with these 3 specific questions in styled list items:
+   - "How do bike rental patterns vary among casual and registered users on weekdays, weekends, and holidays, and what targeted recommendations can be made based on these patterns?"
+   - "How does the average yearly number of bike rentals for both casual and registered users differ across various weather conditions over time, and how to optimize rentals during these different weather scenarios?"
+   - "How are biking patterns among casual and registered users related to temperature variations, and what strategies can be implemented to potentially increase rentals during specific temperature ranges?"
+
+5. Analytical Approach section describing multi-dimensional analysis and Tableau usage
+
+6. Visualization Types Created section with cards showing:
+   - Stacked Bar Chart (ridership patterns across time periods)
+   - Multi-Line Chart (weather conditions impact over 2011-2012)
+   - Trend Analysis Chart (temperature correlation with trend lines)
+
+7. Key Insights section with 4 cards covering:
+   - Temporal Usage Patterns (193 rides weekday average for registered users)
+   - Weather Impact Analysis (60% ridership drop in bad weather)
+   - Temperature Sensitivity (6.2 vs 2.5 rides per degree)
+   - Growth Trajectory (0.17 vs 0.025 annual growth rates)
+
+8. Technical Skills section with 4 categories:
+   - Data Analysis, Business Intelligence, Data Visualization, Strategic Communication
+   - Technology Stack: Tableau Public, Statistical Analysis, Data Modeling, Business Intelligence, Executive Reporting
+
+9. Conclusion section summarizing business impact
+
+10. Project Resources footer with buttons:
+    - "View Tableau Dashboard" (primary button)
+    - "Download Full Report" (secondary button)
+    - "View Source Code" (secondary button)
+
+TECHNICAL SPECS:
+- Max-width: 900px centered container
+- Use CSS Grid for card layouts
+- Smooth hover transitions
+- Professional spacing (40px sections, 25px between cards)
+- Border-left accents using #00d4aa color
+- Rounded corners (6-8px border-radius)
+- Use system font stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+
+The result should look like a professional tech blog article about a data analysis project, not a traditional portfolio card. Focus on readability, clean hierarchy, and showcasing the analytical work performed.

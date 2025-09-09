@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, ExternalLink, Play, FileText, X, Target, BarChart3, Lightbulb, TrendingUp, CheckCircle } from "lucide-react";
 import { PROJECTS, FILTER_CATEGORIES } from "@/lib/constants";
+import { BikeShareBlogCard } from "@/components/bike-share-blog-card";
 import bikeShareBg from "@assets/generated_images/Dark_tech_bike_analytics_dashboard_f691e25c.png";
 import wayfairBg from "@assets/generated_images/Dark_Wayfair_analytics_dashboard_0212aec8.png";
 
@@ -52,7 +53,12 @@ const ProjectsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
             <div key={project.id}>
-              {project.isAdvancedCard ? (
+              {project.id === 1 ? (
+                /* Blog Style Card for Bike Share */
+                <div className="md:col-span-2 lg:col-span-3">
+                  <BikeShareBlogCard />
+                </div>
+              ) : project.isAdvancedCard ? (
                 /* Advanced Portfolio Card */
                 <div 
                   className="advanced-portfolio-card"
