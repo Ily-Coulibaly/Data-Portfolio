@@ -1,0 +1,41 @@
+Transform my existing portfolio project cards into a minimalist hover-reveal design with these exact specifications:
+
+UPDATE THE CARD STRUCTURE:
+- Keep existing content and descriptions unchanged
+- Convert each card to a two-layer system: front view (company name only) and back view (existing content)
+- Front: Clean gradient background with centered company name in white text
+- Back: Current card content (title, description, tags, buttons) in structured layout
+
+ANIMATION REQUIREMENTS:
+- Replace any complex animations with simple fade/slide transition
+- Front card: opacity 1 to 0, translateY(0) to translateY(-10px) on hover
+- Back card: opacity 0 to 1, translateY(10px) to translateY(0) on hover
+- Transition duration: 0.3s ease for all properties
+- No 3D transforms, rotations, or complex effects
+
+STYLING SPECIFICATIONS:
+- Card dimensions: height 240px, border-radius 8px
+- Grid layout: repeat(auto-fit, minmax(380px, 1fr)) with 30px gap
+- Typography: Company names 1.8em weight 600, project titles 1.2em weight 600
+- Colors: #1a1a1a background, #2d2d2d cards, #00d4aa accent, #ffffff text, #b3b3b3 descriptions
+- Border: 1px solid #333 on cards
+
+GRADIENT BACKGROUNDS FOR FRONTS:
+- Bike Share: linear-gradient(135deg, #00d4aa 0%, #00a087 100%)
+- Wayfair: linear-gradient(135deg, #7c4dff 0%, #5e35b1 100%)  
+- Olist: linear-gradient(135deg, #ff7043 0%, #e64a19 100%)
+
+BUTTON UPDATES:
+- Primary button text: "View in Tableau" (not "View Dashboard")
+- Secondary button: "Read More" (links to existing detailed content)
+- Button styling: 8px 16px padding, border-radius 4px, font-size 0.85em
+- Primary: #00d4aa background, #1a1a1a text
+- Secondary: transparent background, #00d4aa text and border
+
+LAYOUT STRUCTURE:
+- Keep existing project descriptions, tags, and all content
+- Back card layout: title at top, description middle, tags below, buttons at bottom
+- Tags: smaller size (0.75em), #1a1a1a background, #00d4aa text, 12px border-radius
+- Maintain responsive design for mobile (single column, reduced dimensions)
+
+The goal is clean minimalism - company name on hover reveals full project details with smooth, subtle transitions. No complex animations or visual effects.
