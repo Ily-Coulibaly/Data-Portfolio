@@ -150,9 +150,11 @@ const ProjectsSection = () => {
                   const back = e.currentTarget.nextElementSibling as HTMLElement;
                   front.style.opacity = '0';
                   front.style.transform = 'translateY(-10px)';
+                  front.style.zIndex = '1';
                   if (back) {
                     back.style.opacity = '1';
                     back.style.transform = 'translateY(0)';
+                    back.style.zIndex = '3';
                   }
                 }}
                 onMouseLeave={(e) => {
@@ -160,9 +162,11 @@ const ProjectsSection = () => {
                   const back = e.currentTarget.nextElementSibling as HTMLElement;
                   front.style.opacity = '1';
                   front.style.transform = 'translateY(0)';
+                  front.style.zIndex = '2';
                   if (back) {
                     back.style.opacity = '0';
                     back.style.transform = 'translateY(10px)';
+                    back.style.zIndex = '1';
                   }
                 }}
               >
