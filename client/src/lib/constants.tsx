@@ -352,30 +352,16 @@ export const PROJECTS = [
 export const ARTICLES = [
   {
     id: 1,
-    title: "Getting Started with Machine Learning",
-    description: "A comprehensive guide for beginners to understand machine learning fundamentals and start their journey in data science.",
+    title: "AI in the Cosmetics Industry: Virtual Try-Ons",
+    subtitle: "Technology Analysis & Industry Research",
+    description: "An in-depth analysis of how AI and augmented reality are revolutionizing the cosmetics industry through virtual try-on technology. Examining adoption rates, business outcomes, and implementation challenges across major beauty brands.",
     readTime: "5 min read",
-    link: SOCIAL_LINKS.medium,
-    gradient: "from-blue-500 to-purple-600",
-    icon: "📚"
-  },
-  {
-    id: 2,
-    title: "Advanced Tableau Techniques",
-    description: "Master advanced Tableau features to create compelling visualizations that tell powerful data stories.",
-    readTime: "8 min read",
-    link: SOCIAL_LINKS.medium,
-    gradient: "from-green-500 to-teal-600",
-    icon: "📊"
-  },
-  {
-    id: 3,
-    title: "The Future of AI in Business Analytics",
-    description: "Exploring how artificial intelligence is transforming business analytics and what it means for data professionals.",
-    readTime: "6 min read",
-    link: SOCIAL_LINKS.medium,
-    gradient: "from-purple-500 to-pink-600",
-    icon: "🤖"
+    date: "February 7, 2025",
+    category: "Technology Trends",
+    tags: ["Artificial Intelligence", "Augmented Reality", "Industry Analysis", "Technology Trends", "Business Strategy"],
+    link: "/attached_assets/Final edited essay_Ily_1757439973917.pdf",
+    backgroundImage: "attached_assets/generated_images/AI_cosmetics_technology_background_d63e1c17.png",
+    gradient: "from-purple-500 to-pink-600"
   }
 ];
 
