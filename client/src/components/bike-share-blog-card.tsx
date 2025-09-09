@@ -28,7 +28,7 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
             justifyContent: 'center',
             fontSize: '20px',
             fontWeight: 'bold',
-            color: '#00d4aa',
+            color: '#A5A584',
             marginRight: '20px'
           }}>
             BS
@@ -56,7 +56,7 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
           padding: '15px 20px',
           background: '#2d2d2d',
           borderRadius: '8px',
-          borderLeft: '4px solid #00d4aa'
+          borderLeft: '4px solid #A5A584'
         }}>
           <p style={{
             margin: 0,
@@ -107,7 +107,7 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
           padding: '25px',
           background: '#2d2d2d',
           borderRadius: '8px',
-          borderLeft: '4px solid #00d4aa'
+          borderLeft: '4px solid #A5A584'
         }}>
           <p style={{
             fontSize: '16px',
@@ -140,7 +140,7 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
               padding: '20px',
               background: '#2d2d2d',
               borderRadius: '8px',
-              borderLeft: '4px solid #00d4aa'
+              borderLeft: '4px solid #A5A584'
             }}>
               <div style={{
                 display: 'flex',
@@ -148,7 +148,7 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
                 gap: '12px'
               }}>
                 <span style={{
-                  color: '#00d4aa',
+                  color: '#A5A584',
                   fontWeight: 'bold',
                   fontSize: '18px',
                   minWidth: '24px'
@@ -305,7 +305,7 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
               padding: '25px',
               background: '#2d2d2d',
               borderRadius: '8px',
-              borderLeft: '4px solid #00d4aa'
+              borderLeft: '4px solid #A5A584'
             }}>
               <h3 style={{
                 fontSize: '16px',
@@ -318,7 +318,7 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
               <div style={{
                 fontSize: '24px',
                 fontWeight: 'bold',
-                color: '#00d4aa',
+                color: '#A5A584',
                 marginBottom: '6px'
               }}>
                 {insight.metric}
@@ -459,7 +459,7 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
               alignItems: 'center',
               gap: '8px',
               padding: '12px 24px',
-              background: '#00d4aa',
+              background: '#A5A584',
               color: '#1a1a1a',
               textDecoration: 'none',
               borderRadius: '8px',
@@ -468,10 +468,10 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
               transition: 'all 0.3s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#00b894';
+              e.currentTarget.style.background = '#8a8a6b';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#00d4aa';
+              e.currentTarget.style.background = '#A5A584';
             }}
           >
             <TrendingUp className="w-4 h-4" />
@@ -485,8 +485,8 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
               gap: '8px',
               padding: '12px 24px',
               background: 'transparent',
-              color: '#00d4aa',
-              border: '1px solid #00d4aa',
+              color: '#A5A584',
+              border: '1px solid #A5A584',
               borderRadius: '8px',
               fontSize: '14px',
               fontWeight: '600',
@@ -494,12 +494,12 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
               transition: 'all 0.3s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#00d4aa';
+              e.currentTarget.style.background = '#A5A584';
               e.currentTarget.style.color = '#1a1a1a';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.color = '#00d4aa';
+              e.currentTarget.style.color = '#A5A584';
             }}
           >
             <Download className="w-4 h-4" />
@@ -513,8 +513,8 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
               gap: '8px',
               padding: '12px 24px',
               background: 'transparent',
-              color: '#00d4aa',
-              border: '1px solid #00d4aa',
+              color: '#A5A584',
+              border: '1px solid #A5A584',
               borderRadius: '8px',
               fontSize: '14px',
               fontWeight: '600',
@@ -522,12 +522,12 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
               transition: 'all 0.3s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#00d4aa';
+              e.currentTarget.style.background = '#A5A584';
               e.currentTarget.style.color = '#1a1a1a';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.color = '#00d4aa';
+              e.currentTarget.style.color = '#A5A584';
             }}
           >
             <Code className="w-4 h-4" />

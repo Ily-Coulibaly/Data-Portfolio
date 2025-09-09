@@ -53,12 +53,7 @@ const ProjectsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
             <div key={project.id}>
-              {project.id === 1 ? (
-                /* Blog Style Card for Bike Share */
-                <div className="md:col-span-2 lg:col-span-3">
-                  <BikeShareBlogCard />
-                </div>
-              ) : project.isAdvancedCard ? (
+              {project.isAdvancedCard ? (
                 /* Advanced Portfolio Card */
                 <div 
                   className="advanced-portfolio-card"
@@ -299,7 +294,7 @@ const ProjectsSection = () => {
         {/* Detailed Modal */}
         {selectedProject && showDetailModal && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-black rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative">
+            <div className="bg-black rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden relative">
               <button
                 onClick={closeProjectModal}
                 className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors"
@@ -307,7 +302,13 @@ const ProjectsSection = () => {
                 <X className="w-6 h-6 text-white" />
               </button>
 
-              <div className="p-8 overflow-y-auto max-h-[80vh]">
+              {selectedProject.id === 1 ? (
+                /* Blog Style View for Bike Share */
+                <div className="overflow-y-auto max-h-[90vh]">
+                  <BikeShareBlogCard />
+                </div>
+              ) : (
+                <div className="p-8 overflow-y-auto max-h-[80vh]">
                 <div className="mb-8">
                   <h2 className="text-3xl font-bold text-white mb-4">{selectedProject.title}</h2>
                   <p className="text-gray-300 text-lg leading-relaxed">
@@ -453,7 +454,8 @@ const ProjectsSection = () => {
                     View in Tableau Public
                   </a>
                 </div>
-              </div>
+                </div>
+              )}
             </div>
           </div>
         )}
