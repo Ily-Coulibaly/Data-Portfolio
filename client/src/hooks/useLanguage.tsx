@@ -58,7 +58,7 @@ const translations = {
     'certificates.subtitle': 'Industry-recognized certifications demonstrating expertise and commitment to continuous learning',
     
     // Articles Section
-    'articles.title': 'Latest Writings',
+    'articles.title': 'Writings',
     'articles.subtitle': 'Insights and thought leadership on data analytics and business intelligence',
     'articles.readTime': 'min read',
     
@@ -163,7 +163,7 @@ const translations = {
     'certificates.subtitle': 'Certifications reconnues par l\'industrie démontrant l\'expertise et l\'engagement envers l\'apprentissage continu',
     
     // Articles Section
-    'articles.title': 'Derniers Écrits',
+    'articles.title': 'Écrits',
     'articles.subtitle': 'Insights et leadership éclairé sur l\'analyse de données et l\'intelligence d\'affaires',
     'articles.readTime': 'min de lecture',
     
