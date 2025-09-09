@@ -357,7 +357,10 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
           View Tableau Dashboard
         </a>
         
-        <button
+        <a
+          href="/attached_assets/Bike Share Case_Ily_1757430755593.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -369,7 +372,7 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
             borderRadius: '6px',
             fontSize: '14px',
             fontWeight: '600',
-            cursor: 'pointer',
+            textDecoration: 'none',
             transition: 'all 0.3s ease'
           }}
           onMouseEnter={(e) => {
@@ -383,7 +386,7 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
         >
           <FileText className="w-4 h-4" />
           View Full Report
-        </button>
+        </a>
       </footer>
     </div>
   );

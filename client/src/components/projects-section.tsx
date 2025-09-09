@@ -294,7 +294,11 @@ const ProjectsSection = () => {
         {/* Detailed Modal */}
         {selectedProject && showDetailModal && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-black rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden relative">
+            <div className={`bg-black overflow-hidden relative ${
+              selectedProject.id === 1 
+                ? 'fixed inset-0 w-full h-full' 
+                : 'rounded-2xl max-w-6xl w-full max-h-[90vh]'
+            }`}>
               <button
                 onClick={closeProjectModal}
                 className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors"
@@ -304,7 +308,7 @@ const ProjectsSection = () => {
 
               {selectedProject.id === 1 ? (
                 /* Blog Style View for Bike Share */
-                <div className="overflow-y-auto max-h-[90vh]">
+                <div className="overflow-y-auto h-full bg-black">
                   <BikeShareBlogCard />
                 </div>
               ) : (
