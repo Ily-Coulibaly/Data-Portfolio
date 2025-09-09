@@ -8,7 +8,10 @@ const ArticlesSection = () => {
   return (
     <section id="articles" className="py-20 px-6 bg-secondary">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">{t('articles.title')}</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-2">{t('articles.title')}</h2>
+          <p className="text-muted-foreground text-sm">I write, sometimes.</p>
+        </div>
         
         <div className="grid grid-cols-1 max-w-4xl mx-auto">
           {ARTICLES.map((article) => (
@@ -21,15 +24,15 @@ const ArticlesSection = () => {
               <div 
                 className="h-64 bg-cover bg-center relative"
                 style={{
-                  backgroundImage: `url(${article.backgroundImage}), linear-gradient(135deg, #7c3aed, #ec4899)`,
+                  backgroundImage: `url(${article.backgroundImage}), linear-gradient(135deg, #A5A584, #6B7C32)`,
                   backgroundBlendMode: 'overlay'
                 }}
               >
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                   <div className="text-white text-center p-6">
-                    <div className="text-sm text-blue-200 mb-2">{article.category}</div>
+                    <div className="text-sm text-[#A5A584] font-medium mb-2">{article.category}</div>
                     <h3 className="text-2xl font-bold mb-2">{article.title}</h3>
-                    <div className="text-blue-100">{article.subtitle}</div>
+                    <div className="text-neutral-200">{article.subtitle}</div>
                   </div>
                 </div>
               </div>
@@ -40,19 +43,8 @@ const ArticlesSection = () => {
                   <span className="text-sm text-muted-foreground">{article.readTime}</span>
                 </div>
                 
-                <p className="text-muted-foreground mb-6 leading-relaxed">{article.description}</p>
+                <p className="text-muted-foreground mb-8 leading-relaxed">{article.description}</p>
                 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {article.tags?.map((tag, index) => (
-                    <span 
-                      key={index}
-                      className="px-3 py-1 bg-muted/50 text-muted-foreground text-sm rounded-full border"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
                 
                 <a 
                   href={article.link} 
