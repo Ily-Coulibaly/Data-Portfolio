@@ -2,10 +2,10 @@ import { useState } from "react";
 import { ChevronDown, ExternalLink, Play, FileText, X, Target, BarChart3, Lightbulb, TrendingUp, CheckCircle, Maximize2, Minimize2 } from "lucide-react";
 import { PROJECTS, FILTER_CATEGORIES } from "@/lib/constants";
 import { BikeShareBlogCard } from "@/components/bike-share-blog-card";
-import bikeShareBg from "@assets/generated_images/Professional_bike_analytics_dashboard_5be14936.png";
-import wayfairBg from "@assets/generated_images/Professional_e-commerce_analytics_dashboard_ffde26ec.png";
-import olistBg from "@assets/generated_images/Professional_marketplace_analytics_dashboard_df03c4da.png";
-import blueBikesBg from "@assets/generated_images/Professional_urban_mobility_dashboard_a9d27f4e.png";
+import bikeShareBg from "@assets/generated_images/Text-free_bike_analytics_dashboard_d253bcee.png";
+import wayfairBg from "@assets/generated_images/Text-free_e-commerce_analytics_dashboard_100cad4c.png";
+import olistBg from "@assets/generated_images/Text-free_marketplace_analytics_dashboard_79006fdc.png";
+import blueBikesBg from "@assets/generated_images/Text-free_urban_mobility_dashboard_6f2f1928.png";
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -166,14 +166,14 @@ const ProjectsSection = () => {
                   }
                 }}
               >
-                {/* Dark overlay for better text readability */}
+                {/* Light overlay for better text readability */}
                 <div style={{
                   position: 'absolute',
                   top: 0,
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  background: 'rgba(0, 0, 0, 0.6)',
+                  background: 'rgba(0, 0, 0, 0.3)',
                   zIndex: 1
                 }} />
                 <h3 style={{
