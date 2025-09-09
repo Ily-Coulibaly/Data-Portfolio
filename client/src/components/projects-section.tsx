@@ -2,6 +2,10 @@ import { useState } from "react";
 import { ChevronDown, ExternalLink, Play, FileText, X, Target, BarChart3, Lightbulb, TrendingUp, CheckCircle, Maximize2, Minimize2 } from "lucide-react";
 import { PROJECTS, FILTER_CATEGORIES } from "@/lib/constants";
 import { BikeShareBlogCard } from "@/components/bike-share-blog-card";
+import bikeShareBg from "@assets/generated_images/Bike_share_analytics_background_484b4e90.png";
+import wayfairBg from "@assets/generated_images/Wayfair_e-commerce_analytics_background_e550f34a.png";
+import olistBg from "@assets/generated_images/Olist_marketplace_analytics_background_b0041778.png";
+import blueBikesBg from "@assets/generated_images/Blue_Bikes_analytics_background_1b7b1831.png";
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -41,13 +45,13 @@ const ProjectsSection = () => {
     return project.title;
   };
 
-  // Get gradient for company
-  const getCompanyGradient = (project: any) => {
-    if (project.id === 1) return "linear-gradient(135deg, #00d4aa 0%, #00a087 100%)";
-    if (project.id === 2) return "linear-gradient(135deg, #7c4dff 0%, #5e35b1 100%)";
-    if (project.id === 3) return "linear-gradient(135deg, #ff7043 0%, #e64a19 100%)";
-    if (project.id === 4) return "linear-gradient(135deg, #00d4aa 0%, #00a087 100%)";
-    return "linear-gradient(135deg, #00d4aa 0%, #00a087 100%)";
+  // Get background for company
+  const getCompanyBackground = (project: any) => {
+    if (project.id === 1) return `url(${bikeShareBg})`;
+    if (project.id === 2) return `url(${wayfairBg})`;
+    if (project.id === 3) return `url(${olistBg})`;
+    if (project.id === 4) return `url(${blueBikesBg})`;
+    return `url(${bikeShareBg})`;
   };
 
   return (
@@ -83,7 +87,7 @@ const ProjectsSection = () => {
                 fontWeight: 500,
                 transition: 'all 0.3s ease',
                 cursor: 'pointer',
-                background: activeFilter === category.id ? '#00d4aa' : 'transparent',
+                background: activeFilter === category.id ? '#A5A584' : 'transparent',
                 color: activeFilter === category.id ? '#1a1a1a' : '#ffffff'
               }}
               onMouseEnter={(e) => {
@@ -131,7 +135,10 @@ const ProjectsSection = () => {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  background: getCompanyGradient(project),
+                  backgroundImage: getCompanyBackground(project),
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -229,7 +236,7 @@ const ProjectsSection = () => {
                         style={{
                           fontSize: '0.75em',
                           background: '#1a1a1a',
-                          color: '#00d4aa',
+                          color: '#A5A584',
                           padding: '4px 8px',
                           borderRadius: '12px',
                           fontWeight: 500
@@ -256,7 +263,7 @@ const ProjectsSection = () => {
                       fontSize: '0.85em',
                       fontWeight: 600,
                       textDecoration: 'none',
-                      background: '#00d4aa',
+                      background: '#A5A584',
                       color: '#1a1a1a',
                       border: 'none',
                       cursor: 'pointer',
@@ -266,10 +273,10 @@ const ProjectsSection = () => {
                       gap: '4px'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = '#00a087';
+                      e.currentTarget.style.background = '#8a8a6b';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = '#00d4aa';
+                      e.currentTarget.style.background = '#A5A584';
                     }}
                     onClick={(e) => e.stopPropagation()}
                   >
@@ -288,18 +295,18 @@ const ProjectsSection = () => {
                       fontSize: '0.85em',
                       fontWeight: 600,
                       background: 'transparent',
-                      color: '#00d4aa',
-                      border: '1px solid #00d4aa',
+                      color: '#A5A584',
+                      border: '1px solid #A5A584',
                       cursor: 'pointer',
                       transition: 'all 0.2s ease'
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = '#00d4aa';
+                      e.currentTarget.style.background = '#A5A584';
                       e.currentTarget.style.color = '#1a1a1a';
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.background = 'transparent';
-                      e.currentTarget.style.color = '#00d4aa';
+                      e.currentTarget.style.color = '#A5A584';
                     }}
                   >
                     Read More
@@ -361,7 +368,7 @@ const ProjectsSection = () => {
                   </h4>
                   {selectedProject.keyFindings.map((finding: string, index: number) => (
                     <div key={index} style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px', fontSize: '14px', lineHeight: 1.6 }}>
-                      <span style={{ color: '#00d4aa', marginRight: '12px', marginTop: '2px', fontWeight: 'bold' }}>•</span>
+                      <span style={{ color: '#A5A584', marginRight: '12px', marginTop: '2px', fontWeight: 'bold' }}>•</span>
                       <span style={{ color: '#d0d0d0' }}>{finding}</span>
                     </div>
                   ))}
@@ -378,7 +385,7 @@ const ProjectsSection = () => {
                     alignItems: 'center',
                     gap: '8px'
                   }}>
-                    <Target className="w-5 h-5" style={{ color: '#00d4aa' }} />
+                    <Target className="w-5 h-5" style={{ color: '#A5A584' }} />
                     Research Questions
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
@@ -404,7 +411,7 @@ const ProjectsSection = () => {
                     alignItems: 'center',
                     gap: '8px'
                   }}>
-                    <BarChart3 className="w-5 h-5" style={{ color: '#00d4aa' }} />
+                    <BarChart3 className="w-5 h-5" style={{ color: '#A5A584' }} />
                     Visualization Types
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
@@ -430,7 +437,7 @@ const ProjectsSection = () => {
                     alignItems: 'center',
                     gap: '8px'
                   }}>
-                    <Lightbulb className="w-5 h-5" style={{ color: '#00d4aa' }} />
+                    <Lightbulb className="w-5 h-5" style={{ color: '#A5A584' }} />
                     Analysis Approach
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
@@ -449,7 +456,7 @@ const ProjectsSection = () => {
                     alignItems: 'center',
                     gap: '8px'
                   }}>
-                    <TrendingUp className="w-5 h-5" style={{ color: '#00d4aa' }} />
+                    <TrendingUp className="w-5 h-5" style={{ color: '#A5A584' }} />
                     Business Impact
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
@@ -468,7 +475,7 @@ const ProjectsSection = () => {
                     alignItems: 'center',
                     gap: '8px'
                   }}>
-                    <CheckCircle className="w-5 h-5" style={{ color: '#00d4aa' }} />
+                    <CheckCircle className="w-5 h-5" style={{ color: '#A5A584' }} />
                     Conclusion
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
@@ -484,7 +491,7 @@ const ProjectsSection = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 px-8 py-4 rounded-lg transition-colors font-semibold text-lg"
                     style={{ 
-                      background: '#00d4aa',
+                      background: '#A5A584',
                       color: '#1a1a1a'
                     }}
                   >
