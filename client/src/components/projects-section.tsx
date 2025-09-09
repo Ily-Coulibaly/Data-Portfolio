@@ -2,10 +2,10 @@ import { useState } from "react";
 import { ChevronDown, ExternalLink, Play, FileText, X, Target, BarChart3, Lightbulb, TrendingUp, CheckCircle, Maximize2, Minimize2 } from "lucide-react";
 import { PROJECTS, FILTER_CATEGORIES } from "@/lib/constants";
 import { BikeShareBlogCard } from "@/components/bike-share-blog-card";
-import bikeShareBg from "@assets/generated_images/Bike_share_analytics_background_484b4e90.png";
-import wayfairBg from "@assets/generated_images/Wayfair_e-commerce_analytics_background_e550f34a.png";
-import olistBg from "@assets/generated_images/Olist_marketplace_analytics_background_b0041778.png";
-import blueBikesBg from "@assets/generated_images/Blue_Bikes_analytics_background_1b7b1831.png";
+import bikeShareBg from "@assets/generated_images/Professional_bike_analytics_dashboard_5be14936.png";
+import wayfairBg from "@assets/generated_images/Professional_e-commerce_analytics_dashboard_ffde26ec.png";
+import olistBg from "@assets/generated_images/Professional_marketplace_analytics_dashboard_df03c4da.png";
+import blueBikesBg from "@assets/generated_images/Professional_urban_mobility_dashboard_a9d27f4e.png";
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -119,7 +119,7 @@ const ProjectsSection = () => {
               data-testid={`project-card-${project.id}`}
               style={{
                 position: 'relative',
-                height: '240px',
+                height: '280px',
                 borderRadius: '8px',
                 border: '1px solid #333',
                 overflow: 'hidden',
@@ -139,6 +139,7 @@ const ProjectsSection = () => {
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
+                  position: 'relative',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -166,12 +167,25 @@ const ProjectsSection = () => {
                   }
                 }}
               >
+                {/* Dark overlay for better text readability */}
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: 'rgba(0, 0, 0, 0.6)',
+                  zIndex: 1
+                }} />
                 <h3 style={{
                   fontSize: '1.8em',
                   fontWeight: 600,
                   color: '#ffffff',
                   textAlign: 'center',
-                  margin: 0
+                  margin: 0,
+                  position: 'relative',
+                  zIndex: 2,
+                  textShadow: '0 2px 4px rgba(0, 0, 0, 0.8)'
                 }}>
                   {getCompanyName(project)}
                 </h3>
@@ -215,9 +229,6 @@ const ProjectsSection = () => {
                     color: '#b3b3b3',
                     lineHeight: 1.4,
                     margin: '0 0 12px 0',
-                    display: '-webkit-box',
-                    WebkitLineClamp: 3,
-                    WebkitBoxOrient: 'vertical',
                     overflow: 'hidden'
                   }}>
                     {project.description}
