@@ -16,10 +16,7 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
       lineHeight: 1.6,
       padding: '40px',
-      borderRadius: '8px',
-      userSelect: 'none',
-      WebkitUserSelect: 'none',
-      MozUserSelect: 'none'
+      borderRadius: '8px'
     }}>
       {/* Header */}
       <header style={{ marginBottom: '40px', borderBottom: '1px solid #333', paddingBottom: '30px' }}>
