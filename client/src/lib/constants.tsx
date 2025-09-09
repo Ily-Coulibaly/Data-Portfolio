@@ -359,7 +359,7 @@ export const ARTICLES = [
     date: "February 7, 2025",
     category: "Technology Trends",
     tags: ["Artificial Intelligence", "Augmented Reality", "Industry Analysis", "Technology Trends", "Business Strategy"],
-    link: "/attached_assets/Final edited essay_Ily_1757439973917.pdf",
+    link: "/attached_assets/Final edited essay_Ily_1757440179934.pdf",
     backgroundImage: "attached_assets/generated_images/AI_cosmetics_technology_background_d63e1c17.png",
     gradient: "from-purple-500 to-pink-600"
   }
