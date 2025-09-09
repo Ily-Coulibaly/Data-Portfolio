@@ -15,7 +15,7 @@ const translations = {
     'nav.skills': 'Skills',
     'nav.projects': 'Projects',
     'nav.certificates': 'Certificates',
-    'nav.articles': 'Articles',
+    'nav.articles': 'Writings',
     'nav.contact': 'Contact',
     
     // Hero Section
@@ -58,7 +58,7 @@ const translations = {
     'certificates.subtitle': 'Industry-recognized certifications demonstrating expertise and commitment to continuous learning',
     
     // Articles Section
-    'articles.title': 'Latest Articles',
+    'articles.title': 'Latest Writings',
     'articles.subtitle': 'Insights and thought leadership on data analytics and business intelligence',
     'articles.readTime': 'min read',
     
@@ -120,7 +120,7 @@ const translations = {
     'nav.skills': 'Compétences',
     'nav.projects': 'Projets',
     'nav.certificates': 'Certifications',
-    'nav.articles': 'Articles',
+    'nav.articles': 'Écrits',
     'nav.contact': 'Contact',
     
     // Hero Section
@@ -163,7 +163,7 @@ const translations = {
     'certificates.subtitle': 'Certifications reconnues par l\'industrie démontrant l\'expertise et l\'engagement envers l\'apprentissage continu',
     
     // Articles Section
-    'articles.title': 'Derniers Articles',
+    'articles.title': 'Derniers Écrits',
     'articles.subtitle': 'Insights et leadership éclairé sur l\'analyse de données et l\'intelligence d\'affaires',
     'articles.readTime': 'min de lecture',
     
