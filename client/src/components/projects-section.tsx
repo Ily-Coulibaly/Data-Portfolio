@@ -2,8 +2,6 @@ import { useState } from "react";
 import { ChevronDown, ExternalLink, Play, FileText, X, Target, BarChart3, Lightbulb, TrendingUp, CheckCircle, Maximize2, Minimize2 } from "lucide-react";
 import { PROJECTS, FILTER_CATEGORIES } from "@/lib/constants";
 import { BikeShareBlogCard } from "@/components/bike-share-blog-card";
-import bikeShareBg from "@assets/generated_images/Dark_tech_bike_analytics_dashboard_f691e25c.png";
-import wayfairBg from "@assets/generated_images/Dark_Wayfair_analytics_dashboard_0212aec8.png";
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -34,21 +32,70 @@ const ProjectsSection = () => {
     setShowDetailModal(true);
   };
 
+  // Get company name from project title
+  const getCompanyName = (project: any) => {
+    if (project.id === 1) return "Bike Share";
+    if (project.id === 2) return "Wayfair";
+    if (project.id === 3) return "Olist";
+    if (project.id === 4) return "Blue Bikes";
+    return project.title;
+  };
+
+  // Get gradient for company
+  const getCompanyGradient = (project: any) => {
+    if (project.id === 1) return "linear-gradient(135deg, #00d4aa 0%, #00a087 100%)";
+    if (project.id === 2) return "linear-gradient(135deg, #7c4dff 0%, #5e35b1 100%)";
+    if (project.id === 3) return "linear-gradient(135deg, #ff7043 0%, #e64a19 100%)";
+    if (project.id === 4) return "linear-gradient(135deg, #00d4aa 0%, #00a087 100%)";
+    return "linear-gradient(135deg, #00d4aa 0%, #00a087 100%)";
+  };
+
   return (
-    <section id="projects" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">Featured Projects</h2>
+    <section id="projects" style={{ padding: '80px 24px', background: '#1a1a1a' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <h2 style={{
+          fontSize: '2.5rem',
+          fontWeight: 'bold',
+          textAlign: 'center',
+          marginBottom: '64px',
+          color: '#ffffff'
+        }}>
+          Featured Projects
+        </h2>
         
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '16px',
+          marginBottom: '48px'
+        }}>
           {FILTER_CATEGORIES.map((category) => (
             <button
               key={category.id}
               onClick={() => setActiveFilter(category.id)}
               data-testid={`filter-${category.id}`}
-              className={`px-6 py-3 rounded-lg border border-border font-medium transition-all duration-300 ${
-                activeFilter === category.id ? 'filter-active' : 'hover:bg-card'
-              }`}
+              style={{
+                padding: '12px 24px',
+                borderRadius: '8px',
+                border: '1px solid #333',
+                fontWeight: 500,
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
+                background: activeFilter === category.id ? '#00d4aa' : 'transparent',
+                color: activeFilter === category.id ? '#1a1a1a' : '#ffffff'
+              }}
+              onMouseEnter={(e) => {
+                if (activeFilter !== category.id) {
+                  e.currentTarget.style.background = '#2d2d2d';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (activeFilter !== category.id) {
+                  e.currentTarget.style.background = 'transparent';
+                }
+              }}
             >
               {category.label}
             </button>
@@ -56,243 +103,209 @@ const ProjectsSection = () => {
         </div>
         
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
+          gap: '30px',
+          marginBottom: '64px'
+        }}>
           {filteredProjects.map((project) => (
-            <div key={project.id}>
-              {project.isAdvancedCard ? (
-                /* Advanced Portfolio Card */
-                <div 
-                  className="advanced-portfolio-card"
-                  data-testid={`project-card-${project.id}`}
-                  style={{
-                    background: '#1a1a1a',
-                    border: '1px solid #333',
-                    borderRadius: '16px',
-                    maxWidth: '450px',
-                    width: '100%',
-                    overflow: 'hidden',
-                    position: 'relative',
-                    transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-8px)';
-                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.4)';
-                    const borderEl = e.currentTarget.querySelector('.gradient-border') as HTMLElement;
-                    if (borderEl) borderEl.style.opacity = '1';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = 'none';
-                    const borderEl = e.currentTarget.querySelector('.gradient-border') as HTMLElement;
-                    if (borderEl) borderEl.style.opacity = '0';
-                  }}
-                >
-                  {/* Gradient Border */}
-                  <div 
-                    className="gradient-border"
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      height: '3px',
-                      background: 'linear-gradient(90deg, #A5A584, #A5A584, #A5A584)',
-                      opacity: 0,
-                      transition: 'opacity 0.4s ease'
-                    }}
-                  />
+            <div 
+              key={project.id}
+              data-testid={`project-card-${project.id}`}
+              style={{
+                position: 'relative',
+                height: '240px',
+                borderRadius: '8px',
+                border: '1px solid #333',
+                overflow: 'hidden',
+                cursor: 'pointer'
+              }}
+            >
+              {/* Front Card - Company Name */}
+              <div
+                className="front-card"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: getCompanyGradient(project),
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.3s ease',
+                  zIndex: 2
+                }}
+                onMouseEnter={(e) => {
+                  const front = e.currentTarget;
+                  const back = e.currentTarget.nextElementSibling as HTMLElement;
+                  front.style.opacity = '0';
+                  front.style.transform = 'translateY(-10px)';
+                  if (back) {
+                    back.style.opacity = '1';
+                    back.style.transform = 'translateY(0)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  const front = e.currentTarget;
+                  const back = e.currentTarget.nextElementSibling as HTMLElement;
+                  front.style.opacity = '1';
+                  front.style.transform = 'translateY(0)';
+                  if (back) {
+                    back.style.opacity = '0';
+                    back.style.transform = 'translateY(10px)';
+                  }
+                }}
+              >
+                <h3 style={{
+                  fontSize: '1.8em',
+                  fontWeight: 600,
+                  color: '#ffffff',
+                  textAlign: 'center',
+                  margin: 0
+                }}>
+                  {getCompanyName(project)}
+                </h3>
+              </div>
 
-                  {/* Header Image */}
-                  <div 
-                    style={{ 
-                      height: '160px',
-                      position: 'relative',
-                      backgroundImage: `url(${project.id === 1 ? bikeShareBg : wayfairBg})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      borderRadius: '16px 16px 0 0',
-                      overflow: 'hidden'
+              {/* Back Card - Project Content */}
+              <div
+                className="back-card"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: '#2d2d2d',
+                  padding: '20px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  opacity: 0,
+                  transform: 'translateY(10px)',
+                  transition: 'all 0.3s ease',
+                  zIndex: 1
+                }}
+              >
+                {/* Title */}
+                <div>
+                  <h3 style={{
+                    fontSize: '1.2em',
+                    fontWeight: 600,
+                    color: '#ffffff',
+                    margin: '0 0 8px 0',
+                    lineHeight: 1.3
+                  }}>
+                    {project.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p style={{
+                    fontSize: '0.85em',
+                    color: '#b3b3b3',
+                    lineHeight: 1.4,
+                    margin: '0 0 12px 0',
+                    display: '-webkit-box',
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden'
+                  }}>
+                    {project.description}
+                  </p>
+                  
+                  {/* Tags */}
+                  <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '6px',
+                    marginBottom: '16px'
+                  }}>
+                    {project.tags.slice(0, 3).map((tag: string) => (
+                      <span 
+                        key={tag}
+                        style={{
+                          fontSize: '0.75em',
+                          background: '#1a1a1a',
+                          color: '#00d4aa',
+                          padding: '4px 8px',
+                          borderRadius: '12px',
+                          fontWeight: 500
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Buttons */}
+                <div style={{
+                  display: 'flex',
+                  gap: '8px'
+                }}>
+                  <a
+                    href={project.tableauLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      padding: '8px 16px',
+                      borderRadius: '4px',
+                      fontSize: '0.85em',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      background: '#00d4aa',
+                      color: '#1a1a1a',
+                      border: 'none',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = '#00a087';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = '#00d4aa';
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Play className="w-3 h-3" />
+                    View in Tableau
+                  </a>
+                  
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      showDetailedView(project);
+                    }}
+                    style={{
+                      padding: '8px 16px',
+                      borderRadius: '4px',
+                      fontSize: '0.85em',
+                      fontWeight: 600,
+                      background: 'transparent',
+                      color: '#00d4aa',
+                      border: '1px solid #00d4aa',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = '#00d4aa';
+                      e.currentTarget.style.color = '#1a1a1a';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'transparent';
+                      e.currentTarget.style.color = '#00d4aa';
                     }}
                   >
-                    {/* Subtle overlay for better contrast */}
-                    <div 
-                      style={{
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        height: '60px',
-                        background: 'linear-gradient(transparent, rgba(0, 0, 0, 0.3))'
-                      }}
-                    />
-                  </div>
-
-                  {/* Title and Content Below Header */}
-                  <div style={{ padding: '20px 24px 0' }}>
-                    <h3 
-                      style={{
-                        fontSize: '18px',
-                        fontWeight: 700,
-                        color: '#ffffff',
-                        marginBottom: '6px',
-                        lineHeight: 1.3
-                      }}
-                    >
-                      {project.title}
-                    </h3>
-                    
-                    <p 
-                      style={{
-                        color: '#a0a0a0',
-                        fontSize: '13px',
-                        lineHeight: 1.4,
-                        marginBottom: '16px'
-                      }}
-                    >
-                      {project.subtitle}
-                    </p>
-                  </div>
-
-                  {/* Content */}
-                  <div style={{ padding: '0 24px 24px' }}>
-                    <div 
-                      style={{
-                        color: '#c0c0c0',
-                        fontSize: '13px',
-                        lineHeight: 1.5,
-                        marginBottom: '18px'
-                      }}
-                    >
-                      Data analysis of two years of hourly bike share usage patterns, delivering actionable business insights into customer behavior segmentation, seasonal demand forecasting, and weather impact analytics to optimize operational efficiency and drive strategic decision-making.
-                    </div>
-
-                    {/* Skill Tags - Minimalistic */}
-                    <div style={{ marginBottom: '18px' }}>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                        {project.tags.slice(0, 3).map((tag: string) => (
-                          <span 
-                            key={tag}
-                            style={{
-                              background: '#2a2a2a',
-                              color: '#d0d0d0',
-                              padding: '4px 10px',
-                              borderRadius: '12px',
-                              fontSize: '11px',
-                              fontWeight: 500,
-                              border: '1px solid #404040'
-                            }}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Action Buttons - Minimalistic */}
-                    <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
-                      <button
-                        onClick={() => showDetailedView(project)}
-                        style={{
-                          padding: '8px 12px',
-                          borderRadius: '4px',
-                          fontSize: '12px',
-                          fontWeight: 500,
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '4px',
-                          transition: 'opacity 0.2s ease',
-                          border: 'none',
-                          cursor: 'pointer',
-                          background: 'transparent',
-                          color: '#A5A584',
-                          textDecoration: 'underline',
-                          textUnderlineOffset: '2px'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.opacity = '0.7';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.opacity = '1';
-                        }}
-                      >
-                        Read More
-                      </button>
-
-                      <a
-                        href={project.tableauLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          padding: '8px 12px',
-                          borderRadius: '4px',
-                          fontSize: '12px',
-                          fontWeight: 500,
-                          textDecoration: 'none',
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '4px',
-                          transition: 'opacity 0.2s ease',
-                          border: '1px solid #404040',
-                          cursor: 'pointer',
-                          background: 'transparent',
-                          color: '#d0d0d0'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.opacity = '0.7';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.opacity = '1';
-                        }}
-                      >
-                        <Play className="w-3 h-3" />
-                        View in Tableau
-                      </a>
-                    </div>
-                  </div>
+                    Read More
+                  </button>
                 </div>
-              ) : (
-                /* Regular Project Cards */
-                <div 
-                  className={`project-card rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer bg-card`}
-                  data-testid={`project-card-${project.id}`}
-                  onClick={() => openProjectModal(project)}
-                >
-                  <div className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
-                    <div className="text-white text-center">
-                      <div className="text-4xl mb-2">{project.icon}</div>
-                      <div className="font-semibold">{project.title}</div>
-                    </div>
-                  </div>
-                  
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-                    <p className="text-muted-foreground mb-4">{project.description}</p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tags.map((tag: string) => (
-                        <span 
-                          key={tag} 
-                          className="px-2 py-1 bg-primary/20 text-primary text-xs rounded"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      data-testid={`project-link-${project.id}`}
-                      className="inline-flex items-center text-primary hover:text-primary/80 transition-colors duration-300"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      View Project
-                      <ExternalLink className="w-4 h-4 ml-1" />
-                    </a>
-                  </div>
-                </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
@@ -348,7 +361,7 @@ const ProjectsSection = () => {
                   </h4>
                   {selectedProject.keyFindings.map((finding: string, index: number) => (
                     <div key={index} style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px', fontSize: '14px', lineHeight: 1.6 }}>
-                      <span style={{ color: '#A5A584', marginRight: '12px', marginTop: '2px', fontWeight: 'bold' }}>•</span>
+                      <span style={{ color: '#00d4aa', marginRight: '12px', marginTop: '2px', fontWeight: 'bold' }}>•</span>
                       <span style={{ color: '#d0d0d0' }}>{finding}</span>
                     </div>
                   ))}
@@ -365,7 +378,7 @@ const ProjectsSection = () => {
                     alignItems: 'center',
                     gap: '8px'
                   }}>
-                    <Target className="w-5 h-5" style={{ color: '#A5A584' }} />
+                    <Target className="w-5 h-5" style={{ color: '#00d4aa' }} />
                     Research Questions
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
@@ -391,7 +404,7 @@ const ProjectsSection = () => {
                     alignItems: 'center',
                     gap: '8px'
                   }}>
-                    <BarChart3 className="w-5 h-5" style={{ color: '#A5A584' }} />
+                    <BarChart3 className="w-5 h-5" style={{ color: '#00d4aa' }} />
                     Visualization Types
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
@@ -417,7 +430,7 @@ const ProjectsSection = () => {
                     alignItems: 'center',
                     gap: '8px'
                   }}>
-                    <Lightbulb className="w-5 h-5" style={{ color: '#A5A584' }} />
+                    <Lightbulb className="w-5 h-5" style={{ color: '#00d4aa' }} />
                     Analysis Approach
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
@@ -436,7 +449,7 @@ const ProjectsSection = () => {
                     alignItems: 'center',
                     gap: '8px'
                   }}>
-                    <TrendingUp className="w-5 h-5" style={{ color: '#A5A584' }} />
+                    <TrendingUp className="w-5 h-5" style={{ color: '#00d4aa' }} />
                     Business Impact
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
@@ -455,7 +468,7 @@ const ProjectsSection = () => {
                     alignItems: 'center',
                     gap: '8px'
                   }}>
-                    <CheckCircle className="w-5 h-5" style={{ color: '#A5A584' }} />
+                    <CheckCircle className="w-5 h-5" style={{ color: '#00d4aa' }} />
                     Conclusion
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
@@ -471,8 +484,8 @@ const ProjectsSection = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 px-8 py-4 rounded-lg transition-colors font-semibold text-lg"
                     style={{ 
-                      background: '#A5A584',
-                      color: '#000'
+                      background: '#00d4aa',
+                      color: '#1a1a1a'
                     }}
                   >
                     <Play className="w-6 h-6" />
@@ -546,7 +559,8 @@ const ProjectsSection = () => {
             data-testid="scroll-to-certificates"
             className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors duration-300"
           >
-            <ChevronDown className="w-6 h-6" />
+            <span className="text-sm mb-2">View Certificates</span>
+            <ChevronDown className="w-6 h-6 animate-bounce" />
           </a>
         </div>
       </div>
