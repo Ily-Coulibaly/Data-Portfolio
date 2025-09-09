@@ -1,5 +1,6 @@
 import React from 'react';
 import { Target, TrendingUp, BarChart3, LineChart, Activity, FileText } from 'lucide-react';
+import bikeShareReport from '@assets/Bike Share Case_Ily_1757430755593.pdf';
 
 interface BikeShareBlogCardProps {
   className?: string;
@@ -358,7 +359,7 @@ export function BikeShareBlogCard({ className = '' }: BikeShareBlogCardProps) {
         </a>
         
         <a
-          href="/attached_assets/Bike Share Case_Ily_1757430755593.pdf"
+          href={bikeShareReport}
           target="_blank"
           rel="noopener noreferrer"
           style={{

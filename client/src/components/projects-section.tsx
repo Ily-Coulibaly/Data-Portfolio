@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ExternalLink, Play, FileText, X, Target, BarChart3, Lightbulb, TrendingUp, CheckCircle } from "lucide-react";
+import { ChevronDown, ExternalLink, Play, FileText, X, Target, BarChart3, Lightbulb, TrendingUp, CheckCircle, Maximize2, Minimize2 } from "lucide-react";
 import { PROJECTS, FILTER_CATEGORIES } from "@/lib/constants";
 import { BikeShareBlogCard } from "@/components/bike-share-blog-card";
 import bikeShareBg from "@assets/generated_images/Dark_tech_bike_analytics_dashboard_f691e25c.png";
@@ -9,6 +9,7 @@ const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [showDetailModal, setShowDetailModal] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const filteredProjects = PROJECTS.filter(project => 
     activeFilter === "all" || project.skills.includes(activeFilter)
@@ -21,6 +22,11 @@ const ProjectsSection = () => {
   const closeProjectModal = () => {
     setSelectedProject(null);
     setShowDetailModal(false);
+    setIsFullscreen(false);
+  };
+
+  const toggleFullscreen = () => {
+    setIsFullscreen(!isFullscreen);
   };
 
   const showDetailedView = (project: any) => {
@@ -295,20 +301,35 @@ const ProjectsSection = () => {
         {selectedProject && showDetailModal && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className={`bg-black overflow-hidden relative ${
-              selectedProject.id === 1 
+              isFullscreen 
                 ? 'fixed inset-0 w-full h-full' 
                 : 'rounded-2xl max-w-6xl w-full max-h-[90vh]'
             }`}>
-              <button
-                onClick={closeProjectModal}
-                className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors"
-              >
-                <X className="w-6 h-6 text-white" />
-              </button>
+              <div className="absolute top-4 right-4 z-10 flex gap-2">
+                {selectedProject.id === 1 && (
+                  <button
+                    onClick={toggleFullscreen}
+                    className="bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors"
+                    title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+                  >
+                    {isFullscreen ? (
+                      <Minimize2 className="w-5 h-5 text-white" />
+                    ) : (
+                      <Maximize2 className="w-5 h-5 text-white" />
+                    )}
+                  </button>
+                )}
+                <button
+                  onClick={closeProjectModal}
+                  className="bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors"
+                >
+                  <X className="w-6 h-6 text-white" />
+                </button>
+              </div>
 
               {selectedProject.id === 1 ? (
                 /* Blog Style View for Bike Share */
-                <div className="overflow-y-auto h-full bg-black">
+                <div className={`overflow-y-auto bg-black ${isFullscreen ? 'h-full' : 'max-h-[80vh]'}`}>
                   <BikeShareBlogCard />
                 </div>
               ) : (
