@@ -9,8 +9,8 @@ const ArticlesSection = () => {
     <section id="articles" className="py-20 px-6 bg-secondary">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-2">{t('articles.title')}</h2>
-          <p className="text-muted-foreground text-sm">I write, sometimes.</p>
+          <h2 className="text-4xl font-bold mb-6">{t('articles.title')}</h2>
+          <p className="text-muted-foreground text-base mb-6">I write, sometimes.</p>
         </div>
         
         <div className="grid grid-cols-1 max-w-4xl mx-auto">
