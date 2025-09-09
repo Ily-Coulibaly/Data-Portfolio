@@ -142,31 +142,30 @@ const ProjectsSection = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  transition: 'all 0.3s ease',
+                  transition: 'opacity 0.3s ease',
                   zIndex: 2
                 }}
                 onMouseEnter={(e) => {
                   const front = e.currentTarget;
                   const back = e.currentTarget.nextElementSibling as HTMLElement;
+                  
+                  // Smooth transition without z-index jumping
                   front.style.opacity = '0';
-                  front.style.transform = 'translateY(-10px)';
-                  front.style.zIndex = '1';
+                  front.style.pointerEvents = 'none';
                   if (back) {
                     back.style.opacity = '1';
-                    back.style.transform = 'translateY(0)';
-                    back.style.zIndex = '3';
+                    back.style.pointerEvents = 'auto';
                   }
                 }}
                 onMouseLeave={(e) => {
                   const front = e.currentTarget;
                   const back = e.currentTarget.nextElementSibling as HTMLElement;
+                  
                   front.style.opacity = '1';
-                  front.style.transform = 'translateY(0)';
-                  front.style.zIndex = '2';
+                  front.style.pointerEvents = 'auto';
                   if (back) {
                     back.style.opacity = '0';
-                    back.style.transform = 'translateY(10px)';
-                    back.style.zIndex = '1';
+                    back.style.pointerEvents = 'none';
                   }
                 }}
               >
@@ -209,9 +208,9 @@ const ProjectsSection = () => {
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   opacity: 0,
-                  transform: 'translateY(10px)',
-                  transition: 'all 0.3s ease',
-                  zIndex: 1
+                  transition: 'opacity 0.3s ease',
+                  zIndex: 3,
+                  pointerEvents: 'none'
                 }}
               >
                 {/* Title */}
