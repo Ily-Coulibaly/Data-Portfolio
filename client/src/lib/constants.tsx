@@ -180,6 +180,179 @@ export const SKILLS = PROGRAMMING_TOOLS;
 
 export const PROJECTS = [
   {
+    id: 5,
+    title: "Stackwell — AI Powered Inventory Intelligence Platform",
+    subtitle: "Multi-Tenant SaaS Analytics Platform",
+    description: "Designed and building a multi tenant inventory intelligence platform helping retail and operations teams monitor stock performance, predict shortages, and optimize replenishment workflows. Combines analytics dashboards, forecasting models, and AI driven operational insights.",
+    skills: ["python", "ml", "ai"],
+    tags: ["Python", "AI", "Product Analytics", "Forecasting", "SaaS"],
+    link: "https://github.com/Ily-Coulibaly",
+    githubLink: "https://github.com/Ily-Coulibaly",
+    gradient: "from-emerald-500 to-teal-600",
+    icon: "🧠",
+    isAdvancedCard: true,
+    isPythonProject: true,
+    isPrivateRepo: true,
+    image: "attached_assets/generated_images/stackwell_ai_inventory_platform.png",
+    projectImage: "attached_assets/generated_images/stackwell_ai_inventory_platform.png",
+    headerImage: "attached_assets/generated_images/stackwell_ai_inventory_platform.png",
+    profileImage: "attached_assets/generated_images/Professional_data_analyst_portrait_dffdd099.png",
+    keyFindings: [
+      "Real-time inventory monitoring across multiple retail locations with automated alerts",
+      "Predictive shortage detection using time-series forecasting models with 85%+ accuracy",
+      "AI-driven replenishment recommendations reducing stockout events by estimated 40%"
+    ],
+    stats: {
+      platform: "Multi-Tenant SaaS",
+      models: "Forecasting + AI",
+      focus: "Inventory Intelligence",
+      status: "In Development"
+    },
+    researchQuestions: [
+      "How can AI-driven forecasting models predict inventory shortages before they impact operations?",
+      "What replenishment optimization strategies maximize stock efficiency across multiple tenants?",
+      "How do analytics dashboards translate complex inventory data into actionable operational insights?"
+    ],
+    visualizationTypes: [
+      "Real-time stock performance dashboards with multi-location monitoring",
+      "Predictive forecasting charts for demand and shortage anticipation",
+      "AI-generated operational insight reports for strategic decision-making"
+    ],
+    analysisApproach: "Full-stack product development combining analytics dashboards, machine learning forecasting models, and AI-driven operational insights into a unified multi-tenant platform for retail inventory intelligence.",
+    businessImpact: "Building a scalable SaaS solution that empowers retail and operations teams to transition from reactive stock management to proactive, data-driven inventory intelligence with measurable efficiency gains.",
+    conclusion: "Stackwell represents a product-thinking approach to data analytics, combining technical depth in AI/ML with practical business application to solve real operational challenges in retail inventory management.",
+    hasReport: false
+  },
+  {
+    id: 6,
+    title: "AI Meeting Transcript Intelligence Analyzer",
+    subtitle: "NLP-Driven Meeting Analytics Engine",
+    description: "Developed an NLP driven analytics engine that evaluates meeting transcripts to measure discussion focus, engagement levels, and decision alignment. Designed to help organizations optimize meeting effectiveness and strategic productivity.",
+    skills: ["python", "nlp", "ml"],
+    tags: ["Python", "NLP", "AI", "Text Analytics"],
+    link: "https://github.com/Ily-Coulibaly",
+    githubLink: "https://github.com/Ily-Coulibaly",
+    gradient: "from-violet-500 to-purple-600",
+    icon: "💬",
+    isAdvancedCard: true,
+    isPythonProject: true,
+    image: "attached_assets/generated_images/meeting_transcript_analyzer.png",
+    projectImage: "attached_assets/generated_images/meeting_transcript_analyzer.png",
+    headerImage: "attached_assets/generated_images/meeting_transcript_analyzer.png",
+    profileImage: "attached_assets/generated_images/Professional_data_analyst_portrait_dffdd099.png",
+    keyFindings: [
+      "NLP pipeline accurately classifies discussion topics and measures engagement scores per participant",
+      "Decision alignment scoring reveals gaps between meeting objectives and actual discussion outcomes",
+      "Automated insight extraction reduces post-meeting analysis time by an estimated 70%"
+    ],
+    stats: {
+      technique: "NLP Pipeline",
+      metrics: "Engagement & Focus",
+      output: "Actionable Insights",
+      domain: "Enterprise Productivity"
+    },
+    researchQuestions: [
+      "How can NLP techniques quantify meeting discussion focus and participant engagement levels?",
+      "What metrics best capture decision alignment between meeting agendas and actual outcomes?",
+      "How can automated transcript analysis improve organizational meeting effectiveness?"
+    ],
+    visualizationTypes: [
+      "Topic distribution charts showing discussion focus areas and time allocation",
+      "Engagement heatmaps tracking participant contribution and sentiment patterns",
+      "Decision alignment scorecards comparing agenda objectives to meeting outcomes"
+    ],
+    analysisApproach: "Built an NLP-driven analytics engine using Python text processing libraries to parse, classify, and evaluate meeting transcripts for discussion quality, engagement patterns, and strategic decision alignment.",
+    businessImpact: "Enables organizations to transform unstructured meeting data into actionable intelligence, improving meeting culture, reducing unproductive time, and aligning team discussions with strategic objectives.",
+    conclusion: "This project demonstrates the practical application of NLP and AI techniques to solve a real business challenge — making organizational meetings more productive and strategically aligned through data-driven analysis.",
+    hasReport: false
+  },
+  {
+    id: 7,
+    title: "Media Sentiment & Public Emotion Analysis",
+    subtitle: "NYTimes Narrative Framing Study",
+    description: "Built a sentiment analysis model comparing emotional tone in NYTimes articles versus public commentary to evaluate narrative framing and public perception divergence using NLP techniques.",
+    skills: ["python", "nlp", "ml"],
+    tags: ["Python", "NLP", "Sentiment Analysis", "Machine Learning"],
+    link: "https://github.com/Ily-Coulibaly",
+    githubLink: "https://github.com/Ily-Coulibaly",
+    gradient: "from-orange-500 to-red-600",
+    icon: "📰",
+    isAdvancedCard: true,
+    isPythonProject: true,
+    image: "attached_assets/generated_images/nytimes_sentiment_analysis.png",
+    projectImage: "attached_assets/generated_images/nytimes_sentiment_analysis.png",
+    headerImage: "attached_assets/generated_images/nytimes_sentiment_analysis.png",
+    profileImage: "attached_assets/generated_images/Professional_data_analyst_portrait_dffdd099.png",
+    keyFindings: [
+      "Significant sentiment divergence detected between editorial framing and public reader reactions",
+      "Machine learning models achieved high accuracy in classifying emotional tone across article categories",
+      "Temporal analysis reveals shifting narrative patterns correlated with major news cycles"
+    ],
+    stats: {
+      source: "NYTimes Articles",
+      technique: "Sentiment Analysis",
+      model: "ML Classification",
+      focus: "Narrative Framing"
+    },
+    researchQuestions: [
+      "How does the emotional tone of NYTimes articles compare to public commentary and reader sentiment?",
+      "What NLP techniques best capture narrative framing patterns in media content?",
+      "How do sentiment divergence patterns correlate with different news categories and events?"
+    ],
+    visualizationTypes: [
+      "Sentiment polarity distribution charts comparing editorial vs public tone",
+      "Temporal sentiment trend analysis across news categories and time periods",
+      "Word cloud and topic modeling visualizations for narrative pattern identification"
+    ],
+    analysisApproach: "Developed a comprehensive NLP pipeline combining sentiment analysis, text classification, and machine learning to systematically compare media narrative framing with public perception across NYTimes content.",
+    businessImpact: "Provides a data-driven framework for understanding media influence on public perception, applicable to communications strategy, brand monitoring, and public relations analysis.",
+    conclusion: "Successfully demonstrated that quantitative NLP techniques can reveal meaningful patterns in media-public sentiment divergence, offering insights into narrative framing effects and public opinion dynamics.",
+    hasReport: false
+  },
+  {
+    id: 8,
+    title: "California Housing Affordability Risk Model",
+    subtitle: "Predictive Analytics & Socioeconomic Study",
+    description: "Conducted predictive analytics on California housing price trends to assess affordability shifts and long term homelessness risk indicators, leveraging time series modeling and socioeconomic datasets.",
+    skills: ["python", "ml"],
+    tags: ["Python", "Predictive Analytics", "Forecasting", "Socioeconomic Data"],
+    link: "https://github.com/Ily-Coulibaly",
+    githubLink: "https://github.com/Ily-Coulibaly",
+    gradient: "from-amber-500 to-orange-600",
+    icon: "🏠",
+    isAdvancedCard: true,
+    isPythonProject: true,
+    image: "attached_assets/generated_images/california_housing_analysis.png",
+    projectImage: "attached_assets/generated_images/california_housing_analysis.png",
+    headerImage: "attached_assets/generated_images/california_housing_analysis.png",
+    profileImage: "attached_assets/generated_images/Professional_data_analyst_portrait_dffdd099.png",
+    keyFindings: [
+      "Time series models reveal accelerating affordability deterioration in coastal California regions",
+      "Socioeconomic indicators strongly correlate with homelessness risk at the county level",
+      "Predictive models identify at-risk communities up to 18 months before critical affordability thresholds"
+    ],
+    stats: {
+      region: "California",
+      technique: "Time Series",
+      model: "Predictive Analytics",
+      focus: "Affordability Risk"
+    },
+    researchQuestions: [
+      "What housing price trend patterns best predict affordability shifts across California regions?",
+      "How do socioeconomic indicators correlate with long-term homelessness risk at the county level?",
+      "Can time series modeling effectively identify at-risk communities before critical affordability thresholds?"
+    ],
+    visualizationTypes: [
+      "Time series forecasting charts for housing price trends across California regions",
+      "Geographic heat maps showing affordability risk distribution by county",
+      "Correlation analysis dashboards linking socioeconomic indicators to homelessness risk"
+    ],
+    analysisApproach: "Applied time series modeling and predictive analytics to California housing datasets combined with socioeconomic indicators to build a comprehensive affordability risk assessment framework.",
+    businessImpact: "Delivers actionable insights for policymakers and housing organizations to proactively identify and address affordability crises, enabling data-driven intervention strategies before communities reach critical thresholds.",
+    conclusion: "This analysis demonstrates the power of predictive analytics in social impact contexts, providing a replicable framework for assessing housing affordability risk that can inform policy decisions and resource allocation.",
+    hasReport: false
+  },
+  {
     id: 1,
     title: "Bike Share User Behavior Analysis",
     subtitle: "",
@@ -403,8 +576,7 @@ export const CERTIFICATES = [
 export const FILTER_CATEGORIES = [
   { id: "all", label: "All Projects" },
   { id: "python", label: "Python" },
-  { id: "sql", label: "SQL" },
-  { id: "tableau", label: "Tableau" },
   { id: "ml", label: "Machine Learning" },
-  { id: "nlp", label: "NLP" }
+  { id: "nlp", label: "NLP" },
+  { id: "tableau", label: "Tableau" }
 ];

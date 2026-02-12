@@ -1,9 +1,15 @@
 import { useState } from "react";
-import { ChevronDown, ExternalLink, Play, FileText, X, Target, BarChart3, Lightbulb, TrendingUp, CheckCircle, Maximize2, Minimize2 } from "lucide-react";
+import { ChevronDown, ExternalLink, Play, FileText, X, Target, BarChart3, Lightbulb, TrendingUp, CheckCircle, Maximize2, Minimize2, Github } from "lucide-react";
 import { PROJECTS, FILTER_CATEGORIES } from "@/lib/constants";
 import { BikeShareBlogCard } from "@/components/bike-share-blog-card";
 import bikeShareBg from "@assets/generated_images/Dark_tech_bike_analytics_dashboard_f691e25c.png";
 import wayfairBg from "@assets/generated_images/Dark_Wayfair_analytics_dashboard_0212aec8.png";
+import stackwellBg from "@assets/generated_images/stackwell_ai_inventory_platform.png";
+import meetingBg from "@assets/generated_images/meeting_transcript_analyzer.png";
+import nytimesBg from "@assets/generated_images/nytimes_sentiment_analysis.png";
+import housingBg from "@assets/generated_images/california_housing_analysis.png";
+import olistBg from "@assets/generated_images/Clean_Brazil_e-commerce_interface_89bcc56b.png";
+import blueBikesBg from "@assets/generated_images/Boston_bike-sharing_analytics_dashboard_68ff43d0.png";
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -107,7 +113,17 @@ const ProjectsSection = () => {
                     style={{ 
                       height: '160px',
                       position: 'relative',
-                      backgroundImage: `url(${project.id === 1 ? bikeShareBg : wayfairBg})`,
+                      backgroundImage: `url(${
+                        project.id === 1 ? bikeShareBg : 
+                        project.id === 2 ? wayfairBg : 
+                        project.id === 3 ? olistBg :
+                        project.id === 4 ? blueBikesBg :
+                        project.id === 5 ? stackwellBg : 
+                        project.id === 6 ? meetingBg : 
+                        project.id === 7 ? nytimesBg : 
+                        project.id === 8 ? housingBg : 
+                        wayfairBg
+                      })`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                       borderRadius: '16px 16px 0 0',
@@ -163,7 +179,7 @@ const ProjectsSection = () => {
                         marginBottom: '18px'
                       }}
                     >
-                      Data analysis of two years of hourly bike share usage patterns, delivering actionable business insights into customer behavior segmentation, seasonal demand forecasting, and weather impact analytics to optimize operational efficiency and drive strategic decision-making.
+                      {project.description}
                     </div>
 
                     {/* Skill Tags - Minimalistic */}
@@ -218,35 +234,67 @@ const ProjectsSection = () => {
                         Read More
                       </button>
 
-                      <a
-                        href={project.tableauLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          padding: '8px 12px',
-                          borderRadius: '4px',
-                          fontSize: '12px',
-                          fontWeight: 500,
-                          textDecoration: 'none',
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '4px',
-                          transition: 'opacity 0.2s ease',
-                          border: '1px solid #404040',
-                          cursor: 'pointer',
-                          background: 'transparent',
-                          color: '#d0d0d0'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.opacity = '0.7';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.opacity = '1';
-                        }}
-                      >
-                        <Play className="w-3 h-3" />
-                        View in Tableau
-                      </a>
+                      {project.isPythonProject ? (
+                        <a
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            padding: '8px 12px',
+                            borderRadius: '4px',
+                            fontSize: '12px',
+                            fontWeight: 500,
+                            textDecoration: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '4px',
+                            transition: 'opacity 0.2s ease',
+                            border: '1px solid #404040',
+                            cursor: 'pointer',
+                            background: 'transparent',
+                            color: '#d0d0d0'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.opacity = '0.7';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.opacity = '1';
+                          }}
+                        >
+                          <Github className="w-3 h-3" />
+                          {project.isPrivateRepo ? 'View Project (Private Demo Available)' : 'View Project'}
+                        </a>
+                      ) : (
+                        <a
+                          href={project.tableauLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            padding: '8px 12px',
+                            borderRadius: '4px',
+                            fontSize: '12px',
+                            fontWeight: 500,
+                            textDecoration: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '4px',
+                            transition: 'opacity 0.2s ease',
+                            border: '1px solid #404040',
+                            cursor: 'pointer',
+                            background: 'transparent',
+                            color: '#d0d0d0'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.opacity = '0.7';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.opacity = '1';
+                          }}
+                        >
+                          <Play className="w-3 h-3" />
+                          View in Tableau
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -465,19 +513,35 @@ const ProjectsSection = () => {
 
                 {/* Action Button */}
                 <div className="flex justify-center">
-                  <a
-                    href={selectedProject.tableauLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-8 py-4 rounded-lg transition-colors font-semibold text-lg"
-                    style={{ 
-                      background: '#A5A584',
-                      color: '#000'
-                    }}
-                  >
-                    <Play className="w-6 h-6" />
-                    View in Tableau Public
-                  </a>
+                  {selectedProject.isPythonProject ? (
+                    <a
+                      href={selectedProject.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-8 py-4 rounded-lg transition-colors font-semibold text-lg"
+                      style={{ 
+                        background: '#A5A584',
+                        color: '#000'
+                      }}
+                    >
+                      <Github className="w-6 h-6" />
+                      {selectedProject.isPrivateRepo ? 'View Project (Private Demo Available)' : 'View on GitHub'}
+                    </a>
+                  ) : (
+                    <a
+                      href={selectedProject.tableauLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-8 py-4 rounded-lg transition-colors font-semibold text-lg"
+                      style={{ 
+                        background: '#A5A584',
+                        color: '#000'
+                      }}
+                    >
+                      <Play className="w-6 h-6" />
+                      View in Tableau Public
+                    </a>
+                  )}
                 </div>
                 </div>
               )}

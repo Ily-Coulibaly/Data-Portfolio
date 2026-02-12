@@ -1,0 +1,228 @@
+Perfect timing to structure this cleanly — your portfolio is already visually strong, so the goal is to **extend the same editorial system** without breaking design consistency.
+
+I’ll give you:
+
+1. Replit prompt to generate Python project cards
+2. Where to place STACKWELL
+3. Card content copy (ready to paste)
+4. GitHub “View Project” behavior
+5. How to add AI projects next (without clutter)
+
+---
+
+# 1️⃣ Master Replit Prompt (Copy Paste)
+
+Use this to make the dev agent replicate your Tableau card style exactly.
+
+```
+I want to add new project cards to the “Featured Projects” section of my portfolio.
+
+IMPORTANT:
+Follow the exact same editorial and visual style as my existing Tableau project cards.
+
+This includes:
+• Same card size and layout
+• Same image placement and overlay
+• Same typography hierarchy
+• Same tag styling (EDA, BI, NLP, etc.)
+• Same button styling and hover effects
+• Same “Read More” + “View Project” structure
+
+Do NOT redesign anything — only duplicate the existing component structure and populate with new content.
+
+NEW CARDS TO ADD:
+These are Python based analytics projects hosted on GitHub.
+
+Each card should include:
+• Project title
+• 2–3 line editorial description (business impact oriented)
+• Tags (Python, NLP, Machine Learning, etc.)
+• “Read More” internal page link (future ready)
+• “View Project” button → redirects to GitHub repo
+
+Ensure filtering works under:
+Python | Machine Learning | NLP
+
+Maintain responsive behavior across desktop and mobile.
+```
+
+---
+
+# 2️⃣ Where To Put STACKWELL
+
+Add STACKWELL as:
+
+👉 First card under “All Projects”
+👉 Also tagged under: “Python” or “Machine Learning” (if AI inside)
+
+Why first?
+
+Because:
+
+• It’s your flagship build
+• Shows product thinking
+• Signals founder operator profile
+• Differentiates you from analysts
+
+Think of it as:
+
+> “Hero product project” — not just another dashboard.
+
+---
+
+# 3️⃣ Project Card Copy — Ready To Paste
+
+Use the same editorial tone as your Tableau cards.
+
+---
+
+## STACKWELL Card
+
+**Title**
+Stackwell — AI Powered Inventory Intelligence Platform
+
+**Description**
+Designed and building a multi tenant inventory intelligence platform helping retail and operations teams monitor stock performance, predict shortages, and optimize replenishment workflows. Combines analytics dashboards, forecasting models, and AI driven operational insights.
+
+**Tags**
+Python • AI • Product Analytics • Forecasting • SaaS
+
+**View Project** → GitHub (or private repo note)
+
+If repo private, label button:
+
+> View Project (Private Demo Available)
+
+---
+
+## Meeting Transcript Analyzer
+
+**Title**
+AI Meeting Transcript Intelligence Analyzer
+
+**Description**
+Developed an NLP driven analytics engine that evaluates meeting transcripts to measure discussion focus, engagement levels, and decision alignment. Designed to help organizations optimize meeting effectiveness and strategic productivity.
+
+**Tags**
+Python • NLP • AI • Text Analytics
+
+---
+
+## NYTimes Emotion Analysis
+
+**Title**
+Media Sentiment & Public Emotion Analysis
+
+**Description**
+Built a sentiment analysis model comparing emotional tone in NYTimes articles versus public commentary to evaluate narrative framing and public perception divergence using NLP techniques.
+
+**Tags**
+Python • NLP • Sentiment Analysis • Machine Learning
+
+---
+
+## Housing Affordability Analysis
+
+**Title**
+California Housing Affordability Risk Model
+
+**Description**
+Conducted predictive analytics on California housing price trends to assess affordability shifts and long term homelessness risk indicators, leveraging time series modeling and socioeconomic datasets.
+
+**Tags**
+Python • Predictive Analytics • Forecasting • Socioeconomic Data
+
+---
+
+# 4️⃣ GitHub “View Project” Behavior Prompt
+
+Add this to Replit:
+
+```
+For all Python and AI project cards, configure the “View Project” button to redirect externally to the corresponding GitHub repository.
+
+Requirements:
+• Open in new tab
+• Include GitHub icon inside button
+• Maintain same styling as Tableau “View in Tableau” button
+• Add hover animation consistent with existing cards
+```
+
+---
+
+# 5️⃣ Filters To Update
+
+Tell Replit:
+
+```
+Add filtering functionality so the new projects appear under:
+
+• Python
+• Machine Learning
+• NLP
+• All Projects
+
+Ensure multi tag filtering works (example: Python + NLP).
+```
+
+---
+
+# 6️⃣ Adding AI Projects — Structure
+
+After Python analytics, create a new layer:
+
+Order inside “All Projects”:
+
+1. Stackwell (Product / AI Platform)
+2. AI Meeting Analyzer
+3. AI Copilot Projects
+4. Predictive Models
+5. Tableau Dashboards
+
+Why?
+
+Recruiters + founders scan top down.
+
+You want them to see:
+
+> Builder → AI → Analytics → Visualization
+
+Not the reverse.
+
+---
+
+# 7️⃣ Future AI Project Card Titles
+
+When ready, add:
+
+• AI Copilot for Business Operations
+• Decision Intelligence Assistant
+• Workflow Automation AI Agent
+• Executive KPI Prediction Engine
+
+Keeps narrative cohesive.
+
+---
+
+# 8️⃣ Visual Consistency Rule
+
+Use same image treatment as Tableau cards:
+
+• Dark gradient overlays
+• Data UI mockups
+• Dashboard holographic screens
+
+Do NOT use GitHub screenshots — too raw.
+
+If needed, generate synthetic UI visuals.
+
+---
+
+If you want next, I can:
+
+• Write all remaining project card descriptions
+• Create AI Copilot card copy
+• Design Stackwell hero mockup prompt
+• Structure “Read More” internal case study pages
+
+You’re turning this portfolio into a product showcase — which is exactly what early startups want to see.
