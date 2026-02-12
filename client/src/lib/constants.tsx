@@ -183,9 +183,9 @@ export const PROJECTS = [
     id: 5,
     title: "Stackwell — AI Powered Inventory & Decision Intelligence Platform",
     subtitle: "Multi-Tenant SaaS Analytics Platform",
-    description: "Stackwell is a multi tenant inventory and analytics platform with AI driven decision intelligence. It centralizes inventory operations, demand forecasting, B2B relationship health monitoring, and supply chain insights into a unified SaaS environment designed to eliminate stock blind spots and revenue leakage.",
+    description: "Stackwell is a multi tenant inventory and analytics platform with AI driven decision intelligence. It centralizes inventory operations, demand forecasting, B2B relationship health monitoring, and supply chain insights into a unified SaaS environment designed to eliminate stock blind spots and revenue leakage. Features real-time inventory tracking, explainable and auditable AI decisions, and structured data pipelines across multiple domains.",
     skills: ["python", "ml"],
-    tags: ["Python", "AI", "Predictive Analytics", "SaaS", "Data Infrastructure", "Decision Intelligence"],
+    tags: ["Python", "AI", "Real-Time Tracking", "Explainable AI", "Data Pipelines", "Decision Intelligence"],
     link: "https://stackwellapp.com",
     githubLink: "https://github.com/Ily-Coulibaly",
     livePlatformLink: "https://stackwellapp.com",
@@ -207,14 +207,14 @@ export const PROJECTS = [
     ],
     role: "Sole architect, engineer, and product owner — responsible for end to end platform design, data architecture, analytics infrastructure, AI orchestration, and production deployment.",
     dataInfrastructure: [
-      "40+ PostgreSQL relational tables",
+      "40+ PostgreSQL relational tables with structured data pipelines across domains",
       "Multi domain schema (inventory, CRM, supply chain, analytics)",
-      "Real time inventory movement tracking",
-      "KPI aggregation pipelines",
-      "Event tracking system replacing third party analytics"
+      "Real-time inventory movement tracking",
+      "KPI aggregation pipelines with automated data transformation",
+      "Custom event tracking and analytics pipeline replacing third-party tools"
     ],
     aiIntelligence: [
-      "Deterministic Decision Engine for auditable metrics",
+      "Deterministic Decision Engine with explainable, auditable outputs (XAI)",
       "Demand forecasting models with confidence scoring",
       "Stockout prediction & urgency tiering",
       "Retailer churn risk prediction",
@@ -224,7 +224,7 @@ export const PROJECTS = [
       "Multi tenant SaaS data isolation",
       "Role based access (5 permission tiers)",
       "212+ REST API endpoints",
-      "Event driven observability layer",
+      "Event-driven observability and real-time monitoring layer",
       "AI audit logging & action approval workflows"
     ],
     keyFindings: [
@@ -252,8 +252,8 @@ export const PROJECTS = [
       "Multi model LLM orchestration (GPT-4o + Gemini fallback)"
     ],
     analysisApproach: "Sole architect, engineer, and product owner — responsible for end to end platform design, data architecture, analytics infrastructure, AI orchestration, and production deployment.",
-    businessImpact: "Prevents revenue loss from stockouts. Automates reorder planning. Predicts retailer inactivity risk. Centralizes multi channel sales tracking. Enables operational decision automation.",
-    conclusion: "Stackwell represents a full stack analytics product build combining data infrastructure, predictive intelligence, and operational decision automation within a scalable SaaS architecture.",
+    businessImpact: "Prevents revenue loss from stockouts through predictive demand forecasting. Automates reorder planning with explainable AI recommendations. Predicts retailer inactivity risk using churn scoring models. Centralizes multi-channel sales tracking with real-time inventory monitoring. Enables operational decision automation with full audit trails.",
+    conclusion: "Stackwell represents a full-stack analytics product combining structured data pipelines, real-time inventory tracking, explainable AI, and operational decision automation within a scalable SaaS architecture.",
     hasReport: false
   },
   {
@@ -303,9 +303,9 @@ export const PROJECTS = [
     id: 7,
     title: "Media Sentiment & Public Emotion Analysis",
     subtitle: "NYTimes Narrative Framing Study",
-    description: "Built a sentiment analysis model comparing emotional tone in NYTimes articles versus public commentary to evaluate narrative framing and public perception divergence using NLP techniques.",
+    description: "Built a sentiment analysis model comparing emotional tone in NYTimes articles versus public commentary to evaluate narrative framing and public perception divergence. Applied NLP classification techniques to a unique, non-standard dataset sourced from public media data rather than overused benchmark datasets.",
     skills: ["python", "nlp", "ml"],
-    tags: ["Python", "NLP", "Sentiment Analysis", "Machine Learning"],
+    tags: ["Python", "NLP", "Sentiment Analysis", "Unique Data Source", "Machine Learning"],
     link: "https://github.com/Ily-Coulibaly/nytimes-vs-public-emotion-analysis",
     githubLink: "https://github.com/Ily-Coulibaly/nytimes-vs-public-emotion-analysis",
     gradient: "from-orange-500 to-red-600",
@@ -344,11 +344,11 @@ export const PROJECTS = [
   },
   {
     id: 8,
-    title: "California Housing Affordability Risk Model",
-    subtitle: "Predictive Analytics & Socioeconomic Study",
-    description: "Conducted predictive analytics on California housing price trends to assess affordability shifts and long term homelessness risk indicators, leveraging time series modeling and socioeconomic datasets.",
+    title: "Housing Affordability & Homelessness Risk Intelligence",
+    subtitle: "Social Impact Predictive Analytics",
+    description: "Built a predictive risk model combining California housing market data with socioeconomic indicators to forecast affordability crises and homelessness risk at the county level. Goes beyond standard housing price prediction by linking economic signals to social outcomes for policy-driven decision making.",
     skills: ["python", "ml"],
-    tags: ["Python", "Predictive Analytics", "Forecasting", "Socioeconomic Data"],
+    tags: ["Python", "Predictive Analytics", "Social Impact", "Time Series", "Public Data"],
     link: "https://github.com/Ily-Coulibaly/housing-affordability-analysis-california",
     githubLink: "https://github.com/Ily-Coulibaly/housing-affordability-analysis-california",
     gradient: "from-amber-500 to-orange-600",
@@ -380,9 +380,9 @@ export const PROJECTS = [
       "Geographic heat maps showing affordability risk distribution by county",
       "Correlation analysis dashboards linking socioeconomic indicators to homelessness risk"
     ],
-    analysisApproach: "Applied time series modeling and predictive analytics to California housing datasets combined with socioeconomic indicators to build a comprehensive affordability risk assessment framework.",
-    businessImpact: "Delivers actionable insights for policymakers and housing organizations to proactively identify and address affordability crises, enabling data-driven intervention strategies before communities reach critical thresholds.",
-    conclusion: "This analysis demonstrates the power of predictive analytics in social impact contexts, providing a replicable framework for assessing housing affordability risk that can inform policy decisions and resource allocation.",
+    analysisApproach: "Combined housing market time series data with socioeconomic datasets sourced from public data repositories to build a multi-factor affordability risk model. Used feature engineering to link economic indicators with social outcomes rather than treating housing prices in isolation.",
+    businessImpact: "Delivers actionable insights for policymakers and housing organizations to proactively identify communities at risk of affordability collapse, enabling data-driven intervention strategies up to 18 months before critical thresholds are reached.",
+    conclusion: "Demonstrates predictive analytics applied to social impact — not standard housing price prediction but a policy-oriented risk framework linking economic signals to homelessness vulnerability at the county level.",
     hasReport: false
   },
   {
