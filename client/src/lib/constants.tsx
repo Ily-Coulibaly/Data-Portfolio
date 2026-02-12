@@ -184,7 +184,7 @@ export const PROJECTS = [
     title: "Stackwell — AI Powered Inventory Intelligence Platform",
     subtitle: "Multi-Tenant SaaS Analytics Platform",
     description: "Designed and building a multi tenant inventory intelligence platform helping retail and operations teams monitor stock performance, predict shortages, and optimize replenishment workflows. Combines analytics dashboards, forecasting models, and AI driven operational insights.",
-    skills: ["python", "ml", "ai"],
+    skills: ["python", "ml"],
     tags: ["Python", "AI", "Product Analytics", "Forecasting", "SaaS"],
     link: "https://github.com/Ily-Coulibaly",
     githubLink: "https://github.com/Ily-Coulibaly",
