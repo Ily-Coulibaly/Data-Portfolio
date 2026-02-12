@@ -1,0 +1,193 @@
+Clear — you now need a **Replit builder prompt** for your portfolio (not Stackwell app this time) to structure the **Certificates & Achievements section** with filtering, scalability, and editorial consistency.
+
+No design micromanagement — just structure, taxonomy, and behavior.
+
+Below is the refined prompt 👇
+
+---
+
+# Replit Prompt — Certificates & Achievements Section
+
+Copy paste this into your portfolio project.
+
+```
+I want to expand the “Certificates & Achievements” section of my portfolio to support multiple categories, filtering, and future scalability.
+
+Do not redesign the overall portfolio aesthetic. Maintain the same editorial card structure, typography hierarchy, and interaction behavior as my existing certificate cards.
+
+The goal is to structure achievements in a way that reflects the breadth of my profile across analytics, leadership, entrepreneurship, and academic excellence.
+
+Please implement the following:
+
+1. Category Framework
+
+Create filterable categories that allow users to sort certificates and achievements dynamically.
+
+Primary categories should include:
+
+• Analytics & Technical Certifications
+• Entrepreneurship & Venture Awards
+• Leadership & Professional Development
+• Academic Excellence & Scholarships
+• Competitions & Honors
+
+Ensure the filtering system allows certificates to belong to multiple categories if relevant.
+
+Example:
+A venture award could appear under both Entrepreneurship and Leadership.
+
+2. Certificate Card Content Structure
+
+Each certificate / achievement card should support the following fields:
+
+• Title
+• Issuing Institution / Organization
+• Year
+• Category Tag(s)
+• Short editorial description (1–2 lines)
+• “See Certificate” button
+
+3. Certificate Viewing Behavior
+
+When users click “See Certificate”:
+
+• Open the certificate image or PDF in a new tab
+• Support high-resolution viewing
+• Allow multiple files per card (for multi-award recognitions)
+• Maintain consistent button styling with existing portfolio CTAs
+
+4. Multi-Award Grouping Logic
+
+Allow grouping multiple recognitions under one flagship card when relevant.
+
+Example:
+“B.E.T.A Challenge Venture Awards” should contain:
+
+• Graduate Track Grand Winner
+• Social Impact Award
+• High Impact Woman Founder Award
+
+Users should be able to expand or view all associated certificates within the same card.
+
+5. Scalability Requirements
+
+Design the backend card structure so I can easily add new certificates later without redesigning the section.
+
+Support:
+
+• Additional categories
+• Additional tags
+• New certificate uploads
+• Future leadership roles or awards
+
+6. Filtering Interaction
+
+Add a filter bar similar to my Projects section, allowing users to click categories such as:
+
+All  
+Analytics  
+Entrepreneurship  
+Leadership  
+Academic  
+Competitions
+
+Ensure cards dynamically display based on filter selection.
+
+7. Sorting Logic (Optional but Preferred)
+
+Allow sorting by:
+
+• Most Recent
+• Category
+• Institution
+
+The goal is to transform this section into a structured achievement ecosystem rather than a static certificate gallery.
+```
+
+---
+
+# Recommended Category Mapping For Your Current Achievements
+
+Use this when populating cards:
+
+---
+
+### Entrepreneurship & Venture Awards
+
+• B.E.T.A Challenge Graduate Track Grand Winner
+• B.E.T.A Challenge Social Impact Award
+• B.E.T.A Challenge High Impact Woman Founder Award
+
+(Grouped under one flagship card)
+
+---
+
+### Academic Excellence & Scholarships
+
+• Impact Scholarship Award
+• Women’s Master’s Leadership Scholarship Award
+
+---
+
+### Leadership & Professional Development
+
+• Vice President, Marketing & Communication — Babson Tech Club
+• Lead of Operations — Babson Women in Business Club
+• Leadership Across Difference Badge
+
+---
+
+### Competitions & Honors
+
+• Second Place — Babson Case Consulting Competition
+
+---
+
+### Analytics & Technical Certifications (Future Ready)
+
+Placeholders for:
+
+• Deloitte Simulation
+• AI Certifications
+• Python Certifications
+• Data Engineering Programs
+
+This keeps section expandable.
+
+---
+
+# Why Filtering Matters
+
+It lets different viewers see you differently:
+
+Recruiters → Analytics
+Founders → Entrepreneurship
+Schools → Academic
+Employers → Leadership
+
+One section, multiple narratives.
+
+---
+
+# Structural Best Practice
+
+Display order inside “All” filter:
+
+1. Venture / Entrepreneurship Awards
+2. Scholarships
+3. Leadership Roles
+4. Competitions
+5. Certifications
+
+This leads with differentiation, not coursework.
+
+---
+
+If you want next, I can:
+
+• Write the actual card descriptions
+• Build the B.E.T.A flagship card content
+• Add icon mapping per category
+• Create Achievement Timeline section
+
+But structurally, this prompt will let your certificate section scale like your project portfolio — not stay static.
