@@ -1,0 +1,84 @@
+I want to keep my current Certificates and Achievements page structure with the two existing tabs:
+Academic Excellence
+Professional Certifications
+
+Do not redesign the page. Keep the same card component style and the current tab toggle UI. This task is only to improve the structure so I can add more items cleanly and attach proof links or files.
+
+1) Data driven content
+Refactor the page so both tabs render cards from a single data array (JSON or TypeScript object) that I can easily edit to add new items.
+
+Each card should support:
+title
+issuer
+year
+tab (Academic or Professional)
+shortDescription (1 to 2 concise lines)
+proofType (none, link, file, multi)
+proofLabel (default: See)
+proofUrl (for link)
+proofFiles (array for file or multi)
+proofLinks (array for multi when the proof is multiple links)
+optional: subItems (array of strings for grouped awards)
+
+2) Proof behavior
+If proofType is link, the See button opens proofUrl in a new tab.
+If proofType is file, the See button opens the file in a new tab at full resolution.
+If proofType is multi, clicking See opens a simple modal or expandable panel listing all proofs as clickable items. Each proof opens in a new tab.
+If proofType is none, do not show the See button.
+
+3) Sorting
+Sort cards by year descending within each tab. Items without a year go last.
+
+4) Populate initial items
+Use the current two Academic Excellence cards already on the page and add the following new items. Use file placeholders for certificates I will upload later.
+
+Add to Academic Excellence tab
+A) Leadership Across Difference Certificate
+Issuer: Babson College
+Year: 2025
+Description: Completed Babson program focused on inclusive leadership, cross cultural collaboration, and leading across difference.
+Proof type: link
+Proof url:
+https://badges.parchment.com/public/assertions/nT12Vyj3S0eFF1HcQJt9BQ?identity__email=icoulibaly1@babson.edu
+
+Optional, only if I choose to display scholarships (keep them in the data but allow an easy toggle to hide them)
+B) Impact Scholarship Award
+Issuer: Babson College
+Year: 2025
+Description: Merit based scholarship recognizing impact, leadership, and academic excellence.
+Proof type: file
+Proof files: placeholder
+
+C) Women’s Masters Leadership Scholarship Award
+Issuer: Babson College
+Year: 2025
+Description: Scholarship recognizing high potential women leaders and demonstrated leadership impact.
+Proof type: file
+Proof files: placeholder
+
+Add to Professional Certifications tab
+D) BETA Challenge Venture Awards
+Issuer: Babson College
+Year: 2025
+Description: Recognized across multiple venture and impact categories for building and scaling a startup venture.
+Sub items:
+BETA Challenge Graduate Track Grand Winner
+BETA Challenge Social Impact Award
+BETA Challenge High Impact Woman Founder Award
+Proof type: multi
+Proof links:
+https://www.babson.edu/entrepreneurship-center/startup-acceleration/beta-challenge/
+https://entrepreneurship.babson.edu/beta-challenge-winners-2025/
+
+E) Second Place, Babson Case Consulting Competition
+Issuer: Babson College
+Year: 2025
+Description: Awarded second place for delivering high impact strategic recommendations in a competitive case setting.
+Proof type: file
+Proof files: placeholder
+
+5) Scholarship toggle
+Add a simple boolean flag in the data file such as showScholarships true or false.
+If false, scholarship cards should not render, but the data remains in the array.
+
+Make sure all new cards match the existing card layout and spacing and the tab behavior remains exactly the same.

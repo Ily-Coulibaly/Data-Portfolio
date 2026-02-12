@@ -571,39 +571,110 @@ export const ARTICLES = [
   }
 ];
 
+export const SHOW_SCHOLARSHIPS = false;
+
 export const CERTIFICATES = [
   {
     id: 1,
     title: "Advanced Data Analytics",
     issuer: "Professional Certification",
-    date: "January 2024",
-    description: "Gained expertise in data exploration, visualization, and real-time business decision tools.",
-    type: "certification"
+    year: 2024,
+    tab: "professional" as const,
+    shortDescription: "Gained expertise in data exploration, visualization, and real-time business decision tools.",
+    proofType: "none" as const,
   },
   {
     id: 2,
     title: "Python for Data Science",
-    issuer: "Professional Certification", 
-    date: "December 2023",
-    description: "Focused on using Python libraries for data wrangling, analysis, and building predictive models.",
-    type: "certification"
+    issuer: "Professional Certification",
+    year: 2023,
+    tab: "professional" as const,
+    shortDescription: "Focused on using Python libraries for data wrangling, analysis, and building predictive models.",
+    proofType: "none" as const,
   },
   {
     id: 3,
     title: "Dean's List",
     issuer: "Babson College",
-    date: "2023",
-    description: "Academic excellence recognition for maintaining high GPA while pursuing Master's in Business Analytics.",
-    type: "achievement"
+    year: 2023,
+    tab: "academic" as const,
+    shortDescription: "Academic excellence recognition for maintaining high GPA while pursuing Master's in Business Analytics.",
+    proofType: "none" as const,
   },
   {
     id: 4,
     title: "Academic Excellence Award",
     issuer: "Mathematics Department",
-    date: "2022", 
-    description: "Outstanding performance in advanced mathematics and statistical analysis coursework.",
-    type: "achievement"
-  }
+    year: 2022,
+    tab: "academic" as const,
+    shortDescription: "Outstanding performance in advanced mathematics and statistical analysis coursework.",
+    proofType: "none" as const,
+  },
+  {
+    id: 5,
+    title: "Leadership Across Difference Certificate",
+    issuer: "Babson College",
+    year: 2025,
+    tab: "academic" as const,
+    shortDescription: "Completed Babson program focused on inclusive leadership, cross-cultural collaboration, and leading across difference.",
+    proofType: "link" as const,
+    proofLabel: "See",
+    proofUrl: "https://badges.parchment.com/public/assertions/nT12Vyj3S0eFF1HcQJt9BQ?identity__email=icoulibaly1@babson.edu",
+  },
+  {
+    id: 6,
+    title: "Impact Scholarship Award",
+    issuer: "Babson College",
+    year: 2025,
+    tab: "academic" as const,
+    shortDescription: "Merit-based scholarship recognizing impact, leadership, and academic excellence.",
+    proofType: "file" as const,
+    proofLabel: "See",
+    proofFiles: [],
+    isScholarship: true,
+  },
+  {
+    id: 7,
+    title: "Women's Masters Leadership Scholarship Award",
+    issuer: "Babson College",
+    year: 2025,
+    tab: "academic" as const,
+    shortDescription: "Scholarship recognizing high-potential women leaders and demonstrated leadership impact.",
+    proofType: "file" as const,
+    proofLabel: "See",
+    proofFiles: [],
+    isScholarship: true,
+  },
+  {
+    id: 8,
+    title: "BETA Challenge Venture Awards",
+    issuer: "Babson College",
+    year: 2025,
+    tab: "professional" as const,
+    shortDescription: "Recognized across multiple venture and impact categories for building and scaling a startup venture.",
+    subItems: [
+      "BETA Challenge Graduate Track Grand Winner",
+      "BETA Challenge Social Impact Award",
+      "BETA Challenge High Impact Woman Founder Award",
+    ],
+    proofType: "multi" as const,
+    proofLabel: "See",
+    proofLinks: [
+      { label: "BETA Challenge Page", url: "https://www.babson.edu/entrepreneurship-center/startup-acceleration/beta-challenge/" },
+      { label: "2025 Winners", url: "https://entrepreneurship.babson.edu/beta-challenge-winners-2025/" },
+    ],
+  },
+  {
+    id: 9,
+    title: "Second Place, Babson Case Consulting Competition",
+    issuer: "Babson College",
+    year: 2025,
+    tab: "professional" as const,
+    shortDescription: "Awarded second place for delivering high-impact strategic recommendations in a competitive case setting.",
+    proofType: "file" as const,
+    proofLabel: "See",
+    proofFiles: [],
+  },
 ];
 
 export const FILTER_CATEGORIES = [
