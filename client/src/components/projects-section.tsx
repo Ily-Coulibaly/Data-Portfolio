@@ -108,6 +108,26 @@ const ProjectsSection = () => {
                     }}
                   />
 
+                  {/* Featured Badge */}
+                  {project.isFeatured && (
+                    <div style={{
+                      position: 'absolute',
+                      top: '12px',
+                      left: '12px',
+                      zIndex: 2,
+                      background: '#A5A584',
+                      color: '#000',
+                      padding: '4px 12px',
+                      borderRadius: '4px',
+                      fontSize: '11px',
+                      fontWeight: 600,
+                      letterSpacing: '0.5px',
+                      textTransform: 'uppercase' as const
+                    }}>
+                      Featured
+                    </div>
+                  )}
+
                   {/* Header Image */}
                   <div 
                     style={{ 
@@ -205,7 +225,7 @@ const ProjectsSection = () => {
                     </div>
 
                     {/* Action Buttons - Minimalistic */}
-                    <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '20px' }}>
                       <button
                         onClick={() => showDetailedView(project)}
                         style={{
@@ -234,7 +254,85 @@ const ProjectsSection = () => {
                         Read More
                       </button>
 
-                      {project.isPythonProject ? (
+                      {project.isStackwell ? (
+                        <>
+                          <a
+                            href={project.livePlatformLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              padding: '8px 12px',
+                              borderRadius: '4px',
+                              fontSize: '12px',
+                              fontWeight: 500,
+                              textDecoration: 'none',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '4px',
+                              transition: 'opacity 0.2s ease',
+                              border: '1px solid #A5A584',
+                              cursor: 'pointer',
+                              background: 'transparent',
+                              color: '#A5A584'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.opacity = '0.7';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.opacity = '1';
+                            }}
+                          >
+                            <ExternalLink className="w-3 h-3" />
+                            Live Platform
+                          </a>
+                          <a
+                            href={project.githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              padding: '8px 12px',
+                              borderRadius: '4px',
+                              fontSize: '12px',
+                              fontWeight: 500,
+                              textDecoration: 'none',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '4px',
+                              transition: 'opacity 0.2s ease',
+                              border: '1px solid #404040',
+                              cursor: 'pointer',
+                              background: 'transparent',
+                              color: '#d0d0d0'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.opacity = '0.7';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.opacity = '1';
+                            }}
+                          >
+                            <Github className="w-3 h-3" />
+                            View Codebase
+                          </a>
+                          <span
+                            style={{
+                              padding: '8px 12px',
+                              borderRadius: '4px',
+                              fontSize: '12px',
+                              fontWeight: 500,
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '4px',
+                              border: '1px solid #333',
+                              color: '#666',
+                              cursor: 'default'
+                            }}
+                          >
+                            <FileText className="w-3 h-3" />
+                            Case Study — Soon
+                          </span>
+                        </>
+                      ) : project.isPythonProject ? (
                         <a
                           href={project.githubLink}
                           target="_blank"
@@ -262,7 +360,7 @@ const ProjectsSection = () => {
                           }}
                         >
                           <Github className="w-3 h-3" />
-                          {project.isPrivateRepo ? 'View Project (Private Demo Available)' : 'View Project'}
+                          View Project
                         </a>
                       ) : (
                         <a
@@ -376,9 +474,119 @@ const ProjectsSection = () => {
               </div>
 
               {selectedProject.id === 1 ? (
-                /* Blog Style View for Bike Share */
                 <div className={`overflow-y-auto bg-black ${isFullscreen ? 'h-full' : 'max-h-[80vh]'}`}>
                   <BikeShareBlogCard />
+                </div>
+              ) : selectedProject.isStackwell ? (
+                <div className="p-8 overflow-y-auto max-h-[80vh]">
+                  <div className="mb-8">
+                    <div style={{ display: 'inline-block', background: '#A5A584', color: '#000', padding: '4px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: '16px' }}>
+                      Featured
+                    </div>
+                    <h2 className="text-3xl font-bold text-white mb-4">{selectedProject.title}</h2>
+                    <p className="text-gray-300 text-lg leading-relaxed">{selectedProject.description}</p>
+                  </div>
+
+                  <div style={{ marginBottom: '30px' }}>
+                    <h4 style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Target className="w-5 h-5" style={{ color: '#A5A584' }} />
+                      Platform Scope
+                    </h4>
+                    {selectedProject.platformScope?.map((item: string, index: number) => (
+                      <div key={index} style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '8px', fontSize: '14px', lineHeight: 1.6 }}>
+                        <span style={{ color: '#A5A584', marginRight: '12px', fontWeight: 'bold' }}>•</span>
+                        <span style={{ color: '#d0d0d0' }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div style={{ marginBottom: '30px', padding: '20px', background: '#1a1a1a', borderRadius: '12px', border: '1px solid #333' }}>
+                    <h4 style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Lightbulb className="w-5 h-5" style={{ color: '#A5A584' }} />
+                      My Role & Ownership
+                    </h4>
+                    <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6, fontStyle: 'italic' }}>
+                      {selectedProject.role}
+                    </div>
+                  </div>
+
+                  <div style={{ marginBottom: '30px' }}>
+                    <h4 style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <BarChart3 className="w-5 h-5" style={{ color: '#A5A584' }} />
+                      Data & Analytics Infrastructure
+                    </h4>
+                    {selectedProject.dataInfrastructure?.map((item: string, index: number) => (
+                      <div key={index} style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '8px', fontSize: '14px', lineHeight: 1.6 }}>
+                        <span style={{ color: '#A5A584', marginRight: '12px', fontWeight: 'bold' }}>•</span>
+                        <span style={{ color: '#d0d0d0' }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div style={{ marginBottom: '30px' }}>
+                    <h4 style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Lightbulb className="w-5 h-5" style={{ color: '#A5A584' }} />
+                      AI & Predictive Intelligence Layer
+                    </h4>
+                    {selectedProject.aiIntelligence?.map((item: string, index: number) => (
+                      <div key={index} style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '8px', fontSize: '14px', lineHeight: 1.6 }}>
+                        <span style={{ color: '#A5A584', marginRight: '12px', fontWeight: 'bold' }}>•</span>
+                        <span style={{ color: '#d0d0d0' }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div style={{ marginBottom: '30px' }}>
+                    <h4 style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Target className="w-5 h-5" style={{ color: '#A5A584' }} />
+                      System Architecture
+                    </h4>
+                    {selectedProject.architectureSignals?.map((item: string, index: number) => (
+                      <div key={index} style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '8px', fontSize: '14px', lineHeight: 1.6 }}>
+                        <span style={{ color: '#A5A584', marginRight: '12px', fontWeight: 'bold' }}>•</span>
+                        <span style={{ color: '#d0d0d0' }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div style={{ marginBottom: '30px' }}>
+                    <h4 style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <TrendingUp className="w-5 h-5" style={{ color: '#A5A584' }} />
+                      Business Impact
+                    </h4>
+                    <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
+                      {selectedProject.businessImpact}
+                    </div>
+                  </div>
+
+                  <div style={{ marginBottom: '30px', padding: '20px', background: '#1a1a1a', borderRadius: '12px', border: '1px solid #A5A584' }}>
+                    <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6, fontStyle: 'italic' }}>
+                      {selectedProject.conclusion}
+                    </div>
+                  </div>
+
+                  <div className="flex justify-center gap-4 flex-wrap">
+                    <a
+                      href={selectedProject.livePlatformLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-8 py-4 rounded-lg transition-colors font-semibold text-lg"
+                      style={{ background: '#A5A584', color: '#000' }}
+                    >
+                      <ExternalLink className="w-6 h-6" />
+                      Live Platform
+                    </a>
+                    <a
+                      href={selectedProject.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-8 py-4 rounded-lg transition-colors font-semibold text-lg"
+                      style={{ background: 'transparent', color: '#A5A584', border: '1px solid #A5A584' }}
+                    >
+                      <Github className="w-6 h-6" />
+                      View Codebase
+                    </a>
+                  </div>
                 </div>
               ) : (
                 <div className="p-8 overflow-y-auto max-h-[80vh]">
@@ -525,7 +733,7 @@ const ProjectsSection = () => {
                       }}
                     >
                       <Github className="w-6 h-6" />
-                      {selectedProject.isPrivateRepo ? 'View Project (Private Demo Available)' : 'View on GitHub'}
+                      View on GitHub
                     </a>
                   ) : (
                     <a

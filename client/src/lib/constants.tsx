@@ -181,46 +181,79 @@ export const SKILLS = PROGRAMMING_TOOLS;
 export const PROJECTS = [
   {
     id: 5,
-    title: "Stackwell — AI Powered Inventory Intelligence Platform",
+    title: "Stackwell — AI Powered Inventory & Decision Intelligence Platform",
     subtitle: "Multi-Tenant SaaS Analytics Platform",
-    description: "Designed and building a multi tenant inventory intelligence platform helping retail and operations teams monitor stock performance, predict shortages, and optimize replenishment workflows. Combines analytics dashboards, forecasting models, and AI driven operational insights.",
+    description: "Stackwell is a multi tenant inventory and analytics platform with AI driven decision intelligence. It centralizes inventory operations, demand forecasting, B2B relationship health monitoring, and supply chain insights into a unified SaaS environment designed to eliminate stock blind spots and revenue leakage.",
     skills: ["python", "ml"],
-    tags: ["Python", "AI", "Product Analytics", "Forecasting", "SaaS"],
-    link: "https://github.com/Ily-Coulibaly",
+    tags: ["Python", "AI", "Predictive Analytics", "SaaS", "Data Infrastructure", "Decision Intelligence"],
+    link: "https://stackwellapp.com",
     githubLink: "https://github.com/Ily-Coulibaly",
+    livePlatformLink: "https://stackwellapp.com",
     gradient: "from-emerald-500 to-teal-600",
     icon: "🧠",
     isAdvancedCard: true,
     isPythonProject: true,
-    isPrivateRepo: true,
+    isFeatured: true,
+    isStackwell: true,
     image: "attached_assets/generated_images/stackwell_ai_inventory_platform.png",
     projectImage: "attached_assets/generated_images/stackwell_ai_inventory_platform.png",
     headerImage: "attached_assets/generated_images/stackwell_ai_inventory_platform.png",
     profileImage: "attached_assets/generated_images/Professional_data_analyst_portrait_dffdd099.png",
+    platformScope: [
+      "Multi location inventory intelligence",
+      "Predictive demand forecasting",
+      "Retailer health & churn risk scoring",
+      "Automated reorder decision engine"
+    ],
+    role: "Sole architect, engineer, and product owner — responsible for end to end platform design, data architecture, analytics infrastructure, AI orchestration, and production deployment.",
+    dataInfrastructure: [
+      "40+ PostgreSQL relational tables",
+      "Multi domain schema (inventory, CRM, supply chain, analytics)",
+      "Real time inventory movement tracking",
+      "KPI aggregation pipelines",
+      "Event tracking system replacing third party analytics"
+    ],
+    aiIntelligence: [
+      "Deterministic Decision Engine for auditable metrics",
+      "Demand forecasting models with confidence scoring",
+      "Stockout prediction & urgency tiering",
+      "Retailer churn risk prediction",
+      "Multi model LLM orchestration (GPT-4o + Gemini fallback)"
+    ],
+    architectureSignals: [
+      "Multi tenant SaaS data isolation",
+      "Role based access (5 permission tiers)",
+      "212+ REST API endpoints",
+      "Event driven observability layer",
+      "AI audit logging & action approval workflows"
+    ],
     keyFindings: [
-      "Real-time inventory monitoring across multiple retail locations with automated alerts",
-      "Predictive shortage detection using time-series forecasting models with 85%+ accuracy",
-      "AI-driven replenishment recommendations reducing stockout events by estimated 40%"
+      "40+ PostgreSQL tables powering multi-domain data architecture across inventory, CRM, and supply chain",
+      "212+ REST API endpoints with role-based access across 5 permission tiers",
+      "Multi-model LLM orchestration combining GPT-4o with Gemini fallback for decision intelligence"
     ],
     stats: {
       platform: "Multi-Tenant SaaS",
-      models: "Forecasting + AI",
-      focus: "Inventory Intelligence",
-      status: "In Development"
+      models: "AI + Forecasting",
+      endpoints: "212+ APIs",
+      tables: "40+ Tables"
     },
     researchQuestions: [
-      "How can AI-driven forecasting models predict inventory shortages before they impact operations?",
-      "What replenishment optimization strategies maximize stock efficiency across multiple tenants?",
-      "How do analytics dashboards translate complex inventory data into actionable operational insights?"
+      "Multi location inventory intelligence",
+      "Predictive demand forecasting",
+      "Retailer health & churn risk scoring",
+      "Automated reorder decision engine"
     ],
     visualizationTypes: [
-      "Real-time stock performance dashboards with multi-location monitoring",
-      "Predictive forecasting charts for demand and shortage anticipation",
-      "AI-generated operational insight reports for strategic decision-making"
+      "Deterministic Decision Engine for auditable metrics",
+      "Demand forecasting models with confidence scoring",
+      "Stockout prediction & urgency tiering",
+      "Retailer churn risk prediction",
+      "Multi model LLM orchestration (GPT-4o + Gemini fallback)"
     ],
-    analysisApproach: "Full-stack product development combining analytics dashboards, machine learning forecasting models, and AI-driven operational insights into a unified multi-tenant platform for retail inventory intelligence.",
-    businessImpact: "Building a scalable SaaS solution that empowers retail and operations teams to transition from reactive stock management to proactive, data-driven inventory intelligence with measurable efficiency gains.",
-    conclusion: "Stackwell represents a product-thinking approach to data analytics, combining technical depth in AI/ML with practical business application to solve real operational challenges in retail inventory management.",
+    analysisApproach: "Sole architect, engineer, and product owner — responsible for end to end platform design, data architecture, analytics infrastructure, AI orchestration, and production deployment.",
+    businessImpact: "Prevents revenue loss from stockouts. Automates reorder planning. Predicts retailer inactivity risk. Centralizes multi channel sales tracking. Enables operational decision automation.",
+    conclusion: "Stackwell represents a full stack analytics product build combining data infrastructure, predictive intelligence, and operational decision automation within a scalable SaaS architecture.",
     hasReport: false
   },
   {
