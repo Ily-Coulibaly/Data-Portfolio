@@ -96,9 +96,11 @@ body {
   /* Skills logo styling for uniform appearance */
   .skills-logo {
     height: 48px;
-    width: auto;
+    width: 48px;
     object-fit: contain;
     transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
   }
   
   .skills-logo:hover {

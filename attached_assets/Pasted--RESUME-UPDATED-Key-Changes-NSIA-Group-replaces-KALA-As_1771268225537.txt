@@ -1,0 +1,100 @@
+**✅ RESUME UPDATED**
+
+**Key Changes:**
+- ✅ **NSIA Group** replaces KALA Assurance
+- ✅ **ESP role progression** shown:
+  - **Insights and Data Analyst** (promoted role)
+  - **Business Development Analyst** (initial role)
+- ✅ All bullets maintained
+- ✅ Still 1 page
+
+---
+
+## **UPDATED ESP PORTFOLIO WRITE-UP** (With Role Progression)
+
+### **DATA AND BUSINESS INTELLIGENCE ANALYST | Entrepreneurial Solutions Partners (ESP)**
+**Jan 2023 - Aug 2024 | Abidjan, Côte d'Ivoire**
+
+**Role Overview:**
+Promoted from Business Development Analyst to Insights and Data Analyst at international development consulting firm supporting women-led SMEs across 10 African countries. Led data infrastructure development, business intelligence initiatives, and strategic consulting projects.
+
+---
+
+#### **INSIGHTS AND DATA ANALYST (Promoted Role)**
+
+**Key Accomplishments:**
+
+**Data Governance & Infrastructure:**
+- Established enterprise data governance framework processing 10,000+ records daily from disparate sources (Excel, Google Sheets, Salesforce, surveys)
+- Defined data standards, metadata management practices, and data quality controls reducing manual reporting by 50%
+- Built automated ETL pipelines using Python to ingest, transform, and validate data from multiple international offices
+- Created data dictionary and documentation ensuring consistent definitions across 10-country operation
+- Implemented data validation rules and quality checks preventing 200+ data entry errors monthly
+
+**Business Intelligence & Dashboarding:**
+- Led Power BI development efforts creating 10+ interactive dashboards monitoring operational and financial KPIs
+- Partnered with business stakeholders across program management, finance, and operations to translate requirements into impactful visualizations
+- Built executive scorecards tracking quarterly goals, program performance metrics, and financial health
+- Designed drill-through reports enabling country directors to analyze performance at granular levels
+- Automated monthly executive reporting reducing preparation time from 40 hours to 2 hours
+
+**AI & Advanced Analytics:**
+- Built enterprise AI search solution using NLP techniques (TF-IDF, vector embeddings) indexing 1,000+ organizational documents
+- Reduced information retrieval time by 80% improving cross-team collaboration and decision-making speed
+- Performed predictive analytics on SME performance data identifying success factors for women-led businesses
+- Delivered data-driven insights to executive leadership influencing strategic priorities and resource allocation
+
+**Technical Stack:**
+- **Languages:** Python (Pandas, NumPy, NLTK), SQL
+- **BI Tools:** Power BI (DAX, Power Query), Tableau
+- **Database:** PostgreSQL, MySQL
+- **AI/ML:** NLP, TF-IDF, Vector embeddings
+- **Cloud:** Google Cloud Platform
+
+---
+
+#### **BUSINESS DEVELOPMENT ANALYST (Initial Role)**
+
+**Key Accomplishments:**
+
+**Strategic Consulting & Government Relations:**
+- Led cross-functional analytics team of 3 partnering with government stakeholders to design Equatorial Guinea's 5-year national tourism strategy
+- Conducted market research, competitive analysis, and stakeholder interviews across tourism sector
+- Delivered comprehensive strategic recommendations through executive presentations informing government development plan
+- Built Tableau visualizations presenting tourism data and economic impact projections to government officials
+
+**Program Evaluation & A/B Testing:**
+- Designed and executed A/B testing measurement framework across 450+ entrepreneurship program participants
+- Built statistical models to evaluate training program effectiveness and identify improvement opportunities
+- Created Tableau dashboards visualizing program metrics (completion rates, business outcomes, participant satisfaction)
+- Presented data-driven findings to 40+ government officials informing program Version 2.0 enhancements
+
+**Financial Forecasting & Grant Development:**
+- Conducted financial forecasting and statistical modeling using time-series analysis (ARIMA) for $500K USADF grant proposal
+- Analyzed agricultural market data and SME performance trends to project program impact
+- Developed financial models demonstrating ROI and sustainability of farmer support initiative
+- Secured $500K grant supporting 300+ agricultural entrepreneurs across West Africa
+
+**Venture Scouting & Due Diligence:**
+- Sourced and evaluated 20 investment-ready startups for €1.4M Orange Corners venture program
+- Conducted due diligence using Excel financial modeling and Survey Monkey data collection
+- Built scoring framework assessing startup viability across business model, market opportunity, and team strength
+- Collaborated with investment committee to make final portfolio selection decisions
+
+**Technical Stack:**
+- **Languages:** Python (data analysis), SQL, Excel (VBA, financial modeling)
+- **Visualization:** Tableau, PowerPoint
+- **Statistical Analysis:** R (ARIMA, time-series forecasting), Python (Statsmodels)
+- **Survey Tools:** Survey Monkey, Google Forms
+- **Tools:** Excel (advanced financial modeling), Jupyter Notebook
+
+---
+
+**Combined Results Across Both Roles:**
+- **50% reduction** in manual reporting through automation
+- **$500K grant secured** through data-driven forecasting
+- **80% faster** information retrieval via AI solution
+- **10+ dashboards** deployed across 10-country operation
+- **95% data quality accuracy** through governance framework
+
+Ready to apply to Baker Newman Noyes!

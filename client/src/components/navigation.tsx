@@ -117,23 +117,28 @@ const Navigation = () => {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[65px] bg-background/98 backdrop-blur-lg z-40">
-          <div className="flex flex-col items-center justify-center h-full gap-1.5 px-6 sm:px-8">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={handleNavClick}
-                data-testid={`mobile-nav-link-${item.label.toLowerCase()}`}
-                className={`w-full text-center py-3.5 text-lg font-medium rounded-xl transition-all duration-300 ${
-                  activeSection === item.href.substring(1)
-                    ? 'text-[#A5A584] font-semibold bg-card'
-                    : 'text-foreground hover:text-primary hover:bg-card/50'
-                }`}
-              >
-                {item.label}
-              </a>
-            ))}
+        <div className="md:hidden fixed inset-0 top-[65px] bg-black/60 backdrop-blur-sm z-40" onClick={handleNavClick}>
+          <div
+            className="mx-4 mt-4 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex flex-col py-2">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={handleNavClick}
+                  data-testid={`mobile-nav-link-${item.label.toLowerCase()}`}
+                  className={`mx-2 my-0.5 px-4 py-3 text-base font-medium rounded-xl transition-all duration-200 ${
+                    activeSection === item.href.substring(1)
+                      ? 'text-[#A5A584] font-semibold bg-primary/10'
+                      : 'text-foreground hover:text-primary hover:bg-primary/5'
+                  }`}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       )}
