@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 import ThemeToggle from "./theme-toggle";
 import LanguageToggle from "./language-toggle";
@@ -6,6 +7,7 @@ import LanguageToggle from "./language-toggle";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -17,8 +19,17 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navItems = [
+    { href: "#home", label: t('nav.home') },
+    { href: "#skills", label: t('nav.skills') },
+    { href: "#projects", label: t('nav.projects') },
+    { href: "#certificates", label: t('nav.certificates') },
+    { href: "#kyn", label: "KYN" },
+    { href: "#contact", label: t('nav.contact') },
+  ];
+
   useEffect(() => {
-    const sections = navItems.map(item => item.href.substring(1)); // Remove # from href
+    const sections = navItems.map(item => item.href.substring(1));
     
     const observer = new IntersectionObserver(
       (entries) => {
@@ -51,15 +62,18 @@ const Navigation = () => {
     };
   }, []);
 
-  const navItems = [
-    { href: "#home", label: t('nav.home') },
-    { href: "#skills", label: t('nav.skills') },
-    { href: "#projects", label: t('nav.projects') },
-    { href: "#certificates", label: t('nav.certificates') },
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen]);
 
-    { href: "#kyn", label: "KYN" },
-    { href: "#contact", label: t('nav.contact') },
-  ];
+  const handleNavClick = () => {
+    setMobileMenuOpen(false);
+  };
 
   return (
     <nav className={`fixed top-0 w-full bg-background/80 backdrop-blur-sm border-b border-border z-50 transition-all duration-300 ${
@@ -67,13 +81,11 @@ const Navigation = () => {
     }`}>
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          {/* Language Toggle - Far Left */}
           <div className="flex items-center">
             <LanguageToggle />
           </div>
           
-          {/* Navigation Links - Center */}
-          <div className="flex justify-center space-x-8 flex-1">
+          <div className="hidden md:flex justify-center space-x-8 flex-1">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -90,12 +102,41 @@ const Navigation = () => {
             ))}
           </div>
           
-          {/* Theme Toggle - Far Right */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-3">
             <ThemeToggle />
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+              data-testid="mobile-menu-toggle"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
       </div>
+
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 top-[65px] bg-background/95 backdrop-blur-md z-40">
+          <div className="flex flex-col items-center justify-center h-full space-y-8">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={handleNavClick}
+                data-testid={`mobile-nav-link-${item.label.toLowerCase()}`}
+                className={`text-2xl font-medium transition-all duration-300 ${
+                  activeSection === item.href.substring(1)
+                    ? 'text-[#A5A584] font-semibold'
+                    : 'text-foreground hover:text-primary'
+                }`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

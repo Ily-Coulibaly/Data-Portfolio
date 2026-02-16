@@ -478,7 +478,7 @@ const ProjectsSection = () => {
                   <BikeShareBlogCard />
                 </div>
               ) : selectedProject.isStackwell ? (
-                <div className="p-8 overflow-y-auto max-h-[80vh]">
+                <div className="p-4 sm:p-8 overflow-y-auto max-h-[80vh]">
                   <div className="mb-8">
                     <div style={{ display: 'inline-block', background: '#A5A584', color: '#000', padding: '4px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: '16px' }}>
                       Featured
@@ -589,9 +589,9 @@ const ProjectsSection = () => {
                   </div>
                 </div>
               ) : (
-                <div className="p-8 overflow-y-auto max-h-[80vh]">
+                <div className="p-4 sm:p-8 overflow-y-auto max-h-[80vh]">
                 <div className="mb-8">
-                  <h2 className="text-3xl font-bold text-white mb-4">{selectedProject.title}</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">{selectedProject.title}</h2>
                   <p className="text-gray-300 text-lg leading-relaxed">
                     {selectedProject.description}
                   </p>

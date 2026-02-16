@@ -39,7 +39,7 @@ const CertificatesSection = () => {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-16">Certificates & Achievements</h2>
         
-        <div className="flex justify-center space-x-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           <button 
             onClick={() => setActiveCategory("academic")}
             data-testid="category-academic"

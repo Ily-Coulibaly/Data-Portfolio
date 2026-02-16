@@ -7,7 +7,7 @@ const Footer = () => {
         <p className="text-muted-foreground mb-6">
           &copy; 2024 Ily Coulibaly. All rights reserved.
         </p>
-        <div className="flex justify-center space-x-6">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           <a 
             href={SOCIAL_LINKS.linkedin} 
             target="_blank" 

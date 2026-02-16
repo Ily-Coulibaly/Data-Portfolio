@@ -31,7 +31,7 @@ const KYNSection = () => {
         </div>
         
         {/* KYN Links */}
-        <div className="flex justify-center space-x-6 mt-12">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
           <a 
             href={SOCIAL_LINKS.kyn} 
             target="_blank" 

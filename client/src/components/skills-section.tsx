@@ -15,8 +15,8 @@ const SkillsSection = () => {
         <h2 className="text-4xl font-bold text-center mb-16">{t('skills.technicalTitle')}</h2>
         
         {/* Filter Buttons */}
-        <div className="flex justify-center mb-12">
-          <div className="flex space-x-1 bg-card rounded-lg p-1">
+        <div className="flex justify-center mb-12 px-2">
+          <div className="flex flex-wrap justify-center gap-1 bg-card rounded-lg p-1">
             {SKILLS_CATEGORIES.map((category) => (
               <button
                 key={category.id}
