@@ -1,10 +1,13 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { z } from "zod";
+import express from "express";
+import path from "path";
 import { storage } from "./storage";
 import { insertContactMessageSchema } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  app.use("/attached_assets", express.static(path.resolve("attached_assets")));
   // Contact form endpoint
   app.post("/api/contact", async (req, res) => {
     try {

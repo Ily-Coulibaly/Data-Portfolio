@@ -10,6 +10,10 @@ import nytimesBg from "@assets/generated_images/nytimes_sentiment_analysis.png";
 import housingBg from "@assets/generated_images/california_housing_analysis.png";
 import olistBg from "@assets/generated_images/Clean_Brazil_e-commerce_interface_89bcc56b.png";
 import blueBikesBg from "@assets/generated_images/Boston_bike-sharing_analytics_dashboard_68ff43d0.png";
+import aiCopilotBg from "@assets/generated_images/ai_copilot_agent_zu.png";
+import genaiIotBg from "@assets/generated_images/genai_iot_agriculture.png";
+import aiMonetizationBg from "@assets/generated_images/ai_monetization_strategy.png";
+import enterpriseAiBg from "@assets/generated_images/enterprise_ai_transformation.png";
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -142,6 +146,10 @@ const ProjectsSection = () => {
                         project.id === 6 ? meetingBg : 
                         project.id === 7 ? nytimesBg : 
                         project.id === 8 ? housingBg : 
+                        project.id === 9 ? aiCopilotBg :
+                        project.id === 10 ? genaiIotBg :
+                        project.id === 11 ? aiMonetizationBg :
+                        project.id === 12 ? enterpriseAiBg :
                         wayfairBg
                       })`,
                       backgroundSize: 'cover',
@@ -332,6 +340,36 @@ const ProjectsSection = () => {
                             Case Study — Soon
                           </span>
                         </>
+                      ) : project.isAIProject ? (
+                        <a
+                          href={project.reportLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            padding: '8px 12px',
+                            borderRadius: '4px',
+                            fontSize: '12px',
+                            fontWeight: 500,
+                            textDecoration: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '4px',
+                            transition: 'opacity 0.2s ease',
+                            border: '1px solid #A5A584',
+                            cursor: 'pointer',
+                            background: 'transparent',
+                            color: '#A5A584'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.opacity = '0.7';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.opacity = '1';
+                          }}
+                        >
+                          <FileText className="w-3 h-3" />
+                          View Report
+                        </a>
                       ) : project.isPythonProject ? (
                         <a
                           href={project.githubLink}
@@ -467,6 +505,7 @@ const ProjectsSection = () => {
                 )}
                 <button
                   onClick={closeProjectModal}
+                  aria-label="Close"
                   className="bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors"
                 >
                   <X className="w-6 h-6 text-white" />
@@ -721,7 +760,21 @@ const ProjectsSection = () => {
 
                 {/* Action Button */}
                 <div className="flex justify-center">
-                  {selectedProject.isPythonProject ? (
+                  {selectedProject.isAIProject ? (
+                    <a
+                      href={selectedProject.reportLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-8 py-4 rounded-lg transition-colors font-semibold text-lg"
+                      style={{ 
+                        background: '#A5A584',
+                        color: '#000'
+                      }}
+                    >
+                      <FileText className="w-6 h-6" />
+                      View Full Report
+                    </a>
+                  ) : selectedProject.isPythonProject ? (
                     <a
                       href={selectedProject.githubLink}
                       target="_blank"
@@ -763,6 +816,7 @@ const ProjectsSection = () => {
             <div className="bg-black rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative">
               <button
                 onClick={closeProjectModal}
+                aria-label="Close"
                 className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors"
               >
                 <X className="w-6 h-6 text-white" />

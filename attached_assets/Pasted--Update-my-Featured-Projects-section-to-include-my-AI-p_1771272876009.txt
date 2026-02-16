@@ -1,0 +1,69 @@
+```
+Update my Featured Projects section to include my AI projects inside the same project grid (do not create a separate AI Projects page).
+
+1) Add a new filter button labeled: AI
+Keep existing filters as well: All Projects, Python, Machine Learning, NLP, Tableau.
+Place AI as the last filter (or next to NLP).
+
+2) Filtering behavior
+When a user clicks a filter, only show projects tagged with that category.
+Projects can have multiple tags and should appear under every relevant filter.
+“All Projects” should always show everything.
+
+3) Add these AI projects as new Featured Project cards
+Use the exact same editorial structure as my existing cards: title, short subtitle, short summary, tags, Read More link, and View button.
+
+Project A
+Title: AI Copilot Agent for Role Automation & Augmentation
+Subtitle: Enterprise AI agent prototype using Copilot Studio
+Tags: AI, GenAI, Automation
+Buttons:
+- View Report (link to my attached report)
+- Read More (opens the case study page)
+
+Project B
+Title: GenAI Driven Analytics & IoT Data Innovation Strategy
+Subtitle: AI powered growth intelligence for smart agriculture systems
+Tags: AI, Machine Learning, Python
+Buttons:
+- View Report (link to my attached report)
+- Read More
+
+Project C
+Title: Data & AI Monetization Strategy for AI Enabled Startups
+Subtitle: Pricing and positioning for AI and data value capture
+Tags: AI, Strategy
+Buttons:
+- View Report (link to my attached report)
+- Read More
+
+Project D
+Title: Enterprise AI Transformation Strategy Design
+Subtitle: End to end AI adoption roadmap across tech, talent, and governance
+Tags: AI, Strategy
+Buttons:
+- View Report (link to my attached report)
+- Read More
+
+4) Stackwell placement and tagging
+Keep Stackwell as the first Featured Project card and ensure it appears under the AI filter too.
+Update Stackwell tags to include: AI, Python, Machine Learning.
+
+5) Featured order
+Set the Featured Projects order to:
+1. Stackwell
+2. AI Copilot Agent
+3. GenAI IoT Analytics
+4. AI Monetization Strategy
+5. Enterprise AI Transformation
+Then keep my other existing projects after.
+
+6) View button rules
+If the project is a deployed product, the View button should be “View App” and link to the live app.
+If the project is a report, the View button should be “View Report” and link to the report.
+If the project is code, the View button should be “View GitHub” and link to the repo.
+
+7) Keep everything else unchanged
+Do not change styling, spacing, fonts, or hover behavior.
+Match the existing card layout and interactions exactly.
+```

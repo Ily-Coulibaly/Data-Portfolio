@@ -184,7 +184,7 @@ export const PROJECTS = [
     title: "Stackwell — AI Powered Inventory & Decision Intelligence Platform",
     subtitle: "Multi-Tenant SaaS Analytics Platform",
     description: "Stackwell is a multi tenant inventory and analytics platform with AI driven decision intelligence. It centralizes inventory operations, demand forecasting, B2B relationship health monitoring, and supply chain insights into a unified SaaS environment designed to eliminate stock blind spots and revenue leakage. Features real-time inventory tracking, explainable and auditable AI decisions, and structured data pipelines across multiple domains.",
-    skills: ["python", "ml"],
+    skills: ["python", "ml", "ai"],
     tags: ["Python", "AI", "Real-Time Tracking", "Explainable AI", "Data Pipelines", "Decision Intelligence"],
     link: "https://stackwellapp.com",
     githubLink: "https://github.com/Ily-Coulibaly",
@@ -255,6 +255,162 @@ export const PROJECTS = [
     businessImpact: "Prevents revenue loss from stockouts through predictive demand forecasting. Automates reorder planning with explainable AI recommendations. Predicts retailer inactivity risk using churn scoring models. Centralizes multi-channel sales tracking with real-time inventory monitoring. Enables operational decision automation with full audit trails.",
     conclusion: "Stackwell represents a full-stack analytics product combining structured data pipelines, real-time inventory tracking, explainable AI, and operational decision automation within a scalable SaaS architecture.",
     hasReport: false
+  },
+  {
+    id: 9,
+    title: "AI Copilot Agent for Role Automation & Augmentation",
+    subtitle: "Enterprise AI agent prototype using Copilot Studio",
+    description: "Designed and built Zu, a custom AI copilot using Microsoft Copilot Studio to automate customer service and augment marketing operations for KYN. The copilot fully replaces the CEO in repetitive customer skincare recommendations while enhancing strategic marketing workflows with data-driven insights and content scheduling.",
+    skills: ["ai"],
+    tags: ["AI", "GenAI", "Automation"],
+    link: "/attached_assets/AI_COPILOT_AGENT_ZU_REPORT_1771272367283.pdf",
+    reportLink: "/attached_assets/AI_COPILOT_AGENT_ZU_REPORT_1771272367283.pdf",
+    gradient: "from-indigo-500 to-blue-600",
+    icon: "🤖",
+    isAdvancedCard: true,
+    isAIProject: true,
+    keyFindings: [
+      "AI copilot fully replaces CEO in customer service tasks using structured recommendation logic based on skin type, UV index, and ingredient preferences",
+      "Marketing augmentation capabilities include content calendar management, hashtag generation, and optimized posting schedules",
+      "Dual-purpose architecture serves both customer-facing support and internal marketing operations"
+    ],
+    stats: {
+      tool: "Copilot Studio",
+      scope: "Customer Service + Marketing",
+      type: "Replace + Augment",
+      domain: "D2C Skincare"
+    },
+    researchQuestions: [
+      "How can an AI copilot fully replace a CEO in repetitive customer service tasks?",
+      "What is the optimal balance between AI automation and human oversight in marketing operations?",
+      "How does structured AI behavior flow ensure consistent and personalized customer recommendations?"
+    ],
+    visualizationTypes: [
+      "AI behavior flow diagrams for customer service recommendation pipeline",
+      "Marketing operation workflow showing AI-augmented content scheduling",
+      "Task classification matrix mapping replacement vs augmentation capabilities"
+    ],
+    analysisApproach: "Designed a dual-purpose AI copilot using Microsoft Copilot Studio, implementing structured behavior flows for automated customer skincare recommendations and marketing workflow augmentation with secure team access controls.",
+    businessImpact: "Enables 24/7 automated customer support with personalized skincare recommendations, reduces CEO time on repetitive tasks, and accelerates marketing operations through AI-driven content scheduling and campaign optimization.",
+    conclusion: "Demonstrates practical AI deployment reshaping leadership responsibilities — automating high-volume customer interactions while augmenting strategic marketing capabilities, allowing human focus to shift toward innovation and growth.",
+    hasReport: true
+  },
+  {
+    id: 10,
+    title: "GenAI-Driven Analytics & IoT Data Innovation Strategy",
+    subtitle: "AI-powered growth intelligence for smart agriculture systems",
+    description: "Developed a comprehensive data analytics strategy for Atlas Urban Farms, transforming a hardware-focused hydroponic company into a data-driven plant optimization platform. Analyzed environmental, growth, and flavor datasets to propose five AI-powered tools including a Flavor Optimizer, Growth Prediction Engine, and Plant Health Monitor.",
+    skills: ["ai", "ml", "python"],
+    tags: ["AI", "Machine Learning", "Python"],
+    link: "/attached_assets/Atlas_Urban_Farm_Strategy_Ily_1771272470798.pdf",
+    reportLink: "/attached_assets/Atlas_Urban_Farm_Strategy_Ily_1771272470798.pdf",
+    gradient: "from-green-500 to-emerald-600",
+    icon: "🌱",
+    isAdvancedCard: true,
+    isAIProject: true,
+    keyFindings: [
+      "Window-side plants showed 30.5% higher yield and 39.3% greater height than room-side plants",
+      "Middle vertical levels (5-6) delivered highest yields while Level 4 recorded superior Brix scores for flavor",
+      "Five AI-powered tools proposed: Flavor Optimizer, Growth Prediction Engine, Plant Health Monitor, Nutrient Optimizer, and GrowBot"
+    ],
+    stats: {
+      period: "33-Day Study",
+      tools: "5 AI Solutions",
+      approach: "Data-Driven Strategy",
+      domain: "Urban Agriculture"
+    },
+    researchQuestions: [
+      "How do environmental factors like light exposure and vertical positioning affect plant growth and flavor?",
+      "What AI-powered tools can transform hardware-focused urban farming into a data-driven platform?",
+      "How can generative AI bridge the gap between complex sensor data and actionable growing insights?"
+    ],
+    visualizationTypes: [
+      "Environmental factor analysis charts (pH, EC, temperature, daylight trends)",
+      "Window vs room-side plant performance comparison dashboards",
+      "Flavor profile distribution analysis by position and vertical level"
+    ],
+    analysisApproach: "Comprehensive data quality audit and multi-dimensional analysis of hydroponic growing conditions, combining environmental monitoring, positional growth experiments, and flavor profiling to design AI-powered optimization tools.",
+    businessImpact: "Positions Atlas Urban Farms to shift from hardware sales to subscription-based analytics services, with proposed AI tools projected to reduce crop losses by up to 50% and improve harvest timing accuracy by 30-40%.",
+    conclusion: "Demonstrates how data analytics and generative AI can transform traditional agriculture businesses into intelligent growing platforms, creating sustainable recurring revenue streams and competitive advantages.",
+    hasReport: true
+  },
+  {
+    id: 11,
+    title: "Data & AI Monetization Strategy for AI-Enabled Startups",
+    subtitle: "Pricing and positioning for AI and data value capture",
+    description: "Developed a comprehensive monetization strategy for Barn Owl Technologies, an innovative pest management company combining hardware, expert services, and AI technology. Designed a tiered subscription-based pricing model that balances device adoption, AI transition, and market expansion across agricultural sectors.",
+    skills: ["ai"],
+    tags: ["AI", "Strategy"],
+    link: "/attached_assets/Data_&_AI_Innovation_Positioning_Ily_1771272434216.pdf",
+    reportLink: "/attached_assets/Data_&_AI_Innovation_Positioning_Ily_1771272434216.pdf",
+    gradient: "from-amber-500 to-yellow-600",
+    icon: "💰",
+    isAdvancedCard: true,
+    isAIProject: true,
+    keyFindings: [
+      "Three-phase AI transition model from complementary feature to primary identification method over 3 years",
+      "Hardware-as-a-Service option at $12/month eliminates upfront costs, aligning with agricultural cash flow patterns",
+      "Market expansion strategy covering vineyards (15% premium), row crops (bulk pricing), and industrial facilities"
+    ],
+    stats: {
+      model: "Tiered Subscription",
+      phases: "3-Phase AI Transition",
+      expansion: "Multi-Sector",
+      domain: "AgTech / AI"
+    },
+    researchQuestions: [
+      "How can AI-enabled startups design pricing that drives adoption while funding the manual-to-AI transition?",
+      "What incentive structures encourage data contribution for AI model training?",
+      "How should pricing adapt across agricultural sectors and industrial applications?"
+    ],
+    visualizationTypes: [
+      "Tiered subscription pricing architecture with component breakdowns",
+      "Three-year AI transition roadmap with revenue projections",
+      "Market expansion opportunity mapping across crop types and industrial sectors"
+    ],
+    analysisApproach: "Strategic pricing analysis combining competitive positioning, value-based pricing methodology, and phased AI transition planning to design a sustainable monetization framework for an AI-enabled pest management platform.",
+    businessImpact: "Provides a scalable pricing architecture that enables Barn Owl to monetize across hardware, services, and AI capabilities while maintaining farmer affordability and funding AI development through data contribution incentives.",
+    conclusion: "Delivers a practical blueprint for AI-enabled startup monetization — balancing early adoption incentives, sustainable AI transition funding, and multi-market expansion through modular pricing architecture.",
+    hasReport: true
+  },
+  {
+    id: 12,
+    title: "Enterprise AI Transformation Strategy Design",
+    subtitle: "End-to-end AI adoption roadmap across tech, talent, and governance",
+    description: "Co-developed a comprehensive AI strategy for Sephora targeting three key opportunities: personalized beauty experiences using AI-powered skin analysis, enhanced product discovery through virtual try-on technologies, and operational excellence via inventory optimization. Designed a 36-month phased implementation plan with governance framework and talent strategy.",
+    skills: ["ai"],
+    tags: ["AI", "Strategy"],
+    link: "/attached_assets/AI_For_Business_Final_Presentation_-_Sephora_AI_Strategy_(1)_(_1771272535982.pdf",
+    reportLink: "/attached_assets/AI_For_Business_Final_Presentation_-_Sephora_AI_Strategy_(1)_(_1771272535982.pdf",
+    gradient: "from-pink-500 to-rose-600",
+    icon: "🏢",
+    isAdvancedCard: true,
+    isAIProject: true,
+    keyFindings: [
+      "Four AI technologies identified for enhancement: recommendation engine (BERT4Rec/DLRM), virtual try-on (GANs), chatbots (GPT-4), and demand forecasting (XGBoost/Prophet)",
+      "36-month phased implementation plan covering technology deployment, talent acquisition, and governance framework",
+      "Comprehensive AI governance framework with ethics committee, algorithmic audits, bias detection, and responsible AI guidelines"
+    ],
+    stats: {
+      timeline: "36-Month Plan",
+      technologies: "4 AI Systems",
+      governance: "Ethics Framework",
+      domain: "Beauty Retail"
+    },
+    researchQuestions: [
+      "How can enterprise AI strategy align technology, talent, and governance for sustainable transformation?",
+      "What governance frameworks ensure responsible AI deployment in consumer-facing industries?",
+      "How should organizations phase AI implementation to maximize adoption and minimize risk?"
+    ],
+    visualizationTypes: [
+      "AI technology stack architecture across four implementation areas",
+      "36-month phased implementation roadmap with milestone tracking",
+      "Governance framework visualization with ethics oversight structure"
+    ],
+    analysisApproach: "Comprehensive enterprise AI strategy covering technology selection, data infrastructure, talent acquisition, governance design, and change management — built on analysis of Sephora's existing capabilities and competitive positioning in beauty retail.",
+    businessImpact: "Positions Sephora as the beauty technology leader through AI-driven personalization, operational efficiency, and customer lifetime value growth, supported by robust governance ensuring ethical and inclusive AI deployment.",
+    conclusion: "Demonstrates end-to-end enterprise AI strategy design — from technology architecture and talent planning to governance frameworks and change management — providing a replicable blueprint for AI transformation in consumer industries.",
+    hasReport: true
   },
   {
     id: 6,
@@ -653,5 +809,6 @@ export const FILTER_CATEGORIES = [
   { id: "python", label: "Python" },
   { id: "ml", label: "Machine Learning" },
   { id: "nlp", label: "NLP" },
-  { id: "tableau", label: "Tableau" }
+  { id: "tableau", label: "Tableau" },
+  { id: "ai", label: "AI" }
 ];
