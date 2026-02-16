@@ -1,0 +1,103 @@
+Update the EDUCATION section of my data portfolio website.
+
+Do NOT redesign the entire site. Keep the current visual style and card layout. Only update the content and structure of the Education section to better fit a data and AI portfolio.
+
+Goals:
+• Emphasize analytics, AI, programming, and BI relevance
+• Keep it objective and resume aligned
+• Remove items I specified
+• Replace GPA with a single Grade line (Grade: A) for both degrees
+• Avoid club leadership overload; keep only what supports data and AI positioning
+
+---------------------------------------
+SECTION TITLE
+Education
+---------------------------------------
+
+CARD 1
+
+Institution:
+Babson College, F.W. Olin Graduate School of Business
+
+Location:
+Wellesley, MA
+
+Degree:
+M.S. in Business Analytics
+
+Dates:
+Aug 2024 – May 2025
+
+Academic Standing:
+Cum Laude
+
+Grade:
+A
+
+Relevant Coursework (display as skill tags, not paragraphs):
+• AI for Business
+• Advanced Programming with Python and SQL
+• Machine Learning for Business
+• Storytelling and Data Visualization with Tableau
+• Econometrics
+• Investment Banking and Financial Modeling
+
+Selected Leadership (keep minimal, only if shown):
+• Lead of Operations, Babson Women in Business Club
+
+Do NOT include:
+• Teaching Assistant
+• Director of Tech Panels, Babson Tech Club
+• Director of Operations, Consulting Club
+
+---------------------------------------
+
+CARD 2
+
+Institution:
+International University of Grand-Bassam (IUGB)
+
+Location:
+Grand-Bassam, Côte d’Ivoire
+
+Degree:
+Bachelor of Science in Mathematics
+
+Concentration:
+Actuarial Science
+
+Dates:
+Sept 2018 – May 2022
+
+Academic Standing:
+Summa Cum Laude
+
+Grade:
+A
+
+Do NOT include:
+• President, Student Ambassadors Program
+• Mathematics Tutor (already listed in Experience)
+
+Optional line (only if space allows and stays relevant to analytics roles):
+• Quantitative foundation in probability, statistics, and modeling
+
+---------------------------------------
+UX AND FORMAT REQUIREMENTS
+
+• Keep both degrees as separate cards
+• Show Honors and Grade as subtle badges
+• Display coursework as clickable tags (AI, ML, Python, SQL, Tableau, Econometrics, Finance)
+• Ensure mobile readability (no long paragraphs)
+• Keep this section focused on academic and technical credibility
+
+Optional filter:
+Add a small toggle or filter that lets visitors view coursework by category:
+• AI and Machine Learning
+• Programming and Data
+• Visualization and BI
+• Quantitative Methods
+• Finance Modeling
+
+Do not add any new leadership or extracurricular items beyond what I listed.
+Do not fabricate details.
