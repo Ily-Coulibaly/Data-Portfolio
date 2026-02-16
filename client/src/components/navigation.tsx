@@ -10,15 +10,6 @@ const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t } = useLanguage();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const navItems = [
     { href: "#home", label: t('nav.home') },
     { href: "#skills", label: t('nav.skills') },
@@ -30,37 +21,37 @@ const Navigation = () => {
   ];
 
   useEffect(() => {
-    const sections = navItems.map(item => item.href.substring(1));
-    
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.3,
-        rootMargin: '-100px 0px -50% 0px'
-      }
-    );
+    const sectionIds = ["home", "skills", "projects", "experience", "education", "certificates", "contact"];
+    const navHeight = 80;
 
-    sections.forEach((section) => {
-      const element = document.getElementById(section);
-      if (element) {
-        observer.observe(element);
-      }
-    });
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
 
-    return () => {
-      sections.forEach((section) => {
+      const scrollY = window.scrollY + navHeight + 40;
+      const docHeight = document.documentElement.scrollHeight;
+      const winHeight = window.innerHeight;
+
+      if (window.scrollY + winHeight >= docHeight - 50) {
+        setActiveSection(sectionIds[sectionIds.length - 1]);
+        return;
+      }
+
+      let current = sectionIds[0];
+      for (const section of sectionIds) {
         const element = document.getElementById(section);
         if (element) {
-          observer.unobserve(element);
+          const top = element.offsetTop;
+          if (scrollY >= top) {
+            current = section;
+          }
         }
-      });
+      }
+      setActiveSection(current);
     };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {

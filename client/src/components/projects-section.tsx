@@ -263,83 +263,35 @@ const ProjectsSection = () => {
                       </button>
 
                       {project.isStackwell ? (
-                        <>
-                          <a
-                            href={project.livePlatformLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                              padding: '8px 12px',
-                              borderRadius: '4px',
-                              fontSize: '12px',
-                              fontWeight: 500,
-                              textDecoration: 'none',
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '4px',
-                              transition: 'opacity 0.2s ease',
-                              border: '1px solid #A5A584',
-                              cursor: 'pointer',
-                              background: 'transparent',
-                              color: '#A5A584'
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.opacity = '0.7';
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.opacity = '1';
-                            }}
-                          >
-                            <ExternalLink className="w-3 h-3" />
-                            Live Platform
-                          </a>
-                          <a
-                            href={project.githubLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                              padding: '8px 12px',
-                              borderRadius: '4px',
-                              fontSize: '12px',
-                              fontWeight: 500,
-                              textDecoration: 'none',
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '4px',
-                              transition: 'opacity 0.2s ease',
-                              border: '1px solid #404040',
-                              cursor: 'pointer',
-                              background: 'transparent',
-                              color: '#d0d0d0'
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.opacity = '0.7';
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.opacity = '1';
-                            }}
-                          >
-                            <Github className="w-3 h-3" />
-                            View Codebase
-                          </a>
-                          <span
-                            style={{
-                              padding: '8px 12px',
-                              borderRadius: '4px',
-                              fontSize: '12px',
-                              fontWeight: 500,
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '4px',
-                              border: '1px solid #333',
-                              color: '#666',
-                              cursor: 'default'
-                            }}
-                          >
-                            <FileText className="w-3 h-3" />
-                            Case Study — Soon
-                          </span>
-                        </>
+                        <a
+                          href={project.livePlatformLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            padding: '8px 12px',
+                            borderRadius: '4px',
+                            fontSize: '12px',
+                            fontWeight: 500,
+                            textDecoration: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '4px',
+                            transition: 'opacity 0.2s ease',
+                            border: '1px solid #A5A584',
+                            cursor: 'pointer',
+                            background: 'transparent',
+                            color: '#A5A584'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.opacity = '0.7';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.opacity = '1';
+                          }}
+                        >
+                          <ExternalLink className="w-3 h-3" />
+                          Live Platform
+                        </a>
                       ) : project.isAIProject ? (
                         <a
                           href={project.reportLink}

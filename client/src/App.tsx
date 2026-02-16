@@ -7,12 +7,14 @@ import { ThemeProvider } from "@/hooks/useTheme";
 import { LanguageProvider } from "@/hooks/useLanguage";
 import Home from "@/pages/home";
 import MoreAboutMePage from "@/pages/more-about-me";
+import ResumePage from "@/pages/resume";
 import NotFound from "@/pages/not-found";
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/more-about-me" component={MoreAboutMePage} />
+      <Route path="/resume" component={ResumePage} />
       <Route component={NotFound} />
     </Switch>
   );
