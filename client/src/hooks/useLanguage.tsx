@@ -15,6 +15,7 @@ const translations = {
     'nav.skills': 'Skills',
     'nav.projects': 'Projects',
     'nav.certificates': 'Certificates',
+    'nav.experience': 'Experience',
     'nav.articles': 'Writings',
     'nav.contact': 'Contact',
     
@@ -120,6 +121,7 @@ const translations = {
     'nav.skills': 'Compétences',
     'nav.projects': 'Projets',
     'nav.certificates': 'Certifications',
+    'nav.experience': 'Expérience',
     'nav.articles': 'Écrits',
     'nav.contact': 'Contact',
     

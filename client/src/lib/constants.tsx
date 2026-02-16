@@ -6,7 +6,7 @@ export const SOCIAL_LINKS = {
   github: "https://github.com/Ily-Coulibaly",
   tableau: "https://public.tableau.com/app/profile/ily.kynion.coulibaly/vizzes",
   medium: "https://medium.com/@k.ilycoulibaly",
-  email: "icoulibaly1@babson.edu",
+  email: "k.ilycoulibaly@gmail.com",
   kyn: "https://kyn-care.com/"
 };
 

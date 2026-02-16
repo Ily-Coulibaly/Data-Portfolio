@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="py-12 px-6 bg-secondary border-t border-border">
       <div className="max-w-6xl mx-auto text-center">
         <p className="text-muted-foreground mb-6">
-          &copy; 2024 Ily Coulibaly. All rights reserved.
+          All rights reserved &copy; 2026
         </p>
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           <a 
@@ -43,15 +43,6 @@ const Footer = () => {
             className="text-muted-foreground hover:text-primary transition-colors duration-300"
           >
             Medium
-          </a>
-          <a 
-            href={SOCIAL_LINKS.kyn} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            data-testid="footer-kyn"
-            className="text-muted-foreground hover:text-primary transition-colors duration-300"
-          >
-            KYN
           </a>
         </div>
       </div>

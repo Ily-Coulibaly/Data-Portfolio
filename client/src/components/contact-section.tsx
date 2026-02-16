@@ -69,124 +69,124 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">{t('contact.getInTouch')}</h2>
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-16">{t('contact.getInTouch')}</h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div>
-            <p className="text-xl text-muted-foreground mb-8">
-              {t('contact.reachOut')}
-            </p>
-            
-            {/* Contact Information */}
-            <div className="space-y-6 mb-8">
-              <div className="flex items-center">
-                <Mail className="w-6 h-6 text-primary mr-4" />
-                <span className="text-muted-foreground">{SOCIAL_LINKS.email}</span>
-              </div>
-              <div className="flex items-center">
-                <SiLinkedin className="w-6 h-6 text-primary mr-4" />
-                <span className="text-muted-foreground">Ily Coulibaly</span>
-              </div>
-              <div className="flex items-center">
-                <SiGithub className="w-6 h-6 text-primary mr-4" />
-                <span className="text-muted-foreground">@icoulibaly</span>
-              </div>
-            </div>
-            
-            {/* Resume Download */}
-            <div className="mb-8">
-              <a 
-                href="Resume_Ily_Coulibaly_Data_Analyst.pdf" 
-                download 
-                data-testid="contact-download-cv"
-                className="inline-flex items-center px-6 py-3 bg-card text-card-foreground rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              >
-                <Download className="w-5 h-5 mr-2" />
-                {t('contact.downloadCV')}
-              </a>
-            </div>
-            
-            {/* Contact Form */}
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <div>
-                <Label htmlFor="email" className="block text-sm font-medium mb-2">
-                  {t('contact.yourEmail')}
-                </Label>
-                <Input
-                  id="email"
-                  type="email"
-                  data-testid="input-email"
-                  className="w-full bg-input border-border"
-                  {...form.register("email")}
-                />
-                {form.formState.errors.email && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {form.formState.errors.email.message}
-                  </p>
-                )}
-              </div>
-              
-              <div>
-                <Label htmlFor="subject" className="block text-sm font-medium mb-2">
-                  {t('contact.subject')}
-                </Label>
-                <Input
-                  id="subject"
-                  type="text"
-                  data-testid="input-subject"
-                  className="w-full bg-input border-border"
-                  {...form.register("subject")}
-                />
-                {form.formState.errors.subject && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {form.formState.errors.subject.message}
-                  </p>
-                )}
-              </div>
-              
-              <div>
-                <Label htmlFor="message" className="block text-sm font-medium mb-2">
-                  {t('contact.message')}
-                </Label>
-                <Textarea
-                  id="message"
-                  rows={6}
-                  data-testid="input-message"
-                  className="w-full bg-input border-border resize-none"
-                  {...form.register("message")}
-                />
-                {form.formState.errors.message && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {form.formState.errors.message.message}
-                  </p>
-                )}
-              </div>
-              
-              <Button 
-                type="submit" 
-                disabled={isSubmitting}
-                data-testid="button-submit-contact"
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
-              >
-                {isSubmitting ? t('contact.sending') : t('contact.letsConnect')}
-              </Button>
-            </form>
+        <p className="text-base sm:text-lg text-muted-foreground mb-8 text-center">
+          {t('contact.reachOut')}
+        </p>
+        
+        <div className="space-y-4 mb-10">
+          <div className="flex items-center justify-center gap-3">
+            <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+            <a 
+              href="mailto:k.ilycoulibaly@gmail.com"
+              className="text-foreground hover:text-primary transition-colors duration-300 text-base sm:text-lg"
+              data-testid="contact-email-link"
+            >
+              k.ilycoulibaly@gmail.com
+            </a>
           </div>
-          
-          {/* Profile Picture Section */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="w-80 h-96 rounded-lg overflow-hidden shadow-2xl">
-              <img 
-                src="/profile.jpg" 
-                alt="Ily Coulibaly Professional Photo" 
-                className="w-full h-full object-cover"
-                data-testid="contact-profile-image"
-              />
-            </div>
+          <div className="flex items-center justify-center gap-3">
+            <SiLinkedin className="w-5 h-5 text-primary flex-shrink-0" />
+            <a 
+              href={SOCIAL_LINKS.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors duration-300"
+            >
+              Ily Coulibaly
+            </a>
+          </div>
+          <div className="flex items-center justify-center gap-3">
+            <SiGithub className="w-5 h-5 text-primary flex-shrink-0" />
+            <a 
+              href={SOCIAL_LINKS.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors duration-300"
+            >
+              @Ily-Coulibaly
+            </a>
           </div>
         </div>
+        
+        <div className="flex justify-center mb-10">
+          <a 
+            href="Resume_Ily_Coulibaly_Data_Analyst.pdf" 
+            download 
+            data-testid="contact-download-cv"
+            className="inline-flex items-center px-6 py-3 bg-card text-card-foreground rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+          >
+            <Download className="w-5 h-5 mr-2" />
+            {t('contact.downloadCV')}
+          </a>
+        </div>
+        
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <div>
+            <Label htmlFor="email" className="block text-sm font-medium mb-2">
+              {t('contact.yourEmail')}
+            </Label>
+            <Input
+              id="email"
+              type="email"
+              data-testid="input-email"
+              className="w-full bg-input border-border"
+              {...form.register("email")}
+            />
+            {form.formState.errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                {form.formState.errors.email.message}
+              </p>
+            )}
+          </div>
+          
+          <div>
+            <Label htmlFor="subject" className="block text-sm font-medium mb-2">
+              {t('contact.subject')}
+            </Label>
+            <Input
+              id="subject"
+              type="text"
+              data-testid="input-subject"
+              className="w-full bg-input border-border"
+              {...form.register("subject")}
+            />
+            {form.formState.errors.subject && (
+              <p className="text-red-500 text-sm mt-1">
+                {form.formState.errors.subject.message}
+              </p>
+            )}
+          </div>
+          
+          <div>
+            <Label htmlFor="message" className="block text-sm font-medium mb-2">
+              {t('contact.message')}
+            </Label>
+            <Textarea
+              id="message"
+              rows={6}
+              data-testid="input-message"
+              className="w-full bg-input border-border resize-none"
+              {...form.register("message")}
+            />
+            {form.formState.errors.message && (
+              <p className="text-red-500 text-sm mt-1">
+                {form.formState.errors.message.message}
+              </p>
+            )}
+          </div>
+          
+          <Button 
+            type="submit" 
+            disabled={isSubmitting}
+            data-testid="button-submit-contact"
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
+          >
+            {isSubmitting ? t('contact.sending') : t('contact.letsConnect')}
+          </Button>
+        </form>
       </div>
     </section>
   );

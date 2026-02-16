@@ -150,8 +150,8 @@ const CertificatesSection = () => {
         
         <div className="mt-16 text-center scroll-indicator">
           <a 
-            href="#kyn" 
-            data-testid="scroll-to-kyn"
+            href="#contact" 
+            data-testid="scroll-to-contact"
             className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors duration-300"
           >
             <ChevronDown className="w-6 h-6" />

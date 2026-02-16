@@ -88,8 +88,8 @@ const SkillsSection = () => {
         {/* Scroll Indicator */}
         <div className="mt-16 text-center scroll-indicator">
           <a 
-            href="#projects" 
-            data-testid="scroll-to-projects"
+            href="#experience" 
+            data-testid="scroll-to-experience"
             className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors duration-300"
           >
             <ChevronDown className="w-6 h-6" />

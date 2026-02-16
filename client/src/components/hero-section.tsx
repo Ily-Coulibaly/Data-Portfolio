@@ -167,7 +167,7 @@ const HeroSection = () => {
         </div>
         
         {/* Action Buttons */}
-        <div className="mb-8">
+        <div className="mb-10 sm:mb-12">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
               href="#projects" 
@@ -175,7 +175,6 @@ const HeroSection = () => {
               className="group inline-flex items-center gap-2 px-5 sm:px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 border border-primary/30 relative overflow-hidden min-w-[160px] sm:min-w-[180px] justify-center text-sm sm:text-base"
               style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}
             >
-              {/* Subtle background effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
               
               <FolderOpen className="w-4 h-4 group-hover:rotate-6 transition-transform duration-300" />
@@ -193,17 +192,17 @@ const HeroSection = () => {
             </a>
           </div>
         </div>
-      </div>
-      
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 scroll-indicator">
-        <a 
-          href="#skills" 
-          data-testid="scroll-to-skills"
-          className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors duration-300"
-        >
-          <ChevronDown className="w-6 h-6" />
-        </a>
+        
+        {/* Scroll Indicator - in flow, not absolute */}
+        <div className="mt-4 sm:mt-8 scroll-indicator">
+          <a 
+            href="#skills" 
+            data-testid="scroll-to-skills"
+            className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors duration-300"
+          >
+            <ChevronDown className="w-6 h-6" />
+          </a>
+        </div>
       </div>
     </section>
   );

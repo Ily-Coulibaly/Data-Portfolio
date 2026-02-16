@@ -8,8 +8,6 @@ import { LanguageProvider } from "@/hooks/useLanguage";
 import Home from "@/pages/home";
 import MoreAboutMePage from "@/pages/more-about-me";
 import NotFound from "@/pages/not-found";
-import AIChatbot from "@/components/ai-chatbot";
-
 function Router() {
   return (
     <Switch>
@@ -28,7 +26,6 @@ function App() {
           <TooltipProvider>
             <Toaster />
             <Router />
-            <AIChatbot />
           </TooltipProvider>
         </LanguageProvider>
       </ThemeProvider>
