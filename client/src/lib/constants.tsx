@@ -571,47 +571,31 @@ export const ARTICLES = [
   }
 ];
 
-export const SHOW_SCHOLARSHIPS = false;
-
 export const CERTIFICATES = [
   {
     id: 1,
-    title: "Advanced Data Analytics",
-    issuer: "Professional Certification",
-    year: 2024,
+    title: "Deloitte — Data Analytics Job Simulation",
+    issuer: "Forage",
+    year: 2025,
     tab: "professional" as const,
-    shortDescription: "Gained expertise in data exploration, visualization, and real-time business decision tools.",
-    proofType: "none" as const,
+    shortDescription: "Completed Deloitte's data analytics simulation covering data exploration, visualization, and real-time business decision tools.",
+    proofType: "link" as const,
+    proofLabel: "Show Credential",
+    proofUrl: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf8qQcvoQ/io9DzWKe3PTsiS6D5_9PBTqmSxAf8qQcvoQ_KMXjySk2vrwi5FGWP_1727536823498_completion_certificate.pdf",
   },
   {
     id: 2,
-    title: "Python for Data Science",
-    issuer: "Professional Certification",
-    year: 2023,
-    tab: "professional" as const,
-    shortDescription: "Focused on using Python libraries for data wrangling, analysis, and building predictive models.",
-    proofType: "none" as const,
+    title: "Second Place, Babson Case Consulting Competition",
+    issuer: "Babson College",
+    year: 2025,
+    tab: "academic" as const,
+    shortDescription: "Awarded second place for delivering high-impact strategic recommendations in a competitive case setting.",
+    proofType: "file" as const,
+    proofLabel: "See",
+    proofFiles: [],
   },
   {
     id: 3,
-    title: "Dean's List",
-    issuer: "Babson College",
-    year: 2023,
-    tab: "academic" as const,
-    shortDescription: "Academic excellence recognition for maintaining high GPA while pursuing Master's in Business Analytics.",
-    proofType: "none" as const,
-  },
-  {
-    id: 4,
-    title: "Academic Excellence Award",
-    issuer: "Mathematics Department",
-    year: 2022,
-    tab: "academic" as const,
-    shortDescription: "Outstanding performance in advanced mathematics and statistical analysis coursework.",
-    proofType: "none" as const,
-  },
-  {
-    id: 5,
     title: "Leadership Across Difference Certificate",
     issuer: "Babson College",
     year: 2025,
@@ -622,7 +606,7 @@ export const CERTIFICATES = [
     proofUrl: "https://badges.parchment.com/public/assertions/nT12Vyj3S0eFF1HcQJt9BQ?identity__email=icoulibaly1@babson.edu",
   },
   {
-    id: 6,
+    id: 4,
     title: "Impact Scholarship Award",
     issuer: "Babson College",
     year: 2025,
@@ -631,10 +615,9 @@ export const CERTIFICATES = [
     proofType: "file" as const,
     proofLabel: "See",
     proofFiles: [],
-    isScholarship: true,
   },
   {
-    id: 7,
+    id: 5,
     title: "Women's Masters Leadership Scholarship Award",
     issuer: "Babson College",
     year: 2025,
@@ -643,14 +626,13 @@ export const CERTIFICATES = [
     proofType: "file" as const,
     proofLabel: "See",
     proofFiles: [],
-    isScholarship: true,
   },
   {
-    id: 8,
+    id: 6,
     title: "BETA Challenge Venture Awards",
     issuer: "Babson College",
     year: 2025,
-    tab: "professional" as const,
+    tab: "entrepreneurship" as const,
     shortDescription: "Recognized across multiple venture and impact categories for building and scaling a startup venture.",
     subItems: [
       "BETA Challenge Graduate Track Grand Winner",
@@ -663,17 +645,6 @@ export const CERTIFICATES = [
       { label: "BETA Challenge Page", url: "https://www.babson.edu/entrepreneurship-center/startup-acceleration/beta-challenge/" },
       { label: "2025 Winners", url: "https://entrepreneurship.babson.edu/beta-challenge-winners-2025/" },
     ],
-  },
-  {
-    id: 9,
-    title: "Second Place, Babson Case Consulting Competition",
-    issuer: "Babson College",
-    year: 2025,
-    tab: "professional" as const,
-    shortDescription: "Awarded second place for delivering high-impact strategic recommendations in a competitive case setting.",
-    proofType: "file" as const,
-    proofLabel: "See",
-    proofFiles: [],
   },
 ];
 

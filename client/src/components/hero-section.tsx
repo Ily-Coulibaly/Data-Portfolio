@@ -78,19 +78,19 @@ const HeroSection = () => {
   const { t } = useLanguage();
   
   return (
-    <section id="home" className="min-h-screen flex flex-col items-center justify-center px-6 pt-20">
+    <section id="home" className="min-h-screen flex flex-col items-center justify-center px-6 pt-24 sm:pt-20">
       <div className="text-center max-w-4xl mx-auto">
         {/* Profile Picture */}
-        <div className="mb-8 -mt-12">
+        <div className="mb-6 sm:mb-8 mt-2 sm:-mt-12">
           <img 
             src="/profile.jpg" 
             alt="Ily Coulibaly Profile Picture" 
-            className="w-36 h-36 rounded-full mx-auto object-cover border-4 border-primary shadow-2xl"
+            className="w-28 h-28 sm:w-36 sm:h-36 rounded-full mx-auto object-cover border-4 border-primary shadow-2xl"
             data-testid="profile-picture"
           />
         </div>
         
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-white" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           Ily Coulibaly
         </h1>
         <div className="mb-3">
@@ -111,12 +111,12 @@ const HeroSection = () => {
             {t('hero.location')}
           </a>
         </p>
-        <p className="text-base text-primary leading-relaxed mb-10 max-w-3xl mx-auto" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
+        <p className="text-sm sm:text-base text-primary leading-relaxed mb-8 sm:mb-10 max-w-3xl mx-auto px-2" style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
           {t('hero.description')}
         </p>
         
         {/* Social Links */}
-        <div className="flex justify-center space-x-6 mb-8">
+        <div className="flex justify-center space-x-4 sm:space-x-6 mb-6 sm:mb-8">
           <a 
             href={SOCIAL_LINKS.linkedin} 
             target="_blank" 
@@ -172,7 +172,7 @@ const HeroSection = () => {
             <a 
               href="#projects" 
               data-testid="view-projects-button"
-              className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 border border-primary/30 relative overflow-hidden min-w-[180px] justify-center"
+              className="group inline-flex items-center gap-2 px-5 sm:px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 border border-primary/30 relative overflow-hidden min-w-[160px] sm:min-w-[180px] justify-center text-sm sm:text-base"
               style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}
             >
               {/* Subtle background effect */}
@@ -185,7 +185,7 @@ const HeroSection = () => {
             
             <a 
               href="#contact"
-              className="px-8 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-300 rounded-lg font-semibold text-center min-w-[180px]"
+              className="px-5 sm:px-8 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-300 rounded-lg font-semibold text-center min-w-[160px] sm:min-w-[180px] text-sm sm:text-base"
               data-testid="contact-me-button"
               style={{fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}
             >

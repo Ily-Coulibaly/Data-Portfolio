@@ -117,18 +117,18 @@ const Navigation = () => {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[65px] bg-background/95 backdrop-blur-md z-40">
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
+        <div className="md:hidden fixed inset-0 top-[65px] bg-background/98 backdrop-blur-lg z-40">
+          <div className="flex flex-col items-center justify-center h-full gap-2 px-8">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={handleNavClick}
                 data-testid={`mobile-nav-link-${item.label.toLowerCase()}`}
-                className={`text-2xl font-medium transition-all duration-300 ${
+                className={`w-full text-center py-4 text-xl font-medium rounded-xl transition-all duration-300 ${
                   activeSection === item.href.substring(1)
-                    ? 'text-[#A5A584] font-semibold'
-                    : 'text-foreground hover:text-primary'
+                    ? 'text-[#A5A584] font-semibold bg-card'
+                    : 'text-foreground hover:text-primary hover:bg-card/50'
                 }`}
               >
                 {item.label}
