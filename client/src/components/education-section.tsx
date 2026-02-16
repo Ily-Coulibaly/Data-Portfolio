@@ -1,86 +1,151 @@
-import { GraduationCap, MapPin, Calendar, ChevronDown } from "lucide-react";
+import { GraduationCap, MapPin, Calendar, ChevronDown, BookOpen } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 import { useState } from "react";
-
-type CourseCategory = "all" | "ai_ml" | "programming" | "visualization" | "quantitative" | "finance";
 
 interface Course {
   name: string;
   nameFr: string;
-  category: CourseCategory[];
 }
 
 const GRAD_COURSEWORK: Course[] = [
-  { name: "AI for Business", nameFr: "IA pour les Affaires", category: ["ai_ml"] },
-  { name: "Machine Learning for Business", nameFr: "Machine Learning pour les Affaires", category: ["ai_ml"] },
-  { name: "Advanced Programming with Python & SQL", nameFr: "Programmation Avancée Python & SQL", category: ["programming"] },
-  { name: "Storytelling & Data Visualization with Tableau", nameFr: "Storytelling & Visualisation de Données avec Tableau", category: ["visualization"] },
-  { name: "Econometrics", nameFr: "Économétrie", category: ["quantitative"] },
-  { name: "Investment Banking & Financial Modeling", nameFr: "Banque d'Investissement & Modélisation Financière", category: ["finance"] },
+  { name: "AI for Business", nameFr: "IA pour les Affaires" },
+  { name: "Machine Learning for Business", nameFr: "Machine Learning pour les Affaires" },
+  { name: "Advanced Programming with Python & SQL", nameFr: "Programmation Avancée Python & SQL" },
+  { name: "Storytelling & Data Visualization with Tableau", nameFr: "Storytelling & Visualisation de Données avec Tableau" },
+  { name: "Econometrics", nameFr: "Économétrie" },
+  { name: "Investment Banking & Financial Modeling", nameFr: "Banque d'Investissement & Modélisation Financière" },
 ];
 
 const UNDERGRAD_COURSEWORK: Course[] = [
-  { name: "Probability & Statistics", nameFr: "Probabilités & Statistiques", category: ["quantitative"] },
-  { name: "Linear Algebra", nameFr: "Algèbre Linéaire", category: ["quantitative"] },
-  { name: "Calculus I, II & III", nameFr: "Calcul I, II & III", category: ["quantitative"] },
-  { name: "Actuarial Mathematics", nameFr: "Mathématiques Actuarielles", category: ["finance"] },
-  { name: "Statistical Modeling", nameFr: "Modélisation Statistique", category: ["quantitative"] },
-  { name: "Numerical Methods", nameFr: "Méthodes Numériques", category: ["programming"] },
+  { name: "Probability & Statistics", nameFr: "Probabilités & Statistiques" },
+  { name: "Linear Algebra", nameFr: "Algèbre Linéaire" },
+  { name: "Calculus I, II & III", nameFr: "Calcul I, II & III" },
+  { name: "Actuarial Mathematics", nameFr: "Mathématiques Actuarielles" },
+  { name: "Statistical Modeling", nameFr: "Modélisation Statistique" },
+  { name: "Numerical Methods", nameFr: "Méthodes Numériques" },
 ];
 
-const CATEGORY_LABELS: Record<CourseCategory, { en: string; fr: string }> = {
-  all: { en: "All", fr: "Tous" },
-  ai_ml: { en: "AI & ML", fr: "IA & ML" },
-  programming: { en: "Programming", fr: "Programmation" },
-  visualization: { en: "Visualization", fr: "Visualisation" },
-  quantitative: { en: "Quantitative", fr: "Quantitatif" },
-  finance: { en: "Finance", fr: "Finance" },
-};
-
-const CourseworkFilter = ({ courses, isEn }: { courses: Course[]; isEn: boolean }) => {
-  const [activeFilter, setActiveFilter] = useState<CourseCategory>("all");
-
-  const availableCategories = (Object.keys(CATEGORY_LABELS) as CourseCategory[]).filter(
-    (cat) => cat === "all" || courses.some((c) => c.category.includes(cat))
-  );
-
-  const filteredCourses = activeFilter === "all"
-    ? courses
-    : courses.filter((c) => c.category.includes(activeFilter));
+const ExpandableCourses = ({ courses, isEn }: { courses: Course[]; isEn: boolean }) => {
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <div>
-      <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-2">
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="flex items-center gap-2 text-sm font-medium transition-colors duration-200 hover:text-primary"
+        style={{ color: expanded ? "#A5A584" : "rgba(165,165,132,0.7)" }}
+      >
+        <BookOpen className="w-3.5 h-3.5" />
         {isEn ? "Relevant Coursework" : "Cours Pertinents"}
-      </p>
-      <div className="flex flex-wrap gap-1.5 mb-3">
-        {availableCategories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActiveFilter(cat)}
-            className={`px-2.5 py-1 text-xs rounded-full font-medium transition-all duration-200 ${
-              activeFilter === cat
-                ? "bg-primary text-primary-foreground"
-                : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
-            }`}
-          >
-            {isEn ? CATEGORY_LABELS[cat].en : CATEGORY_LABELS[cat].fr}
-          </button>
-        ))}
-      </div>
-      <div className="flex flex-wrap gap-1.5">
-        {filteredCourses.map((course, idx) => (
-          <span
-            key={idx}
-            className="px-2.5 py-1 text-xs rounded-full bg-primary/10 text-primary font-medium"
-          >
-            {isEn ? course.name : course.nameFr}
-          </span>
-        ))}
+        <ChevronDown
+          className="w-3.5 h-3.5 transition-transform duration-300"
+          style={{ transform: expanded ? "rotate(180deg)" : "rotate(0deg)" }}
+        />
+      </button>
+      <div
+        className="overflow-hidden transition-all duration-300 ease-in-out"
+        style={{
+          maxHeight: expanded ? "300px" : "0px",
+          opacity: expanded ? 1 : 0,
+          marginTop: expanded ? "10px" : "0px",
+        }}
+      >
+        <div className="flex flex-wrap gap-2">
+          {courses.map((course, idx) => (
+            <span
+              key={idx}
+              className="px-3 py-1.5 text-xs rounded-full font-medium"
+              style={{
+                backgroundColor: "rgba(165,165,132,0.12)",
+                color: "#A5A584",
+                border: "1px solid rgba(165,165,132,0.2)",
+              }}
+            >
+              {isEn ? course.name : course.nameFr}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
+
+const EducationCard = ({
+  school,
+  degree,
+  concentration,
+  location,
+  dates,
+  grade,
+  courses,
+  isEn,
+}: {
+  school: string;
+  degree: string;
+  concentration?: string;
+  location: string;
+  dates: string;
+  grade: string;
+  courses: Course[];
+  isEn: boolean;
+}) => (
+  <div
+    className="rounded-xl p-6 sm:p-7 transition-all duration-300"
+    style={{
+      backgroundColor: "rgba(165,165,132,0.04)",
+      border: "1px solid rgba(165,165,132,0.15)",
+    }}
+  >
+    <div className="flex items-start gap-4">
+      <div
+        className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+        style={{ backgroundColor: "rgba(165,165,132,0.15)" }}
+      >
+        <GraduationCap className="w-5 h-5" style={{ color: "#A5A584" }} />
+      </div>
+      <div className="flex-1 min-w-0">
+        <h3 className="text-base sm:text-lg font-bold tracking-tight" style={{ color: "#A5A584" }}>
+          {school}
+        </h3>
+
+        <div className="mt-2.5">
+          <p className="text-base sm:text-lg font-semibold text-foreground leading-tight">
+            {degree}
+          </p>
+          {concentration && (
+            <p className="text-sm text-muted-foreground mt-0.5">
+              {concentration}
+            </p>
+          )}
+        </div>
+
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mt-3 text-xs text-muted-foreground">
+          <span className="flex items-center gap-1.5">
+            <Calendar className="w-3.5 h-3.5" style={{ color: "rgba(165,165,132,0.6)" }} />
+            {dates}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <MapPin className="w-3.5 h-3.5" style={{ color: "rgba(165,165,132,0.6)" }} />
+            {location}
+          </span>
+          <span
+            className="px-2 py-0.5 text-[10px] font-bold rounded-md uppercase tracking-wider"
+            style={{
+              backgroundColor: "rgba(165,165,132,0.15)",
+              color: "#A5A584",
+            }}
+          >
+            {grade}
+          </span>
+        </div>
+
+        <div className="mt-5">
+          <ExpandableCourses courses={courses} isEn={isEn} />
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 const EducationSection = () => {
   const { language } = useLanguage();
@@ -93,91 +158,27 @@ const EducationSection = () => {
           {isEn ? "Education" : "Formation"}
         </h2>
 
-        <div className="space-y-8">
-          <div className="bg-card rounded-lg p-5 sm:p-6 shadow-lg">
-            <div className="flex items-start gap-3 sm:gap-4 mb-4">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                <GraduationCap className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="text-lg sm:text-xl font-semibold leading-tight">
-                    {isEn ? "M.S. in Business Analytics" : "M.S. en Analytique d'Affaires"}
-                  </h3>
-                  <span className="px-2 py-0.5 text-[10px] font-bold rounded bg-primary/20 text-primary uppercase tracking-wider">
-                    {isEn ? "Grade: A" : "Note : A"}
-                  </span>
-                </div>
-                <p className="text-primary font-medium text-sm sm:text-base mt-1">
-                  Babson College, F.W. Olin Graduate School of Business
-                </p>
-                <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs sm:text-sm text-muted-foreground mt-1.5">
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                    Wellesley, MA
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
-                    Aug 2024 – May 2025
-                  </span>
-                </div>
-              </div>
-            </div>
+        <div className="space-y-6">
+          <EducationCard
+            school="Babson College, F.W. Olin Graduate School of Business"
+            degree={isEn ? "M.S. in Business Analytics" : "M.S. en Analytique d'Affaires"}
+            location="Wellesley, MA"
+            dates="Aug 2024 – May 2025"
+            grade={isEn ? "Grade: A" : "Note : A"}
+            courses={GRAD_COURSEWORK}
+            isEn={isEn}
+          />
 
-            <div className="mt-4">
-              <CourseworkFilter courses={GRAD_COURSEWORK} isEn={isEn} />
-            </div>
-
-            <div className="mt-4 pt-3 border-t border-border/50">
-              <p className="text-sm text-muted-foreground flex items-start gap-2">
-                <span
-                  className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
-                  style={{ backgroundColor: "#A5A584" }}
-                />
-                {isEn
-                  ? "Lead of Operations, Babson Women in Business Club"
-                  : "Responsable des Opérations, Club Women in Business de Babson"}
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-card rounded-lg p-5 sm:p-6 shadow-lg">
-            <div className="flex items-start gap-3 sm:gap-4 mb-4">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                <GraduationCap className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="text-lg sm:text-xl font-semibold leading-tight">
-                    {isEn ? "B.S. in Mathematics" : "B.S. en Mathématiques"}
-                  </h3>
-                  <span className="px-2 py-0.5 text-[10px] font-bold rounded bg-primary/20 text-primary uppercase tracking-wider">
-                    {isEn ? "Grade: A" : "Note : A"}
-                  </span>
-                </div>
-                <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
-                  {isEn ? "Concentration: Actuarial Science" : "Concentration : Science Actuarielle"}
-                </p>
-                <p className="text-primary font-medium text-sm sm:text-base mt-1">
-                  International University of Grand-Bassam (IUGB)
-                </p>
-                <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs sm:text-sm text-muted-foreground mt-1.5">
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                    Grand-Bassam, Côte d'Ivoire
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Calendar className="w-3 h-3" />
-                    Sep 2018 – May 2022
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-4">
-              <CourseworkFilter courses={UNDERGRAD_COURSEWORK} isEn={isEn} />
-            </div>
-          </div>
+          <EducationCard
+            school="International University of Grand-Bassam (IUGB)"
+            degree={isEn ? "B.S. in Mathematics" : "B.S. en Mathématiques"}
+            concentration={isEn ? "Concentration: Actuarial Science" : "Concentration : Science Actuarielle"}
+            location="Grand-Bassam, Côte d'Ivoire"
+            dates="Sep 2018 – May 2022"
+            grade={isEn ? "Grade: A" : "Note : A"}
+            courses={UNDERGRAD_COURSEWORK}
+            isEn={isEn}
+          />
         </div>
 
         <div className="mt-16 text-center scroll-indicator">
