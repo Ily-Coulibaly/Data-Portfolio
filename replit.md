@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a modern, responsive data analyst portfolio website showcasing professional work, skills, and achievements. Built as a full-stack application with React frontend and Express backend, the portfolio features multiple sections including About, Skills, Projects, Articles, Certificates, and a dedicated KYN brand section. The site emphasizes clean design, professional presentation, and interactive elements to effectively showcase data analytics expertise and career progression.
+This is a modern, responsive data analyst portfolio website showcasing professional work, skills, and achievements. Built as a full-stack application with React frontend and Express backend, the portfolio features sections: Hero, Skills, Experience, Projects, Certificates, and Contact. The site emphasizes clean dark theme design with olive green (#A5A584) accents, professional presentation, multilingual support (EN/FR), and mobile-first responsive layouts. KYN section and AI chatbot are currently hidden. Footer copyright: "All rights reserved © 2026".
 
 ## User Preferences
 
@@ -33,7 +33,7 @@ Preferred communication style: Simple, everyday language.
 - **Data Validation**: Zod schemas for runtime validation and type inference
 
 ### UI/UX Design Patterns
-- **Design System**: Dark theme with purple accent colors and neutral base palette
+- **Design System**: Dark theme with olive green (#A5A584) accent colors and neutral base palette
 - **Responsive Design**: Mobile-first approach with breakpoint-based layouts
 - **Component Architecture**: Reusable UI components with consistent styling patterns
 - **Navigation**: Fixed header with smooth scroll behavior and section anchoring
