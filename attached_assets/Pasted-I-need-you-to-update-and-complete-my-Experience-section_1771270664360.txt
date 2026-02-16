@@ -1,0 +1,101 @@
+I need you to update and complete my Experience section.
+
+Do NOT redesign the layout, styling, or card structure.  
+Only update content, ordering, and missing roles.
+
+Tasks to execute:
+
+1) Add missing experiences
+2) Fix chronological order (most recent → oldest)
+3) Standardize formatting across all entries
+4) Keep content truthful and concise
+5) Align tone with analytics / AI / strategy positioning
+
+---
+
+EXPERIENCE ORDER (Top → Bottom)
+
+1. Strategy & Analytics Analyst  
+Company: Mac Unlimited Inc.  
+Location: Oreland, PA (Remote)  
+Dates: Jul 2025 – Present  
+
+2. Founder & AI Solutions Lead  
+Company: KYN LLC  
+Location: Boston, MA  
+Dates: Jan 2023 – Present  
+
+Description to display:
+
+• Founded and scaled a data driven beauty and consumer brand integrating analytics across operations, marketing, and customer intelligence  
+• Built AI powered product recommendation systems and customer insight pipelines  
+• Designed marketing analytics dashboards tracking acquisition, retention, and campaign ROI  
+• Led experimentation initiatives including A/B testing and funnel optimization  
+
+Technical Stack line to add:  
+Python, SQL, Shopify API, Marketing Analytics, NLP, Recommendation Systems
+
+---
+
+3. Insights & Data Analyst  
+Company: Entrepreneurial Solutions Partners (ESP)  
+Location: Abidjan, Côte d’Ivoire  
+Dates: Dec 2023 – Aug 2024  
+
+(Keep existing optimized content)
+
+---
+
+4. Business Development Analyst  
+Company: Entrepreneurial Solutions Partners (ESP)  
+Location: Abidjan, Côte d’Ivoire  
+Dates: Jan 2023 – Dec 2023  
+
+(Keep existing optimized content)
+
+---
+
+5. Data & Actuarial Intern  
+Company: NSIA Group (KALA Assurance)  
+Location: Abidjan, Côte d’Ivoire  
+Dates: Jun 2022 – Dec 2022  
+
+(Keep existing optimized content)
+
+---
+
+6. Mathematics Tutor & Analytics Developer  
+Organization: International University of Grand-Bassam (IUGB)  
+Location: Grand-Bassam, Côte d’Ivoire  
+Dates: Jan 2020 – May 2022  
+
+Add this full entry:
+
+• Delivered tutoring in Statistics, Probability, and Linear Algebra to 100+ undergraduate students  
+• Built student performance analytics platform using Python and SQL to track academic outcomes  
+• Developed predictive models identifying at risk students early using assignment and attendance data  
+• Improved student performance outcomes through data driven intervention strategies  
+
+Technical Stack line:  
+Python, SQL, Predictive Modeling, Data Visualization
+
+---
+
+FORMATTING REQUIREMENTS
+
+• Maintain consistent bullet spacing  
+• Keep 4 bullets per role maximum  
+• Add Technical Stack line under each role  
+• Ensure mobile readability  
+• Keep dates right aligned  
+• Do not truncate role titles  
+• Preserve existing icons / visual markers  
+
+---
+
+FINAL CHECKS
+
+• Confirm KYN appears directly after Mac Unlimited  
+• Confirm Math Tutor appears as oldest role  
+• Ensure no experiences are hidden or collapsed  
+• Ensure section scroll behavior still works properly  

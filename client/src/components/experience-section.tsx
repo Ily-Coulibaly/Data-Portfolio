@@ -10,6 +10,7 @@ interface ExperienceItem {
   dates: string;
   bullets: string[];
   bulletsFr: string[];
+  techStack: string;
 }
 
 const EXPERIENCE_DATA: ExperienceItem[] = [
@@ -23,23 +24,45 @@ const EXPERIENCE_DATA: ExperienceItem[] = [
     bullets: [
       "Led complete business model transformation redesigning revenue structure from 80% active coaching to 70% passive revenue; developed 3-year strategic roadmap through capability optimization and process redesign",
       "Optimized organizational processes diagnosing conversion funnel issues; designed improved customer journey framework projected to double conversion rates from 10–15% to 20–30%",
+      "Built AI-driven analytics tracking frameworks and performance dashboards leveraging predictive modeling to monitor funnel behavior, customer acquisition efficiency, and revenue performance",
       "Performed comprehensive competitive intelligence analysis evaluating 5+ market competitors; developed strategic positioning framework and differentiation strategy",
-      "Built analytics tracking frameworks and performance dashboards to monitor funnel behavior, customer acquisition efficiency, and revenue performance",
     ],
     bulletsFr: [
       "Dirigé la transformation complète du modèle d'affaires, restructurant les revenus de 80% coaching actif vers 70% revenus passifs; développé une feuille de route stratégique sur 3 ans",
       "Optimisé les processus organisationnels en diagnostiquant les problèmes de conversion; conçu un cadre de parcours client projeté pour doubler les taux de conversion",
+      "Construit des cadres de suivi analytique pilotés par l'IA et des tableaux de bord de performance utilisant la modélisation prédictive pour surveiller le comportement de l'entonnoir et l'efficacité d'acquisition",
       "Réalisé une analyse concurrentielle complète évaluant 5+ compétiteurs; développé un cadre de positionnement stratégique",
-      "Construit des cadres de suivi analytique et des tableaux de bord de performance pour surveiller le comportement de l'entonnoir et l'efficacité d'acquisition",
     ],
+    techStack: "Python, SQL, Tableau, Predictive Modeling, Funnel Analytics",
   },
   {
     id: 2,
-    role: "Insights and Data Analyst",
-    roleFr: "Analyste de Données et Insights",
+    role: "Founder & AI Solutions Lead",
+    roleFr: "Fondateur & Responsable Solutions IA",
+    company: "KYN LLC",
+    location: "Boston, MA",
+    dates: "Jan 2023 – Present",
+    bullets: [
+      "Founded and scaled a data-driven beauty and consumer brand integrating analytics across operations, marketing, and customer intelligence",
+      "Built AI-powered product recommendation systems and customer insight pipelines",
+      "Designed marketing analytics dashboards tracking acquisition, retention, and campaign ROI",
+      "Led experimentation initiatives including A/B testing and funnel optimization",
+    ],
+    bulletsFr: [
+      "Fondé et développé une marque de beauté axée sur les données, intégrant l'analytique dans les opérations, le marketing et l'intelligence client",
+      "Construit des systèmes de recommandation de produits alimentés par l'IA et des pipelines d'insights clients",
+      "Conçu des tableaux de bord d'analytique marketing suivant l'acquisition, la rétention et le ROI des campagnes",
+      "Dirigé des initiatives d'expérimentation incluant les tests A/B et l'optimisation de l'entonnoir",
+    ],
+    techStack: "Python, SQL, Shopify API, Marketing Analytics, NLP, Recommendation Systems",
+  },
+  {
+    id: 3,
+    role: "Insights & Data Analyst",
+    roleFr: "Analyste de Données & Insights",
     company: "Entrepreneurial Solutions Partners (ESP)",
     location: "Abidjan, Côte d'Ivoire",
-    dates: "Dec 2023 – Aug 2024",
+    dates: "Jan 2024 – Aug 2024",
     bullets: [
       "Built scalable BI infrastructure and automated ETL pipelines processing 10K+ daily records across 10-country operation; created 10+ executive dashboards reducing manual reporting by 50%",
       "Led financial forecasting initiative using predictive analytics and time-series modeling; developed strategic business case securing $500K USADF grant supporting 300+ agricultural entrepreneurs",
@@ -50,9 +73,10 @@ const EXPERIENCE_DATA: ExperienceItem[] = [
       "Dirigé une initiative de prévision financière utilisant l'analytique prédictive et la modélisation de séries temporelles; obtenu une subvention USADF de 500K$ soutenant 300+ entrepreneurs agricoles",
       "Construit une solution de recherche IA d'entreprise utilisant des techniques NLP indexant 1 000+ documents, réduisant le temps de recherche de 80%",
     ],
+    techStack: "Python, SQL, Power BI, NLP, TF-IDF, Vector Embeddings, ETL",
   },
   {
-    id: 3,
+    id: 4,
     role: "Business Development Analyst",
     roleFr: "Analyste Développement d'Affaires",
     company: "Entrepreneurial Solutions Partners (ESP)",
@@ -68,12 +92,13 @@ const EXPERIENCE_DATA: ExperienceItem[] = [
       "Réalisé des diagnostics d'entreprise et la refonte de programmes de formation à l'entrepreneuriat pour 450+ participants",
       "Recruté et évalué des entreprises prêtes pour l'investissement dans le programme Orange Corners de 1,4M€; développé des cadres d'évaluation",
     ],
+    techStack: "Excel, SQL, Market Research, Strategic Analysis, Data Visualization",
   },
   {
-    id: 4,
-    role: "Data and Actuary Intern",
-    roleFr: "Stagiaire Données et Actuariat",
-    company: "NSIA Group (KALA Assurance)",
+    id: 5,
+    role: "Data & Actuarial Intern",
+    roleFr: "Stagiaire Données & Actuariat",
+    company: "NSIA Group",
     location: "Abidjan, Côte d'Ivoire",
     dates: "Jun 2022 – Dec 2022",
     bullets: [
@@ -84,6 +109,28 @@ const EXPERIENCE_DATA: ExperienceItem[] = [
       "Créé des modèles de tarification actuarielle analysant 500+ polices d'assurance avec SQL et prévision de séries temporelles; amélioré la précision de tarification de 25%",
       "Automatisé les processus de reporting mensuel réduisant le temps de compilation manuelle de 35%",
     ],
+    techStack: "SQL, Excel, Time-Series Forecasting, Actuarial Modeling",
+  },
+  {
+    id: 6,
+    role: "Mathematics Tutor & Analytics Developer",
+    roleFr: "Tuteur en Mathématiques & Développeur Analytique",
+    company: "International University of Grand-Bassam (IUGB)",
+    location: "Grand-Bassam, Côte d'Ivoire",
+    dates: "Jan 2020 – May 2022",
+    bullets: [
+      "Delivered tutoring in Statistics, Probability, and Linear Algebra to 100+ undergraduate students",
+      "Built student performance analytics platform using Python and SQL to track academic outcomes",
+      "Developed predictive models identifying at-risk students early using assignment and attendance data",
+      "Improved student performance outcomes through data-driven intervention strategies",
+    ],
+    bulletsFr: [
+      "Dispensé du tutorat en Statistiques, Probabilités et Algèbre Linéaire à 100+ étudiants de premier cycle",
+      "Construit une plateforme d'analytique de performance étudiante avec Python et SQL pour suivre les résultats académiques",
+      "Développé des modèles prédictifs identifiant les étudiants à risque à partir des données de présence et de devoirs",
+      "Amélioré les résultats de performance étudiante grâce à des stratégies d'intervention basées sur les données",
+    ],
+    techStack: "Python, SQL, Predictive Modeling, Data Visualization",
   },
 ];
 
@@ -141,6 +188,18 @@ const ExperienceSection = () => {
                       )
                     )}
                   </ul>
+                  <div className="mt-3 pt-3 border-t border-border/50">
+                    <div className="flex flex-wrap gap-1.5">
+                      {exp.techStack.split(", ").map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 py-0.5 text-xs rounded-full bg-primary/10 text-primary font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
