@@ -36,7 +36,7 @@ const SkillsSection = () => {
         
         <div className={`grid gap-8 justify-items-center max-w-5xl mx-auto ${
           currentSkills.length <= 3 
-            ? 'grid-cols-1 md:grid-cols-3 place-content-center' 
+            ? 'grid-cols-2 md:grid-cols-3 place-content-center' 
             : currentSkills.length === 4
             ? 'grid-cols-2 md:grid-cols-4 place-content-center'
             : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5'

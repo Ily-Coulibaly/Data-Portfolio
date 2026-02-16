@@ -1,11 +1,13 @@
 import { SOCIAL_LINKS } from "@/lib/constants";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="py-12 px-6 bg-secondary border-t border-border">
       <div className="max-w-6xl mx-auto text-center">
         <p className="text-muted-foreground mb-6">
-          All rights reserved &copy; 2026
+          {t('footer.rights')} &copy; 2026
         </p>
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           <a 

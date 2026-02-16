@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, ExternalLink, Play, FileText, X, Target, BarChart3, Lightbulb, TrendingUp, CheckCircle, Maximize2, Minimize2, Github } from "lucide-react";
 import { PROJECTS, FILTER_CATEGORIES } from "@/lib/constants";
+import { useLanguage } from "@/hooks/useLanguage";
 import { BikeShareBlogCard } from "@/components/bike-share-blog-card";
 import bikeShareBg from "@assets/generated_images/Dark_tech_bike_analytics_dashboard_f691e25c.png";
 import wayfairBg from "@assets/generated_images/Dark_Wayfair_analytics_dashboard_0212aec8.png";
@@ -16,6 +17,7 @@ import aiMonetizationBg from "@assets/generated_images/ai_monetization_strategy.
 import enterpriseAiBg from "@assets/generated_images/enterprise_ai_transformation.png";
 
 const ProjectsSection = () => {
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState("all");
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [showDetailModal, setShowDetailModal] = useState(false);
@@ -47,7 +49,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">Featured Projects</h2>
+        <h2 className="text-4xl font-bold text-center mb-16">{t('projects.title')}</h2>
         
         {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -543,7 +545,7 @@ const ProjectsSection = () => {
                   <div style={{ marginBottom: '30px' }}>
                     <h4 style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <TrendingUp className="w-5 h-5" style={{ color: '#A5A584' }} />
-                      Business Impact
+                      {t('projects.businessImpact')}
                     </h4>
                     <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
                       {selectedProject.businessImpact}
@@ -565,17 +567,7 @@ const ProjectsSection = () => {
                       style={{ background: '#A5A584', color: '#000' }}
                     >
                       <ExternalLink className="w-6 h-6" />
-                      Live Platform
-                    </a>
-                    <a
-                      href={selectedProject.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-8 py-4 rounded-lg transition-colors font-semibold text-lg"
-                      style={{ background: 'transparent', color: '#A5A584', border: '1px solid #A5A584' }}
-                    >
-                      <Github className="w-6 h-6" />
-                      View Codebase
+                      {t('projects.livePlatform')}
                     </a>
                   </div>
                 </div>
@@ -591,7 +583,7 @@ const ProjectsSection = () => {
                 {/* Key Findings */}
                 <div style={{ marginBottom: '30px' }}>
                   <h4 style={{ color: '#ffffff', fontSize: '18px', fontWeight: 600, marginBottom: '16px' }}>
-                    Key Findings
+                    {t('projects.keyFindings')}
                   </h4>
                   {selectedProject.keyFindings.map((finding: string, index: number) => (
                     <div key={index} style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px', fontSize: '14px', lineHeight: 1.6 }}>
@@ -613,7 +605,7 @@ const ProjectsSection = () => {
                     gap: '8px'
                   }}>
                     <Target className="w-5 h-5" style={{ color: '#A5A584' }} />
-                    Research Questions
+                    {t('projects.researchQuestions')}
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
                     {selectedProject.researchQuestions.map((question: string, index: number) => (
@@ -639,7 +631,7 @@ const ProjectsSection = () => {
                     gap: '8px'
                   }}>
                     <BarChart3 className="w-5 h-5" style={{ color: '#A5A584' }} />
-                    Visualization Types
+                    {t('projects.visualizationTypes')}
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
                     {selectedProject.visualizationTypes.map((type: string, index: number) => (
@@ -665,7 +657,7 @@ const ProjectsSection = () => {
                     gap: '8px'
                   }}>
                     <Lightbulb className="w-5 h-5" style={{ color: '#A5A584' }} />
-                    Analysis Approach
+                    {t('projects.analysisApproach')}
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
                     {selectedProject.analysisApproach}
@@ -684,7 +676,7 @@ const ProjectsSection = () => {
                     gap: '8px'
                   }}>
                     <TrendingUp className="w-5 h-5" style={{ color: '#A5A584' }} />
-                    Business Impact
+                    {t('projects.businessImpact')}
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
                     {selectedProject.businessImpact}
@@ -703,7 +695,7 @@ const ProjectsSection = () => {
                     gap: '8px'
                   }}>
                     <CheckCircle className="w-5 h-5" style={{ color: '#A5A584' }} />
-                    Conclusion
+                    {t('projects.conclusion')}
                   </h4>
                   <div style={{ color: '#d0d0d0', fontSize: '14px', lineHeight: 1.6 }}>
                     {selectedProject.conclusion}
@@ -724,7 +716,7 @@ const ProjectsSection = () => {
                       }}
                     >
                       <FileText className="w-6 h-6" />
-                      View Full Report
+                      {t('projects.viewReport')}
                     </a>
                   ) : selectedProject.isPythonProject ? (
                     <a
@@ -738,7 +730,7 @@ const ProjectsSection = () => {
                       }}
                     >
                       <Github className="w-6 h-6" />
-                      View on GitHub
+                      {t('projects.viewGithub')}
                     </a>
                   ) : (
                     <a
@@ -752,7 +744,7 @@ const ProjectsSection = () => {
                       }}
                     >
                       <Play className="w-6 h-6" />
-                      View in Tableau Public
+                      {t('projects.viewTableau')}
                     </a>
                   )}
                 </div>

@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { ChevronDown, Award, Star, ExternalLink, X, Trophy } from "lucide-react";
 import { CERTIFICATES } from "@/lib/constants";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const TABS = [
-  { id: "professional", label: "Professional Certifications" },
-  { id: "academic", label: "Academic Excellence" },
-  { id: "entrepreneurship", label: "Leadership & Entrepreneurship" },
+  { id: "professional", labelEn: "Professional Certifications", labelKey: "certificates.professional" },
+  { id: "academic", labelEn: "Academic Excellence", labelKey: "certificates.academic" },
+  { id: "entrepreneurship", labelEn: "Leadership & Entrepreneurship", labelKey: "certificates.entrepreneurship" },
 ];
 
 const CertificatesSection = () => {
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState("professional");
   const [multiProofOpen, setMultiProofOpen] = useState<number | null>(null);
 
@@ -53,7 +55,7 @@ const CertificatesSection = () => {
   return (
     <section id="certificates" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-16">Certificates & Achievements</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-16">{t('certificates.title')}</h2>
         
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-12">
           {TABS.map((tab) => (
@@ -67,7 +69,7 @@ const CertificatesSection = () => {
                   : 'bg-card text-card-foreground hover:bg-primary/20'
               }`}
             >
-              {tab.label}
+              {t(tab.labelKey)}
             </button>
           ))}
         </div>
@@ -108,7 +110,7 @@ const CertificatesSection = () => {
                   className="px-4 sm:px-6 py-2 border border-border rounded-lg hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all duration-300 inline-flex items-center gap-2 text-sm"
                 >
                   <ExternalLink className="w-4 h-4" />
-                  {"proofLabel" in certificate && certificate.proofLabel ? certificate.proofLabel : "See"}
+                  {"proofLabel" in certificate && certificate.proofLabel ? certificate.proofLabel : t('certificates.seeProof')}
                 </button>
               )}
             </div>
