@@ -80,7 +80,7 @@ const translations = {
     // Hero Section Details
     'hero.education': 'B.S. Mathematics | M.S. Business Analytics',
     'hero.location': 'Boston, MA',
-    'hero.description': 'I leverage AI, Machine Learning, and advanced analytics to turn complex data into strategic business decisions. With 3 years of experience building predictive models, NLP solutions, and automated BI systems, I bridge the gap between data science and business impact.',
+    'hero.description': 'I leverage AI, Machine Learning, and advanced analytics to turn complex data into strategic business decisions. With 3.5 years of experience building predictive models, NLP solutions, and automated BI systems, I bridge the gap between data science and business impact.',
     'hero.experience': '3 years of experience',
     'hero.viewProjects': 'View My Projects',
     'hero.contactMe': 'Contact Me',
@@ -187,7 +187,7 @@ const translations = {
     // Hero Section Details
     'hero.education': 'B.S. Mathématiques | M.S. Analytique d\'Affaires',
     'hero.location': 'Boston, MA',
-    'hero.description': 'J\'utilise l\'IA, le Machine Learning et l\'analytique avancée pour transformer des données complexes en décisions stratégiques. Avec 3 ans d\'expérience en modèles prédictifs, solutions NLP et systèmes BI automatisés, je fais le lien entre la science des données et l\'impact business.',
+    'hero.description': 'J\'utilise l\'IA, le Machine Learning et l\'analytique avancée pour transformer des données complexes en décisions stratégiques. Avec 3,5 ans d\'expérience en modèles prédictifs, solutions NLP et systèmes BI automatisés, je fais le lien entre la science des données et l\'impact business.',
     'hero.experience': '3 ans d\'expérience',
     'hero.viewProjects': 'Voir Mes Projets',
     'hero.contactMe': 'Me Contacter',
